@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Colaborar - Mejora tu Docencia</title>
+  <script src="https://unpkg.com/vue@3.4.15/dist/vue.global.prod.js"></script>
+  <script src="https://unpkg.com/lucide@0.321.0/dist/umd/lucide.min.js"></script>
+  <script src="https://cdn.tailwindcss.com/3.4.1"></script>
+  <script src="js/config.js"></script>
+  <script src="js/components.js"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+            outfit: ['Outfit', 'sans-serif'],
+          },
+          colors: {
+            primary: {
+              50: '#f0fdf4', 100: '#dcfce7', 200: '#bbf7d0', 300: '#86efac', 400: '#4ade80',
+              500: '#22c55e', 600: '#16a34a', 700: '#15803d', 800: '#166534', 900: '#14532d',
+            }
+          }
+        }
+      }
+    }
+  </script>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;900&family=Inter:wght@400;500;600;800&display=swap" rel="stylesheet" />
+  <style>
+    [v-cloak] { display: none; }
+    body { font-family: 'Inter', sans-serif; scroll-behavior: smooth; }
+    h1, h2, h3, h4 { font-family: 'Outfit', sans-serif; }
+    .gradient-bg { background: linear-gradient(135deg, #f0fdf4 0%, #ffffff 50%, #f0fdf4 100%); }
+  </style>
+</head>
+<body class="gradient-bg text-gray-800 min-h-screen flex flex-col">
+  <div id="app" v-cloak class="flex flex-col flex-grow">
+    <site-header active-page="colaborar.html"></site-header>
+
+    <main class="flex-grow max-w-5xl mx-auto w-full p-6 md:p-12 space-y-16 mt-12">
+      <div class="text-center space-y-4 max-w-3xl mx-auto">
+        <div class="inline-flex p-4 bg-primary-100 text-primary-600 rounded-3xl mb-4 shadow-inner">
+          <i data-lucide="message-circle-heart" class="w-10 h-10"></i>
+        </div>
+        <h2 class="text-5xl font-black text-slate-900 leading-tight tracking-tight">🤝 Colabora con el Proyecto</h2>
+        <p class="text-xl text-slate-500 font-medium leading-relaxed">¿Tienes algo genial para compartir? Este espacio es para todos los profes con ganas de innovar.</p>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-8">
+        <div class="bg-white p-10 md:p-12 rounded-[3.5rem] shadow-xl shadow-primary-100/20 border border-primary-50 flex flex-col items-center text-center space-y-8 group hover:-translate-y-2 transition-all duration-300">
+          <div class="w-20 h-20 bg-primary-50 text-primary-600 rounded-3xl flex items-center justify-center shadow-inner group-hover:bg-primary-600 group-hover:text-white transition-colors duration-500">
+            <i data-lucide="mail" class="w-10 h-10"></i>
+          </div>
+          <div class="space-y-3">
+            <h3 class="text-3xl font-black text-slate-900">¡Envía tu Material!</h3>
+            <p class="text-slate-500 text-lg leading-relaxed">Tus experiencias o ideas pueden ayudar a otros docentes en su día a día.</p>
+          </div>
+          <a href="mailto:contacto@mejoratudocencia.es" class="text-2xl md:text-3xl font-black text-primary-600 hover:text-primary-800 transition-colors hover:underline decoration-4 underline-offset-8 tracking-tight break-all">contacto@mejoratudocencia.es</a>
+          <p class="text-[11px] text-slate-400 uppercase tracking-[0.3em] font-black">Respondemos en menos de 48 horas</p>
+        </div>
+
+        <div class="bg-white p-10 md:p-12 rounded-[3.5rem] shadow-xl shadow-blue-100/20 border border-blue-50 flex flex-col items-center text-center space-y-8 group hover:-translate-y-2 transition-all duration-300">
+          <div class="w-20 h-20 bg-blue-50 text-blue-600 rounded-3xl flex items-center justify-center shadow-inner group-hover:bg-blue-600 group-hover:text-white transition-colors duration-500">
+            <i data-lucide="send" class="w-10 h-10"></i>
+          </div>
+          <div class="space-y-3">
+            <h3 class="text-3xl font-black text-slate-900">Comunidad Telegram</h3>
+            <p class="text-slate-500 text-lg leading-relaxed">Únete a nuestro grupo y comparte recursos en tiempo real con otros docentes.</p>
+          </div>
+          <a :href="config.social.telegram" target="_blank" class="bg-blue-600 text-white px-10 py-4 rounded-2xl font-bold shadow-xl shadow-blue-200 hover:bg-blue-700 transition-all transform group-hover:scale-105 inline-flex items-center gap-3">
+            <i data-lucide="send" class="w-5 h-5"></i> Unirse ahora
+          </a>
+          <p class="text-[11px] text-slate-400 uppercase tracking-[0.3em] font-black">Acceso libre y colaborativo</p>
+        </div>
+      </div>
+    </main>
+
+    <site-footer></site-footer>
+  </div>
+
+  <script>
+    const { createApp, nextTick } = Vue;
+    createApp({
+      components: { SiteHeader, SiteFooter },
+      setup() { return { config: APP_CONFIG }; },
+      mounted() { nextTick(() => lucide.createIcons()); }
+    }).mount("#app");
+  </script>
+</body>
+</html>
