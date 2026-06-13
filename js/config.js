@@ -1,12 +1,12 @@
 const APP_CONFIG = {
   title: "Mejora tu Docencia",
   subtitle: "Recursos Pedagógicos y Metodológicos",
-  description: "Un espacio dedicado a la innovación en el aula: desde la gestión de conflictos y la tutoría emocional hasta el aprendizaje basado en proyectos y retos.",
+  description: "Un proyecto abierto, colaborativo y 100% gratuito con recursos, herramientas y estrategias para transformar la educación desde el aula.",
   author: {
     name: "Sergi García",
-    bio: "Soy Sergi García, apasionado por la innovación educativa y las metodologías activas que ponen al alumno en el centro del aprendizaje.",
+    bio: "Soy Sergi García, profe convencido de que la mejor educación es la que se comparte. Este proyecto es mi granito de arena para una docencia más innovadora, colaborativa y accesible para todos.",
     image: "sergi.png",
-    extendedBio: "En Mejora tu Docencia, comparto estrategias reales para gestionar el aula, atender a la diversidad y aplicar metodologías como ABP y ABR de forma práctica y sencilla."
+    extendedBio: "Todo lo que encuentras aquí es gratuito, sin registro y sin ánimo de lucro. Mi objetivo es que cualquier docente, en cualquier centro, pueda acceder a recursos de calidad sin barreras económicas. Porque innovar en educación no debería depender de cuánto pagas."
   },
   sections: [
     { id: 'tutorias', name: 'Tutoría y Emociones', icon: 'heart-handshake', description: 'Dinámicas de cohesión de grupo y gestión emocional.' },
