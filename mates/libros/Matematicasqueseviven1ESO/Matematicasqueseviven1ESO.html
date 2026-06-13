@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Matemáticas que se viven - 1º ESO</title>
+  <script src="https://unpkg.com/vue@3.4.15/dist/vue.global.prod.js"></script>
+  <script src="https://unpkg.com/lucide@0.321.0/dist/umd/lucide.min.js"></script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;900&family=Inter:wght@400;500;600;700&family=JetBrains+Mono&display=swap" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ["Inter", "sans-serif"],
+            outfit: ["Outfit", "sans-serif"],
+            mono: ["JetBrains Mono", "monospace"]
+          },
+          colors: {
+            book: {
+              50: "#f5f7ff", 100: "#ebf0ff", 200: "#d1dbff", 300: "#b2c1ff", 400: "#8ea1ff",
+              500: "#6366f1", 600: "#4f46e5", 700: "#4338ca", 800: "#3730a3", 900: "#1e1b4b"
+            }
+          }
+        }
+      }
+    }
+  </script>
+  <script src="js/config.js"></script>
+  <script src="js/units/unit0.js"></script>
+  <script src="js/units/unit1.js"></script>
+  <script src="js/units/unit2.js"></script>
+  <script src="js/units/unit3.js"></script>
+  <script src="js/content.js"></script>
+  <style>
+    [v-cloak] { display: none; }
+    body { font-family: "Inter", sans-serif; background-color: #fcfcfd; }
+    h1, h2, h3, h4 { font-family: "Outfit", sans-serif; }
+    .editorial-text { line-height: 1.8; color: #334155; font-size: 1.125rem; text-align: left; }
+    .editorial-text h1 { font-size: 3.5rem; font-weight: 900; color: #1e1b4b; line-height: 1.1; margin-top: 4rem; margin-bottom: 2rem; border-bottom: 8px solid #6366f1; padding-bottom: 1rem; display: inline-block; width: 100%; text-align: center; }
+    .editorial-text h2 { font-size: 2.25rem; font-weight: 800; color: #4338ca; margin-top: 5rem; margin-bottom: 1.5rem; display: flex; align-items: center; gap: 0.75rem; border-left: 6px solid #6366f1; padding-left: 1.5rem; text-align: left; }
+    .editorial-text p { margin-bottom: 1.5rem; text-align: justify; }
+    .editorial-text ul, .editorial-text ol { margin-bottom: 2rem; padding-left: 2rem; list-style-type: disc; }
+    .editorial-text li { margin-bottom: 0.75rem; }
+    .editorial-text b, .editorial-text strong { color: #1e1b4b; font-weight: 700; }
+    .editorial-text img { border-radius: 2rem; box-shadow: 0 20px 40px rgba(0,0,0,0.08); margin: 4rem auto; display: block; max-width: 90%; transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1); cursor: zoom-in; }
+    .editorial-text img:hover { transform: scale(1.02); }
+    .progress-bar { height: 4px; background: #6366f1; position: fixed; top: 0; left: 0; transition: width 0.1s; z-index: 100; }
+    .custom-scrollbar::-webkit-scrollbar { width: 6px; }
+    .custom-scrollbar::-webkit-scrollbar-track { background: transparent; }
+    .custom-scrollbar::-webkit-scrollbar-thumb { background: #e2e8f0; border-radius: 10px; }
+    
+    .active-nav { 
+      background: white !important; 
+      color: #4f46e5 !important; 
+      font-weight: 800 !important; 
+      box-shadow: 0 10px 15px -3px rgba(79, 70, 229, 0.1), 0 4px 6px -2px rgba(79, 70, 229, 0.05); 
+      border: 1px solid #e0e7ff !important; 
+    }
+    .toc-item-h2 { margin-left: 1.25rem; border-left: 1px solid #f1f5f9; }
+    
+    @media print { .no-print { display: none; } .editorial-text { font-size: 12pt; } }
+  </style>
+</head>
+<body class="selection:bg-book-100 selection:text-book-900">
+<div id="app" v-cloak>
+  <div class="progress-bar no-print" :style="{ width: progress + '%' }"></div>
+  
+  <nav class="no-print sticky top-0 z-50 bg-white/80 backdrop-blur-xl border-b border-gray-100 px-6 py-4">
+    <div class="max-w-screen-2xl mx-auto flex justify-between items-center">
+      <div class="flex items-center gap-6">
+        <a href="../../index.html" class="flex items-center gap-3 group">
+          <div class="bg-book-50 p-2 rounded-xl group-hover:bg-book-600 group-hover:text-white transition-all">
+            <i data-lucide="chevron-left" class="w-5 h-5"></i>
+          </div>
+          <span class="text-sm font-black uppercase tracking-widest text-book-900">{{ config.institution }}</span>
+        </a>
+        <div class="h-6 w-px bg-gray-200"></div>
+        <h1 class="hidden md:block text-sm font-bold text-gray-500 uppercase tracking-widest">{{ config.title }} <span class="text-gray-300 mx-2">/</span> <span class="text-book-600 font-black">1º ESO</span></h1>
+      </div>
+      <div class="flex items-center gap-4">
+        <button @click="toggleFocusMode" class="flex items-center gap-2 px-4 py-2 bg-gray-100 hover:bg-gray-200 rounded-xl transition-all text-gray-700 font-bold border-2 border-gray-300" title="Alternar barra lateral">
+          <i :data-lucide="focusMode ? 'panel-left-open' : 'panel-left-close'" class="w-4 h-4"></i>
+          <span class="text-[10px] uppercase tracking-widest hidden sm:block">{{ focusMode ? 'Mostrar Índice' : 'Ocultar Índice' }}</span>
+        </button>
+        <div class="h-6 w-px bg-gray-200 mx-2"></div>
+        <button @click="printBook" class="hidden sm:flex items-center gap-2 bg-book-600 text-white px-5 py-2.5 rounded-xl text-xs font-black uppercase tracking-widest shadow-lg shadow-book-200 hover:bg-book-700 transition-all">
+          <i data-lucide="printer" class="w-4 h-4"></i> Imprimir
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <div :class="['max-w-screen-2xl mx-auto px-6 grid grid-cols-1 gap-16 py-12 transition-all duration-500', focusMode ? 'lg:grid-cols-1 max-w-4xl' : 'lg:grid-cols-[280px_1fr]']">
+    <aside v-show="!focusMode" class="no-print hidden lg:block sticky top-32 h-[calc(100vh-10rem)] pr-8 overflow-y-auto custom-scrollbar relative">
+      <div class="mb-8">
+        <button @click="toggleFocusMode" class="w-full flex items-center justify-between px-4 py-3 rounded-xl bg-white text-book-900 hover:bg-book-50 transition-all border-2 border-book-900 shadow-lg group">
+          <span class="text-xs font-black uppercase tracking-widest">Ocultar índice</span>
+          <i data-lucide="panel-left-close" class="w-5 h-5 group-hover:-translate-x-1 transition-transform"></i>
+        </button>
+      </div>
+      <div class="space-y-10">
+        <div class="px-4 text-center">
+          <img :src="config.coverImage" alt="Miniatura" class="w-32 h-44 object-cover mx-auto rounded-xl shadow-md border border-gray-100 mb-6 transform hover:scale-105 transition-transform duration-300">
+          <h3 class="text-[10px] font-black uppercase tracking-[0.3em] text-book-900/30 mb-4">Contenido del libro</h3>
+        </div>
+        <nav class="space-y-1">
+          <a v-for="item in toc" :key="item.id" :href="'#' + item.id"
+             :class="['block px-4 py-2 rounded-xl text-sm transition-all', 
+                      activeId === item.id ? 'active-nav' : 'text-gray-500 hover:bg-gray-50',
+                      item.tag === 'H2' ? 'toc-item-h2' : 'font-bold uppercase tracking-wider text-xs']">
+            {{ item.text }}
+          </a>
+        </nav>
+      </div>
+    </aside>
+
+    <article id="main-article" class="editorial-text text-left">
+      <div class="text-center mb-16 mt-8">
+        <img :src="config.coverImage" alt="Portada" class="w-full max-w-4xl mx-auto rounded-[3rem] shadow-2xl transform hover:scale-[1.01] transition-transform duration-500">
+        <h1 class="c5 mt-12 mb-2"><span class="c30 c4">{{ config.title }}</span></h1>
+        <p class="text-xl text-gray-500 font-medium uppercase tracking-[0.2em] mb-2">{{ config.subtitle }} · {{ config.year }}</p>
+        <p class="text-[9px] text-gray-400 uppercase tracking-widest opacity-50">Licencia CC BY SA</p>
+      </div>
+      
+      <div v-for="section in content" :key="section.id" v-html="section.html" class="mb-12 border-b border-gray-50 pb-12 last:border-0"></div>
+
+      <!-- Enlaces a la Parte 2 -->
+      <div class="mt-24 p-12 bg-book-900 rounded-[3rem] text-white shadow-2xl no-print">
+        <div class="flex flex-col md:flex-row items-center justify-between gap-8">
+          <div class="text-left">
+            <h3 class="text-2xl font-black outfit mb-2 text-book-300 italic">¿Quieres continuar?</h3>
+            <p class="text-book-100/60 max-w-md">Explora la segunda parte del libro con nuevas unidades y situaciones de aprendizaje para 1º de ESO.</p>
+          </div>
+          <div class="flex flex-wrap justify-center gap-4">
+            <a href="../Matematicasqueseviven1ESO_parte2/Matematicasqueseviven1ESO_parte2.html" class="flex items-center gap-2 bg-white text-book-900 px-6 py-3 rounded-2xl font-black uppercase tracking-widest hover:bg-book-50 transition-all">
+              <i data-lucide="globe" class="w-4 h-4"></i> Parte 2 (Web)
+            </a>
+            <a href="../MatematicasQueSeViven1ESO_Parte2.pdf" class="flex items-center gap-2 bg-book-700 text-white px-6 py-3 rounded-2xl font-black uppercase tracking-widest hover:bg-book-600 transition-all border border-book-500">
+              <i data-lucide="file-text" class="w-4 h-4"></i> Parte 2 (PDF)
+            </a>
+          </div>
+        </div>
+      </div>
+    </article>
+  </div>
+</div>
+
+<script>
+const { createApp, ref, onMounted, onUnmounted, nextTick } = Vue;
+createApp({
+  setup() {
+    const toc = ref([]);
+    const activeId = ref('');
+    const progress = ref(0);
+    const focusMode = ref(false);
+    const config = ref(BOOK_CONFIG);
+    const content = ref(BOOK_CONTENT);
+
+    const parseContent = () => {
+      const article = document.getElementById('main-article');
+      if (!article) return;
+      const headers = Array.from(article.querySelectorAll('h1, h2'));
+      toc.value = [];
+      headers.forEach((h, index) => {
+        const text = h.textContent.trim();
+        if (text.length > 1) {
+          const id = h.id || 'section-' + index;
+          h.setAttribute('id', id);
+          toc.value.push({ id, text, tag: h.tagName });
+        }
+      });
+    };
+
+    const handleScroll = () => {
+      const scrolled = window.scrollY;
+      const height = document.documentElement.scrollHeight - window.innerHeight;
+      progress.value = height > 0 ? (scrolled / height) * 100 : 0;
+      
+      const headers = Array.from(document.querySelectorAll('h1, h2'));
+      let current = '';
+      for (const h of headers) {
+        if (scrolled >= h.offsetTop - 150) current = h.getAttribute('id');
+      }
+      activeId.value = current;
+    };
+
+    const toggleFocusMode = () => {
+      focusMode.value = !focusMode.value;
+      nextTick(() => lucide.createIcons());
+    };
+
+    const printBook = () => window.print();
+
+    onMounted(() => {
+      nextTick(() => {
+        parseContent();
+        window.addEventListener('scroll', handleScroll);
+        setTimeout(() => lucide.createIcons(), 100);
+      });
+    });
+
+    onUnmounted(() => window.removeEventListener('scroll', handleScroll));
+
+    return { toc, activeId, progress, focusMode, toggleFocusMode, printBook, config, content };
+  }
+}).mount('#app');
+</script>
+</body>
+</html>

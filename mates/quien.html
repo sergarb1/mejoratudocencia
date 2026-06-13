@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>¿Quién soy? - El Círculo de las Mates</title>
+  <script src="https://unpkg.com/vue@3.4.15/dist/vue.global.prod.js"></script>
+  <script src="https://unpkg.com/lucide@0.321.0/dist/umd/lucide.min.js"></script>
+  <script src="https://cdn.tailwindcss.com/3.4.1"></script>
+  <script src="js/config.js"></script>
+  <script src="js/components.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    [v-cloak] { display: none; }
+    body { font-family: 'Inter', sans-serif; scroll-behavior: smooth; }
+    h1, h2, h3 { font-family: 'Outfit', sans-serif; }
+    .gradient-bg { background: linear-gradient(135deg, #f5f3ff 0%, #ffffff 50%, #f5f3ff 100%); }
+  </style>
+</head>
+<body class="gradient-bg text-gray-800 min-h-screen flex flex-col">
+  <div id="app" v-cloak class="flex flex-col flex-grow">
+    <site-header active-page="quien.html"></site-header>
+
+    <main class="flex-grow max-w-5xl mx-auto w-full p-4 md:p-8 space-y-12">
+      <section class="bg-white rounded-[3rem] p-8 md:p-12 shadow-xl shadow-indigo-100/50 border border-indigo-50 overflow-hidden relative mt-12">
+        <div class="absolute top-0 right-0 w-64 h-64 bg-indigo-50 rounded-full -mr-32 -mt-32 z-0"></div>
+        
+        <div class="relative z-10 flex flex-col md:flex-row items-center gap-12">
+          <div class="shrink-0">
+            <div class="w-48 h-48 md:w-64 md:h-64 rounded-[2.5rem] overflow-hidden border-8 border-white shadow-2xl rotate-3">
+              <img :src="config.author.image" :alt="config.author.name" class="w-full h-full object-cover" />
+            </div>
+          </div>
+          <div class="space-y-6">
+            <h2 class="text-4xl font-black text-gray-900 leading-tight">👩‍🏫 Hola, soy <span class="text-indigo-600">{{ config.author.name }}</span></h2>
+            <div class="space-y-4 text-gray-600 text-lg leading-relaxed">
+              <p>{{ config.author.bio }}</p>
+              <p>Creo firmemente en el poder del aprendizaje colaborativo y el apoyo mutuo. Diseño actividades que fomentan el pensamiento crítico, el trabajo en equipo y la curiosidad matemática.</p>
+              <p class="font-medium italic text-indigo-700">"¡Vamos a explorar y disfrutar de las matemáticas en comunidad!"</p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <site-footer></site-footer>
+  </div>
+
+  <script>
+    const { createApp, nextTick } = Vue;
+    createApp({
+      components: { SiteHeader, SiteFooter },
+      setup() {
+        return { config: APP_CONFIG };
+      },
+      mounted() {
+        nextTick(() => lucide.createIcons());
+      }
+    }).mount("#app");
+  </script>
+</body>
+</html>

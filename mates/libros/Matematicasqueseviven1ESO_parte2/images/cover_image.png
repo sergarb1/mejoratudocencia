@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="600" viewBox="0 0 800 600">
+  <rect width="800" height="600" fill="#6366f1"/>
+  <rect x="50" y="50" width="700" height="500" rx="20" fill="#ffffff" stroke="#4f46e5" stroke-width="4"/>
+  <text x="400" y="200" font-family="Arial, sans-serif" font-size="48" font-weight="bold" fill="#4338ca" text-anchor="middle">Matemáticas que se viven</text>
+  <text x="400" y="280" font-family="Arial, sans-serif" font-size="32" fill="#334155" text-anchor="middle">Continuación - 1º ESO</text>
+  <text x="400" y="340" font-family="Arial, sans-serif" font-size="24" fill="#64748b" text-anchor="middle">Nuevas situaciones de aprendizaje</text>
+  
+  <!-- Geometric elements -->
+  <circle cx="200" cy="450" r="40" fill="#10b981" opacity="0.8"/>
+  <rect x="300" y="430" width="80" height="80" fill="#f59e0b" opacity="0.8"/>
+  <polygon points="500,470 540,430 580,470 540,510" fill="#ef4444" opacity="0.8"/>
+  <line x1="100" y1="150" x2="700" y2="150" stroke="#cbd5e1" stroke-width="2" stroke-dasharray="10,5"/>
+  <line x1="100" y1="400" x2="700" y2="400" stroke="#cbd5e1" stroke-width="2" stroke-dasharray="10,5"/>
+  
+  <!-- Decorative elements -->
+  <path d="M100 100 Q200 50 300 100 T500 100" stroke="#8b5cf6" stroke-width="3" fill="none"/>
+  <path d="M100 500 Q300 550 500 500 T700 500" stroke="#ec4899" stroke-width="3" fill="none"/>
+</svg>

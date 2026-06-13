@@ -36,9 +36,11 @@ const SiteHeader = {
   setup() {
     const menuItems = [
       { name: "Inicio", href: "index.html", icon: "layout-grid" },
-      { name: "¿Quién soy?", href: "quien.html", icon: "user-circle" },
       { name: "Recursos", href: "recursos.html", icon: "library" },
-      { name: "Colaborar", href: "colaborar.html", icon: "message-circle-heart" }
+      { name: "Matemáticas", href: "mates/", icon: "sigma" },
+      { name: "Sociograma", href: "herramientas/sociograma/", icon: "network" },
+      { name: "Colaborar", href: "colaborar.html", icon: "message-circle-heart" },
+      { name: "¿Quién soy?", href: "quien.html", icon: "user-circle" }
     ];
     return { config: APP_CONFIG, menuItems };
   },

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Libros - El Círculo de las Mates</title>
+  <script src="https://unpkg.com/vue@3.4.15/dist/vue.global.prod.js"></script>
+  <script src="https://unpkg.com/lucide@0.321.0/dist/umd/lucide.min.js"></script>
+  <script src="https://cdn.tailwindcss.com/3.4.1"></script>
+  <script src="js/config.js"></script>
+  <script src="js/resources.js"></script>
+  <script src="js/components.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    [v-cloak] { display: none; }
+    body { font-family: 'Inter', sans-serif; scroll-behavior: smooth; }
+    h1, h2, h3 { font-family: 'Outfit', sans-serif; }
+    .gradient-bg { background: linear-gradient(135deg, #f5f3ff 0%, #ffffff 50%, #f5f3ff 100%); }
+    .book-card {
+      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    .book-card:hover {
+      transform: translateY(-8px);
+    }
+  </style>
+</head>
+<body class="gradient-bg text-gray-800 min-h-screen flex flex-col">
+  <div id="app" v-cloak class="flex flex-col flex-grow">
+    <site-header active-page="libros.html"></site-header>
+
+    <main class="flex-grow max-w-7xl mx-auto w-full p-4 md:p-8 space-y-12">
+      <section class="text-center space-y-4 py-8">
+        <h2 class="text-4xl font-black text-gray-900">📚 Nuestros Libros</h2>
+        <p class="text-lg text-gray-600 max-w-2xl mx-auto">Materiales diseñados para aprender matemáticas de forma real, dinámica y cercana.</p>
+      </section>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div v-for="book in data.books" :key="book.title" class="book-card bg-white p-8 rounded-[3rem] shadow-xl border border-indigo-50 space-y-6">
+          <div class="flex items-center gap-4">
+            <div class="bg-indigo-600 text-white p-3 rounded-2xl shadow-lg">
+              <i data-lucide="book-open" class="w-8 h-8"></i>
+            </div>
+            <h3 class="text-2xl font-bold text-gray-900">{{ book.title }}</h3>
+          </div>
+          <p class="text-gray-600 text-lg leading-relaxed">{{ book.description }}</p>
+          
+          <div class="space-y-3 pt-4 border-t border-gray-100">
+            <p class="text-xs font-bold text-gray-400 uppercase tracking-widest">Disponible en:</p>
+            <div class="flex flex-wrap gap-4">
+              <a v-for="format in book.formats" :key="format.name" :href="format.url" target="_blank"
+                class="flex items-center gap-2 px-6 py-3 rounded-2xl font-bold transition-all shadow-md active:scale-95"
+                :class="format.type === 'web' ? 'bg-indigo-600 text-white hover:bg-indigo-700' : 'bg-gray-100 text-gray-700 hover:bg-gray-200'">
+                <i :data-lucide="format.icon" class="w-5 h-5"></i>
+                {{ format.name }}
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <site-footer></site-footer>
+  </div>
+
+  <script>
+    const { createApp, nextTick } = Vue;
+    createApp({
+      components: { SiteHeader, SiteFooter },
+      setup() {
+        return { data: APP_DATA };
+      },
+      mounted() {
+        nextTick(() => lucide.createIcons());
+      }
+    }).mount("#app");
+  </script>
+</body>
+</html>
