@@ -18,16 +18,7 @@ const APP_CONFIG = {
     { id: 'herramientas', name: 'Herramientas', icon: 'puzzle', description: 'Aplicaciones interactivas gratuitas para el aula y la orientación.' },
     { id: 'mates', name: 'Matemáticas', icon: 'calculator', description: 'Recursos y materiales interactivos de matemáticas para ESO.' }
   ],
-  tools: {
-    sociograma: {
-      title: 'Sociograma Interactivo',
-      description: 'Herramienta para pasar cuestionarios sociométricos, visualizar relaciones, detectar aislamiento y liderazgo, y generar informes.',
-      path: 'herramientas/sociograma/',
-      icon: 'network',
-      tags: ['Convivencia', 'Tutoría', 'Sociometría'],
-      badge: 'Nuevo'
-    }
-  },
+  tools: {},
   footerText: "© 2026 Mejora tu Docencia – Impulsando la Innovación Pedagógica",
   social: {
     instagram: "https://www.instagram.com/mejoratudocencia/",
