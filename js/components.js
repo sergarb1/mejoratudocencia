@@ -103,6 +103,9 @@ const SiteFooter = {
           <p class="text-xs text-gray-400 font-medium mt-1.5 flex items-center justify-center gap-2">
             Hecho con <i data-lucide="heart" class="inline w-3 h-3 text-red-500 fill-current animate-pulse"></i> por {{ config.author.name }}
           </p>
+          <p class="text-xs text-gray-400 flex items-center justify-center gap-1.5 mt-2">
+            <i data-lucide="calendar-clock" class="inline w-3 h-3"></i> Última actualización: 13 de junio de 2026
+          </p>
         </div>
       </div>
     </footer>
