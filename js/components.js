@@ -37,7 +37,7 @@ const SiteHeader = {
     const menuItems = [
       { name: "Inicio", href: "index.html", icon: "layout-grid" },
       { name: "Recursos", href: "recursos.html", icon: "library" },
-      { name: "Matemáticas", href: "mates/", icon: "sigma" },
+      { name: "Aplicaciones", href: "aplicaciones.html", icon: "rocket" },
       { name: "Colaborar", href: "colaborar.html", icon: "message-circle-heart" },
       { name: "¿Quién soy?", href: "quien.html", icon: "user-circle" }
     ];
@@ -87,7 +87,7 @@ const SiteFooter = {
                class="group p-2.5 bg-gradient-to-br from-gray-50 to-white rounded-xl text-gray-400 hover:text-white hover:from-blue-400 hover:to-blue-600 transition-all shadow-md hover:shadow-lg hover:scale-110 border border-gray-100">
               <i data-lucide="send" class="w-4 h-4"></i>
             </a>
-            <a href="mailto:contacto@mejoratudocencia.es" 
+            <a href="mailto:mejoratudocencia@gmail.com" 
                class="group p-2.5 bg-gradient-to-br from-gray-50 to-white rounded-xl text-gray-400 hover:text-white hover:from-gray-700 hover:to-gray-900 transition-all shadow-md hover:shadow-lg hover:scale-110 border border-gray-100">
               <i data-lucide="mail" class="w-4 h-4"></i>
             </a>
