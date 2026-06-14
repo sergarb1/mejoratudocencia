@@ -17,20 +17,17 @@ const SiteHeader = {
           </div>
         </div>
 
-        <!-- Navigation más grande -->
-        <nav class="flex flex-wrap justify-center gap-x-2 gap-y-1.5 bg-gradient-to-r from-gray-50/80 to-white/80 p-1.5 rounded-2xl border border-gray-200/60 backdrop-blur-md shadow-sm">
+        <!-- Navigation -->
+        <nav class="flex flex-nowrap justify-center gap-x-1 bg-gradient-to-r from-gray-50/80 to-white/80 p-1 rounded-2xl border border-gray-200/60 backdrop-blur-md shadow-sm overflow-x-auto">
           <a v-for="item in menuItems" :key="item.name" :href="item.href"
             :class="[
-              'text-xs uppercase tracking-widest font-bold transition-all duration-300 flex items-center gap-2 px-5 py-2.5 rounded-xl',
+              'text-[10px] uppercase tracking-widest font-bold transition-all duration-300 flex items-center gap-1 px-2.5 py-1.5 rounded-lg whitespace-nowrap',
               activePage === item.href 
                 ? 'bg-gradient-to-r from-primary-600 to-green-600 text-white shadow-lg shadow-primary-200 scale-105' 
                 : 'text-gray-600 hover:text-primary-700 hover:bg-white hover:shadow-md'
             ]">
-            <i :data-lucide="item.icon" class="w-4 h-4"></i>
-            <span class="flex flex-col items-center leading-tight">
-              <span>{{ item.name }}</span>
-              <span v-if="item.sub" class="text-[9px] opacity-80 -mt-0.5">{{ item.sub }}</span>
-            </span>
+            <i :data-lucide="item.icon" class="w-3 h-3"></i>
+            {{ item.name }}
           </a>
         </nav>
       </div>
@@ -40,10 +37,11 @@ const SiteHeader = {
     const menuItems = [
       { name: "Inicio", href: "index.html", icon: "layout-grid" },
       { name: "Recursos", href: "recursos.html", icon: "library" },
-      { name: "Aplicaciones", sub: "Educativas", href: "aplicaciones.html", icon: "rocket" },
+      { name: "Aplicaciones", href: "aplicaciones.html", icon: "rocket" },
       { name: "IA Docentes", href: "ia-para-docentes.html", icon: "brain-circuit" },
+      { name: "Telegram", href: "telegram.html", icon: "send" },
       { name: "Colaborar", href: "colaborar.html", icon: "message-circle-heart" },
-      { name: "¿Quién soy?", href: "quien.html", icon: "user-circle" }
+      { name: "Quién soy", href: "quien.html", icon: "user-circle" }
     ];
     return { config: APP_CONFIG, menuItems };
   },
