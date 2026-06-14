@@ -27,7 +27,10 @@ const SiteHeader = {
                 : 'text-gray-600 hover:text-primary-700 hover:bg-white hover:shadow-md'
             ]">
             <i :data-lucide="item.icon" class="w-4 h-4"></i>
-            {{ item.name }}
+            <span class="flex flex-col items-center leading-tight">
+              <span>{{ item.name }}</span>
+              <span v-if="item.sub" class="text-[9px] opacity-80 -mt-0.5">{{ item.sub }}</span>
+            </span>
           </a>
         </nav>
       </div>
@@ -37,7 +40,7 @@ const SiteHeader = {
     const menuItems = [
       { name: "Inicio", href: "index.html", icon: "layout-grid" },
       { name: "Recursos", href: "recursos.html", icon: "library" },
-      { name: "Aplicaciones", href: "aplicaciones.html", icon: "rocket" },
+      { name: "Aplicaciones", sub: "Educativas", href: "aplicaciones.html", icon: "rocket" },
       { name: "IA Docentes", href: "ia-para-docentes.html", icon: "brain-circuit" },
       { name: "Colaborar", href: "colaborar.html", icon: "message-circle-heart" },
       { name: "¿Quién soy?", href: "quien.html", icon: "user-circle" }
