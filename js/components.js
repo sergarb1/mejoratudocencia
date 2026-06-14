@@ -40,7 +40,7 @@ const SiteHeader = {
       { name: "Aplicaciones", href: "aplicaciones.html", icon: "rocket" },
       { name: "IA Docentes", href: "ia-para-docentes.html", icon: "brain-circuit" },
       { name: "Telegram", href: "telegram.html", icon: "send" },
-      { name: "Colaborar", href: "colaborar.html", icon: "message-circle-heart" },
+      { name: "Contacto", href: "colaborar.html", icon: "message-circle-heart" },
       { name: "Quién soy", href: "quien.html", icon: "user-circle" }
     ];
     return { config: APP_CONFIG, menuItems };
