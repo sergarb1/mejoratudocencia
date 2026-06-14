@@ -38,6 +38,7 @@ const SiteHeader = {
       { name: "Inicio", href: "index.html", icon: "layout-grid" },
       { name: "Recursos", href: "recursos.html", icon: "library" },
       { name: "Aplicaciones", href: "aplicaciones.html", icon: "rocket" },
+      { name: "IA Docentes", href: "ia-para-docentes.html", icon: "brain-circuit" },
       { name: "Colaborar", href: "colaborar.html", icon: "message-circle-heart" },
       { name: "¿Quién soy?", href: "quien.html", icon: "user-circle" }
     ];
