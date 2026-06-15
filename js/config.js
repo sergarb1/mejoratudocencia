@@ -1,7 +1,7 @@
 const APP_CONFIG = {
   title: "Mejora tu Docencia",
   subtitle: "Recursos Pedagógicos y Metodológicos",
-  description: "Un proyecto abierto, colaborativo y 100% gratuito con recursos, herramientas y estrategias para transformar la educación desde el aula.",
+  description: "Crea aplicaciones educativas gratuitas, recursos interactivos y herramientas de código abierto para transformar tu aula. Todo sin registro, sin servidor, sin conocimientos técnicos.",
   author: {
     name: "Sergi García",
     bio: "Soy Sergi García, profe convencido de que la mejor educación es la que se comparte. Este proyecto es mi granito de arena para una docencia más innovadora, colaborativa y accesible para todos.",
