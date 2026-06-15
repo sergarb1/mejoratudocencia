@@ -116,7 +116,7 @@ const SiteFooter = {
             <span>Contenido bajo licencia Creative Commons</span>
           </p>
           <p class="text-xs text-gray-400 flex items-center justify-center gap-1.5 mt-2">
-            <i data-lucide="calendar-clock" class="inline w-3 h-3"></i> Última actualización: 13 de junio de 2026
+            <i data-lucide="calendar-clock" class="inline w-3 h-3"></i> Última actualización: 16 de junio de 2026
           </p>
         </div>
       </div>
