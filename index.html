@@ -186,21 +186,55 @@
             <div class="h-px flex-1 bg-gradient-to-r from-transparent via-slate-200 to-slate-200"></div>
             <h2 class="font-outfit text-lg md:text-2xl font-black text-slate-900 uppercase tracking-widest flex items-center gap-3 shrink-0">
               <div class="bg-primary-100 p-1.5 md:p-2 rounded-xl">
-                <i data-lucide="layers" class="w-4 md:w-6 h-4 md:h-6 text-primary-600"></i>
+                <i data-lucide="wand-sparkles" class="w-4 md:w-6 h-4 md:h-6 text-primary-600"></i>
               </div>
-              Áreas Destacadas
+              ¿Qué creamos?
             </h2>
             <div class="h-px flex-1 bg-gradient-to-l from-transparent via-slate-200 to-slate-200"></div>
           </div>
 
-          <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-3 md:gap-4">
-            <a v-for="section in featuredSections" :key="section.id" :href="'recursos.html#' + section.id"
-              class="group bg-white rounded-xl md:rounded-2xl p-4 md:p-6 text-center transition-all duration-300 border border-slate-100 hover:border-primary-200 hover:shadow-lg hover:shadow-primary-100 hover:-translate-y-1">
-              <div class="p-2 md:p-3 bg-primary-50 rounded-xl md:rounded-2xl text-primary-600 mb-2 md:mb-3 inline-flex group-hover:bg-primary-600 group-hover:text-white transition-all duration-300">
-                <i :data-lucide="section.icon" class="w-5 md:w-7 h-5 md:h-7"></i>
+          <div class="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4">
+            <div class="bg-white rounded-xl md:rounded-2xl p-4 md:p-6 text-center border border-slate-100 shadow-sm">
+              <div class="p-2 md:p-3 bg-green-50 text-green-600 rounded-xl md:rounded-2xl mb-2 md:mb-3 inline-flex">
+                <i data-lucide="rocket" class="w-5 md:w-7 h-5 md:h-7"></i>
               </div>
-              <h3 class="font-bold text-[10px] md:text-xs text-slate-900 group-hover:text-primary-700 transition-colors leading-tight">{{ section.name }}</h3>
-            </a>
+              <h3 class="font-bold text-[10px] md:text-xs text-slate-900 leading-tight">Apps educativas</h3>
+              <p class="text-[8px] md:text-[9px] text-slate-500 mt-1">Herramientas web gratuitas listas para usar</p>
+            </div>
+            <div class="bg-white rounded-xl md:rounded-2xl p-4 md:p-6 text-center border border-slate-100 shadow-sm">
+              <div class="p-2 md:p-3 bg-blue-50 text-blue-600 rounded-xl md:rounded-2xl mb-2 md:mb-3 inline-flex">
+                <i data-lucide="library" class="w-5 md:w-7 h-5 md:h-7"></i>
+              </div>
+              <h3 class="font-bold text-[10px] md:text-xs text-slate-900 leading-tight">Recursos didácticos</h3>
+              <p class="text-[8px] md:text-[9px] text-slate-500 mt-1">Guías, dinámicas, plantillas y materiales</p>
+            </div>
+            <div class="bg-white rounded-xl md:rounded-2xl p-4 md:p-6 text-center border border-slate-100 shadow-sm">
+              <div class="p-2 md:p-3 bg-purple-50 text-purple-600 rounded-xl md:rounded-2xl mb-2 md:mb-3 inline-flex">
+                <i data-lucide="brain-circuit" class="w-5 md:w-7 h-5 md:h-7"></i>
+              </div>
+              <h3 class="font-bold text-[10px] md:text-xs text-slate-900 leading-tight">Formación IA</h3>
+              <p class="text-[8px] md:text-[9px] text-slate-500 mt-1">Presentaciones y tutoriales sobre IA educativa</p>
+            </div>
+            <div class="bg-white rounded-xl md:rounded-2xl p-4 md:p-6 text-center border border-slate-100 shadow-sm">
+              <div class="p-2 md:p-3 bg-amber-50 text-amber-600 rounded-xl md:rounded-2xl mb-2 md:mb-3 inline-flex">
+                <i data-lucide="code" class="w-5 md:w-7 h-5 md:h-7"></i>
+              </div>
+              <h3 class="font-bold text-[10px] md:text-xs text-slate-900 leading-tight">Software a medida</h3>
+              <p class="text-[8px] md:text-[9px] text-slate-500 mt-1">Creamos lo que necesites, gratis y en comunidad</p>
+            </div>
+          </div>
+
+          <div class="mt-6 md:mt-8 text-center max-w-2xl mx-auto bg-primary-50 rounded-xl md:rounded-2xl p-4 md:p-6 border border-primary-100">
+            <div class="flex items-center justify-center gap-2 mb-1 md:mb-2">
+              <i data-lucide="message-circle-heart" class="w-4 md:w-5 h-4 md:h-5 text-primary-600"></i>
+              <span class="font-black text-xs md:text-sm text-primary-900 uppercase tracking-widest">¿No encuentras lo que buscas?</span>
+            </div>
+            <p class="text-[10px] md:text-xs text-primary-700 leading-relaxed">
+              Pídenos una app, un recurso o cualquier herramienta educativa que necesites. 
+              Lo creamos para ti y lo compartimos con toda la comunidad. 
+              Escríbenos a <a href="mailto:mejoratudocencia@gmail.com" class="font-bold underline hover:text-primary-900">mejoratudocencia@gmail.com</a> 
+              o por <a :href="config.social.telegram" target="_blank" class="font-bold underline hover:text-primary-900">Telegram</a>.
+            </p>
           </div>
         </div>
       </section>
@@ -340,8 +374,6 @@
         const sectionNames = {};
         config.value.sections.forEach(s => { sectionNames[s.id] = s.name; });
         const getSectionName = (id) => sectionNames[id] || id;
-
-        const featuredSections = computed(() => config.value.sections.slice(0, 6));
 
         const latestRecursos = computed(() => {
           return recursos.value.filter(r => r.URL).slice(0, 4);
