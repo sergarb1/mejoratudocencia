@@ -405,5 +405,16 @@
     ],
     "FechaPublicacion": "2025-09-15",
     "Seccion": "mates"
+  },
+  {
+    "Título": "Matemáticas",
+    "URL": "mates/",
+    "Descripción": "Portal de la subweb de matemáticas con libros interactivos, recursos y proyectos para ESO.",
+    "Etiquetas": [
+      "mates-web",
+      "ESO"
+    ],
+    "FechaPublicacion": "2025-07-15",
+    "Seccion": "mates"
   }
 ]

@@ -44,13 +44,4 @@
     "Etiquetas": ["Utilidad"],
     "FechaPublicacion": "2025-07-01"
   },
-  {
-    "Título": "Matemáticas",
-    "Descripción": "Recursos y materiales interactivos de matemáticas para ESO: libros, proyectos y actividades.",
-    "URL": "mates/",
-    "GitHub": "",
-    "Icono": "sigma",
-    "Etiquetas": ["Educación"],
-    "FechaPublicacion": "2025-07-15"
-  }
 ]
