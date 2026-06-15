@@ -41,6 +41,7 @@ const SiteHeader = {
       { name: "IA Docentes", href: "ia-para-docentes.html", icon: "brain-circuit" },
       { name: "Telegram", href: "telegram.html", icon: "send" },
       { name: "Contacto", href: "contacto.html", icon: "message-circle-heart" },
+      { name: "Solicitar", href: "https://t.me/mejoratudocencia", icon: "message-square-plus" },
       { name: "Quién soy", href: "quien.html", icon: "user-circle" }
     ];
     return { config: APP_CONFIG, menuItems };

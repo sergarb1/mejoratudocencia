@@ -1,7 +1,7 @@
 const APP_CONFIG = {
   title: "Mejora tu Docencia",
   subtitle: "Recursos Pedagógicos y Metodológicos",
-  description: "Apps educativas creadas por docentes, para docentes. Siempre gratuitas, siempre libres, siempre cumpliendo la legislación educativa. Hechas por y para profes.",
+  description: "Apps educativas del proyecto Mejora tu Docencia, creadas por y para docentes. Siempre gratuitas, siempre libres, siempre cumpliendo la legislación educativa.",
   author: {
     name: "Sergi García",
     bio: "Soy Sergi García, profe convencido de que la mejor educación es la que se comparte. Este proyecto es mi granito de arena para una docencia más innovadora, colaborativa y accesible para todos.",
