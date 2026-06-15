@@ -3,23 +3,21 @@
     "Título": "Dinámica: El Hilo Invisible",
     "URL": "http://www.auladeelena.com/2016/10/dinamica-de-grupo-el-ovillo.html",
     "Descripción": "Actividad de cohesión para fortalecer los vínculos y la confianza en el grupo-clase mediante la dinámica del ovillo.",
-    "Etiquetas": ["tutorias-dinamica", "Cohesión"],
+    "Etiquetas": [
+      "tutorias-dinamica",
+      "Cohesión"
+    ],
     "FechaPublicacion": "2024-01-15",
-    "Seccion": "tutorias"
-  },
-  {
-    "Título": "Guía de Acompañamiento Emocional",
-    "URL": "",
-    "Descripción": "Protocolo paso a paso para entrevistas individuales con alumnos en momentos de crisis.",
-    "Etiquetas": ["tutorias-guia", "Entrevistas"],
-    "FechaPublicacion": "2024-02-10",
     "Seccion": "tutorias"
   },
   {
     "Título": "Rueda de las Emociones en Secundaria",
     "URL": "https://view.genially.com/6511a4481f9dcd0010b91542/interactive-content-la-rueda-de-las-emociones",
     "Descripción": "Adaptación interactiva de la rueda de Plutchik para trabajar la autoconciencia emocional en adolescentes.",
-    "Etiquetas": ["tutorias-material", "Emociones"],
+    "Etiquetas": [
+      "tutorias-material",
+      "Emociones"
+    ],
     "FechaPublicacion": "2024-03-05",
     "Seccion": "tutorias"
   },
@@ -27,7 +25,10 @@
     "Título": "El Termómetro Emocional",
     "URL": "https://www.orientacionandujar.es/2023/01/10/termometro-de-las-emociones-para-ninos/",
     "Descripción": "Recurso visual para que el alumnado identifique y exprese cómo se siente cada día. Ayuda a normalizar la conversación sobre emociones en el aula.",
-    "Etiquetas": ["tutorias-material", "Emociones"],
+    "Etiquetas": [
+      "tutorias-material",
+      "Emociones"
+    ],
     "FechaPublicacion": "2024-04-01",
     "Seccion": "tutorias"
   },
@@ -35,7 +36,10 @@
     "Título": "Contrato de Grupo para la Convivencia",
     "URL": "https://www.orientacionandujar.es/2022/09/11/plantilla-contrato-de-convivencia-para-el-aula/",
     "Descripción": "Plantilla para elaborar un contrato de convivencia con tus alumnos. Acuerdan normas, firman y se comprometen. Ideal para inicio de curso.",
-    "Etiquetas": ["tutorias-dinamica", "Convivencia"],
+    "Etiquetas": [
+      "tutorias-dinamica",
+      "Convivencia"
+    ],
     "FechaPublicacion": "2024-05-01",
     "Seccion": "tutorias"
   },
@@ -43,7 +47,10 @@
     "Título": "Dinámica: 2 Verdades y 1 Mentira",
     "URL": "https://www.actiludis.com/2022/10/16/dos-verdades-y-una-mentira/",
     "Descripción": "Juego de conocimiento grupal donde cada alumno comparte dos verdades y una mentira. El grupo debe adivinar cuál es la mentira. Ideal para crear vínculos.",
-    "Etiquetas": ["tutorias-dinamica", "Cohesión"],
+    "Etiquetas": [
+      "tutorias-dinamica",
+      "Cohesión"
+    ],
     "FechaPublicacion": "2024-06-01",
     "Seccion": "tutorias"
   },
@@ -51,7 +58,10 @@
     "Título": "Sociograma Interactivo de Aula",
     "URL": "https://sergarb1.github.io/SociogramaAula/",
     "Descripción": "App gratuita para pasar cuestionarios sociométricos, visualizar relaciones, detectar aislamiento y liderazgo. Datos locales, exportable a JSON.",
-    "Etiquetas": ["conflictos-app", "Sociometría"],
+    "Etiquetas": [
+      "conflictos-app",
+      "Sociometría"
+    ],
     "FechaPublicacion": "2024-06-01",
     "Seccion": "conflictos"
   },
@@ -59,23 +69,21 @@
     "Título": "Técnica del Semáforo de Aula",
     "URL": "https://www.escuelaenlanube.com/tecnica-del-semaforo/",
     "Descripción": "Sistema visual para la autorregulación del clima sonoro y conductual en clase basado en la técnica del semáforo.",
-    "Etiquetas": ["conflictos-estrategia", "Autorregulación"],
+    "Etiquetas": [
+      "conflictos-estrategia",
+      "Autorregulación"
+    ],
     "FechaPublicacion": "2024-04-20",
-    "Seccion": "conflictos"
-  },
-  {
-    "Título": "Protocolo de Mediación entre Iguales",
-    "URL": "",
-    "Descripción": "Cómo formar alumnos mediadores para resolver conflictos de baja intensidad.",
-    "Etiquetas": ["conflictos-pdf", "Mediación"],
-    "FechaPublicacion": "2024-05-15",
     "Seccion": "conflictos"
   },
   {
     "Título": "Círculos Restaurativos",
     "URL": "https://www.caib.es/sites/convivexit/f/374062",
     "Descripción": "Guía completa para implementar círculos restaurativos en el aula que sanen relaciones y construyan comunidad.",
-    "Etiquetas": ["conflictos-guia", "Convivencia"],
+    "Etiquetas": [
+      "conflictos-guia",
+      "Convivencia"
+    ],
     "FechaPublicacion": "2024-06-10",
     "Seccion": "conflictos"
   },
@@ -83,23 +91,21 @@
     "Título": "Banco de la Amistad",
     "URL": "https://www.orientacionandujar.es/2023/09/05/el-banco-de-la-amistad-dinamica-para-mejorar-la-convivencia/",
     "Descripción": "Dinámica para fomentar la inclusión y resolver conflictos de manera positiva. Los alumnos aprenden a pedir ayuda y a ofrecer apoyo a sus compañeros.",
-    "Etiquetas": ["conflictos-dinamica", "Inclusión"],
+    "Etiquetas": [
+      "conflictos-dinamica",
+      "Inclusión"
+    ],
     "FechaPublicacion": "2024-07-01",
-    "Seccion": "conflictos"
-  },
-  {
-    "Título": "Las 4 Esquinas de la Resolución",
-    "URL": "",
-    "Descripción": "Dinámica participativa donde cada esquina del aula representa una opción de resolución de un conflicto. Los alumnos debaten y eligen la mejor solución.",
-    "Etiquetas": ["conflictos-estrategia", "Mediación"],
-    "FechaPublicacion": "2024-08-01",
     "Seccion": "conflictos"
   },
   {
     "Título": "Plantilla DUA (Diseño Universal)",
     "URL": "https://view.genially.com/648c20a1e99c850011cbe5b4/interactive-content-pack-dua-basico-aula-desigual-2023",
     "Descripción": "Pack básico DUA con herramientas y estrategias para reducir barreras de aprendizaje desde el inicio.",
-    "Etiquetas": ["diversidad-plantilla", "Inclusión"],
+    "Etiquetas": [
+      "diversidad-plantilla",
+      "Inclusión"
+    ],
     "FechaPublicacion": "2024-07-01",
     "Seccion": "diversidad"
   },
@@ -107,23 +113,21 @@
     "Título": "Estrategias para TDAH en el Aula",
     "URL": "https://ceice.gva.es/documents/162640733/162655257/GuiaTDAH_Profesores_modificada.pdf",
     "Descripción": "Guía práctica de la Conselleria de Educación para el profesorado con pautas y estrategias para alumnos con TDAH.",
-    "Etiquetas": ["diversidad-guia", "TDAH"],
+    "Etiquetas": [
+      "diversidad-guia",
+      "TDAH"
+    ],
     "FechaPublicacion": "2024-07-15",
-    "Seccion": "diversidad"
-  },
-  {
-    "Título": "Paisajes de Aprendizaje",
-    "URL": "",
-    "Descripción": "Cómo crear itinerarios personalizados basados en las Inteligencias Múltiples.",
-    "Etiquetas": ["diversidad-estrategia", "Personalización"],
-    "FechaPublicacion": "2024-08-01",
     "Seccion": "diversidad"
   },
   {
     "Título": "Guía de Altas Capacidades en el Aula",
     "URL": "https://www.educacionyfp.gob.es/dam/jcr:8e7a9b3a-8b3c-4f1a-9e6d-5c4b3f2a1e0d/guia-altas-capacidades.pdf",
     "Descripción": "Guía del Ministerio de Educación para identificar y atender al alumnado con altas capacidades. Incluye estrategias de enriquecimiento curricular.",
-    "Etiquetas": ["diversidad-guia", "Altas Capacidades"],
+    "Etiquetas": [
+      "diversidad-guia",
+      "Altas Capacidades"
+    ],
     "FechaPublicacion": "2024-09-01",
     "Seccion": "diversidad"
   },
@@ -131,7 +135,10 @@
     "Título": "Recursos para la Dislexia en Secundaria",
     "URL": "https://www.orientacionandujar.es/2023/10/15/recursos-para-trabajar-la-dislexia-en-secundaria/",
     "Descripción": "Compilación de estrategias, adaptaciones y materiales para apoyar al alumnado con dislexia en el aula de secundaria.",
-    "Etiquetas": ["diversidad-material", "Dislexia"],
+    "Etiquetas": [
+      "diversidad-material",
+      "Dislexia"
+    ],
     "FechaPublicacion": "2024-10-01",
     "Seccion": "diversidad"
   },
@@ -139,7 +146,10 @@
     "Título": "Pictogramas para la Rutina Diaria",
     "URL": "https://www.orientacionandujar.es/2023/08/20/pictogramas-para-la-rutina-diaria-en-el-aula/",
     "Descripción": "Material visual con pictogramas para estructurar la rutina diaria. Especialmente útil para alumnado TEA y personas con dificultades de organización.",
-    "Etiquetas": ["diversidad-material", "TEA"],
+    "Etiquetas": [
+      "diversidad-material",
+      "TEA"
+    ],
     "FechaPublicacion": "2024-11-01",
     "Seccion": "diversidad"
   },
@@ -147,31 +157,21 @@
     "Título": "Kit de Inicio ABP",
     "URL": "https://www3.gobiernodecanarias.org/medusa/ecoescuela/pedagotic/aprendizaje-basado-proyectos/",
     "Descripción": "Guía completa del Aprendizaje Basado en Proyectos: claves para el diseño, fases y recursos para implementarlo en el aula.",
-    "Etiquetas": ["metodologias-guia", "ABP"],
+    "Etiquetas": [
+      "metodologias-guia",
+      "ABP"
+    ],
     "FechaPublicacion": "2024-09-01",
-    "Seccion": "metodologias"
-  },
-  {
-    "Título": "Manual de ABR (Retos)",
-    "URL": "",
-    "Descripción": "Diferencias clave con el ABP y cómo plantear retos sociales que motiven al alumnado.",
-    "Etiquetas": ["metodologias-manual", "ABR"],
-    "FechaPublicacion": "2024-09-15",
-    "Seccion": "metodologias"
-  },
-  {
-    "Título": "Gamificación: Sistema de XP",
-    "URL": "",
-    "Descripción": "Mecánicas simples para convertir tu asignatura en una narrativa de niveles y logros.",
-    "Etiquetas": ["metodologias-estrategia", "Gamificación"],
-    "FechaPublicacion": "2024-10-01",
     "Seccion": "metodologias"
   },
   {
     "Título": "Aprendizaje Cooperativo: Estructuras Kagan",
     "URL": "https://www.orientacionandujar.es/2022/01/15/estructuras-de-aprendizaje-cooperativo-de-kagan/",
     "Descripción": "Recopilación de las estructuras cooperativas de Spencer Kagan: 1-2-4, folio giratorio, lápices al centro y más. Listas para aplicar en cualquier materia.",
-    "Etiquetas": ["metodologias-guia", "Cooperativo"],
+    "Etiquetas": [
+      "metodologias-guia",
+      "Cooperativo"
+    ],
     "FechaPublicacion": "2024-11-01",
     "Seccion": "metodologias"
   },
@@ -179,7 +179,10 @@
     "Título": "Flipped Classroom: Guía de Inicio Rápido",
     "URL": "https://www.theflippedclassroom.es/guia-para-empezar-con-flipped-classroom/",
     "Descripción": "Guía práctica para implementar la clase invertida: cómo grabar vídeos, qué hacer en clase y cómo evaluar. Recursos y ejemplos reales.",
-    "Etiquetas": ["metodologias-guia", "Flipped"],
+    "Etiquetas": [
+      "metodologias-guia",
+      "Flipped"
+    ],
     "FechaPublicacion": "2024-12-01",
     "Seccion": "metodologias"
   },
@@ -187,39 +190,21 @@
     "Título": "Design Thinking en Educación",
     "URL": "https://www.educaciontrespuntocero.com/recursos/design-thinking-en-el-aula/",
     "Descripción": "Introducción al Design Thinking como metodología activa para resolver problemas reales en el aula. Incluye plantillas y fases del proceso.",
-    "Etiquetas": ["metodologias-guia", "Creatividad"],
+    "Etiquetas": [
+      "metodologias-guia",
+      "Creatividad"
+    ],
     "FechaPublicacion": "2025-01-01",
     "Seccion": "metodologias"
-  },
-  {
-    "Título": "Diana de Autoevaluación",
-    "URL": "",
-    "Descripción": "Herramienta visual para que el alumno evalúe sus propias competencias de forma gráfica.",
-    "Etiquetas": ["evaluacion-material", "Autoevaluación"],
-    "FechaPublicacion": "2024-10-15",
-    "Seccion": "evaluacion"
-  },
-  {
-    "Título": "Banco de Rúbricas Competenciales",
-    "URL": "",
-    "Descripción": "Ejemplos de rúbricas para evaluar el trabajo en equipo, la expresión oral y el pensamiento crítico.",
-    "Etiquetas": ["evaluacion-guia", "Rúbricas"],
-    "FechaPublicacion": "2024-11-01",
-    "Seccion": "evaluacion"
-  },
-  {
-    "Título": "Feedback 2x2",
-    "URL": "",
-    "Descripción": "Técnica rápida para dar retroalimentación efectiva: dos fortalezas y dos áreas de mejora.",
-    "Etiquetas": ["evaluacion-estrategia", "Feedback"],
-    "FechaPublicacion": "2024-11-15",
-    "Seccion": "evaluacion"
   },
   {
     "Título": "Portfolio Digital del Alumno",
     "URL": "https://www.educaciontrespuntocero.com/recursos/portfolio-digital-alumno/",
     "Descripción": "Guía para implementar el portfolio digital como herramienta de evaluación formativa. Permite al alumno reflexionar sobre su propio aprendizaje.",
-    "Etiquetas": ["evaluacion-guia", "Portfolio"],
+    "Etiquetas": [
+      "evaluacion-guia",
+      "Portfolio"
+    ],
     "FechaPublicacion": "2025-01-15",
     "Seccion": "evaluacion"
   },
@@ -227,39 +212,21 @@
     "Título": "Rúbrica de Evaluación de Trabajo en Equipo",
     "URL": "https://www.orientacionandujar.es/2023/03/10/rubrica-para-evaluar-el-trabajo-en-equipo/",
     "Descripción": "Rúbrica lista para usar que evalúa la colaboración, la comunicación, la responsabilidad y la resolución de conflictos dentro del equipo.",
-    "Etiquetas": ["evaluacion-guia", "Rúbricas"],
+    "Etiquetas": [
+      "evaluacion-guia",
+      "Rúbricas"
+    ],
     "FechaPublicacion": "2025-02-01",
     "Seccion": "evaluacion"
-  },
-  {
-    "Título": "Diario de Aprendizaje Reflexivo",
-    "URL": "",
-    "Descripción": "Plantilla de diario de aprendizaje para que el alumno registre qué ha aprendido, cómo lo ha aprendido y qué dificultades ha encontrado.",
-    "Etiquetas": ["evaluacion-material", "Reflexión"],
-    "FechaPublicacion": "2025-03-01",
-    "Seccion": "evaluacion"
-  },
-  {
-    "Título": "IA para la Diferenciación",
-    "URL": "",
-    "Descripción": "Cómo usar modelos de lenguaje para adaptar un mismo texto a 5 niveles de lectura distintos.",
-    "Etiquetas": ["ia-pedagogica-tutorial", "Inclusión"],
-    "FechaPublicacion": "2025-01-10",
-    "Seccion": "ia-pedagogica"
-  },
-  {
-    "Título": "Generación de Situaciones de Aprendizaje",
-    "URL": "",
-    "Descripción": "Prompts avanzados para alinear actividades con los criterios de evaluación LOMLOE.",
-    "Etiquetas": ["ia-pedagogica-estrategia", "Programación"],
-    "FechaPublicacion": "2025-02-01",
-    "Seccion": "ia-pedagogica"
   },
   {
     "Título": "Formación IA para Docentes",
     "URL": "https://sergarb1.github.io/FormacionIADocentes/",
     "Descripción": "Web completa de formación del profesorado en Inteligencia Artificial aplicada a la educación. 6 presentaciones con audio y PDF.",
-    "Etiquetas": ["ia-pedagogica-web", "Formación"],
+    "Etiquetas": [
+      "ia-pedagogica-web",
+      "Formación"
+    ],
     "FechaPublicacion": "2025-03-01",
     "Seccion": "ia-pedagogica"
   },
@@ -267,31 +234,21 @@
     "Título": "Awesome List — Prompts ChatGPT para Educación",
     "URL": "https://github.com/sergarb1/AwesomeList-Prompts-ChatGPT-Educacion",
     "Descripción": "Colección curada de prompts para ChatGPT orientados a la educación. Organizados por áreas y usos docentes.",
-    "Etiquetas": ["ia-pedagogica-lista", "Prompts"],
+    "Etiquetas": [
+      "ia-pedagogica-lista",
+      "Prompts"
+    ],
     "FechaPublicacion": "2025-04-01",
-    "Seccion": "ia-pedagogica"
-  },
-  {
-    "Título": "Chatbots Educativos con IA",
-    "URL": "",
-    "Descripción": "Guía para diseñar y utilizar chatbots educativos basados en IA como tutores virtuales, asistentes de estudio y generadores de práctica personalizada.",
-    "Etiquetas": ["ia-pedagogica-guia", "Chatbots"],
-    "FechaPublicacion": "2025-05-01",
-    "Seccion": "ia-pedagogica"
-  },
-  {
-    "Título": "Detección de Textos con IA en el Aula",
-    "URL": "",
-    "Descripción": "Reflexión y estrategias para abordar el uso de IA generativa en trabajos académicos. Cómo detectar, prevenir y rediseñar tareas para integrar la IA de forma ética.",
-    "Etiquetas": ["ia-pedagogica-estrategia", "Ética"],
-    "FechaPublicacion": "2025-06-01",
     "Seccion": "ia-pedagogica"
   },
   {
     "Título": "Sociograma Interactivo",
     "URL": "https://sergarb1.github.io/SociogramaAula/",
     "Descripción": "App completa para sociometría de aula. Crea grupos, pasa cuestionarios, visualiza el grafo de relaciones, obtén predicciones e informes.",
-    "Etiquetas": ["herramientas-app", "Sociometría"],
+    "Etiquetas": [
+      "herramientas-app",
+      "Sociometría"
+    ],
     "FechaPublicacion": "2025-05-01",
     "Seccion": "herramientas"
   },
@@ -299,7 +256,10 @@
     "Título": "Generador de Cuadrante de Tareas",
     "URL": "https://sergarb1.github.io/GeneradorCuadranteTareas/",
     "Descripción": "Genera cuadrantes de tareas y responsabilidades para organizar el aula. Personalizable y listo para imprimir.",
-    "Etiquetas": ["herramientas-app", "Organización"],
+    "Etiquetas": [
+      "herramientas-app",
+      "Organización"
+    ],
     "FechaPublicacion": "2025-05-15",
     "Seccion": "herramientas"
   },
@@ -307,7 +267,10 @@
     "Título": "Generador de Calendario de Exámenes",
     "URL": "https://sergarb1.github.io/GeneradorCalendarioExamenes/",
     "Descripción": "Crea calendarios de exámenes visuales para compartir con tus alumnos. Configura fechas, asignaturas y avisos.",
-    "Etiquetas": ["herramientas-app", "Planificación"],
+    "Etiquetas": [
+      "herramientas-app",
+      "Planificación"
+    ],
     "FechaPublicacion": "2025-06-01",
     "Seccion": "herramientas"
   },
@@ -315,7 +278,10 @@
     "Título": "Generador de Orlas",
     "URL": "https://sergarb1.github.io/GeneradorOrlas/",
     "Descripción": "Genera orlas escolares personalizadas con fotos y nombres. Ideal para final de curso y graduaciones.",
-    "Etiquetas": ["herramientas-app", "Eventos"],
+    "Etiquetas": [
+      "herramientas-app",
+      "Eventos"
+    ],
     "FechaPublicacion": "2025-06-15",
     "Seccion": "herramientas"
   },
@@ -323,7 +289,10 @@
     "Título": "Bolsa de Trabajo",
     "URL": "https://sergarb1.github.io/BolsaTrabajoEjemploAPP/",
     "Descripción": "Prototipo de bolsa de trabajo para centros educativos. Muestra cómo gestionar ofertas y candidaturas.",
-    "Etiquetas": ["herramientas-app", "Ejemplo"],
+    "Etiquetas": [
+      "herramientas-app",
+      "Ejemplo"
+    ],
     "FechaPublicacion": "2025-07-01",
     "Seccion": "herramientas"
   },
@@ -331,7 +300,10 @@
     "Título": "Let's Study — App de Estudio",
     "URL": "https://github.com/sergarb1/letsstudy",
     "Descripción": "Aplicación para facilitar el estudio. Organiza tareas, temporizador Pomodoro, seguimiento de hábitos y más.",
-    "Etiquetas": ["herramientas-app", "Estudio"],
+    "Etiquetas": [
+      "herramientas-app",
+      "Estudio"
+    ],
     "FechaPublicacion": "2025-07-15",
     "Seccion": "herramientas"
   },
@@ -339,7 +311,10 @@
     "Título": "Educaplay",
     "URL": "https://www.educaplay.com/",
     "Descripción": "Plataforma para crear actividades educativas interactivas: crucigramas, sopas de letras, mapas, adivinanzas y más. Gratuita para docentes.",
-    "Etiquetas": ["aplicaciones-externas-actividades", "Juegos"],
+    "Etiquetas": [
+      "aplicaciones-externas-actividades",
+      "Juegos"
+    ],
     "FechaPublicacion": "2025-08-01",
     "Seccion": "aplicaciones-externas"
   },
@@ -347,7 +322,10 @@
     "Título": "Liveworksheets",
     "URL": "https://www.liveworksheets.com/",
     "Descripción": "Convierte fichas tradicionales en ejercicios interactivos autocorregibles. Compatible con PDF e imágenes. Ideal para clases online y presenciales.",
-    "Etiquetas": ["aplicaciones-externas-fichas", "Ejercicios"],
+    "Etiquetas": [
+      "aplicaciones-externas-fichas",
+      "Ejercicios"
+    ],
     "FechaPublicacion": "2025-08-01",
     "Seccion": "aplicaciones-externas"
   },
@@ -355,7 +333,10 @@
     "Título": "Wordwall",
     "URL": "https://wordwall.net/",
     "Descripción": "Crea actividades personalizadas con plantillas listas para usar: ruletas, concursos, crucigramas, emparejamientos y más. Muy visual e intuitivo.",
-    "Etiquetas": ["aplicaciones-externas-plantillas", "Juegos"],
+    "Etiquetas": [
+      "aplicaciones-externas-plantillas",
+      "Juegos"
+    ],
     "FechaPublicacion": "2025-08-01",
     "Seccion": "aplicaciones-externas"
   },
@@ -363,7 +344,10 @@
     "Título": "Genially",
     "URL": "https://genially.com/",
     "Descripción": "Crea presentaciones interactivas, infografías, gamificaciones y contenidos visuales atractivos. Plan gratuito educativo muy completo.",
-    "Etiquetas": ["aplicaciones-externas-presentaciones", "Interactivo"],
+    "Etiquetas": [
+      "aplicaciones-externas-presentaciones",
+      "Interactivo"
+    ],
     "FechaPublicacion": "2025-08-01",
     "Seccion": "aplicaciones-externas"
   },
@@ -371,7 +355,10 @@
     "Título": "Canva para Educación",
     "URL": "https://www.canva.com/edu/",
     "Descripción": "Diseño gráfico adaptado a educación: presentaciones, infografías, carteles y plantillas colaborativas. Gratuito para docentes y centros.",
-    "Etiquetas": ["aplicaciones-externas-diseño", "Presentaciones"],
+    "Etiquetas": [
+      "aplicaciones-externas-diseño",
+      "Presentaciones"
+    ],
     "FechaPublicacion": "2025-08-01",
     "Seccion": "aplicaciones-externas"
   },
@@ -379,7 +366,10 @@
     "Título": "Matemáticas que se viven 1º ESO",
     "URL": "mates/libros/Matematicasqueseviven1ESO/Matematicasqueseviven1ESO.html",
     "Descripción": "Libro interactivo completo de matemáticas para 1º de ESO. Unidades, ejercicios y contenido multimedia.",
-    "Etiquetas": ["mates-libro", "1º ESO"],
+    "Etiquetas": [
+      "mates-libro",
+      "1º ESO"
+    ],
     "FechaPublicacion": "2025-08-01",
     "Seccion": "mates"
   },
@@ -387,7 +377,10 @@
     "Título": "Matemáticas que se viven 1º ESO (Parte 2)",
     "URL": "mates/libros/Matematicasqueseviven1ESO_parte2/Matematicasqueseviven1ESO_parte2.html",
     "Descripción": "Continuación del libro interactivo con más unidades y contenidos para 1º de ESO.",
-    "Etiquetas": ["mates-libro", "1º ESO"],
+    "Etiquetas": [
+      "mates-libro",
+      "1º ESO"
+    ],
     "FechaPublicacion": "2025-08-15",
     "Seccion": "mates"
   },
@@ -395,7 +388,10 @@
     "Título": "Recursos de Matemáticas",
     "URL": "mates/recursos.html",
     "Descripción": "Colección de materiales, actividades y proyectos para la clase de matemáticas.",
-    "Etiquetas": ["mates-web", "ESO"],
+    "Etiquetas": [
+      "mates-web",
+      "ESO"
+    ],
     "FechaPublicacion": "2025-09-01",
     "Seccion": "mates"
   },
@@ -403,7 +399,10 @@
     "Título": "Proyectos Matemáticos",
     "URL": "mates/proyectos.html",
     "Descripción": "Ideas y guías para implementar proyectos y retos en el aula de matemáticas.",
-    "Etiquetas": ["mates-guia", "ABR"],
+    "Etiquetas": [
+      "mates-guia",
+      "ABR"
+    ],
     "FechaPublicacion": "2025-09-15",
     "Seccion": "mates"
   }
