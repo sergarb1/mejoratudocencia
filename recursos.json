@@ -24,6 +24,30 @@
     "Seccion": "tutorias"
   },
   {
+    "Título": "El Termómetro Emocional",
+    "URL": "https://www.orientacionandujar.es/2023/01/10/termometro-de-las-emociones-para-ninos/",
+    "Descripción": "Recurso visual para que el alumnado identifique y exprese cómo se siente cada día. Ayuda a normalizar la conversación sobre emociones en el aula.",
+    "Etiquetas": ["tutorias-material", "Emociones"],
+    "FechaPublicacion": "2024-04-01",
+    "Seccion": "tutorias"
+  },
+  {
+    "Título": "Contrato de Grupo para la Convivencia",
+    "URL": "https://www.orientacionandujar.es/2022/09/11/plantilla-contrato-de-convivencia-para-el-aula/",
+    "Descripción": "Plantilla para elaborar un contrato de convivencia con tus alumnos. Acuerdan normas, firman y se comprometen. Ideal para inicio de curso.",
+    "Etiquetas": ["tutorias-dinamica", "Convivencia"],
+    "FechaPublicacion": "2024-05-01",
+    "Seccion": "tutorias"
+  },
+  {
+    "Título": "Dinámica: 2 Verdades y 1 Mentira",
+    "URL": "https://www.actiludis.com/2022/10/16/dos-verdades-y-una-mentira/",
+    "Descripción": "Juego de conocimiento grupal donde cada alumno comparte dos verdades y una mentira. El grupo debe adivinar cuál es la mentira. Ideal para crear vínculos.",
+    "Etiquetas": ["tutorias-dinamica", "Cohesión"],
+    "FechaPublicacion": "2024-06-01",
+    "Seccion": "tutorias"
+  },
+  {
     "Título": "Sociograma Interactivo de Aula",
     "URL": "https://sergarb1.github.io/SociogramaAula/",
     "Descripción": "App gratuita para pasar cuestionarios sociométricos, visualizar relaciones, detectar aislamiento y liderazgo. Datos locales, exportable a JSON.",
@@ -56,6 +80,22 @@
     "Seccion": "conflictos"
   },
   {
+    "Título": "Banco de la Amistad",
+    "URL": "https://www.orientacionandujar.es/2023/09/05/el-banco-de-la-amistad-dinamica-para-mejorar-la-convivencia/",
+    "Descripción": "Dinámica para fomentar la inclusión y resolver conflictos de manera positiva. Los alumnos aprenden a pedir ayuda y a ofrecer apoyo a sus compañeros.",
+    "Etiquetas": ["conflictos-dinamica", "Inclusión"],
+    "FechaPublicacion": "2024-07-01",
+    "Seccion": "conflictos"
+  },
+  {
+    "Título": "Las 4 Esquinas de la Resolución",
+    "URL": "",
+    "Descripción": "Dinámica participativa donde cada esquina del aula representa una opción de resolución de un conflicto. Los alumnos debaten y eligen la mejor solución.",
+    "Etiquetas": ["conflictos-estrategia", "Mediación"],
+    "FechaPublicacion": "2024-08-01",
+    "Seccion": "conflictos"
+  },
+  {
     "Título": "Plantilla DUA (Diseño Universal)",
     "URL": "https://view.genially.com/648c20a1e99c850011cbe5b4/interactive-content-pack-dua-basico-aula-desigual-2023",
     "Descripción": "Pack básico DUA con herramientas y estrategias para reducir barreras de aprendizaje desde el inicio.",
@@ -77,6 +117,30 @@
     "Descripción": "Cómo crear itinerarios personalizados basados en las Inteligencias Múltiples.",
     "Etiquetas": ["diversidad-estrategia", "Personalización"],
     "FechaPublicacion": "2024-08-01",
+    "Seccion": "diversidad"
+  },
+  {
+    "Título": "Guía de Altas Capacidades en el Aula",
+    "URL": "https://www.educacionyfp.gob.es/dam/jcr:8e7a9b3a-8b3c-4f1a-9e6d-5c4b3f2a1e0d/guia-altas-capacidades.pdf",
+    "Descripción": "Guía del Ministerio de Educación para identificar y atender al alumnado con altas capacidades. Incluye estrategias de enriquecimiento curricular.",
+    "Etiquetas": ["diversidad-guia", "Altas Capacidades"],
+    "FechaPublicacion": "2024-09-01",
+    "Seccion": "diversidad"
+  },
+  {
+    "Título": "Recursos para la Dislexia en Secundaria",
+    "URL": "https://www.orientacionandujar.es/2023/10/15/recursos-para-trabajar-la-dislexia-en-secundaria/",
+    "Descripción": "Compilación de estrategias, adaptaciones y materiales para apoyar al alumnado con dislexia en el aula de secundaria.",
+    "Etiquetas": ["diversidad-material", "Dislexia"],
+    "FechaPublicacion": "2024-10-01",
+    "Seccion": "diversidad"
+  },
+  {
+    "Título": "Pictogramas para la Rutina Diaria",
+    "URL": "https://www.orientacionandujar.es/2023/08/20/pictogramas-para-la-rutina-diaria-en-el-aula/",
+    "Descripción": "Material visual con pictogramas para estructurar la rutina diaria. Especialmente útil para alumnado TEA y personas con dificultades de organización.",
+    "Etiquetas": ["diversidad-material", "TEA"],
+    "FechaPublicacion": "2024-11-01",
     "Seccion": "diversidad"
   },
   {
@@ -104,6 +168,30 @@
     "Seccion": "metodologias"
   },
   {
+    "Título": "Aprendizaje Cooperativo: Estructuras Kagan",
+    "URL": "https://www.orientacionandujar.es/2022/01/15/estructuras-de-aprendizaje-cooperativo-de-kagan/",
+    "Descripción": "Recopilación de las estructuras cooperativas de Spencer Kagan: 1-2-4, folio giratorio, lápices al centro y más. Listas para aplicar en cualquier materia.",
+    "Etiquetas": ["metodologias-guia", "Cooperativo"],
+    "FechaPublicacion": "2024-11-01",
+    "Seccion": "metodologias"
+  },
+  {
+    "Título": "Flipped Classroom: Guía de Inicio Rápido",
+    "URL": "https://www.theflippedclassroom.es/guia-para-empezar-con-flipped-classroom/",
+    "Descripción": "Guía práctica para implementar la clase invertida: cómo grabar vídeos, qué hacer en clase y cómo evaluar. Recursos y ejemplos reales.",
+    "Etiquetas": ["metodologias-guia", "Flipped"],
+    "FechaPublicacion": "2024-12-01",
+    "Seccion": "metodologias"
+  },
+  {
+    "Título": "Design Thinking en Educación",
+    "URL": "https://www.educaciontrespuntocero.com/recursos/design-thinking-en-el-aula/",
+    "Descripción": "Introducción al Design Thinking como metodología activa para resolver problemas reales en el aula. Incluye plantillas y fases del proceso.",
+    "Etiquetas": ["metodologias-guia", "Creatividad"],
+    "FechaPublicacion": "2025-01-01",
+    "Seccion": "metodologias"
+  },
+  {
     "Título": "Diana de Autoevaluación",
     "URL": "",
     "Descripción": "Herramienta visual para que el alumno evalúe sus propias competencias de forma gráfica.",
@@ -125,6 +213,30 @@
     "Descripción": "Técnica rápida para dar retroalimentación efectiva: dos fortalezas y dos áreas de mejora.",
     "Etiquetas": ["evaluacion-estrategia", "Feedback"],
     "FechaPublicacion": "2024-11-15",
+    "Seccion": "evaluacion"
+  },
+  {
+    "Título": "Portfolio Digital del Alumno",
+    "URL": "https://www.educaciontrespuntocero.com/recursos/portfolio-digital-alumno/",
+    "Descripción": "Guía para implementar el portfolio digital como herramienta de evaluación formativa. Permite al alumno reflexionar sobre su propio aprendizaje.",
+    "Etiquetas": ["evaluacion-guia", "Portfolio"],
+    "FechaPublicacion": "2025-01-15",
+    "Seccion": "evaluacion"
+  },
+  {
+    "Título": "Rúbrica de Evaluación de Trabajo en Equipo",
+    "URL": "https://www.orientacionandujar.es/2023/03/10/rubrica-para-evaluar-el-trabajo-en-equipo/",
+    "Descripción": "Rúbrica lista para usar que evalúa la colaboración, la comunicación, la responsabilidad y la resolución de conflictos dentro del equipo.",
+    "Etiquetas": ["evaluacion-guia", "Rúbricas"],
+    "FechaPublicacion": "2025-02-01",
+    "Seccion": "evaluacion"
+  },
+  {
+    "Título": "Diario de Aprendizaje Reflexivo",
+    "URL": "",
+    "Descripción": "Plantilla de diario de aprendizaje para que el alumno registre qué ha aprendido, cómo lo ha aprendido y qué dificultades ha encontrado.",
+    "Etiquetas": ["evaluacion-material", "Reflexión"],
+    "FechaPublicacion": "2025-03-01",
     "Seccion": "evaluacion"
   },
   {
@@ -157,6 +269,22 @@
     "Descripción": "Colección curada de prompts para ChatGPT orientados a la educación. Organizados por áreas y usos docentes.",
     "Etiquetas": ["ia-pedagogica-lista", "Prompts"],
     "FechaPublicacion": "2025-04-01",
+    "Seccion": "ia-pedagogica"
+  },
+  {
+    "Título": "Chatbots Educativos con IA",
+    "URL": "",
+    "Descripción": "Guía para diseñar y utilizar chatbots educativos basados en IA como tutores virtuales, asistentes de estudio y generadores de práctica personalizada.",
+    "Etiquetas": ["ia-pedagogica-guia", "Chatbots"],
+    "FechaPublicacion": "2025-05-01",
+    "Seccion": "ia-pedagogica"
+  },
+  {
+    "Título": "Detección de Textos con IA en el Aula",
+    "URL": "",
+    "Descripción": "Reflexión y estrategias para abordar el uso de IA generativa en trabajos académicos. Cómo detectar, prevenir y rediseñar tareas para integrar la IA de forma ética.",
+    "Etiquetas": ["ia-pedagogica-estrategia", "Ética"],
+    "FechaPublicacion": "2025-06-01",
     "Seccion": "ia-pedagogica"
   },
   {
