@@ -18,7 +18,7 @@ const SiteHeader = {
         </div>
 
         <!-- Navigation -->
-        <nav class="flex flex-nowrap justify-center gap-x-1 bg-gradient-to-r from-gray-50/80 to-white/80 p-1 rounded-2xl border border-gray-200/60 backdrop-blur-md shadow-sm overflow-x-auto">
+        <nav class="flex flex-wrap justify-center gap-x-1 gap-y-1 bg-gradient-to-r from-gray-50/80 to-white/80 p-1.5 rounded-2xl border border-gray-200/60 backdrop-blur-md shadow-sm">
           <a v-for="item in menuItems" :key="item.name" :href="item.href"
             :class="[
               'text-[10px] uppercase tracking-widest font-bold transition-all duration-300 flex items-center gap-1 px-2.5 py-1.5 rounded-lg whitespace-nowrap',
