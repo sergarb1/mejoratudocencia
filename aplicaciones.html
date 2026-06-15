@@ -33,128 +33,99 @@
     body { font-family: 'Inter', sans-serif; scroll-behavior: smooth; }
     h1, h2, h3, h4 { font-family: 'Outfit', sans-serif; }
     .gradient-bg { background: linear-gradient(135deg, #f0fdf4 0%, #ffffff 50%, #f0fdf4 100%); }
+    .glass-effect { background: rgba(255,255,255,0.8); backdrop-filter: blur(12px); border: 1px solid rgba(255,255,255,0.3); }
+    .card { transition: all 0.3s cubic-bezier(0.4,0,0.2,1); border: 1px solid rgba(226,232,240,0.8); }
+    .card:hover { transform: translateY(-4px); box-shadow: 0 10px 20px -5px rgba(0,0,0,0.05); border-color: #bbf7d0; }
+    .list-enter-active, .list-leave-active { transition: all 0.3s ease; }
+    .list-enter-from, .list-leave-to { opacity: 0; transform: scale(0.95); }
+    .list-move { transition: transform 0.3s ease; }
   </style>
 </head>
 <body class="gradient-bg text-gray-800 min-h-screen flex flex-col">
   <div id="app" v-cloak class="flex flex-col flex-grow">
     <site-header active-page="aplicaciones.html"></site-header>
 
-    <main class="flex-grow max-w-5xl mx-auto w-full p-6 md:p-12 space-y-16 mt-12">
-      <div class="text-center space-y-4 max-w-3xl mx-auto">
-        <div class="inline-flex p-4 bg-primary-100 text-primary-600 rounded-3xl mb-4 shadow-inner">
-          <i data-lucide="rocket" class="w-10 h-10"></i>
+    <main class="flex-grow max-w-7xl mx-auto w-full p-4 md:p-6 space-y-4 mt-4">
+      <div class="text-center space-y-2 max-w-3xl mx-auto">
+        <div class="inline-flex p-2.5 bg-primary-100 text-primary-600 rounded-xl mb-2 shadow-inner">
+          <i data-lucide="rocket" class="w-5 h-5"></i>
         </div>
-        <h2 class="text-5xl font-black text-slate-900 leading-tight tracking-tight">Aplicaciones Educativas</h2>
-        <p class="text-xl text-slate-500 font-medium leading-relaxed">Herramientas interactivas gratuitas para usar en el aula y en orientación educativa.</p>
+        <h2 class="text-2xl md:text-3xl font-black text-slate-900 leading-tight tracking-tight">Aplicaciones Educativas</h2>
+        <p class="text-sm text-slate-500 font-medium">Apps creadas y mantenidas por la comunidad <strong>Mejora tu Docencia</strong>. Código abierto, gratuitas y sin ánimo de lucro.</p>
+        <p class="text-[11px] text-slate-400">Si buscas aplicaciones externas, están en <a href="recursos.html" class="text-primary-600 font-bold hover:underline">Recursos</a> como categoría independiente.</p>
       </div>
 
-      <div class="grid md:grid-cols-2 gap-8">
-        <div class="bg-white p-10 md:p-12 rounded-[3.5rem] shadow-xl shadow-primary-100/20 border border-primary-50 flex flex-col items-center text-center space-y-8 group hover:-translate-y-2 transition-all duration-300">
-          <div class="w-20 h-20 bg-primary-50 text-primary-600 rounded-3xl flex items-center justify-center shadow-inner group-hover:bg-primary-600 group-hover:text-white transition-colors duration-500">
-            <i data-lucide="users" class="w-10 h-10"></i>
+      <section class="glass-effect p-4 rounded-2xl shadow-sm sticky top-0 z-40">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+          <div class="relative">
+            <label class="flex items-center gap-1.5 text-[9px] font-bold text-primary-600 mb-1 ml-1 uppercase tracking-widest">
+              <i data-lucide="search" class="w-2.5 h-2.5"></i> Búsqueda
+            </label>
+            <div class="relative">
+              <input v-model="search" type="text" placeholder="Filtrar aplicaciones..." class="w-full pl-8 p-2 bg-white/50 border border-gray-200 rounded-xl focus:ring-4 focus:ring-primary-500/10 focus:border-primary-500 focus:outline-none text-[11px] transition-all" />
+              <span class="absolute left-2.5 top-1/2 -translate-y-1/2 text-gray-400"><i data-lucide="search" class="w-3.5 h-3.5"></i></span>
+            </div>
           </div>
-          <div class="space-y-3">
-            <h3 class="text-3xl font-black text-slate-900">Sociograma de Aula</h3>
-            <p class="text-slate-500 text-lg leading-relaxed">Crea sociogramas de aula, analiza relaciones sociales y dinámicas de grupo. Datos locales, exportable a JSON.</p>
-          </div>
-          <div class="flex gap-3 w-full">
-            <a href="https://sergarb1.github.io/SociogramaAula/" target="_blank" class="flex-1 bg-primary-600 text-white px-4 py-4 rounded-2xl font-bold shadow-xl shadow-primary-200 hover:bg-primary-700 transition-all transform group-hover:scale-105 inline-flex items-center justify-center gap-2">
-              <i data-lucide="external-link" class="w-4 h-4"></i> App
-            </a>
-            <a href="https://github.com/sergarb1/SociogramaAula" target="_blank" class="flex-1 bg-gray-600 text-white px-4 py-4 rounded-2xl font-bold shadow-xl shadow-gray-200 hover:bg-gray-700 transition-all transform group-hover:scale-105 inline-flex items-center justify-center gap-2">
-              <i data-lucide="code" class="w-4 h-4"></i> Código
-            </a>
-          </div>
-        </div>
-
-        <div class="bg-white p-10 md:p-12 rounded-[3.5rem] shadow-xl shadow-orange-100/20 border border-orange-50 flex flex-col items-center text-center space-y-8 group hover:-translate-y-2 transition-all duration-300">
-          <div class="w-20 h-20 bg-orange-50 text-orange-600 rounded-3xl flex items-center justify-center shadow-inner group-hover:bg-orange-600 group-hover:text-white transition-colors duration-500">
-            <i data-lucide="calendar-check" class="w-10 h-10"></i>
-          </div>
-          <div class="space-y-3">
-            <h3 class="text-3xl font-black text-slate-900">Generador Calendario Exámenes</h3>
-            <p class="text-slate-500 text-lg leading-relaxed">Crea calendarios de exámenes visuales para compartir con tus alumnos. Configura fechas, asignaturas y avisos.</p>
-          </div>
-          <div class="flex gap-3 w-full">
-            <a href="https://sergarb1.github.io/GeneradorCalendarioExamenes/" target="_blank" class="flex-1 bg-orange-600 text-white px-4 py-4 rounded-2xl font-bold shadow-xl shadow-orange-200 hover:bg-orange-700 transition-all transform group-hover:scale-105 inline-flex items-center justify-center gap-2">
-              <i data-lucide="external-link" class="w-4 h-4"></i> App
-            </a>
-            <a href="https://github.com/sergarb1/GeneradorCalendarioExamenes" target="_blank" class="flex-1 bg-gray-600 text-white px-4 py-4 rounded-2xl font-bold shadow-xl shadow-gray-200 hover:bg-gray-700 transition-all transform group-hover:scale-105 inline-flex items-center justify-center gap-2">
-              <i data-lucide="code" class="w-4 h-4"></i> Código
-            </a>
+          <div>
+            <label class="flex items-center gap-1.5 text-[9px] font-bold text-primary-600 mb-1 ml-1 uppercase tracking-widest">
+              <i data-lucide="filter" class="w-2.5 h-2.5"></i> Categoría
+            </label>
+            <select v-model="selectedTag" class="w-full p-2 bg-white/50 border border-gray-200 rounded-xl focus:ring-4 focus:ring-primary-500/10 focus:border-primary-500 focus:outline-none text-[11px] transition-all cursor-pointer">
+              <option value="">Todas las categorías</option>
+              <option v-for="t in availableTags" :key="t" :value="t">{{ t }}</option>
+            </select>
           </div>
         </div>
-
-        <div class="bg-white p-10 md:p-12 rounded-[3.5rem] shadow-xl shadow-blue-100/20 border border-blue-50 flex flex-col items-center text-center space-y-8 group hover:-translate-y-2 transition-all duration-300">
-          <div class="w-20 h-20 bg-blue-50 text-blue-600 rounded-3xl flex items-center justify-center shadow-inner group-hover:bg-blue-600 group-hover:text-white transition-colors duration-500">
-            <i data-lucide="clipboard-list" class="w-10 h-10"></i>
-          </div>
-          <div class="space-y-3">
-            <h3 class="text-3xl font-black text-slate-900">Generador Cuadrante Tareas</h3>
-            <p class="text-slate-500 text-lg leading-relaxed">Genera cuadrantes de tareas y responsabilidades para organizar el aula. Personalizable y listo para imprimir.</p>
-          </div>
-          <div class="flex gap-3 w-full">
-            <a href="https://sergarb1.github.io/GeneradorCuadranteTareas/" target="_blank" class="flex-1 bg-blue-600 text-white px-4 py-4 rounded-2xl font-bold shadow-xl shadow-blue-200 hover:bg-blue-700 transition-all transform group-hover:scale-105 inline-flex items-center justify-center gap-2">
-              <i data-lucide="external-link" class="w-4 h-4"></i> App
-            </a>
-            <a href="https://github.com/sergarb1/GeneradorCuadranteTareas" target="_blank" class="flex-1 bg-gray-600 text-white px-4 py-4 rounded-2xl font-bold shadow-xl shadow-gray-200 hover:bg-gray-700 transition-all transform group-hover:scale-105 inline-flex items-center justify-center gap-2">
-              <i data-lucide="code" class="w-4 h-4"></i> Código
-            </a>
-          </div>
+        <div class="mt-3 flex justify-center items-center gap-4">
+          <span v-if="loading" class="flex items-center gap-2 text-[9px] text-primary-600 font-bold animate-pulse">
+            <i data-lucide="refresh-cw" class="w-3 h-3 animate-spin"></i> CARGANDO...
+          </span>
+          <span v-else class="px-2.5 py-0.5 bg-primary-50 text-primary-700 rounded-full text-[9px] font-bold shadow-sm border border-primary-100 flex items-center gap-1">
+            <i data-lucide="rocket" class="w-2.5 h-2.5"></i> {{ filteredApps.length }} aplicaciones
+          </span>
+          <button v-if="search || selectedTag" @click="resetFilters" class="text-[9px] font-bold text-red-500 hover:text-red-700 uppercase flex items-center gap-1">
+            <i data-lucide="x-circle" class="w-2.5 h-2.5"></i> Limpiar
+          </button>
         </div>
+      </section>
 
-        <div class="bg-white p-10 md:p-12 rounded-[3.5rem] shadow-xl shadow-pink-100/20 border border-pink-50 flex flex-col items-center text-center space-y-8 group hover:-translate-y-2 transition-all duration-300">
-          <div class="w-20 h-20 bg-pink-50 text-pink-600 rounded-3xl flex items-center justify-center shadow-inner group-hover:bg-pink-600 group-hover:text-white transition-colors duration-500">
-            <i data-lucide="graduation-cap" class="w-10 h-10"></i>
+      <transition-group name="list" tag="section" class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        <article v-for="app in filteredApps" :key="app.Título"
+          class="card bg-white rounded-2xl p-4 flex flex-col h-full relative group border border-gray-100 overflow-hidden">
+          <div class="absolute top-0 left-0 w-1 h-full bg-primary-500 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+
+          <div class="mb-2">
+            <div class="flex items-center justify-between mb-2">
+              <span class="text-[7px] font-bold bg-primary-50 text-primary-600 px-1.5 py-0.5 rounded-sm border border-primary-100 uppercase">
+                {{ app.Etiquetas[0] }}
+              </span>
+              <div class="text-gray-300 group-hover:text-primary-500 transition-colors">
+                <i :data-lucide="app.Icono" class="w-4 h-4"></i>
+              </div>
+            </div>
+            <h3 class="font-bold text-xs text-gray-900 mb-1 leading-tight group-hover:text-primary-700 transition-colors">{{ app.Título }}</h3>
+            <p class="text-gray-500 text-[10px] leading-relaxed line-clamp-3">{{ app.Descripción }}</p>
           </div>
-          <div class="space-y-3">
-            <h3 class="text-3xl font-black text-slate-900">Generador de Orlas</h3>
-            <p class="text-slate-500 text-lg leading-relaxed">Genera orlas escolares personalizadas con fotos y nombres. Ideal para final de curso y graduaciones.</p>
-          </div>
-          <div class="flex gap-3 w-full">
-            <a href="https://sergarb1.github.io/GeneradorOrlas/" target="_blank" class="flex-1 bg-pink-600 text-white px-4 py-4 rounded-2xl font-bold shadow-xl shadow-pink-200 hover:bg-pink-700 transition-all transform group-hover:scale-105 inline-flex items-center justify-center gap-2">
-              <i data-lucide="external-link" class="w-4 h-4"></i> App
+
+          <div class="mt-auto pt-2 border-t border-gray-50 flex gap-2">
+            <a :href="app.URL" target="_blank"
+              class="flex-1 bg-primary-600 text-white px-3 py-2 rounded-lg font-bold text-[11px] shadow-sm shadow-primary-200 hover:bg-primary-700 transition-all transform group-hover:scale-105 inline-flex items-center justify-center gap-1.5">
+              <i data-lucide="external-link" class="w-3 h-3"></i> App
             </a>
-            <a href="https://github.com/sergarb1/GeneradorOrlas" target="_blank" class="flex-1 bg-gray-600 text-white px-4 py-4 rounded-2xl font-bold shadow-xl shadow-gray-200 hover:bg-gray-700 transition-all transform group-hover:scale-105 inline-flex items-center justify-center gap-2">
-              <i data-lucide="code" class="w-4 h-4"></i> Código
+            <a v-if="app.GitHub" :href="app.GitHub" target="_blank"
+              class="flex-1 bg-gray-600 text-white px-3 py-2 rounded-lg font-bold text-[11px] shadow-sm shadow-gray-200 hover:bg-gray-700 transition-all transform group-hover:scale-105 inline-flex items-center justify-center gap-1.5">
+              <i data-lucide="code" class="w-3 h-3"></i> Código
             </a>
           </div>
+        </article>
+      </transition-group>
+
+      <div v-if="!loading && !filteredApps.length" class="text-center py-16 bg-white/50 rounded-[2rem] border border-dashed border-gray-300">
+        <div class="inline-flex p-3 bg-gray-100 rounded-full mb-3">
+          <i data-lucide="search-x" class="w-6 h-6 text-gray-400"></i>
         </div>
-
-        <div class="bg-white p-10 md:p-12 rounded-[3.5rem] shadow-xl shadow-teal-100/20 border border-teal-50 flex flex-col items-center text-center space-y-8 group hover:-translate-y-2 transition-all duration-300">
-          <div class="w-20 h-20 bg-teal-50 text-teal-600 rounded-3xl flex items-center justify-center shadow-inner group-hover:bg-teal-600 group-hover:text-white transition-colors duration-500">
-            <i data-lucide="briefcase" class="w-10 h-10"></i>
-          </div>
-          <div class="space-y-3">
-            <h3 class="text-3xl font-black text-slate-900">Bolsa de Trabajo</h3>
-            <p class="text-slate-500 text-lg leading-relaxed">Prototipo de bolsa de trabajo para centros educativos. Gestiona ofertas y candidaturas de forma sencilla.</p>
-          </div>
-          <div class="flex gap-3 w-full">
-            <a href="https://sergarb1.github.io/BolsaTrabajoEjemploAPP/" target="_blank" class="flex-1 bg-teal-600 text-white px-4 py-4 rounded-2xl font-bold shadow-xl shadow-teal-200 hover:bg-teal-700 transition-all transform group-hover:scale-105 inline-flex items-center justify-center gap-2">
-              <i data-lucide="external-link" class="w-4 h-4"></i> App
-            </a>
-            <a href="https://github.com/sergarb1/BolsaTrabajoEjemploAPP" target="_blank" class="flex-1 bg-gray-600 text-white px-4 py-4 rounded-2xl font-bold shadow-xl shadow-gray-200 hover:bg-gray-700 transition-all transform group-hover:scale-105 inline-flex items-center justify-center gap-2">
-              <i data-lucide="code" class="w-4 h-4"></i> Código
-            </a>
-          </div>
-        </div>
-
-        <div class="bg-white p-10 md:p-12 rounded-[3.5rem] shadow-xl shadow-purple-100/20 border border-purple-50 flex flex-col items-center text-center space-y-8 group hover:-translate-y-2 transition-all duration-300">
-          <div class="w-20 h-20 bg-purple-50 text-purple-600 rounded-3xl flex items-center justify-center shadow-inner group-hover:bg-purple-600 group-hover:text-white transition-colors duration-500">
-            <i data-lucide="sigma" class="w-10 h-10"></i>
-          </div>
-          <div class="space-y-3">
-            <h3 class="text-3xl font-black text-slate-900">Matemáticas</h3>
-            <p class="text-slate-500 text-lg leading-relaxed">Recursos y materiales interactivos de matemáticas para ESO: libros, proyectos y actividades.</p>
-          </div>
-          <a href="mates/" class="bg-purple-600 text-white px-10 py-4 rounded-2xl font-bold shadow-xl shadow-purple-200 hover:bg-purple-700 transition-all transform group-hover:scale-105 inline-flex items-center gap-3">
-            <i data-lucide="external-link" class="w-5 h-5"></i> Explorar
-          </a>
-        </div>
-      </div>
-
-      <div class="text-center pt-8">
-        <p class="text-slate-400 text-sm font-medium">Mantente al día — iré añadiendo más aplicaciones aquí.</p>
+        <p class="text-xs text-gray-500 font-medium">No se han encontrado aplicaciones.</p>
+        <button @click="resetFilters" class="mt-2 text-[10px] text-primary-600 font-bold hover:underline uppercase">Ver todas</button>
       </div>
     </main>
 
@@ -162,11 +133,49 @@
   </div>
 
   <script>
-    const { createApp, nextTick } = Vue;
+    const { createApp, ref, computed, onMounted, nextTick } = Vue;
+
     createApp({
       components: { SiteHeader, SiteFooter },
-      setup() { return { config: APP_CONFIG }; },
-      mounted() { nextTick(() => lucide.createIcons()); }
+      setup() {
+        const apps = ref([]);
+        const loading = ref(true);
+        const search = ref('');
+        const selectedTag = ref('');
+
+        const availableTags = computed(() => {
+          const tags = [...new Set(apps.value.flatMap(a => a.Etiquetas || []).filter(Boolean))];
+          return tags.sort();
+        });
+
+        const filteredApps = computed(() => {
+          const text = search.value.toLowerCase();
+          return apps.value.filter(a => {
+            const byText = !text || a.Título?.toLowerCase().includes(text) || a.Descripción?.toLowerCase().includes(text) || (a.Etiquetas || []).some(t => t.toLowerCase().includes(text));
+            const byTag = !selectedTag.value || (a.Etiquetas || []).includes(selectedTag.value);
+            return byText && byTag;
+          });
+        });
+
+        const resetFilters = () => {
+          search.value = '';
+          selectedTag.value = '';
+        };
+
+        onMounted(async () => {
+          try {
+            const res = await fetch('aplicaciones.json');
+            apps.value = await res.json();
+          } catch (e) {
+            console.error('Error loading aplicaciones:', e);
+          } finally {
+            loading.value = false;
+            nextTick(() => lucide.createIcons());
+          }
+        });
+
+        return { loading, search, selectedTag, availableTags, filteredApps, resetFilters };
+      }
     }).mount("#app");
   </script>
 </body>

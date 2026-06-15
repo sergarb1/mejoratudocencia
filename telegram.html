@@ -39,33 +39,36 @@
   <div id="app" v-cloak class="flex flex-col flex-grow">
     <site-header active-page="telegram.html"></site-header>
 
-    <main class="flex-grow max-w-5xl mx-auto w-full p-6 md:p-12 space-y-16 mt-12">
-      <div class="text-center space-y-4 max-w-3xl mx-auto">
-        <div class="inline-flex p-4 bg-blue-50 text-blue-600 rounded-3xl mb-4 shadow-inner">
-          <i data-lucide="send" class="w-10 h-10"></i>
+    <main class="flex-grow max-w-5xl mx-auto w-full p-6 md:p-8 space-y-8 mt-8">
+      <div class="text-center space-y-3 max-w-3xl mx-auto">
+        <div class="inline-flex p-3 bg-blue-50 text-blue-600 rounded-2xl mb-3 shadow-inner">
+          <i data-lucide="send" class="w-7 h-7"></i>
         </div>
-        <h2 class="text-5xl font-black text-slate-900 leading-tight tracking-tight">Comunidad Telegram</h2>
-        <p class="text-xl text-slate-500 font-medium leading-relaxed">Un espacio abierto para docentes que quieren compartir, preguntar y aprender juntos.</p>
+        <h2 class="text-3xl md:text-4xl font-black text-slate-900 leading-tight tracking-tight">Comunidad Telegram</h2>
+        <p class="text-base text-slate-500 font-medium">Un espacio abierto para docentes que quieren compartir, preguntar y aprender juntos.</p>
+        <a :href="config.social.telegram" target="_blank" class="inline-flex bg-blue-600 text-white px-6 py-3 rounded-xl font-bold text-sm shadow-lg shadow-blue-200 hover:bg-blue-700 hover:scale-105 transition-all items-center gap-2">
+          <i data-lucide="send" class="w-4 h-4"></i> Unirme a la comunidad
+        </a>
       </div>
 
-      <section class="bg-white rounded-[3rem] p-10 md:p-16 shadow-xl shadow-blue-100/20 border border-blue-50 space-y-8 max-w-4xl mx-auto">
-        <div class="flex items-center gap-6">
-          <div class="bg-blue-50 text-blue-600 p-4 rounded-2xl">
-            <i data-lucide="message-circle" class="w-8 h-8"></i>
+      <section class="bg-white rounded-[2rem] p-6 md:p-10 shadow-lg shadow-blue-100/20 border border-blue-50 space-y-5 max-w-4xl mx-auto">
+        <div class="flex items-start gap-4">
+          <div class="bg-blue-50 text-blue-600 p-3 rounded-xl shrink-0">
+            <i data-lucide="message-circle" class="w-6 h-6"></i>
           </div>
           <div>
-            <h3 class="text-2xl font-black text-slate-900">¿Qué es?</h3>
-            <p class="text-slate-500 text-lg">Un grupo de Telegram donde docentes de todas las etapas compartimos recursos, resolvemos dudas y colaboramos en proyectos educativos.</p>
+            <h3 class="text-lg font-black text-slate-900">¿Qué es?</h3>
+            <p class="text-slate-500 text-sm">Un grupo de Telegram donde docentes de todas las etapas compartimos recursos, resolvemos dudas y colaboramos en proyectos educativos.</p>
           </div>
         </div>
 
-        <div class="flex items-center gap-6">
-          <div class="bg-blue-50 text-blue-600 p-4 rounded-2xl">
-            <i data-lucide="users" class="w-8 h-8"></i>
+        <div class="flex items-start gap-4">
+          <div class="bg-blue-50 text-blue-600 p-3 rounded-xl shrink-0">
+            <i data-lucide="users" class="w-6 h-6"></i>
           </div>
           <div>
-            <h3 class="text-2xl font-black text-slate-900">¿Qué puedes hacer?</h3>
-            <ul class="text-slate-500 text-lg space-y-2 list-disc list-inside">
+            <h3 class="text-lg font-black text-slate-900">¿Qué puedes hacer?</h3>
+            <ul class="text-slate-500 text-sm space-y-1.5 list-disc list-inside">
               <li>Compartir recursos y materiales que uses en clase</li>
               <li>Pedir ayuda o ideas para tus sesiones</li>
               <li>Solicitar que se generen materiales, aplicaciones o recursos específicos</li>
@@ -76,21 +79,21 @@
           </div>
         </div>
 
-        <div class="flex items-center gap-6">
-          <div class="bg-blue-50 text-blue-600 p-4 rounded-2xl">
-            <i data-lucide="sparkles" class="w-8 h-8"></i>
+        <div class="flex items-start gap-4">
+          <div class="bg-blue-50 text-blue-600 p-3 rounded-xl shrink-0">
+            <i data-lucide="sparkles" class="w-6 h-6"></i>
           </div>
           <div>
-            <h3 class="text-2xl font-black text-slate-900">¿Por qué unirte?</h3>
-            <p class="text-slate-500 text-lg">Porque la docencia compartida es mejor. Aquí no hay jerarquías ni ventas: solo profes ayudando a profes. Todo lo que se genera es abierto, gratuito y sin ánimo de lucro.</p>
+            <h3 class="text-lg font-black text-slate-900">¿Por qué unirte?</h3>
+            <p class="text-slate-500 text-sm">Porque la docencia compartida es mejor. Aquí no hay jerarquías ni ventas: solo profes ayudando a profes. Todo lo que se genera es abierto, gratuito y sin ánimo de lucro.</p>
           </div>
         </div>
 
-        <div class="pt-6 text-center">
-          <a :href="config.social.telegram" target="_blank" class="bg-blue-600 text-white px-12 py-5 rounded-2xl font-bold text-xl shadow-2xl shadow-blue-200 hover:bg-blue-700 hover:scale-105 transition-all inline-flex items-center gap-3">
-            <i data-lucide="send" class="w-6 h-6"></i> Unirme a la comunidad
+        <div class="pt-4 text-center">
+          <a :href="config.social.telegram" target="_blank" class="bg-blue-600 text-white px-8 py-4 rounded-xl font-bold text-base shadow-lg shadow-blue-200 hover:bg-blue-700 hover:scale-105 transition-all inline-flex items-center gap-2">
+            <i data-lucide="send" class="w-5 h-5"></i> Unirme a la comunidad
           </a>
-          <p class="text-slate-400 text-sm mt-4">Es gratis, abierto a todo el mundo y no hay spam.</p>
+          <p class="text-slate-400 text-xs mt-3">Es gratis, abierto a todo el mundo y no hay spam.</p>
         </div>
       </section>
     </main>

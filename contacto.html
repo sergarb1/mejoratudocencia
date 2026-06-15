@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contacto - Mejora tu Docencia</title>
+  <script src="https://unpkg.com/vue@3.4.15/dist/vue.global.prod.js"></script>
+  <script src="https://unpkg.com/lucide@0.321.0/dist/umd/lucide.min.js"></script>
+  <script src="https://cdn.tailwindcss.com/3.4.1"></script>
+  <script src="js/config.js"></script>
+  <script src="js/components.js"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+            outfit: ['Outfit', 'sans-serif'],
+          },
+          colors: {
+            primary: {
+              50: '#f0fdf4', 100: '#dcfce7', 200: '#bbf7d0', 300: '#86efac', 400: '#4ade80',
+              500: '#22c55e', 600: '#16a34a', 700: '#15803d', 800: '#166534', 900: '#14532d',
+            }
+          }
+        }
+      }
+    }
+  </script>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;900&family=Inter:wght@400;500;600;800&display=swap" rel="stylesheet" />
+  <style>
+    [v-cloak] { display: none; }
+    body { font-family: 'Inter', sans-serif; scroll-behavior: smooth; }
+    h1, h2, h3, h4 { font-family: 'Outfit', sans-serif; }
+    .gradient-bg { background: linear-gradient(135deg, #f0fdf4 0%, #ffffff 50%, #f0fdf4 100%); }
+  </style>
+</head>
+<body class="gradient-bg text-gray-800 min-h-screen flex flex-col">
+  <div id="app" v-cloak class="flex flex-col flex-grow">
+    <site-header active-page="contacto.html"></site-header>
+
+    <main class="flex-grow max-w-4xl mx-auto w-full p-4 md:p-6 space-y-6 mt-4">
+      <div class="text-center space-y-2 max-w-2xl mx-auto">
+        <div class="inline-flex p-2.5 bg-primary-100 text-primary-600 rounded-xl mb-2 shadow-inner">
+          <i data-lucide="message-circle-heart" class="w-5 h-5"></i>
+        </div>
+        <h2 class="text-2xl md:text-3xl font-black text-slate-900 leading-tight tracking-tight">Contacto</h2>
+        <p class="text-sm text-slate-500 font-medium">Estoy aquí para lo que necesites. Elige el canal que prefieras.</p>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-3">
+        <div class="bg-white p-4 md:p-5 rounded-xl shadow-md shadow-blue-100/20 border border-blue-50 flex flex-col items-center text-center space-y-3 group hover:-translate-y-0.5 transition-all duration-300">
+          <div class="w-12 h-12 bg-blue-50 text-blue-600 rounded-xl flex items-center justify-center shadow-inner group-hover:bg-blue-600 group-hover:text-white transition-colors duration-500">
+            <i data-lucide="send" class="w-6 h-6"></i>
+          </div>
+          <div class="space-y-1">
+            <h3 class="text-base font-black text-slate-900">Telegram</h3>
+            <p class="text-slate-500 text-xs">Únete a la comunidad docente: comparte recursos, pregunta y colabora en tiempo real.</p>
+          </div>
+          <a :href="config.social.telegram" target="_blank" class="bg-blue-600 text-white px-4 py-2 rounded-lg font-bold text-[11px] shadow-md shadow-blue-200 hover:bg-blue-700 transition-all transform group-hover:scale-105 inline-flex items-center gap-1.5 w-full justify-center">
+            <i data-lucide="send" class="w-3 h-3"></i> Unirme
+          </a>
+        </div>
+
+        <div class="bg-white p-4 md:p-5 rounded-xl shadow-md shadow-pink-100/20 border border-pink-50 flex flex-col items-center text-center space-y-3 group hover:-translate-y-0.5 transition-all duration-300">
+          <div class="w-12 h-12 bg-pink-50 text-pink-600 rounded-xl flex items-center justify-center shadow-inner group-hover:bg-pink-600 group-hover:text-white transition-colors duration-500">
+            <i data-lucide="instagram" class="w-6 h-6"></i>
+          </div>
+          <div class="space-y-1">
+            <h3 class="text-base font-black text-slate-900">Instagram</h3>
+            <p class="text-slate-500 text-xs">Sígueme para estar al día de nuevos recursos, aplicaciones y novedades del proyecto.</p>
+          </div>
+          <a :href="config.social.instagram" target="_blank" class="bg-pink-600 text-white px-4 py-2 rounded-lg font-bold text-[11px] shadow-md shadow-pink-200 hover:bg-pink-700 transition-all transform group-hover:scale-105 inline-flex items-center gap-1.5 w-full justify-center">
+            <i data-lucide="instagram" class="w-3 h-3"></i> Seguir
+          </a>
+        </div>
+
+        <div class="bg-white p-4 md:p-5 rounded-xl shadow-md shadow-primary-100/20 border border-primary-50 flex flex-col items-center text-center space-y-3 group hover:-translate-y-0.5 transition-all duration-300">
+          <div class="w-12 h-12 bg-primary-50 text-primary-600 rounded-xl flex items-center justify-center shadow-inner group-hover:bg-primary-600 group-hover:text-white transition-colors duration-500">
+            <i data-lucide="mail" class="w-6 h-6"></i>
+          </div>
+          <div class="space-y-1">
+            <h3 class="text-base font-black text-slate-900">Email</h3>
+            <p class="text-slate-500 text-xs">Escríbeme directamente para propuestas, dudas o si quieres aportar algo al proyecto.</p>
+          </div>
+          <a href="mailto:mejoratudocencia@gmail.com" class="bg-primary-600 text-white px-4 py-2 rounded-lg font-bold text-[11px] shadow-md shadow-primary-200 hover:bg-primary-700 transition-all transform group-hover:scale-105 inline-flex items-center gap-1.5 w-full justify-center">
+            <i data-lucide="mail" class="w-3 h-3"></i> Enviar email
+          </a>
+        </div>
+      </div>
+    </main>
+
+    <site-footer></site-footer>
+  </div>
+
+  <script>
+    const { createApp, nextTick } = Vue;
+    createApp({
+      components: { SiteHeader, SiteFooter },
+      setup() { return { config: APP_CONFIG }; },
+      mounted() { nextTick(() => lucide.createIcons()); }
+    }).mount("#app");
+  </script>
+</body>
+</html>

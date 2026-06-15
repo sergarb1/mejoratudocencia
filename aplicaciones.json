@@ -1,0 +1,56 @@
+[
+  {
+    "Título": "Sociograma de Aula",
+    "Descripción": "Crea sociogramas de aula, analiza relaciones sociales y dinámicas de grupo. Datos locales, exportable a JSON.",
+    "URL": "https://sergarb1.github.io/SociogramaAula/",
+    "GitHub": "https://github.com/sergarb1/SociogramaAula",
+    "Icono": "users",
+    "Etiquetas": ["Sociometría"],
+    "FechaPublicacion": "2025-05-01"
+  },
+  {
+    "Título": "Generador Calendario Exámenes",
+    "Descripción": "Crea calendarios de exámenes visuales para compartir con tus alumnos. Configura fechas, asignaturas y avisos.",
+    "URL": "https://sergarb1.github.io/GeneradorCalendarioExamenes/",
+    "GitHub": "https://github.com/sergarb1/GeneradorCalendarioExamenes",
+    "Icono": "calendar-check",
+    "Etiquetas": ["Planificación"],
+    "FechaPublicacion": "2025-06-01"
+  },
+  {
+    "Título": "Generador Cuadrante Tareas",
+    "Descripción": "Genera cuadrantes de tareas y responsabilidades para organizar el aula. Personalizable y listo para imprimir.",
+    "URL": "https://sergarb1.github.io/GeneradorCuadranteTareas/",
+    "GitHub": "https://github.com/sergarb1/GeneradorCuadranteTareas",
+    "Icono": "clipboard-list",
+    "Etiquetas": ["Organización"],
+    "FechaPublicacion": "2025-05-15"
+  },
+  {
+    "Título": "Generador de Orlas",
+    "Descripción": "Genera orlas escolares personalizadas con fotos y nombres. Ideal para final de curso y graduaciones.",
+    "URL": "https://sergarb1.github.io/GeneradorOrlas/",
+    "GitHub": "https://github.com/sergarb1/GeneradorOrlas",
+    "Icono": "graduation-cap",
+    "Etiquetas": ["Eventos"],
+    "FechaPublicacion": "2025-06-15"
+  },
+  {
+    "Título": "Bolsa de Trabajo",
+    "Descripción": "Prototipo de bolsa de trabajo para centros educativos. Muestra cómo gestionar ofertas y candidaturas.",
+    "URL": "https://sergarb1.github.io/BolsaTrabajoEjemploAPP/",
+    "GitHub": "https://github.com/sergarb1/BolsaTrabajoEjemploAPP",
+    "Icono": "briefcase",
+    "Etiquetas": ["Utilidad"],
+    "FechaPublicacion": "2025-07-01"
+  },
+  {
+    "Título": "Matemáticas",
+    "Descripción": "Recursos y materiales interactivos de matemáticas para ESO: libros, proyectos y actividades.",
+    "URL": "mates/",
+    "GitHub": "",
+    "Icono": "sigma",
+    "Etiquetas": ["Educación"],
+    "FechaPublicacion": "2025-07-15"
+  }
+]

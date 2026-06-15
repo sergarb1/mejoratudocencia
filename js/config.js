@@ -16,6 +16,7 @@ const APP_CONFIG = {
     { id: 'evaluacion', name: 'Evaluación Formativa', icon: 'clipboard-check', description: 'Rúbricas, dianas de evaluación y feedback efectivo.' },
     { id: 'ia-pedagogica', name: 'IA Pedagógica', icon: 'brain-circuit', description: 'Cómo usar la IA para personalizar el aprendizaje, no solo crear materiales.' },
     { id: 'herramientas', name: 'Herramientas', icon: 'puzzle', description: 'Aplicaciones interactivas gratuitas para el aula y la orientación.' },
+    { id: 'aplicaciones-externas', name: 'Apps Externas', icon: 'app-window', description: 'Aplicaciones educativas de terceros para usar en el aula.' },
     { id: 'mates', name: 'Matemáticas', icon: 'calculator', description: 'Recursos y materiales interactivos de matemáticas para ESO.' }
   ],
   tools: {},
