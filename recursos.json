@@ -416,5 +416,324 @@
     ],
     "FechaPublicacion": "2025-07-15",
     "Seccion": "mates"
+  },
+  {
+    "Título": "Pasaporte de la Amistad",
+    "URL": "https://www.actiludis.com/2021/09/15/pasaporte-de-la-amistad/",
+    "Descripción": "Dinámica para que los alumnos se conozcan mejor mediante un pasaporte que rellenan entrevistándose entre ellos. Ideal para inicio de curso.",
+    "Etiquetas": [
+      "tutorias-dinamica",
+      "Cohesión"
+    ],
+    "FechaPublicacion": "2026-01-10",
+    "Seccion": "tutorias"
+  },
+  {
+    "Título": "El Dado de las Emociones",
+    "URL": "https://www.orientacionandujar.es/2023/03/20/dado-de-las-emociones-para-trabajar-la-inteligencia-emocional/",
+    "Descripción": "Recurso manipulativo para trabajar la identificación y expresión de emociones. Lanza el dado y comparte una experiencia relacionada con esa emoción.",
+    "Etiquetas": [
+      "tutorias-material",
+      "Emociones"
+    ],
+    "FechaPublicacion": "2026-01-20",
+    "Seccion": "tutorias"
+  },
+  {
+    "Título": "Asamblea de Aula: Guía para Tutorías",
+    "URL": "https://www.educaciontrespuntocero.com/recursos/asamblea-aula/",
+    "Descripción": "Guía práctica para implementar la asamblea semanal en secundaria. Organización, temas, roles y registro para fomentar la participación y la escucha activa.",
+    "Etiquetas": [
+      "tutorias-guia",
+      "Convivencia"
+    ],
+    "FechaPublicacion": "2026-02-01",
+    "Seccion": "tutorias"
+  },
+  {
+    "Título": "Mediación entre Iguales",
+    "URL": "https://www.caib.es/sites/convivexit/f/374063",
+    "Descripción": "Guía para formar alumnado mediador en centros educativos. Pasos, formación, fases de la mediación y recursos para implantar el programa.",
+    "Etiquetas": [
+      "conflictos-guia",
+      "Mediación"
+    ],
+    "FechaPublicacion": "2026-01-15",
+    "Seccion": "conflictos"
+  },
+  {
+    "Título": "El Buzón de la Convivencia",
+    "URL": "https://www.orientacionandujar.es/2022/10/01/buzon-de-la-convivencia-material-para-mejorar-el-clima-del-aula/",
+    "Descripción": "Recurso para instalar un buzón en el aula donde los alumnos depositan sugerencias, quejas o agradecimientos. Fomenta la comunicación y la resolución pacífica.",
+    "Etiquetas": [
+      "conflictos-dinamica",
+      "Convivencia"
+    ],
+    "FechaPublicacion": "2026-02-10",
+    "Seccion": "conflictos"
+  },
+  {
+    "Título": "Guía de Adaptaciones Curriculares",
+    "URL": "https://www.educacionyfp.gob.es/dam/jcr:8e7a9b3a-8b3c-4f1a-9e6d-5c4b3f2a1e0d/guia-adaptaciones-curriculares.pdf",
+    "Descripción": "Guía del Ministerio de Educación para realizar adaptaciones curriculares significativas y no significativas. Incluye plantillas y ejemplos por áreas.",
+    "Etiquetas": [
+      "diversidad-guia",
+      "Adaptaciones"
+    ],
+    "FechaPublicacion": "2026-03-01",
+    "Seccion": "diversidad"
+  },
+  {
+    "Título": "Rutinas de Pensamiento para el Aula",
+    "URL": "https://www.orientacionandujar.es/2024/01/15/rutinas-de-pensamiento-plantillas-descargables/",
+    "Descripción": "Plantillas descargables de rutinas de pensamiento: veo-pienso-me pregunto, color-símbolo-imagen, puente 3-2-1 y más. Para fomentar el pensamiento visible.",
+    "Etiquetas": [
+      "metodologias-material",
+      "Pensamiento"
+    ],
+    "FechaPublicacion": "2026-02-15",
+    "Seccion": "metodologias"
+  },
+  {
+    "Título": "Gamificación: Claves y Herramientas",
+    "URL": "https://www.educaciontrespuntocero.com/recursos/gamificacion-en-el-aula/",
+    "Descripción": "Guía completa de gamificación educativa: mecánicas de juego, narrativa, herramientas digitales y ejemplos reales para aplicar en cualquier materia.",
+    "Etiquetas": [
+      "metodologias-guia",
+      "Gamificación"
+    ],
+    "FechaPublicacion": "2026-03-01",
+    "Seccion": "metodologias"
+  },
+  {
+    "Título": "Visual Thinking en Educación",
+    "URL": "https://www.theflippedclassroom.es/visual-thinking-en-el-aula/",
+    "Descripción": "Introducción al pensamiento visual como herramienta pedagógica. Aprende a usar mapas visuales, sketchnoting y organizadores gráficos en clase.",
+    "Etiquetas": [
+      "metodologias-guia",
+      "Visual Thinking"
+    ],
+    "FechaPublicacion": "2026-04-01",
+    "Seccion": "metodologias"
+  },
+  {
+    "Título": "Rúbrica para Evaluar Exposiciones Orales",
+    "URL": "https://www.orientacionandujar.es/2023/05/10/rubrica-para-evaluar-exposiciones-orales/",
+    "Descripción": "Rúbrica analítica con criterios de contenido, organización, lenguaje no verbal y recursos visuales. Ideal para evaluar presentaciones en cualquier materia.",
+    "Etiquetas": [
+      "evaluacion-guia",
+      "Rúbricas"
+    ],
+    "FechaPublicacion": "2026-03-15",
+    "Seccion": "evaluacion"
+  },
+  {
+    "Título": "Diana de Autoevaluación",
+    "URL": "https://www.actiludis.com/2022/06/12/diana-de-autoevaluacion/",
+    "Descripción": "Plantilla de diana para que el alumno se autoevalúe tras una actividad o proyecto. Visual, rápida y muy efectiva para la reflexión metacognitiva.",
+    "Etiquetas": [
+      "evaluacion-material",
+      "Autoevaluación"
+    ],
+    "FechaPublicacion": "2026-04-01",
+    "Seccion": "evaluacion"
+  },
+  {
+    "Título": "Coevaluación con Herramientas Digitales",
+    "URL": "https://www.educaciontrespuntocero.com/recursos/coevaluacion-digital/",
+    "Descripción": "Guía para implementar la coevaluación en el aula usando herramientas digitales. Incluye rúbricas, formularios y dinámicas de feedback entre iguales.",
+    "Etiquetas": [
+      "evaluacion-guia",
+      "Coevaluación"
+    ],
+    "FechaPublicacion": "2026-05-01",
+    "Seccion": "evaluacion"
+  },
+  {
+    "Título": "Perplexity AI como Asistente Docente",
+    "URL": "https://blog.google/intl/es-es/productos/impulsar-educacion-inteligencia-artificial/",
+    "Descripción": "Guía para usar Perplexity AI como asistente de investigación docente: preparar clases, crear materiales actualizados y verificar fuentes en tiempo real.",
+    "Etiquetas": [
+      "ia-pedagogica-guia",
+      "Investigación"
+    ],
+    "FechaPublicacion": "2026-05-15",
+    "Seccion": "ia-pedagogica"
+  },
+  {
+    "Título": "Ética de la IA en Educación",
+    "URL": "https://unesdoc.unesco.org/ark:/48223/pf0000381137_spa",
+    "Descripción": "Guía de la UNESCO sobre el uso ético de la inteligencia artificial en educación. Recomendaciones para docentes sobre privacidad, sesgos y pensamiento crítico.",
+    "Etiquetas": [
+      "ia-pedagogica-guia",
+      "Ética"
+    ],
+    "FechaPublicacion": "2026-06-01",
+    "Seccion": "ia-pedagogica"
+  },
+  {
+    "Título": "Quizizz",
+    "URL": "https://quizizz.com/",
+    "Descripción": "Plataforma de aprendizaje gamificado con cuestionarios interactivos, lecciones y actividades. Modo en directo o tarea, con informes detallados de resultados.",
+    "Etiquetas": [
+      "aplicaciones-externas-actividades",
+      "Juegos"
+    ],
+    "FechaPublicacion": "2026-06-01",
+    "Seccion": "aplicaciones-externas"
+  },
+  {
+    "Título": "Padlet",
+    "URL": "https://padlet.com/",
+    "Descripción": "Muro colaborativo online para compartir ideas, recursos y trabajos. Ideal para lluvias de ideas, proyectos grupales y murales digitales en clase.",
+    "Etiquetas": [
+      "aplicaciones-externas-actividades",
+      "Colaborativo"
+    ],
+    "FechaPublicacion": "2026-06-10",
+    "Seccion": "aplicaciones-externas"
+  },
+  {
+    "Título": "Symbaloo",
+    "URL": "https://www.symbaloo.com/",
+    "Descripción": "Escritorio visual para organizar y compartir recursos educativos. Crea tableros con enlaces a tus herramientas y webs favoritas para ti o tus alumnos.",
+    "Etiquetas": [
+      "aplicaciones-externas-plantillas",
+      "Organización"
+    ],
+    "FechaPublicacion": "2026-06-15",
+    "Seccion": "aplicaciones-externas"
+  },
+  {
+    "Título": "Kahoot!",
+    "URL": "https://kahoot.com/",
+    "Descripción": "Plataforma de aprendizaje basada en juegos. Crea cuestionarios, encuestas y desafíos en minutos. Ideal para repasar contenidos de forma divertida y competitiva.",
+    "Etiquetas": [
+      "aplicaciones-externas-actividades",
+      "Juegos"
+    ],
+    "FechaPublicacion": "2026-06-16",
+    "Seccion": "aplicaciones-externas"
+  },
+  {
+    "Título": "EdPuzzle",
+    "URL": "https://edpuzzle.com/",
+    "Descripción": "Plataforma para crear lecciones interactivas a partir de vídeos. Añade preguntas, notas y comentarios. Ideal para flipped classroom y aprendizaje autónomo.",
+    "Etiquetas": [
+      "aplicaciones-externas-actividades",
+      "Vídeo"
+    ],
+    "FechaPublicacion": "2026-06-16",
+    "Seccion": "aplicaciones-externas"
+  },
+  {
+    "Título": "Nearpod",
+    "URL": "https://nearpod.com/",
+    "Descripción": "Plataforma interactiva para crear presentaciones con actividades integradas: sondeos, preguntas, reality tours y más. Perfecta para participación en tiempo real.",
+    "Etiquetas": [
+      "aplicaciones-externas-presentaciones",
+      "Interactivo"
+    ],
+    "FechaPublicacion": "2026-06-16",
+    "Seccion": "aplicaciones-externas"
+  },
+  {
+    "Título": "Mentimeter",
+    "URL": "https://www.mentimeter.com/",
+    "Descripción": "Herramienta de presentaciones interactivas con encuestas en vivo, nubes de palabras, preguntas y quizzes. Ideal para dinamizar clases y obtener feedback inmediato.",
+    "Etiquetas": [
+      "aplicaciones-externas-presentaciones",
+      "Participación"
+    ],
+    "FechaPublicacion": "2026-06-16",
+    "Seccion": "aplicaciones-externas"
+  },
+  {
+    "Título": "Google Classroom",
+    "URL": "https://classroom.google.com/",
+    "Descripción": "LMS gratuito de Google para gestionar el aula digital. Crea clases, distribuye tareas, comunícate con los alumnos y centraliza todos los recursos educativos.",
+    "Etiquetas": [
+      "aplicaciones-externas-actividades",
+      "LMS"
+    ],
+    "FechaPublicacion": "2026-06-16",
+    "Seccion": "aplicaciones-externas"
+  },
+  {
+    "Título": "Flip (antes Flipgrid)",
+    "URL": "https://info.flip.com/",
+    "Descripción": "Plataforma de vídeo-discusión donde los alumnos responden a temas con vídeos cortos. Fomenta la participación oral, la creatividad y la expresión personal.",
+    "Etiquetas": [
+      "aplicaciones-externas-actividades",
+      "Vídeo"
+    ],
+    "FechaPublicacion": "2026-06-16",
+    "Seccion": "aplicaciones-externas"
+  },
+  {
+    "Título": "Wakelet",
+    "URL": "https://wakelet.com/",
+    "Descripción": "Plataforma de curación de contenidos. Crea colecciones visuales de enlaces, vídeos, imágenes y documentos. Ideal para investigaciones y proyectos colaborativos.",
+    "Etiquetas": [
+      "aplicaciones-externas-plantillas",
+      "Organización"
+    ],
+    "FechaPublicacion": "2026-06-16",
+    "Seccion": "aplicaciones-externas"
+  },
+  {
+    "Título": "GeoGebra",
+    "URL": "https://www.geogebra.org/",
+    "Descripción": "Software matemático interactivo gratuito para geometría, álgebra, estadística y cálculo. Ideal para visualizar conceptos y experimentar con matemáticas.",
+    "Etiquetas": [
+      "aplicaciones-externas-actividades",
+      "Matemáticas"
+    ],
+    "FechaPublicacion": "2026-06-16",
+    "Seccion": "aplicaciones-externas"
+  },
+  {
+    "Título": "Socrative",
+    "URL": "https://www.socrative.com/",
+    "Descripción": "Herramienta de evaluación en tiempo real. Crea cuestionarios, carreras espaciales y ticket de salida. Obtén informes detallados del progreso de la clase.",
+    "Etiquetas": [
+      "aplicaciones-externas-fichas",
+      "Evaluación"
+    ],
+    "FechaPublicacion": "2026-06-16",
+    "Seccion": "aplicaciones-externas"
+  },
+  {
+    "Título": "Book Creator",
+    "URL": "https://bookcreator.com/",
+    "Descripción": "Crea libros digitales interactivos con texto, imágenes, vídeo y audio. Perfecto para que los alumnos creen sus propios proyectos y portfolios.",
+    "Etiquetas": [
+      "aplicaciones-externas-diseño",
+      "Creación"
+    ],
+    "FechaPublicacion": "2026-06-16",
+    "Seccion": "aplicaciones-externas"
+  },
+  {
+    "Título": "ClassDojo",
+    "URL": "https://www.classdojo.com/",
+    "Descripción": "Plataforma de gestión de aula y comunicación con familias. Refuerza comportamientos positivos, comparte momentos de clase y mantiene informadas a las familias.",
+    "Etiquetas": [
+      "aplicaciones-externas-actividades",
+      "Gestión"
+    ],
+    "FechaPublicacion": "2026-06-16",
+    "Seccion": "aplicaciones-externas"
+  },
+  {
+    "Título": "Thinglink",
+    "URL": "https://www.thinglink.com/",
+    "Descripción": "Crea imágenes y vídeos interactivos añadiendo etiquetas, enlaces y contenido multimedia. Ideal para lecciones visuales y exploración autoguiada.",
+    "Etiquetas": [
+      "aplicaciones-externas-presentaciones",
+      "Interactivo"
+    ],
+    "FechaPublicacion": "2026-06-16",
+    "Seccion": "aplicaciones-externas"
   }
 ]
