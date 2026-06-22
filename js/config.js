@@ -5,7 +5,7 @@ const APP_CONFIG = {
   author: {
     name: "Sergi García",
     bio: "Soy Sergi García, profe convencido de que la mejor educación es la que se comparte. Este proyecto es mi granito de arena para una docencia más innovadora, colaborativa y accesible para todos.",
-    image: "sergi.png",
+    image: "/sergi.png",
     extendedBio: "Todo lo que encuentras aquí es gratuito, sin registro y sin ánimo de lucro. Mi objetivo es que cualquier docente, en cualquier centro, pueda acceder a recursos de calidad sin barreras económicas. Porque innovar en educación no debería depender de cuánto pagas."
   },
   sections: [

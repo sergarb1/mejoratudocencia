@@ -13,7 +13,7 @@ const SiteHeader = {
         <div class="flex items-center cursor-pointer group" onclick="window.location.href='/'">
           <div class="relative rounded-2xl overflow-hidden shadow-xl shadow-primary-100/60 group-hover:shadow-primary-200 transition-all duration-500 ease-out bg-white">
             <div class="absolute inset-0 bg-gradient-to-br from-primary-500/15 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-10"></div>
-            <img src="logo.png" alt="Mejora tu Docencia" class="h-12 md:h-16 lg:h-20 w-auto object-contain relative z-20 group-hover:scale-105 transition-transform duration-500 ease-out" />
+            <img src="/logo.png" alt="Mejora tu Docencia" class="h-12 md:h-16 lg:h-20 w-auto object-contain relative z-20 group-hover:scale-105 transition-transform duration-500 ease-out" />
           </div>
         </div>
 
