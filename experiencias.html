@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Experiencias - Mejora tu Docencia</title>
+  <script src="https://unpkg.com/vue@3.4.15/dist/vue.global.prod.js"></script>
+  <script src="https://unpkg.com/lucide@0.321.0/dist/umd/lucide.min.js"></script>
+  <script src="https://cdn.tailwindcss.com/3.4.1"></script>
+  <script src="js/config.js"></script>
+  <script src="js/components.js"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+            outfit: ['Outfit', 'sans-serif'],
+          },
+          colors: {
+            primary: {
+              50: '#f0fdf4', 100: '#dcfce7', 200: '#bbf7d0', 300: '#86efac', 400: '#4ade80',
+              500: '#22c55e', 600: '#16a34a', 700: '#15803d', 800: '#166534', 900: '#14532d',
+            }
+          }
+        }
+      }
+    }
+  </script>
+  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;900&family=Inter:wght@400;500;600;800&display=swap" rel="stylesheet" />
+  <style>
+    [v-cloak] { display: none; }
+    body { font-family: 'Inter', sans-serif; scroll-behavior: smooth; }
+    h1, h2, h3, h4 { font-family: 'Outfit', sans-serif; }
+    .gradient-bg { background: linear-gradient(135deg, #f0fdf4 0%, #ffffff 50%, #f0fdf4 100%); }
+  </style>
+</head>
+<body class="gradient-bg text-gray-800 min-h-screen flex flex-col">
+  <div id="app" v-cloak class="flex flex-col flex-grow">
+    <site-header active-page="experiencias.html"></site-header>
+
+    <main class="flex-grow max-w-7xl mx-auto w-full p-4 md:p-6 mt-4 space-y-6">
+      <div class="text-center space-y-3 max-w-2xl mx-auto">
+        <div class="inline-flex p-2.5 bg-amber-100 text-amber-600 rounded-xl mb-1 shadow-inner">
+          <i data-lucide="book-open" class="w-5 h-5"></i>
+        </div>
+        <h2 class="text-2xl md:text-3xl font-black text-slate-900 leading-tight tracking-tight">Experiencias de aula</h2>
+        <p class="text-xs md:text-sm text-slate-500 font-medium">
+          Compartimos experiencias reales de docentes como tú. Pruebas, errores, aciertos y aprendizajes 
+          que puedes aplicar en tu clase.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-5">
+        <article v-for="exp in experiencias" :key="exp.id"
+          class="bg-white rounded-xl md:rounded-2xl overflow-hidden border border-gray-100 shadow-sm hover:shadow-lg hover:shadow-amber-100 hover:-translate-y-1 transition-all duration-300 group flex flex-col">
+          <div class="h-40 md:h-48 bg-gradient-to-br from-amber-50 to-primary-50 overflow-hidden">
+            <img v-if="exp.imagen" :src="exp.imagen" :alt="exp.titulo" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+            <div v-else class="w-full h-full flex items-center justify-center">
+              <i data-lucide="book-open" class="w-12 h-12 text-amber-200"></i>
+            </div>
+          </div>
+          <div class="p-4 md:p-5 flex flex-col flex-grow">
+            <div class="flex items-center gap-2 mb-2">
+              <span class="text-[9px] font-bold bg-amber-50 text-amber-700 px-1.5 py-0.5 rounded-sm uppercase tracking-wider" v-for="tag in exp.etiquetas" :key="tag">{{ tag }}</span>
+            </div>
+            <h3 class="font-bold text-sm md:text-base text-slate-900 mb-1 leading-tight group-hover:text-primary-700 transition-colors">{{ exp.titulo }}</h3>
+            <p class="text-xs md:text-sm text-slate-500 leading-relaxed flex-grow">{{ exp.descripcion }}</p>
+            <div class="mt-3 pt-3 border-t border-gray-50 flex items-center justify-between">
+              <span class="text-[10px] text-gray-400 flex items-center gap-1">
+                <i data-lucide="user" class="w-2.5 h-2.5"></i> {{ exp.autor }} · {{ formatFecha(exp.fecha) }}
+              </span>
+              <a :href="exp.url" class="inline-flex items-center gap-1 text-[10px] font-bold text-primary-600 hover:text-primary-800 uppercase tracking-widest transition-colors">
+                Leer <i data-lucide="arrow-right" class="w-2.5 h-2.5"></i>
+              </a>
+            </div>
+          </div>
+        </article>
+      </div>
+
+      <div v-if="!experiencias.length" class="text-center py-10 bg-white/50 rounded-2xl border border-dashed border-gray-300">
+        <div class="inline-flex p-3 bg-gray-100 rounded-full mb-3">
+          <i data-lucide="book-open" class="w-6 h-6 text-gray-400"></i>
+        </div>
+        <p class="text-xs text-gray-500 font-medium">Todavía no hay experiencias publicadas.</p>
+        <p class="text-[10px] text-gray-400 mt-1">¡La primera está en camino!</p>
+      </div>
+    </main>
+
+    <site-footer></site-footer>
+  </div>
+
+  <script>
+    const { createApp, ref, computed, nextTick } = Vue;
+
+    const experienciasData = [
+      {
+        id: 'pomodoro-en-aula',
+        titulo: 'Pomodoro en el aula de Ofimática',
+        autor: 'Raúl',
+        fecha: '2026-06-18',
+        url: 'experiencias/experiencia-pomodoro-en-aula.html',
+        descripcion: 'Cómo aplicar la técnica Pomodoro en sesiones de 3 horas con alumnos de Grado Medio de SMR. Una experiencia que mejoró la productividad y el ambiente en clase.',
+        etiquetas: ['Metodologías', 'Técnicas de estudio'],
+        imagen: 'experiencias/infografiaPomodoro.png'
+      }
+    ];
+
+    createApp({
+      components: { SiteHeader, SiteFooter },
+      setup() {
+        const config = ref(APP_CONFIG);
+        const experiencias = ref(experienciasData);
+
+        const formatFecha = (fecha) => {
+          if (!fecha) return '';
+          const date = new Date(fecha);
+          if (isNaN(date.getTime())) return fecha;
+          return date.toLocaleDateString('es-ES', { day: '2-digit', month: 'long', year: 'numeric' });
+        };
+
+        return { config, experiencias, formatFecha };
+      },
+      mounted() { nextTick(() => lucide.createIcons()); }
+    }).mount("#app");
+  </script>
+</body>
+</html>
