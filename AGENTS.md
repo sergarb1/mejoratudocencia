@@ -7,6 +7,8 @@ Web estática con Vue 3 + Tailwind CSS + Lucide icons. Sin build step — CDN di
 - Cada página es un HTML standalone con Vue 3 montado en `#app`
 - `js/config.js` — Config global (secciones, redes sociales, colores, autor)
 - `js/components.js` — Componentes Vue compartidos: `site-header`, `site-footer`
+- `js/tailwind-config.js` — Config de Tailwind (paleta primary, fuentes) compartida por todas las páginas
+- `js/app.css` — CSS común: gradient-bg, glass-effect, cards, article-content, transiciones Vue, list-enter/leave/move
 - `aplicaciones.json` — Datos de aplicaciones cargados por `aplicaciones.html` e `index.html`
 - `recursos.json` — Datos de recursos cargados dinámicamente por `recursos.html` e `index.html`
 - `experiencias/` — Artículos de experiencias de aula, cada uno en su subcarpeta `experiencias/<slug>/`
@@ -49,12 +51,22 @@ Web estática con Vue 3 + Tailwind CSS + Lucide icons. Sin build step — CDN di
 ### Plantilla de artículo (`experiencias/<slug>/index.html`)
 
 Cada artículo debe:
-- Cargar `../../js/config.js` y `../../js/components.js` (desde la subcarpeta)
+- Cargar `../../js/config.js`, `../../js/components.js`, `../../js/tailwind-config.js`, `../../js/app.css` (desde la subcarpeta)
 - Usar `<site-header active-page="experiencias.html">` y `<site-footer>`
-- Incluir los mismos estilos de `tailwind.config` (misma paleta primary)
-- Usar la clase `.article-content` para el contenido del artículo (estilos predefinidos para h2, h3, p, ul, ol, blockquote, img)
-- Enlazar volver atrás con `../../experiencias.html`
+- Usar la clase `.article-content` para el contenido del artículo (estilos en `js/app.css`)
+- Enlazar volver atrás con `/experiencias.html` (ruta absoluta desde raíz)
 - Inicializar Vue con `createApp`, montar en `#app`, llamar `lucide.createIcons()` en mounted
+
+## Layout compartido
+
+Todo el CSS común está centralizado en `js/app.css`. La configuración de Tailwind (paleta primary, fuentes) en `js/tailwind-config.js`. Las páginas que necesiten CSS propio lo mantienen en un `<style>` inline después de los imports compartidos. Para añadir una página nueva, el `head` mínimo es:
+
+```html
+<script src="js/config.js"></script>
+<script src="js/components.js"></script>
+<script src="js/tailwind-config.js"></script>
+<link rel="stylesheet" href="js/app.css" />
+```
 
 ## Estilo visual
 
@@ -76,7 +88,7 @@ Cada artículo debe:
 - `aplicaciones.json` tiene campo `Icono` (nombre de icono Lucide), `Etiquetas` (array), `GitHub` (opcional)
 - `recursos.json` tiene campo `Seccion` (id de sección), `Etiquetas` (array con prefijo seccion-tipo), `URL` (obligatorio)
 - No hay npm ni build — todo via CDN (unpkg + cdn.tailwindcss.com)
-- Las config de color de Tailwind se repiten en cada página (no hay shared tailwind.config)
+- La config de Tailwind (`js/tailwind-config.js`) se carga después del CDN de Tailwind
 - Footer incluye aviso de licencia CC BY-SA 4.0 y CTA de petición de apps/recursos
 
 ## Skeletons de carga
