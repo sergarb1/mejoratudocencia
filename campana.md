@@ -131,3 +131,113 @@ Fase beta: mostramos lo que ya hay y pedimos qué más necesitan. En septiembre,
 - Crecimiento de seguidores
 - Interacciones (comentarios, guardados, compartidos)
 - Clicks al enlace de la bio
+
+---
+
+# Post Pomodoro — guía de contenido
+
+## Para Instagram (feed)
+
+**Carousel de 4-5 diapositivas** basado en el artículo de experiencia.
+
+### Slide 1 — Portada
+- Título: "Pomodoro en el aula 🍅"
+- Subtítulo: "Cómo mantener la concentración en sesiones largas"
+- Fondo verde degradado con icono de temporizador
+- Texto pequeño: "Experiencia real · me joratudocencia.es"
+
+### Slide 2 — El problema
+- Icono: 💤
+- "Las sesiones de 2-3 horas agotan a los alumnos. Pasada la primera hora, la concentración cae y las distracciones aumentan."
+- "Necesitábamos una estructura que mantuviera el foco sin agotar a nadie."
+
+### Slide 3 — La solución: tabla de tiempos
+- Mostrar los 4 ciclos en formato visual:
+  - 15+3 → Primaria (sesiones 45-60 min)
+  - 25+5 → ESO (sesiones 50-60 min)
+  - 35+7 → Cualquier materia (sesiones ≥2h)
+  - 45+10 → Bachillerato / Ciclos (investigación)
+- Destacar el recomendado: **35+7** como punto óptimo
+
+### Slide 4 — Reglas del descanso
+- 📵 Pantallas apagadas (descanso visual)
+- 🚶‍♂️ Levantarse y estirar (descanso activo)
+- 🗣️ Socializar (primeros minutos del descanso)
+
+### Slide 5 — Resultados + CTA
+- 4 iconos con resultados: concentración, menos agotamiento, mejor ambiente, más autonomía
+- CTA: "Lee la experiencia completa en mej oratudocencia.es/experiencias/pomodoro"
+- "Comparte con otros profes 👩‍🏫👨‍🏫"
+
+### Texto del post
+```
+¿Tus alumnos se desconcentran en sesiones largas? 😴
+
+Probamos la técnica Pomodoro adaptada al aula y estos fueron los resultados:
+
+🍅 35 min de trabajo intensivo + 7 min de descanso activo
+📵 Pantallas apagadas durante el descanso
+🚶‍♂️ Levantarse y estirar (nada de quedarse sentados)
+
+Funciona en cualquier materia y nivel. Solo necesitas un temporizador.
+
+👉 Guárdalo para tu próxima clase
+👉 Comparte con otros profes
+👉 Enlace en la bio para leer la experiencia completa
+
+#Pomodoro #TecnicaDeEstudio #MetodologiasActivas #Educacion #Docentes #MejoraTuDocencia
+```
+
+## Para Telegram
+
+**Mismo contenido adaptado al formato texto.** Sin carrusel, directo al grano.
+
+```
+🍅 Pomodoro en el aula: cómo mantener la concentración
+
+Las sesiones de 2-3 horas son un reto. Probamos una adaptación de la técnica Pomodoro y cambió la dinámica.
+
+Los tiempos que mejor funcionaron:
+• 15+3 → Primaria (sesiones 45-60 min)
+• 25+5 → ESO (50-60 min)
+• 35+7 → Cualquier materia ≥2h ★ recomendado
+• 45+10 → Bachillerato / Ciclos
+
+Las reglas del descanso:
+📵 Pantallas apagadas
+🚶‍♂️ Levantarse y estirar
+🗣️ Socializar (con límite)
+
+Resultados: más concentración, menos agotamiento, mejor ambiente, más autonomía.
+
+📖 Lee la experiencia completa:
+https://mejoratudocencia.es/experiencias/pomodoro/
+
+#Pomodoro #Experiencias #MejoraTuDocencia
+```
+
+---
+
+# Prompt para diseño visual / layout de Mejora tu Docencia
+
+## Para generar imágenes de campaña (Midjourney / DALL-E / Leonardo)
+
+### Prompt base (portada post Pomodoro)
+```
+Flat lay of a teacher's desk with a tomato timer, open notebook, pencils, and a cup of tea. Soft green and white color palette. Natural lighting from the left. Minimalist and cozy classroom aesthetic. Top-down photography style. Warm tones. Educational vibe. 4k.
+```
+
+### Prompt base (identidad visual general)
+```
+Modern educational brand identity with soft green gradient (#f0fdf4 to #16a34a), clean sans-serif typography, organic shapes, subtle geometric patterns. Minimalist web design mockup showing a header with menu, hero section with app cards, and footer. Light airy background with green accents. Glassmorphism UI elements. Mobile and desktop views side by side.
+```
+
+### Prompt para cards de Instagram (genérico)
+```
+Square Instagram post template with soft green gradient background, white rounded cards, subtle shadow. Space for title, icon, and description. Clean modern educational design. No text, just the layout template. 1080x1080px. Minimalist.
+```
+
+### Prompt para portada de artículo / blog
+```
+Clean blog article header with green gradient background, white rounded shapes overlapping, space for title text and a small illustration. Modern educational website design. Soft shadows. Outfit and Inter typography style. Wide aspect ratio 1200x630px.
+```

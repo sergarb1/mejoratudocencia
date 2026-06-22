@@ -13,7 +13,7 @@ Web estática con Vue 3 + Tailwind CSS + Lucide icons. Sin build step — CDN di
 - `recursos.json` — Datos de recursos cargados dinámicamente por `recursos.html` e `index.html`
 - `experiencias/` — Artículos de experiencias de aula, cada uno en su subcarpeta `experiencias/<slug>/`
 - `mates/` — Subweb de matemáticas con su propio index, libros, proyectos
-- `campana-telegram.md` — Plan de campaña para Telegram e Instagram (beta, estreno septiembre 2026)
+- `campana.md` — Plan de campaña para Telegram e Instagram (beta, estreno septiembre 2026)
 - `favicon.ico` — Favicon del sitio
 - `sergi.png` — Foto del autor
 - `logo.png` — Logo horizontal del sitio
