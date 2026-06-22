@@ -28,7 +28,7 @@ Web estática con Vue 3 + Tailwind CSS + Lucide icons. Sin build step — CDN di
 
 ## Experiencias
 
-- Los artículos van en `experiencias/` como HTML standalone con el layout del sitio (Vue header + footer)
+- Los artículos van en `experiencias/<slug>/index.html` con sus assets en la misma carpeta
 - La lista se carga desde `experiencias.html` con datos inline en el setup de Vue
 - `index.html` muestra las últimas 3 en una sección entre Recursos y Aplicaciones
 - Cada card es un `<a>` completo que enlaza al artículo
