@@ -96,6 +96,53 @@ Todo el CSS común está centralizado en `js/app.css`. La configuración de Tail
 
 En `index.html`, las secciones de últimos recursos y apps muestran skeletons (divs grises animados con `animate-pulse`) mientras se resuelven los fetch a `recursos.json` y `aplicaciones.json`.
 
+## Instagram — Posts visuales (`instagram/`)
+
+### Estructura
+
+- Cada post en su carpeta `instagram/<slug>/index.html`
+- Usa `instagram/layout.png` (1254×1254) como fondo de todos los slides
+- html2canvas (CDN) para exportar slides a PNG de 1080×1080
+- Fuente Architects Daughter para títulos, Inter para cuerpo
+- Sin build step, todo CDN
+
+### layout.png — Área blanca analizada (1254×1254)
+
+- **Área blanca utilizable:** x=40 a 1216, y=37 a 1223 (~1176×1186px)
+- **Zona segura para texto (sin decoraciones):** x=80 a 1180 (1100px), y=60 a 960 (900px)
+- **Decoraciones mayores desde y=983+**
+- **Decoraciones:**
+  - Izquierda: línea azul fina x=30-35 rgb(10,140,219)
+  - Derecha: línea verde fina x=1220-1225 rgb(93,196,46)
+  - Arriba: barra degradada sutil y=0-36
+  - Abajo: estrella amarilla y=1040-1080, hoja/bola verde y=1140, elementos oscuros y=1090 y 1170
+- html2canvas con `scale: 1080/1254` produce PNG de 1080×1080
+- html2canvas NO funciona desde `file://` (CORS); requiere servidor local (`python3 -m http.server`)
+
+### Post 01 — Pomodoro en el aula (`instagram/01-pomodoro/`)
+
+3 slides en carrusel:
+1. **Cover** — Emoji 🍅, título, hook ("compañero compartió su experiencia"), swipe indicator, bottom-brand
+2. **Tiempos** — 4 ciclos (15+3, 25+5, 35+7★, 45+10) con iconos por nivel, tip, bottom-brand
+3. **Reglas + Resultados** — 6 reglas de descanso en grid 3×2 + 4 resultados (concentración, agotamiento, ambiente, autonomía), CTA artículo, bottom-brand
+
+Debajo: textos listos para copiar (Instagram y Telegram) con hashtags y enlaces Instagram/Telegram resaltados (.url, .hash).
+
+### Convenciones de slides
+
+- Transición con `opacity` + `visibility` (no `display: none` — necesario para html2canvas)
+- Carrusel con dots de navegación
+- Botones de descarga individual y "descargar todo"
+- Cada slide: `<img class="bg" src="/instagram/layout.png">` + `.content` con padding de 60/90/300px
+
+### Alineación vertical de contenido
+
+- **Slide 1 (Cover):** `justify-content: space-between` — el contenido se centra verticalmente (tiene poco texto, queda bien centrado) con un `.top-inner` y `.swipe` dentro de `.top` + `.bottom-brand` fuera
+- **Slides 2+ (contenido):** `justify-content: space-between` + `padding: 60px 90px 300px` — el contenido principal va en un `.top` y la marca/CTA en `.bottom-brand`; así se aprovecha todo el alto del slide
+- Cada slide usa `.top` (wrapper flex column centrado) para el contenido y `.bottom-brand` al final
+- **NO** mezclar `center` y `flex-start` entre slides de contenido — el salto visual es muy notorio (~300px de diferencia en un slide de 1254px)
+- Padding-bottom 300px mantiene el contenido en zona segura (y<960)
+
 ## Servidor local
 
 No hay servidor de desarrollo. Abrir los HTML directamente o servir con cualquier http server:

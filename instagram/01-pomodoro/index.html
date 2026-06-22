@@ -4,135 +4,106 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>01 — Pomodoro en el aula • Mejora tu Docencia</title>
-  <link href="https://fonts.googleapis.com/css2?family=Architects+Daughter&family=Inter:wght@500;600;800&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Architects+Daughter&family=Inter:wght@500;600;700;800&display=swap" rel="stylesheet" />
   <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
-
     body {
       background: #e2e8f0;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      padding: 1.5rem;
-      font-family: 'Inter', sans-serif;
+      display: flex; flex-direction: column; align-items: center;
+      padding: 1.5rem; font-family: 'Inter', sans-serif;
     }
-
     h1, h2, .ad { font-family: 'Architects Daughter', cursive; }
 
     /* --- Carrusel --- */
     .carousel {
       position: relative;
-      width: 1254px;
-      height: 1254px;
+      width: 1254px; height: 1254px;
       border-radius: 20px;
       box-shadow: 0 20px 60px rgba(0,0,0,0.15);
     }
-
     .slide {
-      position: absolute;
-      inset: 0;
-      overflow: hidden;
-      border-radius: 20px;
-      opacity: 0;
-      visibility: hidden;
+      position: absolute; inset: 0;
+      overflow: hidden; border-radius: 20px;
+      opacity: 0; visibility: hidden;
       transition: opacity .4s, visibility .4s;
     }
     .slide.active { opacity: 1; visibility: visible; }
-
     .slide .bg {
-      position: absolute;
-      top: 0; left: 0;
+      position: absolute; top: 0; left: 0;
       width: 1254px; height: 1254px;
       pointer-events: none;
     }
-
     .slide .content {
-      position: absolute;
-      inset: 0;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      padding: 90px 100px;
-      text-align: center;
+      position: absolute; inset: 0;
+      display: flex; flex-direction: column;
+      align-items: center; text-align: center;
+      padding: 60px 90px 300px;
+      justify-content: space-between;
     }
+    .emoji-xl { font-size: 80px; line-height: 1; margin-bottom: 12px; }
 
     /* ===== SLIDE 1 – COVER ===== */
-    .slide1 .emoji { font-size: 96px; line-height: 1; margin-bottom: 14px; }
+    .slide1 .top {
+      display: flex; flex-direction: column; align-items: center;
+      flex: 1; width: 100%; justify-content: space-between;
+    }
+    .slide1 .top-inner {
+      display: flex; flex-direction: column; align-items: center;
+      flex: 1; justify-content: center;
+    }
     .slide1 h1 {
-      font-size: 104px;
-      line-height: 1.05;
-      color: #0f172a;
-      margin-bottom: 10px;
+      font-size: 104px; line-height: 1.05; color: #0f172a;
+      margin-bottom: 12px;
+    }
+    .slide1 .hook {
+      font-weight: 600; font-size: 32px; color: #475569;
+      line-height: 1.35; margin-bottom: 10px; max-width: 760px;
     }
     .slide1 .sub {
-      font-weight: 600;
-      font-size: 34px;
-      color: #475569;
-      line-height: 1.35;
-      margin-bottom: 36px;
-      max-width: 750px;
-    }
-    .slide1 .tag {
-      font-size: 28px;
-      color: #16a34a;
-    }
-    .slide1 .tag span {
-      background: rgba(22,163,74,0.1);
-      padding: 8px 28px;
-      border-radius: 40px;
+      font-weight: 500; font-size: 26px; color: #64748b;
+      line-height: 1.4; margin-bottom: 28px; max-width: 720px;
     }
     .slide1 .swipe {
-      position: absolute;
-      bottom: 48px;
-      font-size: 20px;
-      color: #94a3b8;
-      font-weight: 600;
+      font-size: 24px; color: #94a3b8; font-weight: 600;
+      display: flex; align-items: center; gap: 8px; padding-bottom: 10px;
     }
 
     /* ===== SLIDE 2 – TIEMPOS ===== */
+    .slide2 .top {
+      display: flex; flex-direction: column; align-items: center;
+      width: 100%; flex: 1; justify-content: space-between;
+    }
     .slide2 h2 {
-      font-size: 64px;
-      color: #0f172a;
-      margin-bottom: 6px;
+      font-size: 72px; color: #0f172a; margin-bottom: 6px;
     }
     .slide2 .sub2 {
-      font-weight: 500;
-      font-size: 24px;
-      color: #64748b;
-      margin-bottom: 44px;
+      font-size: 26px; font-weight: 500; color: #64748b;
+      margin-bottom: 40px;
     }
     .ciclos {
-      display: flex;
-      flex-direction: column;
-      gap: 16px;
-      width: 100%;
-      max-width: 780px;
+      display: flex; flex-direction: column;
+      gap: 20px; width: 100%; max-width: 1000px;
     }
     .ciclo {
-      display: flex;
-      align-items: center;
-      gap: 22px;
-      background: rgba(255,255,255,0.55);
+      display: flex; align-items: center; gap: 20px;
+      background: rgba(255,255,255,0.6);
       backdrop-filter: blur(4px);
-      padding: 20px 28px;
-      border-radius: 60px;
+      padding: 24px 30px; border-radius: 50px;
       border: 1px solid rgba(255,255,255,0.5);
     }
+    .ciclo .emoji-sm { font-size: 38px; min-width: 48px; text-align: center; }
     .ciclo .num {
-      font-size: 40px;
-      font-weight: 400;
-      color: #16a34a;
-      min-width: 100px;
-      text-align: center;
+      font-size: 46px; font-weight: 400; color: #16a34a;
+      min-width: 110px; text-align: center;
     }
     .ciclo .desc {
-      font-size: 20px;
-      font-weight: 600;
-      color: #1e293b;
-      text-align: left;
-      flex: 1;
+      font-size: 24px; font-weight: 600; color: #1e293b;
+      text-align: left; flex: 1;
+    }
+    .ciclo .extra {
+      font-size: 17px; font-weight: 500; color: #94a3b8;
+      text-align: right; min-width: 130px;
     }
     .ciclo.destacado {
       background: rgba(22,163,74,0.12);
@@ -140,203 +111,135 @@
     }
     .ciclo.destacado .num { color: #15803d; }
     .ciclo .badge {
-      font-size: 14px;
-      font-weight: 800;
-      background: #16a34a;
-      color: #fff;
-      padding: 5px 18px;
-      border-radius: 30px;
+      font-size: 15px; font-weight: 800;
+      background: #16a34a; color: #fff;
+      padding: 5px 20px; border-radius: 30px;
+      margin-left: 8px;
+    }
+
+    .slide2 .tip {
+      font-size: 26px; font-weight: 600; color: #64748b;
+      max-width: 800px; line-height: 1.4;
+    }
+
+    .bottom-brand {
+      font-size: 24px; color: #16a34a; font-weight: 600;
+      display: flex; align-items: center; gap: 12px;
+      letter-spacing: 0.5px;
+    }
+    .bottom-brand .sep {
+      width: 50px; height: 2px; background: rgba(22,163,74,0.2);
     }
 
     /* ===== SLIDE 3 – REGLAS + RESULTADOS ===== */
-    .slide3 .content { padding: 80px 100px; justify-content: flex-start; padding-top: 110px; }
+    .slide3 .top {
+      display: flex; flex-direction: column; align-items: center;
+      width: 100%; flex: 1;
+    }
     .slide3 h2 {
-      font-size: 60px;
-      color: #0f172a;
-      margin-bottom: 10px;
+      font-size: 64px; color: #0f172a; margin-bottom: 6px;
     }
     .slide3 .sub3 {
-      font-weight: 500;
-      font-size: 22px;
-      color: #64748b;
-      margin-bottom: 44px;
+      font-size: 26px; font-weight: 500; color: #64748b; margin-bottom: 30px;
     }
-
     .reglas {
-      display: flex;
-      gap: 18px;
-      width: 100%;
-      max-width: 850px;
+      display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 16px;
+      width: 100%; max-width: 1000px;
     }
     .regla {
-      flex: 1;
-      background: rgba(255,255,255,0.55);
+      background: rgba(255,255,255,0.6);
       backdrop-filter: blur(4px);
-      padding: 24px 14px;
-      border-radius: 28px;
+      padding: 26px 14px 22px;
+      border-radius: 24px;
       border: 1px solid rgba(255,255,255,0.5);
       text-align: center;
     }
-    .regla .r-icon { font-size: 44px; margin-bottom: 8px; }
+    .regla .r-icon { font-size: 46px; margin-bottom: 6px; }
     .regla .r-tit {
-      font-size: 22px;
-      font-weight: 400;
-      color: #0f172a;
-      margin-bottom: 4px;
+      font-size: 22px; font-weight: 400; color: #0f172a; margin-bottom: 4px;
     }
-    .regla .r-desc {
-      font-size: 15px;
-      font-weight: 600;
-      color: #64748b;
-    }
+    .regla .r-desc { font-size: 14px; font-weight: 600; color: #64748b; line-height: 1.3; }
 
     .divider {
-      width: 60%;
-      height: 2px;
-      background: rgba(148,163,184,0.15);
-      margin: 30px 0 24px;
+      width: 50%; height: 2px;
+      background: rgba(148,163,184,0.12);
+      margin: 32px 0 24px;
     }
 
-    .resultados {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 14px 28px;
-      text-align: left;
-      width: 100%;
-      max-width: 750px;
+    .results-grid {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 16px 32px;
+      text-align: left; width: 100%; max-width: 780px;
+      margin-bottom: 16px;
     }
     .res-item {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      font-size: 19px;
-      font-weight: 700;
-      color: #0f172a;
+      display: flex; align-items: center; gap: 14px;
+      font-size: 22px; font-weight: 700; color: #0f172a;
     }
-    .res-item .check { font-size: 26px; }
+    .res-item .check { font-size: 30px; }
 
     .slide3 .cta {
-      margin-top: 30px;
-      font-size: 24px;
-      color: #16a34a;
+      margin-top: 32px;
+      font-size: 28px; color: #16a34a;
+      display: flex; align-items: center; gap: 8px;
+    }
+    .slide3 .cta small {
+      font-size: 18px; font-weight: 500; color: #94a3b8;
     }
 
     /* --- Navegación --- */
-    .nav-dots {
-      display: flex;
-      gap: 10px;
-      margin: 16px 0 14px;
-    }
+    .nav-dots { display: flex; gap: 10px; margin: 14px 0 12px; }
     .nav-dots button {
-      width: 14px; height: 14px;
-      border-radius: 50%;
-      border: 2px solid #16a34a;
-      background: transparent;
-      cursor: pointer;
-      transition: .2s;
+      width: 14px; height: 14px; border-radius: 50%;
+      border: 2px solid #16a34a; background: transparent;
+      cursor: pointer; transition: .2s;
     }
     .nav-dots button.active { background: #16a34a; transform: scale(1.2); }
 
     /* --- Botones --- */
-    .actions {
-      display: flex;
-      gap: 10px;
-      flex-wrap: wrap;
-      justify-content: center;
-      margin-bottom: 16px;
-    }
+    .actions { display: flex; gap: 8px; flex-wrap: wrap; justify-content: center; margin-bottom: 12px; }
     .btn {
-      padding: 12px 28px;
-      font-weight: 800;
-      font-size: 14px;
-      color: #fff;
-      background: #16a34a;
-      border: none;
-      border-radius: 40px;
-      cursor: pointer;
-      transition: transform .15s;
+      padding: 11px 26px; font-weight: 800; font-size: 14px;
+      color: #fff; background: #16a34a; border: none;
+      border-radius: 40px; cursor: pointer; transition: transform .15s;
     }
     .btn:hover { transform: scale(1.04); }
     .btn:disabled { opacity: .5; cursor: not-allowed; transform: none; }
-    .btn-outline {
-      background: transparent;
-      color: #16a34a;
-      border: 2px solid #16a34a;
-    }
     .btn-gray { background: #475569; }
 
-    .nota {
-      font-size: 13px;
-      color: #64748b;
-      margin-bottom: 8px;
-    }
-    .error {
-      font-size: 13px;
-      color: #dc2626;
-      display: none;
-      margin-bottom: 8px;
-    }
+    .nota { font-size: 13px; color: #64748b; margin-bottom: 6px; }
+    .error { font-size: 13px; color: #dc2626; display: none; margin-bottom: 6px; }
 
-    /* ===== POST TEXT (debajo) ===== */
+    /* ===== POST TEXT ===== */
     .post-text {
-      width: 1254px;
-      max-width: 100%;
-      background: #fff;
-      border-radius: 20px;
-      padding: 32px 40px;
+      width: 1254px; max-width: 100%;
+      background: #fff; border-radius: 20px;
+      padding: 32px 36px;
       box-shadow: 0 10px 40px rgba(0,0,0,0.08);
-      margin-top: 24px;
-    }
-    .post-text h3 {
-      font-size: 18px;
-      font-weight: 800;
-      color: #0f172a;
-      margin-bottom: 12px;
-      display: flex;
-      align-items: center;
-      gap: 8px;
-    }
-    .post-text h3 small {
-      font-weight: 500;
-      font-size: 13px;
-      color: #94a3b8;
-    }
-    .post-text .box {
-      background: #f8fafc;
-      border-radius: 16px;
-      padding: 24px 28px;
-      font-size: 15px;
-      line-height: 1.65;
-      color: #1e293b;
-      white-space: pre-wrap;
-      border: 1px solid #e2e8f0;
-    }
-    .post-text .box .url {
-      color: #16a34a;
-      font-weight: 700;
-      text-decoration: underline;
-    }
-    .post-text .box .hash {
-      color: #2563eb;
-      font-weight: 600;
-    }
-    .post-text .btn-copy {
-      margin-top: 12px;
-      padding: 10px 24px;
-      font-weight: 700;
-      font-size: 13px;
-      color: #16a34a;
-      background: transparent;
-      border: 2px solid #16a34a;
-      border-radius: 40px;
-      cursor: pointer;
-      transition: .2s;
-    }
-    .post-text .btn-copy:hover { background: #16a34a; color: #fff; }
-
-    .telegram-box {
       margin-top: 20px;
     }
+    .post-text h3 {
+      font-size: 18px; font-weight: 800; color: #0f172a;
+      margin-bottom: 10px; display: flex; align-items: center; gap: 8px;
+    }
+    .post-text h3 small { font-weight: 500; font-size: 13px; color: #94a3b8; }
+    .post-text .box {
+      background: #f8fafc; border-radius: 16px;
+      padding: 22px 26px;
+      font-size: 15px; line-height: 1.65;
+      color: #1e293b; white-space: pre-wrap;
+      border: 1px solid #e2e8f0;
+    }
+    .post-text .box .url { color: #16a34a; font-weight: 700; text-decoration: underline; }
+    .post-text .box .hash { color: #2563eb; font-weight: 600; }
+    .post-text .btn-copy {
+      margin-top: 10px; padding: 9px 22px;
+      font-weight: 700; font-size: 13px;
+      color: #16a34a; background: transparent;
+      border: 2px solid #16a34a; border-radius: 40px;
+      cursor: pointer; transition: .2s;
+    }
+    .post-text .btn-copy:hover { background: #16a34a; color: #fff; }
+    .tg-box { margin-top: 18px; }
   </style>
 </head>
 <body>
@@ -344,78 +247,130 @@
   <!-- ============ CARRUSEL ============ -->
   <div class="carousel">
 
-    <!-- Slide 1: Cover -->
+    <!-- SLIDE 1 — Cover -->
     <div class="slide slide1 active" data-slide="0">
-      <img class="bg" src="../layout.png" alt="" />
+      <img class="bg" src="/instagram/layout.png" alt="" />
       <div class="content">
-        <div class="emoji">🍅</div>
-        <h1>Pomodoro<br />en el aula</h1>
-        <p class="sub">Mantén la concentración<br />en sesiones largas</p>
-        <div class="tag"><span>mejoratudocencia.es</span></div>
-        <div class="swipe">Desliza →</div>
+        <div class="top">
+          <div class="top-inner">
+            <div class="emoji-xl">🍅</div>
+            <h1>Pomodoro<br />en el aula</h1>
+            <p class="hook">Un compañero perdió la concentración en sesiones de 3h 😅</p>
+            <p class="sub">
+              Probó Pomodoro adaptado al aula y nos contó cómo lo solucionó.<br />
+              Esto es lo que aprendimos de su experiencia.
+            </p>
+          </div>
+          <div class="swipe">👆 Desliza para ver los tiempos →</div>
+        </div>
+        <div class="bottom-brand">
+          <span class="sep"></span> mejoratudocencia.es <span class="sep"></span>
+        </div>
       </div>
     </div>
 
-    <!-- Slide 2: Tiempos -->
+    <!-- SLIDE 2 — Tiempos -->
     <div class="slide slide2" data-slide="1">
-      <img class="bg" src="../layout.png" alt="" />
+      <img class="bg" src="/instagram/layout.png" alt="" />
       <div class="content">
-        <div class="emoji">⏱️</div>
-        <h2>Los tiempos ideales</h2>
-        <p class="sub2">Elige el ciclo ideal para tu clase</p>
-        <div class="ciclos">
-          <div class="ciclo">
-            <div class="num">15'+3'</div>
-            <div class="desc">Primaria · sesiones de 45–60 min</div>
+        <div class="top">
+          <div class="emoji-xl">⏱️</div>
+          <h2>¿Qué ciclo te va mejor?</h2>
+          <p class="sub2">Los tiempos que le funcionaron a él · cada nivel y materia tiene su ritmo</p>
+          <div class="ciclos">
+            <div class="ciclo">
+              <div class="emoji-sm">🧒</div>
+              <div class="num">15'+3'</div>
+              <div class="desc">Primaria · actividades cortas y variadas</div>
+              <div class="extra">clases de 45–60′</div>
+            </div>
+            <div class="ciclo">
+              <div class="emoji-sm">📚</div>
+              <div class="num">25'+5'</div>
+              <div class="desc">ESO · tareas con cambios frecuentes</div>
+              <div class="extra">clases de 50–60′</div>
+            </div>
+            <div class="ciclo destacado">
+              <div class="emoji-sm">⭐</div>
+              <div class="num">35'+7'</div>
+              <div class="desc">Cualquier materia · el punto óptimo</div>
+              <div class="extra">sesiones ≥ 2 h</div>
+              <div class="badge">Recomendado</div>
+            </div>
+            <div class="ciclo">
+              <div class="emoji-sm">🎓</div>
+              <div class="num">45'+10'</div>
+              <div class="desc">Bachillerato · investigación o proyectos</div>
+              <div class="extra">sesiones largas</div>
+            </div>
           </div>
-          <div class="ciclo">
-            <div class="num">25'+5'</div>
-            <div class="desc">ESO · tareas con cambios frecuentes</div>
-          </div>
-          <div class="ciclo destacado">
-            <div class="num">35'+7'</div>
-            <div class="desc">Cualquier materia · sesiones ≥ 2 h</div>
-            <div class="badge">★ Recomendado</div>
-          </div>
-          <div class="ciclo">
-            <div class="num">45'+10'</div>
-            <div class="desc">Bachillerato · investigación o proyectos</div>
-          </div>
+          <p class="tip">
+            💡 Su clave: mantener la misma estructura cada día · los alumnos saben qué esperar
+          </p>
+        </div>
+        <div class="bottom-brand">
+          <span class="sep"></span> mejoratudocencia.es <span class="sep"></span>
         </div>
       </div>
     </div>
 
-    <!-- Slide 3: Reglas + Resultados -->
+    <!-- SLIDE 3 — Reglas + Resultados -->
     <div class="slide slide3" data-slide="2">
-      <img class="bg" src="../layout.png" alt="" />
+      <img class="bg" src="/instagram/layout.png" alt="" />
       <div class="content">
-        <h2>Claves del descanso</h2>
-        <p class="sub3">Tres reglas para que funcione</p>
-        <div class="reglas">
-          <div class="regla">
-            <div class="r-icon">📵</div>
-            <div class="r-tit">Pantallas apagadas</div>
-            <div class="r-desc">Descanso visual obligatorio</div>
+        <div class="top">
+          <h2>6 reglas de oro</h2>
+          <p class="sub3">Las 6 reglas que se puso para que el descanso funcionara de verdad</p>
+          <div class="reglas">
+            <div class="regla">
+              <div class="r-icon">📵</div>
+              <div class="r-tit">Pantallas apagadas</div>
+              <div class="r-desc">Descanso visual · la vista lo agradece</div>
+            </div>
+            <div class="regla">
+              <div class="r-icon">🚶‍♂️</div>
+              <div class="r-tit">Levántate y estira</div>
+              <div class="r-desc">Descanso activo · nada de quedarse clavado</div>
+            </div>
+            <div class="regla">
+              <div class="r-icon">🗣️</div>
+              <div class="r-tit">Socializa (con control)</div>
+              <div class="r-desc">Habla, ríe… pero al timer, vuelta al trabajo</div>
+            </div>
+            <div class="regla">
+              <div class="r-icon">💧</div>
+              <div class="r-tit">Bebe agua</div>
+              <div class="r-desc">Hidrátate · el cerebro funciona mejor</div>
+            </div>
+            <div class="regla">
+              <div class="r-icon">🌬️</div>
+              <div class="r-tit">Respira hondo</div>
+              <div class="r-desc">3 respiraciones · reinicia tu atención</div>
+            </div>
+            <div class="regla">
+              <div class="r-icon">📋</div>
+              <div class="r-tit">Revisa tu plan</div>
+              <div class="r-desc">Mira qué toca · vuelve con propósito</div>
+            </div>
           </div>
-          <div class="regla">
-            <div class="r-icon">🚶‍♂️</div>
-            <div class="r-tit">Levántate y estira</div>
-            <div class="r-desc">Descanso activo, nada de quedarse</div>
+          <div class="divider"></div>
+          <p style="font-size: 22px; font-weight: 700; color: #0f172a; margin-bottom: 16px;">
+            🎯 Los resultados que obtuvo
+          </p>
+            <div class="results-grid">
+              <div class="res-item"><span class="check">🧘</span> Más concentración sostenida</div>
+              <div class="res-item"><span class="check">⚡</span> Menos agotamiento mental</div>
+              <div class="res-item"><span class="check">💚</span> Mejor ambiente en clase</div>
+              <div class="res-item"><span class="check">🎯</span> Más autonomía del alumno</div>
+            </div>
+            <div class="cta">
+              📖 Artículo completo
+              <small>· mejoratudocencia.es/experiencias/pomodoro</small>
+            </div>
           </div>
-          <div class="regla">
-            <div class="r-icon">🗣️</div>
-            <div class="r-tit">Socializa (con límite)</div>
-            <div class="r-desc">Al terminar el tiempo, todos a sus puestos</div>
+          <div class="bottom-brand">
+            <span class="sep"></span> mejoratudocencia.es <span class="sep"></span>
           </div>
-        </div>
-        <div class="divider"></div>
-        <div class="resultados">
-          <div class="res-item"><span class="check">✅</span> Más concentración</div>
-          <div class="res-item"><span class="check">✅</span> Menos agotamiento</div>
-          <div class="res-item"><span class="check">✅</span> Mejor ambiente en clase</div>
-          <div class="res-item"><span class="check">✅</span> Más autonomía del alumno</div>
-        </div>
-        <div class="cta">📖 mejoratudocencia.es/experiencias/pomodoro</div>
       </div>
     </div>
   </div>
@@ -432,7 +387,7 @@
     <button class="btn" onclick="descargar(0)">⬇ Slide 1</button>
     <button class="btn" onclick="descargar(1)">⬇ Slide 2</button>
     <button class="btn" onclick="descargar(2)">⬇ Slide 3</button>
-    <button class="btn btn-gray" onclick="descargarTodo()">⬇⬇ Todo</button>
+    <button class="btn btn-gray" onclick="descargarTodo()">⬇⬇ Descargar todo</button>
   </div>
   <p class="nota">Abrir con <code>python3 -m http.server</code> → <code>localhost:8000/instagram/01-pomodoro/</code></p>
   <p class="error" id="errorMsg"></p>
@@ -440,55 +395,67 @@
   <!-- ============ POST TEXT ============ -->
   <div class="post-text">
     <h3>📝 Texto del post para Instagram <small>(copia y pega)</small></h3>
-    <div class="box" id="igText">¿Tus alumnos pierden el foco en clases de 2–3 h? 😴
+    <div class="box" id="igText">🍅 ¿Tus alumnos se desconcentran a los 40 minutos de clase?
 
-Nos pasó. Probamos la técnica Pomodoro adaptada al aula y estos fueron los resultados 👇
+Compartimos experiencias educativas para que aprendamos unos de otros. Un compañero nos contó su problema con las sesiones de 2–3 h y cómo lo solucionó 👇
 
-🍅 <span class="url">35 min de trabajo + 7 min de descanso</span>
-📵 Pantallas apagadas en el descanso
-🚶‍♂️ Levántate, estira, desconecta
-🗣️ Socializa… pero al tiempo, vuelta al trabajo
+Probó la técnica Pomodoro adaptada al aula. Estos son los ciclos que le funcionaron según el nivel:
 
-📈 <span class="url">+ concentración · – agotamiento · + ambiente · + autonomía</span>
+🧒 15+3 → Primaria (actividades cortas, 45–60′)
+📚 25+5 → ESO (cambios frecuentes de tarea)
+⭐ <span class="url">35+7 → El punto óptimo · cualquier materia ≥ 2 h ✅</span>
+🎓 45+10 → Bachillerato / Ciclos (investigación)
 
-Funciona en Primaria, ESO, Bachillerato… cualquier materia. Solo necesitas un temporizador.
+Y las 6 reglas que se puso para el descanso:
+📵 Pantallas apagadas · 🚶‍♂️ Levántate y estira · 🗣️ Socializa con control
+💧 Bebe agua · 🌬️ Respira hondo · 📋 Revisa tu plan
 
-📖 Artículo completo con todos los detalles:
+Los resultados que obtuvo:
+🧘 Más concentración · ⚡ Menos agotamiento · 💚 Mejor ambiente · 🎯 Más autonomía
+
+📖 Él mismo escribió su experiencia con problemas y soluciones:
 🔗 <span class="url">mejoratudocencia.es/experiencias/pomodoro</span>
 
-💬 ¿Lo has probado? Cuéntanos en @mejoratudocencia (Telegram)
+💬 ¿Te animas a compartir tu experiencia? Pasa por @mejoratudocencia (Telegram)
+👇 Guarda el post y comparte con otros profes
 
-👇 Guarda para tu próxima clase · Comparte con otros profes
-
-<span class="hash">#Pomodoro</span> <span class="hash">#TecnicaPomodoro</span> <span class="hash">#MetodologiasActivas</span> <span class="hash">#Educacion</span>
-<span class="hash">#Docentes</span> <span class="hash">#Concentracion</span> <span class="hash">#Aula</span> <span class="hash">#MejoraTuDocencia</span></div>
+<span class="hash">#ExperienciasEducativas</span> <span class="hash">#Pomodoro</span> <span class="hash">#TecnicaPomodoro</span>
+<span class="hash">#Educacion</span> <span class="hash">#Docentes</span> <span class="hash">#Concentracion</span>
+<span class="hash">#Aula</span> <span class="hash">#CompartirExperiencias</span> <span class="hash">#MejoraTuDocencia</span></div>
     <button class="btn-copy" onclick="copiar('igText')">📋 Copiar texto</button>
 
-    <h3 class="telegram-box">✈️ Texto para Telegram</h3>
-    <div class="box" id="tgText">🍅 <span class="url">Pomodoro en el aula</span> — cómo mantener la concentración en sesiones largas
+    <div class="tg-box">
+      <h3>✈️ Texto para Telegram</h3>
+      <div class="box" id="tgText">🍅 <span class="url">Pomodoro en el aula</span> — compartimos experiencias educativas
 
-Las sesiones de 2–3 h son un reto. Probamos una adaptación de la técnica Pomodoro y cambió la dinámica por completo.
+Un compañero tenía un problema: sus alumnos perdían la concentración en sesiones de 2–3 h. Probó adaptar la técnica Pomodoro y nos contó cómo lo solucionó.
 
-Los tiempos que mejor funcionaron:
-• 15+3 → Primaria (sesiones 45–60 min)
-• 25+5 → ESO (cambios frecuentes)
-• <span class="url">35+7 → Cualquier materia ≥ 2 h ★ Recomendado</span>
-• 45+10 → Bachillerato / Ciclos
+⏱️ Los tiempos que le funcionaron según el nivel:
+• 🧒 15+3 → Primaria (sesiones 45–60′)
+• 📚 25+5 → ESO (cambios frecuentes)
+• ⭐ <span class="url">35+7 → Cualquier materia ≥ 2 h ★ Recomendado</span>
+• 🎓 45+10 → Bachillerato / Ciclos
 
-3 reglas de oro del descanso:
-📵 Pantallas apagadas
-🚶‍♂️ Levántate y estira
-🗣️ Socializa (con límite)
+📵 6 reglas que se puso para el descanso:
+• Pantallas apagadas · Levántate y estira · Socializa con control
+• Bebe agua · Respira hondo · Revisa tu plan
 
-Resultados: más concentración, menos agotamiento, mejor ambiente, más autonomía.
+📈 Resultados que obtuvo: + concentración · – agotamiento · + ambiente · + autonomía
 
-📖 Artículo completo:
+📖 Su experiencia con problemas y soluciones:
 🔗 <span class="url">mejoratudocencia.es/experiencias/pomodoro</span>
 
-💬 ¿Te animas a probarlo? Cuéntanos en @mejoratudocencia
+💬 ¿Tienes una experiencia que compartir? Pasa por @mejoratudocencia
 
-<span class="hash">#Pomodoro</span> <span class="hash">#Experiencias</span> <span class="hash">#MejoraTuDocencia</span></div>
-    <button class="btn-copy" onclick="copiar('tgText')">📋 Copiar texto</button>
+✨ Y si quieres ver el post original en Instagram:
+👉 <span class="url">https://www.instagram.com/p/DZ4qpd1jOq_/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==</span>
+
+📲 Síguenos en Instagram para más ideas:
+👉 <span class="url">https://www.instagram.com/mejoratudocencia/</span>
+
+<span class="hash">#ExperienciasEducativas</span> <span class="hash">#Pomodoro</span> <span class="hash">#CompartirExperiencias</span> <span class="hash">#MejoraTuDocencia</span></div>
+      <button class="btn-copy" onclick="copiar('tgText')">📋 Copiar texto</button>
+    </div>
   </div>
 
   <script>
