@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>01 — Pomodoro en el aula • Mejora tu Docencia</title>
-  <link href="https://fonts.googleapis.com/css2?family=Architects+Daughter&family=Inter:wght@600;800&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Architects+Daughter&family=Inter:wght@500;600;800&display=swap" rel="stylesheet" />
   <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -18,9 +18,9 @@
       font-family: 'Inter', sans-serif;
     }
 
-    h2 { font-family: 'Architects Daughter', cursive; }
+    h1, h2, .ad { font-family: 'Architects Daughter', cursive; }
 
-    /* Contenedor carrusel */
+    /* --- Carrusel --- */
     .carousel {
       position: relative;
       width: 1254px;
@@ -32,24 +32,18 @@
     .slide {
       position: absolute;
       inset: 0;
-      width: 1254px;
-      height: 1254px;
       overflow: hidden;
       border-radius: 20px;
       opacity: 0;
       visibility: hidden;
-      transition: opacity 0.4s, visibility 0.4s;
+      transition: opacity .4s, visibility .4s;
     }
-    .slide.active {
-      opacity: 1;
-      visibility: visible;
-    }
+    .slide.active { opacity: 1; visibility: visible; }
 
     .slide .bg {
       position: absolute;
       top: 0; left: 0;
-      width: 1254px;
-      height: 1254px;
+      width: 1254px; height: 1254px;
       pointer-events: none;
     }
 
@@ -60,86 +54,83 @@
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      padding: 100px 120px;
+      padding: 90px 100px;
       text-align: center;
     }
 
-    /* --- Slide 1: Cover --- */
-    .emoji-big { font-size: 80px; line-height: 1; margin-bottom: 18px; }
+    /* ===== SLIDE 1 – COVER ===== */
+    .slide1 .emoji { font-size: 96px; line-height: 1; margin-bottom: 14px; }
     .slide1 h1 {
-      font-family: 'Architects Daughter', cursive;
-      font-size: 86px;
-      line-height: 1.06;
+      font-size: 104px;
+      line-height: 1.05;
       color: #0f172a;
-      margin-bottom: 14px;
+      margin-bottom: 10px;
     }
     .slide1 .sub {
       font-weight: 600;
-      font-size: 28px;
+      font-size: 34px;
       color: #475569;
       line-height: 1.35;
-      margin-bottom: 30px;
+      margin-bottom: 36px;
+      max-width: 750px;
     }
     .slide1 .tag {
-      font-family: 'Architects Daughter', cursive;
-      font-size: 24px;
+      font-size: 28px;
       color: #16a34a;
     }
     .slide1 .tag span {
       background: rgba(22,163,74,0.1);
-      padding: 6px 22px;
+      padding: 8px 28px;
       border-radius: 40px;
     }
     .slide1 .swipe {
       position: absolute;
-      bottom: 50px;
-      font-size: 18px;
+      bottom: 48px;
+      font-size: 20px;
       color: #94a3b8;
       font-weight: 600;
     }
 
-    /* --- Slide 2: Tiempos --- */
-    .slide2 .content { padding: 100px 110px; }
+    /* ===== SLIDE 2 – TIEMPOS ===== */
     .slide2 h2 {
-      font-size: 56px;
+      font-size: 64px;
       color: #0f172a;
-      margin-bottom: 8px;
+      margin-bottom: 6px;
     }
     .slide2 .sub2 {
-      font-size: 20px;
-      font-weight: 600;
+      font-weight: 500;
+      font-size: 24px;
       color: #64748b;
-      margin-bottom: 40px;
+      margin-bottom: 44px;
     }
     .ciclos {
       display: flex;
       flex-direction: column;
-      gap: 14px;
+      gap: 16px;
       width: 100%;
-      max-width: 700px;
+      max-width: 780px;
     }
     .ciclo {
       display: flex;
       align-items: center;
-      gap: 20px;
+      gap: 22px;
       background: rgba(255,255,255,0.55);
       backdrop-filter: blur(4px);
-      padding: 16px 24px;
+      padding: 20px 28px;
       border-radius: 60px;
       border: 1px solid rgba(255,255,255,0.5);
     }
     .ciclo .num {
-      font-family: 'Architects Daughter', cursive;
-      font-size: 34px;
-      font-weight: 700;
+      font-size: 40px;
+      font-weight: 400;
       color: #16a34a;
-      min-width: 90px;
+      min-width: 100px;
       text-align: center;
     }
     .ciclo .desc {
-      font-size: 17px;
+      font-size: 20px;
       font-weight: 600;
-      color: #334155;
+      color: #1e293b;
       text-align: left;
       flex: 1;
     }
@@ -149,85 +140,84 @@
     }
     .ciclo.destacado .num { color: #15803d; }
     .ciclo .badge {
-      font-size: 12px;
+      font-size: 14px;
       font-weight: 800;
       background: #16a34a;
       color: #fff;
-      padding: 4px 14px;
+      padding: 5px 18px;
       border-radius: 30px;
-      letter-spacing: 0.03em;
     }
 
-    /* --- Slide 3: Reglas + Resultados --- */
-    .slide3 .content { padding: 90px 110px; }
+    /* ===== SLIDE 3 – REGLAS + RESULTADOS ===== */
+    .slide3 .content { padding: 80px 100px; justify-content: flex-start; padding-top: 110px; }
     .slide3 h2 {
-      font-size: 52px;
+      font-size: 60px;
       color: #0f172a;
-      margin-bottom: 36px;
+      margin-bottom: 10px;
     }
+    .slide3 .sub3 {
+      font-weight: 500;
+      font-size: 22px;
+      color: #64748b;
+      margin-bottom: 44px;
+    }
+
     .reglas {
       display: flex;
-      gap: 16px;
-      margin-bottom: 32px;
+      gap: 18px;
       width: 100%;
-      max-width: 800px;
+      max-width: 850px;
     }
     .regla {
       flex: 1;
       background: rgba(255,255,255,0.55);
       backdrop-filter: blur(4px);
-      padding: 20px 12px;
-      border-radius: 24px;
+      padding: 24px 14px;
+      border-radius: 28px;
       border: 1px solid rgba(255,255,255,0.5);
       text-align: center;
     }
-    .regla .r-icon { font-size: 36px; margin-bottom: 6px; }
+    .regla .r-icon { font-size: 44px; margin-bottom: 8px; }
     .regla .r-tit {
-      font-family: 'Architects Daughter', cursive;
-      font-size: 16px;
-      font-weight: 700;
+      font-size: 22px;
+      font-weight: 400;
       color: #0f172a;
       margin-bottom: 4px;
     }
     .regla .r-desc {
-      font-size: 12px;
+      font-size: 15px;
       font-weight: 600;
       color: #64748b;
-      line-height: 1.3;
     }
 
     .divider {
-      width: 70%;
+      width: 60%;
       height: 2px;
-      background: rgba(148,163,184,0.2);
-      margin-bottom: 24px;
+      background: rgba(148,163,184,0.15);
+      margin: 30px 0 24px;
     }
 
     .resultados {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 10px 20px;
+      gap: 14px 28px;
       text-align: left;
       width: 100%;
-      max-width: 700px;
+      max-width: 750px;
     }
     .res-item {
       display: flex;
       align-items: center;
-      gap: 10px;
-      font-size: 15px;
+      gap: 12px;
+      font-size: 19px;
       font-weight: 700;
       color: #0f172a;
     }
-    .res-item .check {
-      font-size: 22px;
-      line-height: 1;
-    }
+    .res-item .check { font-size: 26px; }
 
     .slide3 .cta {
-      margin-top: 28px;
-      font-family: 'Architects Daughter', cursive;
-      font-size: 20px;
+      margin-top: 30px;
+      font-size: 24px;
       color: #16a34a;
     }
 
@@ -235,29 +225,27 @@
     .nav-dots {
       display: flex;
       gap: 10px;
-      margin: 16px 0 12px;
+      margin: 16px 0 14px;
     }
     .nav-dots button {
-      width: 12px; height: 12px;
+      width: 14px; height: 14px;
       border-radius: 50%;
       border: 2px solid #16a34a;
       background: transparent;
       cursor: pointer;
-      transition: all 0.2s;
+      transition: .2s;
     }
-    .nav-dots button.active {
-      background: #16a34a;
-      transform: scale(1.2);
-    }
+    .nav-dots button.active { background: #16a34a; transform: scale(1.2); }
 
     /* --- Botones --- */
     .actions {
       display: flex;
-      gap: 12px;
+      gap: 10px;
       flex-wrap: wrap;
       justify-content: center;
+      margin-bottom: 16px;
     }
-    .btn-download {
+    .btn {
       padding: 12px 28px;
       font-weight: 800;
       font-size: 14px;
@@ -266,37 +254,101 @@
       border: none;
       border-radius: 40px;
       cursor: pointer;
-      transition: transform 0.15s;
+      transition: transform .15s;
     }
-    .btn-download:hover { transform: scale(1.04); }
-    .btn-download:disabled { opacity: 0.5; cursor: not-allowed; transform: none; }
-    .btn-all {
-      background: #475569;
+    .btn:hover { transform: scale(1.04); }
+    .btn:disabled { opacity: .5; cursor: not-allowed; transform: none; }
+    .btn-outline {
+      background: transparent;
+      color: #16a34a;
+      border: 2px solid #16a34a;
     }
+    .btn-gray { background: #475569; }
 
     .nota {
-      margin-top: 10px;
       font-size: 13px;
       color: #64748b;
+      margin-bottom: 8px;
     }
     .error {
-      margin-top: 6px;
       font-size: 13px;
       color: #dc2626;
       display: none;
+      margin-bottom: 8px;
+    }
+
+    /* ===== POST TEXT (debajo) ===== */
+    .post-text {
+      width: 1254px;
+      max-width: 100%;
+      background: #fff;
+      border-radius: 20px;
+      padding: 32px 40px;
+      box-shadow: 0 10px 40px rgba(0,0,0,0.08);
+      margin-top: 24px;
+    }
+    .post-text h3 {
+      font-size: 18px;
+      font-weight: 800;
+      color: #0f172a;
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .post-text h3 small {
+      font-weight: 500;
+      font-size: 13px;
+      color: #94a3b8;
+    }
+    .post-text .box {
+      background: #f8fafc;
+      border-radius: 16px;
+      padding: 24px 28px;
+      font-size: 15px;
+      line-height: 1.65;
+      color: #1e293b;
+      white-space: pre-wrap;
+      border: 1px solid #e2e8f0;
+    }
+    .post-text .box .url {
+      color: #16a34a;
+      font-weight: 700;
+      text-decoration: underline;
+    }
+    .post-text .box .hash {
+      color: #2563eb;
+      font-weight: 600;
+    }
+    .post-text .btn-copy {
+      margin-top: 12px;
+      padding: 10px 24px;
+      font-weight: 700;
+      font-size: 13px;
+      color: #16a34a;
+      background: transparent;
+      border: 2px solid #16a34a;
+      border-radius: 40px;
+      cursor: pointer;
+      transition: .2s;
+    }
+    .post-text .btn-copy:hover { background: #16a34a; color: #fff; }
+
+    .telegram-box {
+      margin-top: 20px;
     }
   </style>
 </head>
 <body>
 
-  <!-- Carrusel -->
-  <div class="carousel" id="carousel">
+  <!-- ============ CARRUSEL ============ -->
+  <div class="carousel">
 
     <!-- Slide 1: Cover -->
     <div class="slide slide1 active" data-slide="0">
       <img class="bg" src="../layout.png" alt="" />
       <div class="content">
-        <div class="emoji-big">🍅</div>
+        <div class="emoji">🍅</div>
         <h1>Pomodoro<br />en el aula</h1>
         <p class="sub">Mantén la concentración<br />en sesiones largas</p>
         <div class="tag"><span>mejoratudocencia.es</span></div>
@@ -308,25 +360,25 @@
     <div class="slide slide2" data-slide="1">
       <img class="bg" src="../layout.png" alt="" />
       <div class="content">
-        <div class="emoji-big">⏱️</div>
+        <div class="emoji">⏱️</div>
         <h2>Los tiempos ideales</h2>
-        <p class="sub2">Elige el ciclo según tu clase</p>
+        <p class="sub2">Elige el ciclo ideal para tu clase</p>
         <div class="ciclos">
           <div class="ciclo">
-            <div class="num">15+3</div>
+            <div class="num">15'+3'</div>
             <div class="desc">Primaria · sesiones de 45–60 min</div>
           </div>
           <div class="ciclo">
-            <div class="num">25+5</div>
-            <div class="desc">ESO · cambios frecuentes de tarea</div>
+            <div class="num">25'+5'</div>
+            <div class="desc">ESO · tareas con cambios frecuentes</div>
           </div>
           <div class="ciclo destacado">
-            <div class="num">35+7</div>
-            <div class="desc">Cualquier materia · sesiones ≥ 2h</div>
-            <div class="badge">Recomendado</div>
+            <div class="num">35'+7'</div>
+            <div class="desc">Cualquier materia · sesiones ≥ 2 h</div>
+            <div class="badge">★ Recomendado</div>
           </div>
           <div class="ciclo">
-            <div class="num">45+10</div>
+            <div class="num">45'+10'</div>
             <div class="desc">Bachillerato · investigación o proyectos</div>
           </div>
         </div>
@@ -337,7 +389,8 @@
     <div class="slide slide3" data-slide="2">
       <img class="bg" src="../layout.png" alt="" />
       <div class="content">
-        <h2>Claves para el descanso</h2>
+        <h2>Claves del descanso</h2>
+        <p class="sub3">Tres reglas para que funcione</p>
         <div class="reglas">
           <div class="regla">
             <div class="r-icon">📵</div>
@@ -346,23 +399,23 @@
           </div>
           <div class="regla">
             <div class="r-icon">🚶‍♂️</div>
-            <div class="r-tit">Levántate</div>
-            <div class="r-desc">Estirar y moverse</div>
+            <div class="r-tit">Levántate y estira</div>
+            <div class="r-desc">Descanso activo, nada de quedarse</div>
           </div>
           <div class="regla">
             <div class="r-icon">🗣️</div>
-            <div class="r-tit">Socializa</div>
-            <div class="r-desc">Pero al tiempo, vuelta al trabajo</div>
+            <div class="r-tit">Socializa (con límite)</div>
+            <div class="r-desc">Al terminar el tiempo, todos a sus puestos</div>
           </div>
         </div>
         <div class="divider"></div>
         <div class="resultados">
           <div class="res-item"><span class="check">✅</span> Más concentración</div>
           <div class="res-item"><span class="check">✅</span> Menos agotamiento</div>
-          <div class="res-item"><span class="check">✅</span> Mejor ambiente</div>
-          <div class="res-item"><span class="check">✅</span> Más autonomía</div>
+          <div class="res-item"><span class="check">✅</span> Mejor ambiente en clase</div>
+          <div class="res-item"><span class="check">✅</span> Más autonomía del alumno</div>
         </div>
-        <div class="cta">mejoratudocencia.es/experiencias/pomodoro</div>
+        <div class="cta">📖 mejoratudocencia.es/experiencias/pomodoro</div>
       </div>
     </div>
   </div>
@@ -376,14 +429,67 @@
 
   <!-- Acciones -->
   <div class="actions">
-    <button class="btn-download" onclick="descargar(0)">⬇ Slide 1</button>
-    <button class="btn-download" onclick="descargar(1)">⬇ Slide 2</button>
-    <button class="btn-download" onclick="descargar(2)">⬇ Slide 3</button>
-    <button class="btn-download btn-all" onclick="descargarTodo()">⬇⬇ Descargar todo</button>
+    <button class="btn" onclick="descargar(0)">⬇ Slide 1</button>
+    <button class="btn" onclick="descargar(1)">⬇ Slide 2</button>
+    <button class="btn" onclick="descargar(2)">⬇ Slide 3</button>
+    <button class="btn btn-gray" onclick="descargarTodo()">⬇⬇ Todo</button>
   </div>
-
-  <p class="nota">Abre con <code>python3 -m http.server</code> → <code>localhost:8000/instagram/01-pomodoro/</code></p>
+  <p class="nota">Abrir con <code>python3 -m http.server</code> → <code>localhost:8000/instagram/01-pomodoro/</code></p>
   <p class="error" id="errorMsg"></p>
+
+  <!-- ============ POST TEXT ============ -->
+  <div class="post-text">
+    <h3>📝 Texto del post para Instagram <small>(copia y pega)</small></h3>
+    <div class="box" id="igText">¿Tus alumnos pierden el foco en clases de 2–3 h? 😴
+
+Nos pasó. Probamos la técnica Pomodoro adaptada al aula y estos fueron los resultados 👇
+
+🍅 <span class="url">35 min de trabajo + 7 min de descanso</span>
+📵 Pantallas apagadas en el descanso
+🚶‍♂️ Levántate, estira, desconecta
+🗣️ Socializa… pero al tiempo, vuelta al trabajo
+
+📈 <span class="url">+ concentración · – agotamiento · + ambiente · + autonomía</span>
+
+Funciona en Primaria, ESO, Bachillerato… cualquier materia. Solo necesitas un temporizador.
+
+📖 Artículo completo con todos los detalles:
+🔗 <span class="url">mejoratudocencia.es/experiencias/pomodoro</span>
+
+💬 ¿Lo has probado? Cuéntanos en @mejoratudocencia (Telegram)
+
+👇 Guarda para tu próxima clase · Comparte con otros profes
+
+<span class="hash">#Pomodoro</span> <span class="hash">#TecnicaPomodoro</span> <span class="hash">#MetodologiasActivas</span> <span class="hash">#Educacion</span>
+<span class="hash">#Docentes</span> <span class="hash">#Concentracion</span> <span class="hash">#Aula</span> <span class="hash">#MejoraTuDocencia</span></div>
+    <button class="btn-copy" onclick="copiar('igText')">📋 Copiar texto</button>
+
+    <h3 class="telegram-box">✈️ Texto para Telegram</h3>
+    <div class="box" id="tgText">🍅 <span class="url">Pomodoro en el aula</span> — cómo mantener la concentración en sesiones largas
+
+Las sesiones de 2–3 h son un reto. Probamos una adaptación de la técnica Pomodoro y cambió la dinámica por completo.
+
+Los tiempos que mejor funcionaron:
+• 15+3 → Primaria (sesiones 45–60 min)
+• 25+5 → ESO (cambios frecuentes)
+• <span class="url">35+7 → Cualquier materia ≥ 2 h ★ Recomendado</span>
+• 45+10 → Bachillerato / Ciclos
+
+3 reglas de oro del descanso:
+📵 Pantallas apagadas
+🚶‍♂️ Levántate y estira
+🗣️ Socializa (con límite)
+
+Resultados: más concentración, menos agotamiento, mejor ambiente, más autonomía.
+
+📖 Artículo completo:
+🔗 <span class="url">mejoratudocencia.es/experiencias/pomodoro</span>
+
+💬 ¿Te animas a probarlo? Cuéntanos en @mejoratudocencia
+
+<span class="hash">#Pomodoro</span> <span class="hash">#Experiencias</span> <span class="hash">#MejoraTuDocencia</span></div>
+    <button class="btn-copy" onclick="copiar('tgText')">📋 Copiar texto</button>
+  </div>
 
   <script>
     let descargando = false;
@@ -400,22 +506,14 @@
       descargando = true;
       const err = document.getElementById('errorMsg');
       err.style.display = 'none';
-
       try {
         await document.fonts.ready;
-        const slide = document.querySelector(`.slide[data-slide="${idx}"]`);
-        // Mostrar slide para capturarla
         ir(idx);
         await new Promise(r => setTimeout(r, 100));
-
+        const slide = document.querySelector(`.slide[data-slide="${idx}"]`);
         const canvas = await html2canvas(slide, {
-          width: 1254,
-          height: 1254,
-          scale: 1080 / 1254,
-          useCORS: true,
-          logging: false
+          width: 1254, height: 1254, scale: 1080/1254, useCORS: true, logging: false
         });
-
         const link = document.createElement('a');
         link.download = `01-pomodoro-slide-${idx+1}.png`;
         link.href = canvas.toDataURL('image/png');
@@ -424,15 +522,22 @@
         err.textContent = 'Error: abre con servidor local (python3 -m http.server), no como archivo local.';
         err.style.display = 'block';
       }
-
       descargando = false;
     }
 
     async function descargarTodo() {
-      for (let i = 0; i < 3; i++) {
-        await descargar(i);
-        await new Promise(r => setTimeout(r, 300));
-      }
+      for (let i = 0; i < 3; i++) { await descargar(i); await new Promise(r => setTimeout(r, 300)); }
+    }
+
+    function copiar(id) {
+      const el = document.getElementById(id);
+      const text = el.textContent;
+      navigator.clipboard.writeText(text).then(() => {
+        const btn = el.parentElement.querySelector('.btn-copy');
+        const orig = btn.textContent;
+        btn.textContent = '✅ Copiado';
+        setTimeout(() => btn.textContent = orig, 1500);
+      });
     }
   </script>
 </body>
