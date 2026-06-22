@@ -18,15 +18,15 @@ const SiteHeader = {
         </div>
 
         <!-- Navigation -->
-        <nav class="flex flex-wrap justify-center gap-x-1 gap-y-1 bg-gradient-to-r from-gray-50/80 to-white/80 p-1.5 rounded-2xl border border-gray-200/60 backdrop-blur-md shadow-sm">
+        <nav class="flex flex-wrap justify-center gap-x-0.5 lg:gap-x-1 bg-gradient-to-r from-gray-50/80 to-white/80 p-1 lg:p-1.5 rounded-2xl border border-gray-200/60 backdrop-blur-md shadow-sm">
           <a v-for="item in menuItems" :key="item.name" :href="item.href"
             :class="[
-              'text-[10px] uppercase tracking-widest font-bold transition-all duration-300 flex items-center gap-1 px-2.5 py-1.5 rounded-lg whitespace-nowrap',
+              'text-[9px] lg:text-[10px] uppercase tracking-widest font-bold transition-all duration-300 flex items-center gap-0.5 lg:gap-1 px-1.5 lg:px-2.5 py-1 lg:py-1.5 rounded-lg whitespace-nowrap',
               activePage === item.href 
                 ? 'bg-gradient-to-r from-primary-600 to-green-600 text-white shadow-lg shadow-primary-200 scale-105' 
                 : 'text-gray-600 hover:text-primary-700 hover:bg-white hover:shadow-md'
             ]">
-            <i :data-lucide="item.icon" class="w-3 h-3"></i>
+            <i :data-lucide="item.icon" class="w-2.5 lg:w-3 h-2.5 lg:h-3"></i>
             {{ item.name }}
           </a>
         </nav>

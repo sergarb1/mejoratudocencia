@@ -6,11 +6,10 @@ Web estática con Vue 3 + Tailwind CSS + Lucide icons. Sin build step — CDN di
 
 - Cada página es un HTML standalone con Vue 3 montado en `#app`
 - `js/config.js` — Config global (secciones, redes sociales, colores)
-- `js/components.js` — Componentes Vue compartidos: `site-header`, `site-footer`. Nav incluye "Solicitar" que enlaza a Telegram.
-- `js/resources.js` — (ya no se usa, migrado a `recursos.json`)
-- `js/quotes.js` — (ya no se usa)
+- `js/components.js` — Componentes Vue compartidos: `site-header`, `site-footer`
 - `aplicaciones.json` — Datos de aplicaciones cargados por `aplicaciones.html` e `index.html`
 - `recursos.json` — Datos de recursos cargados dinámicamente por `recursos.html` e `index.html`
+- `experiencias/` — Artículos de experiencias de aula en HTML standalone con el mismo layout
 - `mates/` — Subweb de matemáticas con su propio index, libros, proyectos
 - `campana-telegram.md` — Plan de campaña para Telegram e Instagram (beta, estreno septiembre 2026)
 
@@ -18,13 +17,21 @@ Web estática con Vue 3 + Tailwind CSS + Lucide icons. Sin build step — CDN di
 
 | Archivo | Ruta | Descripción |
 |---------|------|-------------|
-| `index.html` | `/` | Portada: hero, "¿Qué creamos?" (4 tipos + CTA petición), últimos recursos, apps, Telegram CTA, quién soy |
+| `index.html` | `/` | Portada: hero, "¿Qué creamos?" (4 tipos + CTA petición), últimos recursos, experiencias, apps, Telegram CTA, quién soy |
 | `recursos.html` | `/recursos.html` | Biblioteca de recursos con filtros (carga `recursos.json`) |
 | `aplicaciones.html` | `/aplicaciones.html` | Apps del proyecto (carga `aplicaciones.json`) |
+| `experiencias.html` | `/experiencias.html` | Experiencias de aula con cards que enlazan a artículos en `experiencias/` |
 | `ia-para-docentes.html` | `/ia-para-docentes.html` | Recursos de IA para docentes |
 | `telegram.html` | `/telegram.html` | Página de comunidad Telegram |
 | `contacto.html` | `/contacto.html` | Contacto (Telegram, Instagram, email) |
-| `quien.html` | `/quien.html` | Sobre el autor |
+| `quien.html` | `/quien.html` | Sobre el autor y el proyecto de apps libres |
+
+## Experiencias
+
+- Los artículos van en `experiencias/` como HTML standalone con el layout del sitio (Vue header + footer)
+- La lista se carga desde `experiencias.html` con datos inline en el setup de Vue
+- `index.html` muestra las últimas 3 en una sección entre Recursos y Aplicaciones
+- Cada card es un `<a>` completo que enlaza al artículo
 
 ## Estilo visual
 
@@ -34,7 +41,7 @@ Web estática con Vue 3 + Tailwind CSS + Lucide icons. Sin build step — CDN di
 - **Tipografía**: Outfit para headings, Inter para body
 - **Colores**: Primary verde (`#16a34a`), fondos gradient `#f0fdf4 → #fff → #f0fdf4`
 - **Iconos**: Lucide v0.321.0
-- **Móvil**: todos los tamaños con `text-[Npx] md:text-[Npx]`, padding `p-N md:p-N`. Nav con `flex-wrap` para 2 filas.
+- **Móvil**: todos los tamaños con `text-[Npx] md:text-[Npx]`, padding `p-N md:p-N`. Nav con tamaños reducidos en pantallas pequeñas para que quepa en 1-2 filas.
 
 ## Convenciones
 
