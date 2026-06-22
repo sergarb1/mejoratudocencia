@@ -136,40 +136,20 @@ Fase beta: mostramos lo que ya hay y pedimos qué más necesitan. En septiembre,
 
 # Post Pomodoro — guía de contenido
 
-## Para Instagram (feed)
+## Archivos generados
 
-**Carousel de 4-5 diapositivas** basado en el artículo de experiencia.
+Los 3 slides están en `instagram/01-pomodoro/index.html`:
+1. **Cover** — título + descripción
+2. **Tiempos** — 4 ciclos adaptados por nivel
+3. **Reglas + resultados** — descanso activo y beneficios
 
-### Slide 1 — Portada
-- Título: "Pomodoro en el aula 🍅"
-- Subtítulo: "Cómo mantener la concentración en sesiones largas"
-- Fondo verde degradado con icono de temporizador
-- Texto pequeño: "Experiencia real · me joratudocencia.es"
+Abrir con servidor local y descargar cada PNG:
+```bash
+python3 -m http.server 8000
+# → http://localhost:8000/instagram/01-pomodoro/
+```
 
-### Slide 2 — El problema
-- Icono: 💤
-- "Las sesiones de 2-3 horas agotan a los alumnos. Pasada la primera hora, la concentración cae y las distracciones aumentan."
-- "Necesitábamos una estructura que mantuviera el foco sin agotar a nadie."
-
-### Slide 3 — La solución: tabla de tiempos
-- Mostrar los 4 ciclos en formato visual:
-  - 15+3 → Primaria (sesiones 45-60 min)
-  - 25+5 → ESO (sesiones 50-60 min)
-  - 35+7 → Cualquier materia (sesiones ≥2h)
-  - 45+10 → Bachillerato / Ciclos (investigación)
-- Destacar el recomendado: **35+7** como punto óptimo
-
-### Slide 4 — Reglas del descanso
-- 📵 Pantallas apagadas (descanso visual)
-- 🚶‍♂️ Levantarse y estirar (descanso activo)
-- 🗣️ Socializar (primeros minutos del descanso)
-
-### Slide 5 — Resultados + CTA
-- 4 iconos con resultados: concentración, menos agotamiento, mejor ambiente, más autonomía
-- CTA: "Lee la experiencia completa en mej oratudocencia.es/experiencias/pomodoro"
-- "Comparte con otros profes 👩‍🏫👨‍🏫"
-
-### Texto del post
+## Texto para acompañar el carrusel (Instagram)
 ```
 ¿Tus alumnos se desconcentran en sesiones largas? 😴
 
