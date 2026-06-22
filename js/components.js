@@ -22,7 +22,7 @@ const SiteHeader = {
           <a v-for="item in menuItems" :key="item.name" :href="item.href"
             :class="[
               'text-[9px] lg:text-[10px] uppercase tracking-widest font-bold transition-all duration-300 flex items-center gap-0.5 lg:gap-1 px-1.5 lg:px-2.5 py-1 lg:py-1.5 rounded-lg whitespace-nowrap',
-              activePage === item.href 
+              activePage === (item.href.startsWith('/') ? item.href.slice(1) : item.href) 
                 ? 'bg-gradient-to-r from-primary-600 to-green-600 text-white shadow-lg shadow-primary-200 scale-105' 
                 : 'text-gray-600 hover:text-primary-700 hover:bg-white hover:shadow-md'
             ]">
@@ -35,14 +35,14 @@ const SiteHeader = {
   `,
   setup() {
     const menuItems = [
-      { name: "Inicio", href: "index.html", icon: "layout-grid" },
-      { name: "Recursos", href: "recursos.html", icon: "library" },
-      { name: "Aplicaciones", href: "aplicaciones.html", icon: "rocket" },
-      { name: "IA Docentes", href: "ia-para-docentes.html", icon: "brain-circuit" },
-      { name: "Telegram", href: "telegram.html", icon: "send" },
-      { name: "Experiencias", href: "experiencias.html", icon: "book-open" },
-      { name: "Contacto", href: "contacto.html", icon: "message-circle-heart" },
-      { name: "Quién soy", href: "quien.html", icon: "user-circle" }
+      { name: "Inicio", href: "/index.html", icon: "layout-grid" },
+      { name: "Recursos", href: "/recursos.html", icon: "library" },
+      { name: "Aplicaciones", href: "/aplicaciones.html", icon: "rocket" },
+      { name: "IA Docentes", href: "/ia-para-docentes.html", icon: "brain-circuit" },
+      { name: "Telegram", href: "/telegram.html", icon: "send" },
+      { name: "Experiencias", href: "/experiencias.html", icon: "book-open" },
+      { name: "Contacto", href: "/contacto.html", icon: "message-circle-heart" },
+      { name: "Quién soy", href: "/quien.html", icon: "user-circle" }
     ];
     return { config: APP_CONFIG, menuItems };
   },

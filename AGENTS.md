@@ -37,6 +37,7 @@ Web estática con Vue 3 + Tailwind CSS + Lucide icons. Sin build step — CDN di
 - Compara con `item.href` de cada entrada del menú
 - Logo enlaza a `'/'` (raíz absoluta) funcionando desde cualquier subdirectorio
 - Menú con 8 items: Inicio, Recursos, Aplicaciones, IA Docentes, Telegram, Experiencias, Contacto, Quién soy
+- Todos los enlaces internos son absolutos (`/index.html`, `/recursos.html`, etc.) para funcionar desde cualquier subdirectorio
 - En móvil los items se renderizan más pequeños (`text-[9px]`, `px-1.5`, iconos `w-2.5`) para que quepan en una fila
 
 ## Experiencias
