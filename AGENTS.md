@@ -5,26 +5,37 @@ Web estática con Vue 3 + Tailwind CSS + Lucide icons. Sin build step — CDN di
 ## Estructura
 
 - Cada página es un HTML standalone con Vue 3 montado en `#app`
-- `js/config.js` — Config global (secciones, redes sociales, colores)
+- `js/config.js` — Config global (secciones, redes sociales, colores, autor)
 - `js/components.js` — Componentes Vue compartidos: `site-header`, `site-footer`
 - `aplicaciones.json` — Datos de aplicaciones cargados por `aplicaciones.html` e `index.html`
 - `recursos.json` — Datos de recursos cargados dinámicamente por `recursos.html` e `index.html`
-- `experiencias/` — Artículos de experiencias de aula en HTML standalone con el mismo layout
+- `experiencias/` — Artículos de experiencias de aula, cada uno en su subcarpeta `experiencias/<slug>/`
 - `mates/` — Subweb de matemáticas con su propio index, libros, proyectos
 - `campana-telegram.md` — Plan de campaña para Telegram e Instagram (beta, estreno septiembre 2026)
+- `favicon.ico` — Favicon del sitio
+- `sergi.png` — Foto del autor
+- `logo.png` — Logo horizontal del sitio
 
 ## Páginas
 
 | Archivo | Ruta | Descripción |
 |---------|------|-------------|
-| `index.html` | `/` | Portada: hero, "¿Qué creamos?" (4 tipos + CTA petición), últimos recursos, experiencias, apps, Telegram CTA, quién soy |
+| `index.html` | `/` | Portada: hero, "¿Qué creamos?" (4 tipos + CTA petición), últimos recursos, últimas experiencias, apps, Telegram CTA, quién soy |
 | `recursos.html` | `/recursos.html` | Biblioteca de recursos con filtros (carga `recursos.json`) |
 | `aplicaciones.html` | `/aplicaciones.html` | Apps del proyecto (carga `aplicaciones.json`) |
-| `experiencias.html` | `/experiencias.html` | Experiencias de aula con cards que enlazan a artículos en `experiencias/` |
+| `experiencias.html` | `/experiencias.html` | Experiencias de aula con cards que enlazan a artículos en `experiencias/<slug>/` |
 | `ia-para-docentes.html` | `/ia-para-docentes.html` | Recursos de IA para docentes |
 | `telegram.html` | `/telegram.html` | Página de comunidad Telegram |
 | `contacto.html` | `/contacto.html` | Contacto (Telegram, Instagram, email) |
 | `quien.html` | `/quien.html` | Sobre el autor y el proyecto de apps libres |
+
+## Header y navegación
+
+- `site-header` recibe prop `active-page` (ej. `"experiencias.html"`) para resaltar el item activo
+- Compara con `item.href` de cada entrada del menú
+- Logo enlaza a `'/'` (raíz absoluta) funcionando desde cualquier subdirectorio
+- Menú con 8 items: Inicio, Recursos, Aplicaciones, IA Docentes, Telegram, Experiencias, Contacto, Quién soy
+- En móvil los items se renderizan más pequeños (`text-[9px]`, `px-1.5`, iconos `w-2.5`) para que quepan en una fila
 
 ## Experiencias
 
@@ -32,6 +43,18 @@ Web estática con Vue 3 + Tailwind CSS + Lucide icons. Sin build step — CDN di
 - La lista se carga desde `experiencias.html` con datos inline en el setup de Vue
 - `index.html` muestra las últimas 3 en una sección entre Recursos y Aplicaciones
 - Cada card es un `<a>` completo que enlaza al artículo
+- Los datos inline usan: `id`, `titulo`, `autor`, `fecha` (YYYY-MM-DD), `url`, `descripcion`, `etiquetas` (array), `imagen`
+- La función `formatFecha()` en el setup convierte fechas ISO a locale español
+
+### Plantilla de artículo (`experiencias/<slug>/index.html`)
+
+Cada artículo debe:
+- Cargar `../../js/config.js` y `../../js/components.js` (desde la subcarpeta)
+- Usar `<site-header active-page="experiencias.html">` y `<site-footer>`
+- Incluir los mismos estilos de `tailwind.config` (misma paleta primary)
+- Usar la clase `.article-content` para el contenido del artículo (estilos predefinidos para h2, h3, p, ul, ol, blockquote, img)
+- Enlazar volver atrás con `../../experiencias.html`
+- Inicializar Vue con `createApp`, montar en `#app`, llamar `lucide.createIcons()` en mounted
 
 ## Estilo visual
 
@@ -41,22 +64,26 @@ Web estática con Vue 3 + Tailwind CSS + Lucide icons. Sin build step — CDN di
 - **Tipografía**: Outfit para headings, Inter para body
 - **Colores**: Primary verde (`#16a34a`), fondos gradient `#f0fdf4 → #fff → #f0fdf4`
 - **Iconos**: Lucide v0.321.0
-- **Móvil**: todos los tamaños con `text-[Npx] md:text-[Npx]`, padding `p-N md:p-N`. Nav con tamaños reducidos en pantallas pequeñas para que quepa en 1-2 filas.
+- **Móvil**: todos los tamaños con `text-[Npx] md:text-[Npx]`, padding `p-N md:p-N`. Nav con tamaños reducidos en pantallas pequeñas.
+- **Header**: barra decorativa superior gradient, fondo `bg-primary-50/30`, bordes redondeados `rounded-b-[3rem]`
+- **Footer**: gradient `from-white to-slate-50` con licencia CC BY-SA 4.0, CTA de petición, fecha de última actualización
 
 ## Convenciones
 
 - Usar `text-[Npx]` en lugar de clases de tamaño predefinidas para texto muy pequeño
 - Prefijo `md:` para estilos de escritorio, mobile-first
+- Prefijo `lg:` para transiciones intermedias (nav items, logo)
 - `aplicaciones.json` tiene campo `Icono` (nombre de icono Lucide), `Etiquetas` (array), `GitHub` (opcional)
 - `recursos.json` tiene campo `Seccion` (id de sección), `Etiquetas` (array con prefijo seccion-tipo), `URL` (obligatorio)
 - No hay npm ni build — todo via CDN (unpkg + cdn.tailwindcss.com)
+- Las config de color de Tailwind se repiten en cada página (no hay shared tailwind.config)
 - Footer incluye aviso de licencia CC BY-SA 4.0 y CTA de petición de apps/recursos
 
 ## Skeletons de carga
 
 En `index.html`, las secciones de últimos recursos y apps muestran skeletons (divs grises animados con `animate-pulse`) mientras se resuelven los fetch a `recursos.json` y `aplicaciones.json`.
 
-## Comandos
+## Servidor local
 
 No hay servidor de desarrollo. Abrir los HTML directamente o servir con cualquier http server:
 ```
