@@ -22,39 +22,6 @@
     "Seccion": "tutorias"
   },
   {
-    "Título": "El Termómetro Emocional",
-    "URL": "https://www.orientacionandujar.es/2023/01/10/termometro-de-las-emociones-para-ninos/",
-    "Descripción": "Recurso visual para que el alumnado identifique y exprese cómo se siente cada día. Ayuda a normalizar la conversación sobre emociones en el aula.",
-    "Etiquetas": [
-      "tutorias-material",
-      "Emociones"
-    ],
-    "FechaPublicacion": "2024-04-01",
-    "Seccion": "tutorias"
-  },
-  {
-    "Título": "Contrato de Grupo para la Convivencia",
-    "URL": "https://www.orientacionandujar.es/2022/09/11/plantilla-contrato-de-convivencia-para-el-aula/",
-    "Descripción": "Plantilla para elaborar un contrato de convivencia con tus alumnos. Acuerdan normas, firman y se comprometen. Ideal para inicio de curso.",
-    "Etiquetas": [
-      "tutorias-dinamica",
-      "Convivencia"
-    ],
-    "FechaPublicacion": "2024-05-01",
-    "Seccion": "tutorias"
-  },
-  {
-    "Título": "Dinámica: 2 Verdades y 1 Mentira",
-    "URL": "https://www.actiludis.com/2022/10/16/dos-verdades-y-una-mentira/",
-    "Descripción": "Juego de conocimiento grupal donde cada alumno comparte dos verdades y una mentira. El grupo debe adivinar cuál es la mentira. Ideal para crear vínculos.",
-    "Etiquetas": [
-      "tutorias-dinamica",
-      "Cohesión"
-    ],
-    "FechaPublicacion": "2024-06-01",
-    "Seccion": "tutorias"
-  },
-  {
     "Título": "Sociograma Interactivo de Aula",
     "URL": "https://sergarb1.github.io/SociogramaAula/",
     "Descripción": "App gratuita para pasar cuestionarios sociométricos, visualizar relaciones, detectar aislamiento y liderazgo. Datos locales, exportable a JSON.",
@@ -66,17 +33,6 @@
     "Seccion": "conflictos"
   },
   {
-    "Título": "Técnica del Semáforo de Aula",
-    "URL": "https://www.escuelaenlanube.com/tecnica-del-semaforo/",
-    "Descripción": "Sistema visual para la autorregulación del clima sonoro y conductual en clase basado en la técnica del semáforo.",
-    "Etiquetas": [
-      "conflictos-estrategia",
-      "Autorregulación"
-    ],
-    "FechaPublicacion": "2024-04-20",
-    "Seccion": "conflictos"
-  },
-  {
     "Título": "Círculos Restaurativos",
     "URL": "https://www.caib.es/sites/convivexit/f/374062",
     "Descripción": "Guía completa para implementar círculos restaurativos en el aula que sanen relaciones y construyan comunidad.",
@@ -85,17 +41,6 @@
       "Convivencia"
     ],
     "FechaPublicacion": "2024-06-10",
-    "Seccion": "conflictos"
-  },
-  {
-    "Título": "Banco de la Amistad",
-    "URL": "https://www.orientacionandujar.es/2023/09/05/el-banco-de-la-amistad-dinamica-para-mejorar-la-convivencia/",
-    "Descripción": "Dinámica para fomentar la inclusión y resolver conflictos de manera positiva. Los alumnos aprenden a pedir ayuda y a ofrecer apoyo a sus compañeros.",
-    "Etiquetas": [
-      "conflictos-dinamica",
-      "Inclusión"
-    ],
-    "FechaPublicacion": "2024-07-01",
     "Seccion": "conflictos"
   },
   {
@@ -121,39 +66,6 @@
     "Seccion": "diversidad"
   },
   {
-    "Título": "Guía de Altas Capacidades en el Aula",
-    "URL": "https://www.educacionyfp.gob.es/dam/jcr:8e7a9b3a-8b3c-4f1a-9e6d-5c4b3f2a1e0d/guia-altas-capacidades.pdf",
-    "Descripción": "Guía del Ministerio de Educación para identificar y atender al alumnado con altas capacidades. Incluye estrategias de enriquecimiento curricular.",
-    "Etiquetas": [
-      "diversidad-guia",
-      "Altas Capacidades"
-    ],
-    "FechaPublicacion": "2024-09-01",
-    "Seccion": "diversidad"
-  },
-  {
-    "Título": "Recursos para la Dislexia en Secundaria",
-    "URL": "https://www.orientacionandujar.es/2023/10/15/recursos-para-trabajar-la-dislexia-en-secundaria/",
-    "Descripción": "Compilación de estrategias, adaptaciones y materiales para apoyar al alumnado con dislexia en el aula de secundaria.",
-    "Etiquetas": [
-      "diversidad-material",
-      "Dislexia"
-    ],
-    "FechaPublicacion": "2024-10-01",
-    "Seccion": "diversidad"
-  },
-  {
-    "Título": "Pictogramas para la Rutina Diaria",
-    "URL": "https://www.orientacionandujar.es/2023/08/20/pictogramas-para-la-rutina-diaria-en-el-aula/",
-    "Descripción": "Material visual con pictogramas para estructurar la rutina diaria. Especialmente útil para alumnado TEA y personas con dificultades de organización.",
-    "Etiquetas": [
-      "diversidad-material",
-      "TEA"
-    ],
-    "FechaPublicacion": "2024-11-01",
-    "Seccion": "diversidad"
-  },
-  {
     "Título": "Kit de Inicio ABP",
     "URL": "https://www3.gobiernodecanarias.org/medusa/ecoescuela/pedagotic/aprendizaje-basado-proyectos/",
     "Descripción": "Guía completa del Aprendizaje Basado en Proyectos: claves para el diseño, fases y recursos para implementarlo en el aula.",
@@ -163,61 +75,6 @@
     ],
     "FechaPublicacion": "2024-09-01",
     "Seccion": "metodologias"
-  },
-  {
-    "Título": "Aprendizaje Cooperativo: Estructuras Kagan",
-    "URL": "https://www.orientacionandujar.es/2022/01/15/estructuras-de-aprendizaje-cooperativo-de-kagan/",
-    "Descripción": "Recopilación de las estructuras cooperativas de Spencer Kagan: 1-2-4, folio giratorio, lápices al centro y más. Listas para aplicar en cualquier materia.",
-    "Etiquetas": [
-      "metodologias-guia",
-      "Cooperativo"
-    ],
-    "FechaPublicacion": "2024-11-01",
-    "Seccion": "metodologias"
-  },
-  {
-    "Título": "Flipped Classroom: Guía de Inicio Rápido",
-    "URL": "https://www.theflippedclassroom.es/guia-para-empezar-con-flipped-classroom/",
-    "Descripción": "Guía práctica para implementar la clase invertida: cómo grabar vídeos, qué hacer en clase y cómo evaluar. Recursos y ejemplos reales.",
-    "Etiquetas": [
-      "metodologias-guia",
-      "Flipped"
-    ],
-    "FechaPublicacion": "2024-12-01",
-    "Seccion": "metodologias"
-  },
-  {
-    "Título": "Design Thinking en Educación",
-    "URL": "https://www.educaciontrespuntocero.com/recursos/design-thinking-en-el-aula/",
-    "Descripción": "Introducción al Design Thinking como metodología activa para resolver problemas reales en el aula. Incluye plantillas y fases del proceso.",
-    "Etiquetas": [
-      "metodologias-guia",
-      "Creatividad"
-    ],
-    "FechaPublicacion": "2025-01-01",
-    "Seccion": "metodologias"
-  },
-  {
-    "Título": "Portfolio Digital del Alumno",
-    "URL": "https://www.educaciontrespuntocero.com/recursos/portfolio-digital-alumno/",
-    "Descripción": "Guía para implementar el portfolio digital como herramienta de evaluación formativa. Permite al alumno reflexionar sobre su propio aprendizaje.",
-    "Etiquetas": [
-      "evaluacion-guia",
-      "Portfolio"
-    ],
-    "FechaPublicacion": "2025-01-15",
-    "Seccion": "evaluacion"
-  },
-  {
-    "Título": "Rúbrica de Evaluación de Trabajo en Equipo",
-    "URL": "https://www.orientacionandujar.es/2023/03/10/rubrica-para-evaluar-el-trabajo-en-equipo/",
-    "Descripción": "Rúbrica lista para usar que evalúa la colaboración, la comunicación, la responsabilidad y la resolución de conflictos dentro del equipo.",
-    "Etiquetas": [
-      "evaluacion-guia",
-      "Rúbricas"
-    ],
-    "FechaPublicacion": "2025-02-01",
-    "Seccion": "evaluacion"
   },
   {
     "Título": "Formación IA para Docentes",
@@ -418,39 +275,6 @@
     "Seccion": "mates"
   },
   {
-    "Título": "Pasaporte de la Amistad",
-    "URL": "https://www.actiludis.com/2021/09/15/pasaporte-de-la-amistad/",
-    "Descripción": "Dinámica para que los alumnos se conozcan mejor mediante un pasaporte que rellenan entrevistándose entre ellos. Ideal para inicio de curso.",
-    "Etiquetas": [
-      "tutorias-dinamica",
-      "Cohesión"
-    ],
-    "FechaPublicacion": "2026-01-10",
-    "Seccion": "tutorias"
-  },
-  {
-    "Título": "El Dado de las Emociones",
-    "URL": "https://www.orientacionandujar.es/2023/03/20/dado-de-las-emociones-para-trabajar-la-inteligencia-emocional/",
-    "Descripción": "Recurso manipulativo para trabajar la identificación y expresión de emociones. Lanza el dado y comparte una experiencia relacionada con esa emoción.",
-    "Etiquetas": [
-      "tutorias-material",
-      "Emociones"
-    ],
-    "FechaPublicacion": "2026-01-20",
-    "Seccion": "tutorias"
-  },
-  {
-    "Título": "Asamblea de Aula: Guía para Tutorías",
-    "URL": "https://www.educaciontrespuntocero.com/recursos/asamblea-aula/",
-    "Descripción": "Guía práctica para implementar la asamblea semanal en secundaria. Organización, temas, roles y registro para fomentar la participación y la escucha activa.",
-    "Etiquetas": [
-      "tutorias-guia",
-      "Convivencia"
-    ],
-    "FechaPublicacion": "2026-02-01",
-    "Seccion": "tutorias"
-  },
-  {
     "Título": "Mediación entre Iguales",
     "URL": "https://www.caib.es/sites/convivexit/f/374063",
     "Descripción": "Guía para formar alumnado mediador en centros educativos. Pasos, formación, fases de la mediación y recursos para implantar el programa.",
@@ -460,105 +284,6 @@
     ],
     "FechaPublicacion": "2026-01-15",
     "Seccion": "conflictos"
-  },
-  {
-    "Título": "El Buzón de la Convivencia",
-    "URL": "https://www.orientacionandujar.es/2022/10/01/buzon-de-la-convivencia-material-para-mejorar-el-clima-del-aula/",
-    "Descripción": "Recurso para instalar un buzón en el aula donde los alumnos depositan sugerencias, quejas o agradecimientos. Fomenta la comunicación y la resolución pacífica.",
-    "Etiquetas": [
-      "conflictos-dinamica",
-      "Convivencia"
-    ],
-    "FechaPublicacion": "2026-02-10",
-    "Seccion": "conflictos"
-  },
-  {
-    "Título": "Guía de Adaptaciones Curriculares",
-    "URL": "https://www.educacionyfp.gob.es/dam/jcr:8e7a9b3a-8b3c-4f1a-9e6d-5c4b3f2a1e0d/guia-adaptaciones-curriculares.pdf",
-    "Descripción": "Guía del Ministerio de Educación para realizar adaptaciones curriculares significativas y no significativas. Incluye plantillas y ejemplos por áreas.",
-    "Etiquetas": [
-      "diversidad-guia",
-      "Adaptaciones"
-    ],
-    "FechaPublicacion": "2026-03-01",
-    "Seccion": "diversidad"
-  },
-  {
-    "Título": "Rutinas de Pensamiento para el Aula",
-    "URL": "https://www.orientacionandujar.es/2024/01/15/rutinas-de-pensamiento-plantillas-descargables/",
-    "Descripción": "Plantillas descargables de rutinas de pensamiento: veo-pienso-me pregunto, color-símbolo-imagen, puente 3-2-1 y más. Para fomentar el pensamiento visible.",
-    "Etiquetas": [
-      "metodologias-material",
-      "Pensamiento"
-    ],
-    "FechaPublicacion": "2026-02-15",
-    "Seccion": "metodologias"
-  },
-  {
-    "Título": "Gamificación: Claves y Herramientas",
-    "URL": "https://www.educaciontrespuntocero.com/recursos/gamificacion-en-el-aula/",
-    "Descripción": "Guía completa de gamificación educativa: mecánicas de juego, narrativa, herramientas digitales y ejemplos reales para aplicar en cualquier materia.",
-    "Etiquetas": [
-      "metodologias-guia",
-      "Gamificación"
-    ],
-    "FechaPublicacion": "2026-03-01",
-    "Seccion": "metodologias"
-  },
-  {
-    "Título": "Visual Thinking en Educación",
-    "URL": "https://www.theflippedclassroom.es/visual-thinking-en-el-aula/",
-    "Descripción": "Introducción al pensamiento visual como herramienta pedagógica. Aprende a usar mapas visuales, sketchnoting y organizadores gráficos en clase.",
-    "Etiquetas": [
-      "metodologias-guia",
-      "Visual Thinking"
-    ],
-    "FechaPublicacion": "2026-04-01",
-    "Seccion": "metodologias"
-  },
-  {
-    "Título": "Rúbrica para Evaluar Exposiciones Orales",
-    "URL": "https://www.orientacionandujar.es/2023/05/10/rubrica-para-evaluar-exposiciones-orales/",
-    "Descripción": "Rúbrica analítica con criterios de contenido, organización, lenguaje no verbal y recursos visuales. Ideal para evaluar presentaciones en cualquier materia.",
-    "Etiquetas": [
-      "evaluacion-guia",
-      "Rúbricas"
-    ],
-    "FechaPublicacion": "2026-03-15",
-    "Seccion": "evaluacion"
-  },
-  {
-    "Título": "Diana de Autoevaluación",
-    "URL": "https://www.actiludis.com/2022/06/12/diana-de-autoevaluacion/",
-    "Descripción": "Plantilla de diana para que el alumno se autoevalúe tras una actividad o proyecto. Visual, rápida y muy efectiva para la reflexión metacognitiva.",
-    "Etiquetas": [
-      "evaluacion-material",
-      "Autoevaluación"
-    ],
-    "FechaPublicacion": "2026-04-01",
-    "Seccion": "evaluacion"
-  },
-  {
-    "Título": "Coevaluación con Herramientas Digitales",
-    "URL": "https://www.educaciontrespuntocero.com/recursos/coevaluacion-digital/",
-    "Descripción": "Guía para implementar la coevaluación en el aula usando herramientas digitales. Incluye rúbricas, formularios y dinámicas de feedback entre iguales.",
-    "Etiquetas": [
-      "evaluacion-guia",
-      "Coevaluación"
-    ],
-    "FechaPublicacion": "2026-05-01",
-    "Seccion": "evaluacion"
-  },
-  {
-    "Título": "Perplexity AI como Asistente Docente",
-    "URL": "https://blog.google/intl/es-es/productos/impulsar-educacion-inteligencia-artificial/",
-    "Descripción": "Guía para usar Perplexity AI como asistente de investigación docente: preparar clases, crear materiales actualizados y verificar fuentes en tiempo real.",
-    "Etiquetas": [
-      "ia-pedagogica-guia",
-      "Investigación"
-    ],
-    "FechaPublicacion": "2026-05-15",
-    "Seccion": "ia-pedagogica"
   },
   {
     "Título": "Ética de la IA en Educación",
@@ -660,17 +385,6 @@
     "Seccion": "aplicaciones-externas"
   },
   {
-    "Título": "Flip (antes Flipgrid)",
-    "URL": "https://info.flip.com/",
-    "Descripción": "Plataforma de vídeo-discusión donde los alumnos responden a temas con vídeos cortos. Fomenta la participación oral, la creatividad y la expresión personal.",
-    "Etiquetas": [
-      "aplicaciones-externas-actividades",
-      "Vídeo"
-    ],
-    "FechaPublicacion": "2026-06-16",
-    "Seccion": "aplicaciones-externas"
-  },
-  {
     "Título": "Wakelet",
     "URL": "https://wakelet.com/",
     "Descripción": "Plataforma de curación de contenidos. Crea colecciones visuales de enlaces, vídeos, imágenes y documentos. Ideal para investigaciones y proyectos colaborativos.",
@@ -735,5 +449,104 @@
     ],
     "FechaPublicacion": "2026-06-16",
     "Seccion": "aplicaciones-externas"
+  },
+  {
+    "Título": "El Botiquín que Cura Todo — Gestión de Conflictos y Emociones",
+    "URL": "https://www.proferecursos.com/el-botiquin-que-cura-todo-manualidad-para-el-aula-gestion-de-conflictos-y-emociones/",
+    "Descripción": "Manualidad para crear un botiquín emocional en el aula. Los alumnos construyen herramientas para gestionar conflictos y emociones de forma creativa y colaborativa.",
+    "Etiquetas": [
+      "conflictos-dinamica",
+      "Emociones"
+    ],
+    "FechaPublicacion": "2026-06-01",
+    "Seccion": "conflictos"
+  },
+  {
+    "Título": "Fichas de Dislexia — Conciencia Fonológica y Lectura",
+    "URL": "https://www.proferecursos.com/fichas-de-dislexia/",
+    "Descripción": "Fichas de trabajo específicas para alumnos con dislexia. Incluye ejercicios de conciencia fonológica, discriminación de letras y comprensión lectora.",
+    "Etiquetas": [
+      "diversidad-material",
+      "Dislexia"
+    ],
+    "FechaPublicacion": "2026-06-01",
+    "Seccion": "diversidad"
+  },
+  {
+    "Título": "4Docent.es — Cuaderno Docente con Inteligencia Artificial",
+    "URL": "https://4docent.es/",
+    "Descripción": "Plataforma integral con IA para docentes: genera programaciones, situaciones de aprendizaje, rúbricas, exámenes y planes de apoyo personalizados. Usada por más de 50.000 docentes.",
+    "Etiquetas": [
+      "ia-pedagogica-herramienta",
+      "Planificación"
+    ],
+    "FechaPublicacion": "2026-06-01",
+    "Seccion": "ia-pedagogica"
+  },
+  {
+    "Título": "Soy Visual — Sistema de Comunicación Aumentativa",
+    "URL": "https://www.soyvisual.org/",
+    "Descripción": "Sistema de comunicación aumentativa con pictogramas, láminas y materiales para apoyar a personas con TEA y necesidades complejas de comunicación. Recurso gratuito de la Fundación Orange.",
+    "Etiquetas": [
+      "diversidad-material",
+      "TEA"
+    ],
+    "FechaPublicacion": "2026-06-01",
+    "Seccion": "diversidad"
+  },
+  {
+    "Título": "Summarize.tech — Resumir Vídeos de YouTube con IA",
+    "URL": "https://www.summarize.tech/",
+    "Descripción": "Herramienta gratuita que usa IA para resumir vídeos largos de YouTube. Ideal para docentes que quieren extraer rápidamente el contenido clave de vídeos educativos.",
+    "Etiquetas": [
+      "ia-pedagogica-herramienta",
+      "Productividad"
+    ],
+    "FechaPublicacion": "2026-06-01",
+    "Seccion": "ia-pedagogica"
+  },
+  {
+    "Título": "Napkin.ai — Convierte Texto en Elementos Visuales",
+    "URL": "https://www.napkin.ai/",
+    "Descripción": "Transforma texto en diagramas, infografías y elementos visuales atractivos con IA. Perfecto para crear materiales didácticos visuales y adaptar contenidos.",
+    "Etiquetas": [
+      "ia-pedagogica-herramienta",
+      "Visual Thinking"
+    ],
+    "FechaPublicacion": "2026-06-01",
+    "Seccion": "ia-pedagogica"
+  },
+  {
+    "Título": "Taller ChatGPT para Docentes — Ejemplos de Prompts",
+    "URL": "https://github.com/sergarb1/IAPractica/blob/main/Taller%20ChatGPT%20para%20docentes%20-%20Ejemplos%20de%20prompts.pdf",
+    "Descripción": "PDF con ejemplos prácticos de prompts para ChatGPT orientados a la docencia: programaciones, rúbricas, actividades, atención a la diversidad y más.",
+    "Etiquetas": [
+      "ia-pedagogica-guia",
+      "Prompts"
+    ],
+    "FechaPublicacion": "2026-06-01",
+    "Seccion": "ia-pedagogica"
+  },
+  {
+    "Título": "Board Game Arena — Juegos de Mesa Online",
+    "URL": "https://es.boardgamearena.com/",
+    "Descripción": "Plataforma gratuita para jugar a cientos de juegos de mesa online multijugador. Ideal para gamificar el aula y fomentar el pensamiento estratégico.",
+    "Etiquetas": [
+      "aplicaciones-externas-actividades",
+      "Juegos"
+    ],
+    "FechaPublicacion": "2026-06-01",
+    "Seccion": "aplicaciones-externas"
+  },
+  {
+    "Título": "Programa TEI — Tutoría Entre Iguales contra el Acoso Escolar",
+    "URL": "https://www.programatei.com/",
+    "Descripción": "Programa de convivencia para la prevención de la violencia y el acoso escolar basado en la tutorización emocional entre iguales. Implica a todas las etapas educativas con evidencias científicas de resultados: reduce el acoso verbal un 28,8% y la agresión física un 52,1%.",
+    "Etiquetas": [
+      "conflictos-guia",
+      "Convivencia"
+    ],
+    "FechaPublicacion": "2026-06-01",
+    "Seccion": "conflictos"
   }
 ]
