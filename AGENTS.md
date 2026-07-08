@@ -203,6 +203,22 @@ Debajo: textos listos para copiar (Instagram, Telegram y Story) con hashtags y e
 
 Además incluye `story.html` (1080×1920) para Instagram Stories, WhatsApp y Telegram Noticias.
 
+### Crear video Story + audio
+
+`instagram/scripts/crear-story-video.ps1` combina el PNG exportado de la story con un MP3 local para generar un MP4 (1080×1920). Uso:
+
+```powershell
+# Básico: el PNG en el directorio actual, el MP3 en cualquier ruta
+pwsh instagram/scripts/crear-story-video.ps1 -Mp3Path "ruta/al/audio.mp3"
+
+# Especificando PNG y nombre de salida
+pwsh instagram/scripts/crear-story-video.ps1 -Mp3Path "audio.mp3" -StoryPng "02-vacaciones-story.png" -OutputName "mi-video"
+```
+
+**Requisitos:** ffmpeg instalado y accesible en PATH. Requiere haber exportado la story a PNG desde `story.html`.
+
+**⚠️ Los MP3 y MP4 en `instagram/` están en `.gitignore` — nunca se suben a la web ni al repositorio.**
+
 ## Servidor local
 
 No hay servidor de desarrollo. Abrir los HTML directamente o servir con cualquier http server:
