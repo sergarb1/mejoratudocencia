@@ -15,55 +15,82 @@
     }
     h1, h2, .ad { font-family: 'Architects Daughter', cursive; }
 
-    /* ===== STORY PREVIEW CARD ===== */
+    /* ===== STORY PREVIEW CARD (9:16 vertical) ===== */
     .story-card-wrap {
       margin: 20px 0;
     }
     .story-card {
-      width: 600px; height: 600px;
-      border-radius: 24px;
+      width: 338px; height: 600px;
+      border-radius: 28px;
       background: linear-gradient(160deg, #f0fdf4 0%, #ffffff 50%, #f0fdf4 100%);
-      box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+      box-shadow: 0 15px 40px rgba(0,0,0,0.12);
       display: flex; flex-direction: column;
-      align-items: center; justify-content: center;
-      text-align: center;
-      padding: 40px;
+      align-items: center; text-align: center;
+      padding: 36px 24px 20px;
       position: relative;
       overflow: hidden;
+      justify-content: space-between;
     }
     .story-card .sc-deco {
       position: absolute; top: 0; left: 0; right: 0;
-      height: 60px;
+      height: 40px;
       background: linear-gradient(90deg, #16a34a, #22c55e, #16a34a);
       opacity: 0.06;
     }
-    .story-card .sc-emoji { font-size: 64px; margin-bottom: 10px; }
+    .story-card .sc-deco-line {
+      position: absolute; top: 0; left: 12px;
+      width: 2px; height: 100%;
+      background: rgba(10,140,219,0.1);
+    }
+    .story-card .sc-deco-line-r {
+      position: absolute; top: 0; right: 12px;
+      width: 2px; height: 100%;
+      background: rgba(93,196,46,0.1);
+    }
+    .story-card .sc-top {
+      display: flex; flex-direction: column; align-items: center;
+      width: 100%; flex: 1; justify-content: center;
+    }
+    .story-card .sc-emoji { font-size: 42px; margin-bottom: 6px; }
     .story-card .sc-tit {
-      font-size: 36px; font-weight: 700; color: #0f172a;
+      font-size: 22px; font-weight: 700; color: #0f172a;
       font-family: 'Architects Daughter', cursive;
-      line-height: 1.15; margin-bottom: 8px;
+      line-height: 1.15; margin-bottom: 4px;
     }
-    .story-card .sc-desc {
-      font-size: 20px; font-weight: 500; color: #64748b;
-      line-height: 1.4; margin-bottom: 20px; max-width: 440px;
+    .story-card .sc-hook {
+      font-size: 12px; font-weight: 600; color: #475569;
+      line-height: 1.35; margin-bottom: 10px; max-width: 240px;
     }
-    .story-card .sc-btn {
-      display: inline-flex; align-items: center; gap: 8px;
-      padding: 14px 32px;
-      background: #16a34a; color: #fff;
-      font-weight: 700; font-size: 18px;
-      border-radius: 50px; text-decoration: none;
-      transition: transform .15s;
-      border: none; cursor: pointer;
+    .story-card .sc-items {
+      display: flex; flex-direction: column; gap: 6px;
+      width: 100%; max-width: 260px; margin-bottom: 8px;
     }
-    .story-card .sc-btn:hover { transform: scale(1.05); }
+    .story-card .sc-item {
+      display: flex; align-items: center; gap: 8px;
+      background: rgba(255,255,255,0.6);
+      padding: 6px 12px; border-radius: 30px;
+      border: 1px solid rgba(255,255,255,0.4);
+    }
+    .story-card .sc-item .si-emoji { font-size: 16px; min-width: 24px; text-align: center; }
+    .story-card .sc-item .si-txt {
+      font-size: 10px; font-weight: 600; color: #1e293b;
+      text-align: left;
+    }
+    .story-card .sc-cta {
+      font-size: 11px; font-weight: 700; color: #16a34a;
+      margin-top: 4px;
+    }
+    .story-card .sc-url {
+      font-size: 9px; font-weight: 600; color: #94a3b8;
+      letter-spacing: 0.5px;
+    }
     .story-card .sc-labels {
-      display: flex; gap: 10px; margin-top: 14px;
+      display: flex; gap: 6px; flex-wrap: wrap; justify-content: center;
     }
     .story-card .sc-labels span {
-      font-size: 14px; font-weight: 600; color: #94a3b8;
+      font-size: 9px; font-weight: 600; color: #94a3b8;
       background: rgba(255,255,255,0.6);
-      padding: 6px 16px; border-radius: 30px;
+      padding: 3px 10px; border-radius: 30px;
       border: 1px solid rgba(255,255,255,0.4);
     }
     .story-card-actions {
@@ -468,19 +495,37 @@
     <button class="btn btn-gray" onclick="descargarTodo()">⬇⬇ Descargar todo</button>
   </div>
 
-  <!-- ===== STORY PREVIEW CARD ===== -->
+  <!-- ===== STORY PREVIEW CARD (9:16) ===== -->
   <div class="story-card-wrap" id="storyCard">
     <div class="story-card" id="storyPreview">
       <div class="sc-deco"></div>
-      <div class="sc-emoji">📱</div>
-      <div class="sc-tit">Story vertical</div>
-      <div class="sc-desc">Formato vertical para Instagram Stories, WhatsApp<br>y Telegram Noticias</div>
-      <a class="sc-btn" href="story.html" target="_blank">
-        ➜ Abrir story
-      </a>
+      <div class="sc-deco-line"></div>
+      <div class="sc-deco-line-r"></div>
+      <div class="sc-top">
+        <div class="sc-emoji">🌊</div>
+        <div class="sc-tit">Disfrutando<br />del verano</div>
+        <div class="sc-hook">Ya preparamos recursos, apps y experiencias para septiembre 🚀</div>
+        <div class="sc-items">
+          <div class="sc-item">
+            <span class="si-emoji">💡</span>
+            <span class="si-txt">Sugiere recursos o ideas</span>
+          </div>
+          <div class="sc-item">
+            <span class="si-emoji">📱</span>
+            <span class="si-txt">Propón una app para tu aula</span>
+          </div>
+          <div class="sc-item">
+            <span class="si-emoji">📖</span>
+            <span class="si-txt">Comparte tu experiencia</span>
+          </div>
+        </div>
+        <div class="sc-cta">✈️ Únete a la comunidad</div>
+        <div class="sc-url">mejoratudocencia.es</div>
+      </div>
       <div class="sc-labels">
         <span>📸 1080×1920</span>
-        <span>🎯 1 slide</span>
+        <span>🎯 9:16</span>
+        <span>1 slide</span>
       </div>
     </div>
     <div class="story-card-actions">
