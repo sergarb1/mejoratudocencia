@@ -119,3 +119,15 @@ Todos los slides siguen la misma estructura:
 - Servir con `python -m http.server`
 - Esperar `document.fonts.ready` antes de capturar
 - `scale: 1080/1254` produce PNG de 1080×1080
+
+## Video Story (PNG + MP3 → MP4)
+
+- Script: `instagram/scripts/crear-story-video.ps1`
+- Combina el PNG exportado de `story.html` (1080×1920) con un MP3 local
+- Output: MP4 (1080×1920, H.264 + AAC) listo para Instagram Stories/Reels
+- Requisito: ffmpeg en PATH
+- Uso:
+  ```powershell
+  pwsh instagram/scripts/crear-story-video.ps1 -Mp3Path "ruta/audio.mp3"
+  ```
+- Los `.mp3` y `.mp4` dentro de `instagram/` están en `.gitignore` — nunca se suben

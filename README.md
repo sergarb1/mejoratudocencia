@@ -100,9 +100,9 @@
 │   ├── tailwind-config.js      Paleta Tailwind
 │   └── app.css                 Estilos comunes
 │
-├── 📁 instagram/               Posts visuales Instagram
+│   ├── scripts/                Script para generar video Story (PNG+MP3→MP4)
 │   ├── 01-pomodoro/            Técnica Pomodoro (3 slides)
-│   └── 02-vacaciones/          Verano + colaboración (3+1)
+│   └── 02-vacaciones/          Verano + colaboración (3 slides + story) + story.html
 │
 ├── 📄 campana.md               Plan de promoción
 ├── 📄 AGENTS.md                Instrucciones IA
@@ -151,7 +151,12 @@ Cada post en `instagram/<slug>/` incluye slides exportables a PNG y textos copia
 | **01-pomodoro** | Técnica Pomodoro en el aula — 3 slides |
 | **02-vacaciones** | Despedida de verano + llamada a colaborar — 3 slides + story |
 
-> ⚠️ html2canvas requiere servidor local (no funciona desde `file://`).
+| **scripts/** | Script PowerShell para combinar PNG de story + MP3 → MP4 (1080×1920) listo para subir a Instagram |
+| **layout.png** | Fondo común para slides carrusel (1254×1254) |
+| **CONVENCIONES.md** | Convenciones detalladas de diseño y medidas |
+
+> ⚠️ html2canvas requiere servidor local (no funciona desde `file://`).  
+> ⚠️ Los archivos `.mp3` y `.mp4` dentro de `instagram/` están en `.gitignore` y no se suben al repositorio.
 
 ---
 

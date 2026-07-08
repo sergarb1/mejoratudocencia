@@ -34,7 +34,7 @@ Write-Host "Generando video..." -ForegroundColor Cyan
 
 # Create video: loop image for audio duration, add audio track
 & ffmpeg -loop 1 -i $StoryPng -i $Mp3Path `
-    -c:v libx264 -t $duration -pix_fmt yuv420p -vf "scale=1080:1920:force_original_aspect_ratio=decrease,pad=1080:1920:(ow-iw)/2:(oh-ih)/2" `
+    -c:v libx264 -t $duration -pix_fmt yuv420p `
     -c:a aac -b:a 192k -shortest `
     -y "$OutputName.mp4"
 
