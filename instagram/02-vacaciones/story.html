@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>02 — Vacaciones • Story • Mejora tu Docencia</title>
+  <title>02 — Vacaciones • Post • Mejora tu Docencia</title>
   <link href="https://fonts.googleapis.com/css2?family=Architects+Daughter&family=Inter:wght@500;600;700;800&display=swap" rel="stylesheet" />
   <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
   <style>
@@ -17,110 +17,91 @@
 
     .story {
       position: relative;
-      width: 1080px; height: 1920px;
+      width: 1080px; height: 1080px;
       border-radius: 40px;
       box-shadow: 0 20px 60px rgba(0,0,0,0.15);
-      background: linear-gradient(160deg, #f0fdf4 0%, #ffffff 40%, #f0fdf4 100%);
       overflow: hidden;
     }
-
-    /* Decoración superior */
-    .deco-top {
-      position: absolute; top: 0; left: 0; right: 0;
-      height: 120px;
-      background: linear-gradient(90deg, #16a34a, #22c55e, #16a34a);
-      opacity: 0.08;
+    .story .bg {
+      position: absolute; top: 0; left: 0;
+      width: 1080px; height: 1080px;
+      pointer-events: none;
     }
-
-    /* Líneas laterales decorativas */
-    .deco-line-left {
-      position: absolute; top: 0; left: 35px;
-      width: 4px; height: 100%;
-      background: rgba(10,140,219,0.15);
-      border-radius: 2px;
-    }
-    .deco-line-right {
-      position: absolute; top: 0; right: 35px;
-      width: 4px; height: 100%;
-      background: rgba(93,196,46,0.15);
-      border-radius: 2px;
-    }
-
     .content {
       position: absolute; inset: 0;
       display: flex; flex-direction: column;
       align-items: center; text-align: center;
-      padding: 100px 80px 160px;
+      padding: 60px 90px 300px;
       justify-content: space-between;
     }
     .top {
       display: flex; flex-direction: column; align-items: center;
-      width: 100%;
+      width: 100%; flex: 1; justify-content: center;
     }
-    .emoji-xl { font-size: 120px; line-height: 1; margin-bottom: 20px; }
+    .emoji-xl { font-size: 72px; line-height: 1; margin-bottom: 10px; }
 
     h1 {
-      font-size: 100px; line-height: 1.1; color: #0f172a;
-      margin-bottom: 16px;
+      font-size: 80px; line-height: 1.1; color: #0f172a;
+      margin-bottom: 12px;
     }
 
     .hook {
-      font-weight: 600; font-size: 38px; color: #475569;
-      line-height: 1.35; margin-bottom: 14px; max-width: 800px;
+      font-weight: 600; font-size: 30px; color: #475569;
+      line-height: 1.35; margin-bottom: 10px; max-width: 780px;
     }
     .sub {
-      font-weight: 500; font-size: 32px; color: #64748b;
-      line-height: 1.4; margin-bottom: 40px; max-width: 860px;
+      font-weight: 500; font-size: 24px; color: #64748b;
+      line-height: 1.4; margin-bottom: 28px; max-width: 820px;
     }
 
     .items-story {
-      display: flex; flex-direction: column; gap: 24px;
-      width: 100%; max-width: 880px; margin-bottom: 40px;
+      display: flex; flex-direction: column; gap: 14px;
+      width: 100%; max-width: 860px; margin-bottom: 24px;
     }
     .item-story {
-      display: flex; align-items: center; gap: 28px;
+      display: flex; align-items: center; gap: 22px;
       background: rgba(255,255,255,0.7);
       backdrop-filter: blur(8px);
-      padding: 28px 36px; border-radius: 60px;
+      padding: 20px 28px; border-radius: 50px;
       border: 1px solid rgba(255,255,255,0.6);
     }
-    .item-story .s-emoji { font-size: 48px; min-width: 60px; text-align: center; }
+    .item-story .s-emoji { font-size: 36px; min-width: 50px; text-align: center; }
     .item-story .s-tit {
-      font-size: 32px; font-weight: 700; color: #0f172a;
+      font-size: 24px; font-weight: 700; color: #0f172a;
       text-align: left; flex: 1;
     }
     .item-story .s-desc {
-      font-size: 24px; font-weight: 500; color: #64748b;
+      font-size: 18px; font-weight: 500; color: #64748b;
       text-align: right;
     }
 
     .cta-story {
-      width: 100%; max-width: 880px;
+      width: 100%; max-width: 860px;
       background: rgba(22,163,74,0.08);
-      border-radius: 60px;
-      padding: 30px 40px;
+      border-radius: 50px;
+      padding: 22px 32px;
       border: 1px solid rgba(22,163,74,0.15);
     }
     .cta-story .cta-title {
-      font-size: 32px; font-weight: 700; color: #16a34a;
-      margin-bottom: 12px;
+      font-size: 24px; font-weight: 700; color: #16a34a;
+      margin-bottom: 8px;
     }
     .cta-story .cta-link {
-      font-size: 28px; font-weight: 600; color: #0f172a;
-      display: flex; align-items: center; justify-content: center; gap: 16px;
+      font-size: 20px; font-weight: 600; color: #0f172a;
+      display: flex; align-items: center; justify-content: center; gap: 14px;
       flex-wrap: wrap;
     }
     .cta-story .cta-link small {
-      font-weight: 500; font-size: 22px; color: #94a3b8;
+      font-weight: 500; font-size: 16px; color: #94a3b8;
     }
 
-    .bottom-brand-story {
-      font-size: 30px; color: #16a34a; font-weight: 700;
-      display: flex; align-items: center; gap: 16px;
-      letter-spacing: 1px;
+    .bottom-brand {
+      font-size: 22px; color: #16a34a; font-weight: 600;
+      display: flex; align-items: center; gap: 12px;
+      letter-spacing: 0.5px;
     }
-    .bottom-brand-story .sep {
-      width: 60px; height: 3px; background: rgba(22,163,74,0.2);
+    .bottom-brand .sep {
+      width: 50px; height: 2px; background: rgba(22,163,74,0.2);
     }
 
     /* ===== Botones ===== */
@@ -170,11 +151,7 @@
 <body>
 
   <div class="story" id="story">
-    <!-- Decoraciones -->
-    <div class="deco-top"></div>
-    <div class="deco-line-left"></div>
-    <div class="deco-line-right"></div>
-
+    <img class="bg" src="../layout.png" alt="" />
     <div class="content">
       <div class="top">
         <div class="emoji-xl">🌊</div>
@@ -207,19 +184,16 @@
             <span>t.me/noticias_mejora_tu_docencia <small>· Novedades</small></span>
           </div>
         </div>
-        <div style="margin-top: 20px; font-size: 34px; font-weight: 700; color: #0f172a;">
-          🌐 mejoratudocencia.es
-        </div>
       </div>
 
-      <div class="bottom-brand-story">
+      <div class="bottom-brand">
         <span class="sep"></span> mejoratudocencia.es <span class="sep"></span>
       </div>
     </div>
   </div>
 
   <div class="actions">
-    <button class="btn" onclick="descargar()">⬇ Descargar Story</button>
+    <button class="btn" onclick="descargar()">⬇ Descargar post</button>
     <button class="btn btn-gray" onclick="copiarTexto()">📋 Copiar texto</button>
   </div>
   <p class="nota">Abrir con <code>python -m http.server</code> → <code>localhost:8000/instagram/02-vacaciones/story.html</code></p>
@@ -256,10 +230,10 @@
         await new Promise(r => setTimeout(r, 100));
         const el = document.getElementById('story');
         const canvas = await html2canvas(el, {
-          width: 1080, height: 1920, scale: 1, useCORS: true, logging: false
+          width: 1080, height: 1080, scale: 1, useCORS: true, logging: false
         });
         const link = document.createElement('a');
-        link.download = '02-vacaciones-story.png';
+        link.download = '02-vacaciones-post.png';
         link.href = canvas.toDataURL('image/png');
         link.click();
       } catch (e) {

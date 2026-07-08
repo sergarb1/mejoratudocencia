@@ -79,31 +79,31 @@ Todos los slides siguen la misma estructura:
 | cta small | 18 |
 | bottom-brand | 24 |
 
-## Story para Instagram (1080×1920)
+## Post standalone (1080×1080)
 
 - Archivo: `story.html` dentro de cada carpeta de post
-- **No usa `layout.png`** — fondo con gradient `#f0fdf4 → #fff → #f0fdf4`
-- Decoraciones: barra superior + líneas laterales finas (simulan layout.png)
-- Tamaño canvas nativo: 1080×1920 (sin scale)
-- Mismo contenido resumido del carrusel en vertical
-- Incluye CTA con ambos canales de Telegram
-- Sirve para: Instagram Stories, WhatsApp, Telegram Noticias
+- Usa `layout.png` como fondo (mismo que los slides del carrusel)
+- Tamaño canvas nativo: 1080×1080 (cuadrado, como post de Instagram)
+- Sirve como slide adicional independiente, fuera del carrusel
+- Misma estructura visual que los slides: padding `60px 90px 300px`, `.top` + `.bottom-brand`
 
 ### Estructura
 
 ```css
 .story {
-  width: 1080px; height: 1920px;
-  background: linear-gradient(160deg, #f0fdf4 0%, #ffffff 40%, #f0fdf4 100%);
+  width: 1080px; height: 1080px;
+}
+.story .bg {
+  width: 1080px; height: 1080px;
 }
 .content {
-  padding: 100px 80px 160px;
+  padding: 60px 90px 300px;
   justify-content: space-between;
 }
 ```
 
-- `.top` contiene el contenido principal
-- `.bottom-brand-story` al fondo
+- `.top` centrado verticalmente con `flex: 1; justify-content: center`
+- `.bottom-brand` al fondo (como en los slides del carrusel)
 - Items con glass-effect (bg white/70 + backdrop-blur)
 
 ## Telegram en posts
@@ -120,11 +120,11 @@ Todos los slides siguen la misma estructura:
 - Esperar `document.fonts.ready` antes de capturar
 - `scale: 1080/1254` produce PNG de 1080×1080
 
-## Video Story (PNG + MP3 → MP4)
+## Video del post (PNG + MP3 → MP4)
 
 - Script: `instagram/scripts/crear-story-video.ps1`
-- Combina el PNG exportado de `story.html` (1080×1920) con un MP3 local
-- Output: MP4 (1080×1920, H.264 + AAC) listo para Instagram Stories/Reels
+- Combina el PNG exportado de `story.html` (1080×1080) con un MP3 local
+- Output: MP4 (1080×1080, H.264 + AAC) listo para Instagram (post cuadrado con audio)
 - Requisito: ffmpeg en PATH
 - Uso:
   ```powershell

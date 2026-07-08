@@ -15,82 +15,72 @@
     }
     h1, h2, .ad { font-family: 'Architects Daughter', cursive; }
 
-    /* ===== STORY PREVIEW CARD (9:16 vertical) ===== */
+    /* ===== POST PREVIEW CARD (1:1 square) ===== */
     .story-card-wrap {
       margin: 20px 0;
     }
     .story-card {
-      width: 338px; height: 600px;
+      width: 338px; height: 338px;
       border-radius: 28px;
       background: linear-gradient(160deg, #f0fdf4 0%, #ffffff 50%, #f0fdf4 100%);
       box-shadow: 0 15px 40px rgba(0,0,0,0.12);
       display: flex; flex-direction: column;
       align-items: center; text-align: center;
-      padding: 36px 24px 20px;
+      padding: 24px 20px 16px;
       position: relative;
       overflow: hidden;
       justify-content: space-between;
     }
     .story-card .sc-deco {
       position: absolute; top: 0; left: 0; right: 0;
-      height: 40px;
+      height: 30px;
       background: linear-gradient(90deg, #16a34a, #22c55e, #16a34a);
       opacity: 0.06;
-    }
-    .story-card .sc-deco-line {
-      position: absolute; top: 0; left: 12px;
-      width: 2px; height: 100%;
-      background: rgba(10,140,219,0.1);
-    }
-    .story-card .sc-deco-line-r {
-      position: absolute; top: 0; right: 12px;
-      width: 2px; height: 100%;
-      background: rgba(93,196,46,0.1);
     }
     .story-card .sc-top {
       display: flex; flex-direction: column; align-items: center;
       width: 100%; flex: 1; justify-content: center;
     }
-    .story-card .sc-emoji { font-size: 42px; margin-bottom: 6px; }
+    .story-card .sc-emoji { font-size: 32px; margin-bottom: 4px; }
     .story-card .sc-tit {
-      font-size: 22px; font-weight: 700; color: #0f172a;
+      font-size: 16px; font-weight: 700; color: #0f172a;
       font-family: 'Architects Daughter', cursive;
-      line-height: 1.15; margin-bottom: 4px;
+      line-height: 1.15; margin-bottom: 3px;
     }
     .story-card .sc-hook {
-      font-size: 12px; font-weight: 600; color: #475569;
-      line-height: 1.35; margin-bottom: 10px; max-width: 240px;
+      font-size: 9px; font-weight: 600; color: #475569;
+      line-height: 1.35; margin-bottom: 8px; max-width: 200px;
     }
     .story-card .sc-items {
-      display: flex; flex-direction: column; gap: 6px;
-      width: 100%; max-width: 260px; margin-bottom: 8px;
+      display: flex; flex-direction: column; gap: 4px;
+      width: 100%; max-width: 240px; margin-bottom: 6px;
     }
     .story-card .sc-item {
-      display: flex; align-items: center; gap: 8px;
+      display: flex; align-items: center; gap: 6px;
       background: rgba(255,255,255,0.6);
-      padding: 6px 12px; border-radius: 30px;
+      padding: 4px 10px; border-radius: 30px;
       border: 1px solid rgba(255,255,255,0.4);
     }
-    .story-card .sc-item .si-emoji { font-size: 16px; min-width: 24px; text-align: center; }
+    .story-card .sc-item .si-emoji { font-size: 12px; min-width: 20px; text-align: center; }
     .story-card .sc-item .si-txt {
-      font-size: 10px; font-weight: 600; color: #1e293b;
+      font-size: 8px; font-weight: 600; color: #1e293b;
       text-align: left;
     }
     .story-card .sc-cta {
-      font-size: 11px; font-weight: 700; color: #16a34a;
-      margin-top: 4px;
+      font-size: 9px; font-weight: 700; color: #16a34a;
+      margin-top: 3px;
     }
     .story-card .sc-url {
-      font-size: 9px; font-weight: 600; color: #94a3b8;
+      font-size: 7px; font-weight: 600; color: #94a3b8;
       letter-spacing: 0.5px;
     }
     .story-card .sc-labels {
-      display: flex; gap: 6px; flex-wrap: wrap; justify-content: center;
+      display: flex; gap: 4px; flex-wrap: wrap; justify-content: center;
     }
     .story-card .sc-labels span {
-      font-size: 9px; font-weight: 600; color: #94a3b8;
+      font-size: 7px; font-weight: 600; color: #94a3b8;
       background: rgba(255,255,255,0.6);
-      padding: 3px 10px; border-radius: 30px;
+      padding: 2px 8px; border-radius: 30px;
       border: 1px solid rgba(255,255,255,0.4);
     }
     .story-card-actions {
@@ -495,12 +485,10 @@
     <button class="btn btn-gray" onclick="descargarTodo()">⬇⬇ Descargar todo</button>
   </div>
 
-  <!-- ===== STORY PREVIEW CARD (9:16) ===== -->
+  <!-- ===== POST PREVIEW CARD (1:1 square) ===== -->
   <div class="story-card-wrap" id="storyCard">
     <div class="story-card" id="storyPreview">
       <div class="sc-deco"></div>
-      <div class="sc-deco-line"></div>
-      <div class="sc-deco-line-r"></div>
       <div class="sc-top">
         <div class="sc-emoji">🌊</div>
         <div class="sc-tit">Disfrutando<br />del verano</div>
@@ -523,14 +511,14 @@
         <div class="sc-url">mejoratudocencia.es</div>
       </div>
       <div class="sc-labels">
-        <span>📸 1080×1920</span>
-        <span>🎯 9:16</span>
+        <span>📸 1080×1080</span>
+        <span>🎯 1:1</span>
         <span>1 slide</span>
       </div>
     </div>
     <div class="story-card-actions">
       <button class="btn" onclick="descargarStoryPreview()">⬇ Exportar card</button>
-      <button class="btn btn-outline" onclick="window.open('story.html', '_blank')">📱 Abrir story</button>
+      <button class="btn btn-outline" onclick="window.open('story.html', '_blank')">📱 Abrir post</button>
     </div>
   </div>
 
@@ -671,10 +659,10 @@ Entre todos hacemos que la docencia mejore.
         await new Promise(r => setTimeout(r, 100));
         const card = document.getElementById('storyPreview');
         const canvas = await html2canvas(card, {
-          width: 600, height: 600, scale: 2, useCORS: true, logging: false
+          width: 338, height: 338, scale: 2, useCORS: true, logging: false
         });
         const link = document.createElement('a');
-        link.download = '02-vacaciones-story-card.png';
+        link.download = '02-vacaciones-post-card.png';
         link.href = canvas.toDataURL('image/png');
         link.click();
       } catch (e) {

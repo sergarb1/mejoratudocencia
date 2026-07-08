@@ -63,7 +63,8 @@
 
       <transition-group name="list" tag="section" class="grid gap-3 md:gap-4 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
         <article v-for="app in filteredApps" :key="app.Título"
-          class="card bg-white rounded-xl md:rounded-2xl p-3 md:p-4 flex flex-col h-full relative group border border-gray-100 overflow-hidden">
+          @click="openUrl(app.URL)"
+          class="card bg-white rounded-xl md:rounded-2xl p-3 md:p-4 flex flex-col h-full relative group border border-gray-100 overflow-hidden cursor-pointer hover:shadow-md transition-shadow">
           <div class="absolute top-0 left-0 w-0.5 md:w-1 h-full bg-primary-500 opacity-0 group-hover:opacity-100 transition-opacity"></div>
 
           <div class="mb-1.5 md:mb-2">
@@ -80,11 +81,11 @@
           </div>
 
           <div class="mt-auto pt-1.5 md:pt-2 border-t border-gray-50 flex gap-1.5 md:gap-2">
-            <a :href="app.URL" target="_blank"
+            <a :href="app.URL" target="_blank" rel="noopener noreferrer" @click.stop
               class="flex-1 bg-primary-600 text-white px-2 md:px-3 py-1.5 md:py-2 rounded-lg font-bold text-[9px] md:text-[11px] shadow-sm shadow-primary-200 hover:bg-primary-700 transition-all inline-flex items-center justify-center gap-1 md:gap-1.5">
               <i data-lucide="external-link" class="w-2.5 md:w-3 h-2.5 md:h-3"></i> App
             </a>
-            <a v-if="app.GitHub" :href="app.GitHub" target="_blank"
+            <a v-if="app.GitHub" :href="app.GitHub" target="_blank" rel="noopener noreferrer" @click.stop
               class="flex-1 bg-gray-600 text-white px-2 md:px-3 py-1.5 md:py-2 rounded-lg font-bold text-[9px] md:text-[11px] shadow-sm shadow-gray-200 hover:bg-gray-700 transition-all inline-flex items-center justify-center gap-1 md:gap-1.5">
               <i data-lucide="code" class="w-2.5 md:w-3 h-2.5 md:h-3"></i> Código
             </a>
@@ -129,6 +130,8 @@
           });
         });
 
+        const openUrl = (url) => window.open(url, '_blank', 'noopener,noreferrer');
+
         const resetFilters = () => {
           search.value = '';
           selectedTag.value = '';
@@ -146,7 +149,7 @@
           }
         });
 
-        return { loading, search, selectedTag, availableTags, filteredApps, resetFilters };
+        return { loading, search, selectedTag, availableTags, filteredApps, resetFilters, openUrl };
       }
     }).mount("#app");
   </script>

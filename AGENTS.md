@@ -178,34 +178,31 @@ Debajo: textos listos para copiar (Instagram y Telegram) con hashtags y enlaces 
 - **NO** mezclar `center` y `flex-start` entre slides de contenido — el salto visual es muy notorio (~300px de diferencia en un slide de 1254px)
 - Padding-bottom 300px mantiene el contenido en zona segura (y<960)
 
-### Formato Story (9:16)
+### Formato Post standalone (1:1)
 
-- **Proporciones:** 9:16 (ancho:alto)
-- **Dimensiones layout Story:** 1080×1920px
-- **html2canvas:** `width: 1080, height: 1920, scale: 1, useCORS: true`
-- **Story card preview en index.html:** 338×600px (escala 1:3.2 respecto a la real)
-- **Zona segura:** padding 100px superior, 80px laterales, 160px inferior
-- **Decoraciones:** barra gradient superior (120px, opacity 0.08), líneas laterales finas (4px width, opacity 0.15)
-- **Contenido:** `justify-content: space-between` con `.top` (flex column centrado) + `.bottom-brand-story` al final
-- La story siempre es **1 slide** (no carrusel)
-- `story.html` se abre desde `index.html` con `window.open()` y desde el botón "Abrir story"
-- Exportar story card preview con `scale: 2` (output 676×1200px)
+- **Proporciones:** 1:1 (cuadrado, como post de Instagram)
+- **Dimensiones:** 1080×1080px
+- **html2canvas:** `width: 1080, height: 1080, scale: 1, useCORS: true`
+- **Fondo:** usa `layout.png` (mismo que los slides del carrusel)
+- **Contenido:** mismo padding que los slides (`60px 90px 300px`), `.top` + `.bottom-brand`
+- `story.html` es un post cuadrado independiente (no carrusel)
+- **Story card preview en index.html:** 338×338px (escala 1:3.2)
 
 ### Post 02 — Vacaciones (`instagram/02-vacaciones/`)
 
-3 slides en carrusel + story:
+3 slides en carrusel + post standalone:
 1. **Cover** — 🌊 "Disfrutando del verano", hook sobre preparar septiembre
 2. **Qué preparamos** — 4 items: recursos, apps, experiencias, IA
 3. **Colabora** — 3 formas de participar + 3 pasos + CTA Telegram
-4. **Story card** — Preview vertical exportable (338×600px, 9:16) entre carrusel y textos, con enlace a `story.html` y botón de descarga propia. La card es un mini-resumen visual de la story real con emoji, título, hook y mini-items.
+4. **Post card** — Preview cuadrada exportable (338×338px, 1:1) entre carrusel y textos, con enlace a `story.html` y botón de descarga propia. La card es un mini-resumen visual del post real con emoji, título, hook y mini-items.
 
 Debajo: textos listos para copiar (Instagram, Telegram y Story) con hashtags y enlaces resaltados (.url, .hash).
 
-Además incluye `story.html` (1080×1920) para Instagram Stories, WhatsApp y Telegram Noticias.
+Además incluye `story.html` (1080×1080) para Instagram (post cuadrado) con fondo `layout.png`.
 
-### Crear video Story + audio
+### Crear video del post + audio
 
-`instagram/scripts/crear-story-video.ps1` combina el PNG exportado de la story con un MP3 local para generar un MP4 (1080×1920). Uso:
+`instagram/scripts/crear-story-video.ps1` combina el PNG exportado de `story.html` con un MP3 local para generar un MP4 (1080×1080). Uso:
 
 ```powershell
 # Básico: el PNG en el directorio actual, el MP3 en cualquier ruta
