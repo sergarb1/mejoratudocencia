@@ -1,5 +1,7 @@
 const APP_BASE_PATH = window.location.pathname.includes('/mejoratudocencia/') ? '/mejoratudocencia' : '';
 
+const p = (path) => APP_BASE_PATH + path;
+
 const APP_CONFIG = {
   title: "Mejora tu Docencia",
   subtitle: "Recursos Pedagógicos y Metodológicos",
