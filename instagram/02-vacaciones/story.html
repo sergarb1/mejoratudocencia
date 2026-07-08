@@ -55,44 +55,31 @@
     }
 
     .items-story {
-      display: flex; flex-direction: column; gap: 14px;
-      width: 100%; max-width: 900px; margin-bottom: 22px;
+      display: flex; flex-direction: column; gap: 12px;
+      width: 100%; max-width: 960px; margin-bottom: 22px;
     }
     .item-story {
-      display: flex; align-items: center; gap: 22px;
+      display: flex; align-items: center; gap: 18px;
       background: rgba(255,255,255,0.7);
       backdrop-filter: blur(8px);
-      padding: 20px 28px; border-radius: 50px;
+      padding: 16px 24px; border-radius: 50px;
       border: 1px solid rgba(255,255,255,0.6);
     }
     .item-story .s-emoji { font-size: 40px; min-width: 52px; text-align: center; }
     .item-story .s-tit {
-      font-size: 26px; font-weight: 700; color: #0f172a;
-      text-align: left; flex: 1;
-    }
-    .item-story .s-desc {
-      font-size: 18px; font-weight: 500; color: #64748b;
-      text-align: right;
+      font-size: 24px; font-weight: 700; color: #0f172a;
+      text-align: left; flex: 1; line-height: 1.25;
     }
 
     .cta-story {
       width: 100%; max-width: 900px;
       background: rgba(22,163,74,0.08);
       border-radius: 50px;
-      padding: 20px 30px;
+      padding: 16px 30px;
       border: 1px solid rgba(22,163,74,0.15);
     }
     .cta-story .cta-title {
       font-size: 26px; font-weight: 700; color: #16a34a;
-      margin-bottom: 8px;
-    }
-    .cta-story .cta-link {
-      font-size: 20px; font-weight: 600; color: #0f172a;
-      display: flex; align-items: center; justify-content: center; gap: 14px;
-      flex-wrap: wrap;
-    }
-    .cta-story .cta-link small {
-      font-weight: 500; font-size: 16px; color: #94a3b8;
     }
 
     /* ===== Botones ===== */
@@ -148,31 +135,25 @@
         <div class="emoji-xl">🌊</div>
         <h1>Disfrutando del verano</h1>
         <p class="hook">Ya preparamos recursos, apps y experiencias para septiembre 🚀</p>
-        <p class="sub">¿Quieres colaborar? Únete a la comunidad y comparte tus ideas</p>
+        <p class="sub">Comparte, propón, inspira — entre todos hacemos que la docencia mejore</p>
 
-        <div class="items-story">
-          <div class="item-story">
-            <div class="s-emoji">💡</div>
-            <div class="s-tit">Sugiere recursos o ideas</div>
-            <div class="s-desc">Ayuda a otros docentes</div>
+          <div class="items-story">
+            <div class="item-story">
+              <div class="s-emoji">💡</div>
+              <div class="s-tit">Sugiere un recurso o dinámica que haya funcionado en tu aula</div>
+            </div>
+            <div class="item-story">
+              <div class="s-emoji">📱</div>
+              <div class="s-tit">Propón una app educativa que necesites y la creamos gratis</div>
+            </div>
+            <div class="item-story">
+              <div class="s-emoji">📖</div>
+              <div class="s-tit">Comparte tu experiencia docente e inspira a otros profes</div>
+            </div>
           </div>
-          <div class="item-story">
-            <div class="s-emoji">📱</div>
-            <div class="s-tit">Propón una app para tu aula</div>
-            <div class="s-desc">La creamos gratis</div>
-          </div>
-          <div class="item-story">
-            <div class="s-emoji">📖</div>
-            <div class="s-tit">Comparte tu experiencia</div>
-            <div class="s-desc">Inspira a la comunidad</div>
-          </div>
-        </div>
 
         <div class="cta-story">
           <div class="cta-title">✈️ Únete a la comunidad</div>
-          <div class="cta-link">
-            <span>t.me/mejoratudocencia <small>· Comunidad</small></span>
-          </div>
         </div>
       </div>
     </div>
