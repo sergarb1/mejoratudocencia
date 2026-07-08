@@ -79,6 +79,41 @@ Todos los slides siguen la misma estructura:
 | cta small | 18 |
 | bottom-brand | 24 |
 
+## Story para Instagram (1080×1920)
+
+- Archivo: `story.html` dentro de cada carpeta de post
+- **No usa `layout.png`** — fondo con gradient `#f0fdf4 → #fff → #f0fdf4`
+- Decoraciones: barra superior + líneas laterales finas (simulan layout.png)
+- Tamaño canvas nativo: 1080×1920 (sin scale)
+- Mismo contenido resumido del carrusel en vertical
+- Incluye CTA con ambos canales de Telegram
+- Sirve para: Instagram Stories, WhatsApp, Telegram Noticias
+
+### Estructura
+
+```css
+.story {
+  width: 1080px; height: 1920px;
+  background: linear-gradient(160deg, #f0fdf4 0%, #ffffff 40%, #f0fdf4 100%);
+}
+.content {
+  padding: 100px 80px 160px;
+  justify-content: space-between;
+}
+```
+
+- `.top` contiene el contenido principal
+- `.bottom-brand-story` al fondo
+- Items con glass-effect (bg white/70 + backdrop-blur)
+
+## Telegram en posts
+
+- Usar URL completa `t.me/...` en lugar de `@...` (evita confusión con Instagram)
+- **Comunidad:** `t.me/mejoratudocencia`
+- **Novedades:** `t.me/noticias_mejora_tu_docencia`
+- Mostrar siempre ambos canales: Comunidad (colaboración) + Novedades (avisos)
+- Escribir "Comunidad" y "Novedades" con mayúscula
+
 ## html2canvas
 - No funciona desde `file://` (CORS)
 - Servir con `python -m http.server`

@@ -450,28 +450,8 @@
     "FechaPublicacion": "2026-06-16",
     "Seccion": "aplicaciones-externas"
   },
-  {
-    "Título": "El Botiquín que Cura Todo — Gestión de Conflictos y Emociones",
-    "URL": "https://www.proferecursos.com/el-botiquin-que-cura-todo-manualidad-para-el-aula-gestion-de-conflictos-y-emociones/",
-    "Descripción": "Manualidad para crear un botiquín emocional en el aula. Los alumnos construyen herramientas para gestionar conflictos y emociones de forma creativa y colaborativa.",
-    "Etiquetas": [
-      "conflictos-dinamica",
-      "Emociones"
-    ],
-    "FechaPublicacion": "2026-06-01",
-    "Seccion": "conflictos"
-  },
-  {
-    "Título": "Fichas de Dislexia — Conciencia Fonológica y Lectura",
-    "URL": "https://www.proferecursos.com/fichas-de-dislexia/",
-    "Descripción": "Fichas de trabajo específicas para alumnos con dislexia. Incluye ejercicios de conciencia fonológica, discriminación de letras y comprensión lectora.",
-    "Etiquetas": [
-      "diversidad-material",
-      "Dislexia"
-    ],
-    "FechaPublicacion": "2026-06-01",
-    "Seccion": "diversidad"
-  },
+
+
   {
     "Título": "4Docent.es — Cuaderno Docente con Inteligencia Artificial",
     "URL": "https://4docent.es/",
@@ -494,17 +474,7 @@
     "FechaPublicacion": "2026-06-01",
     "Seccion": "diversidad"
   },
-  {
-    "Título": "Summarize.tech — Resumir Vídeos de YouTube con IA",
-    "URL": "https://www.summarize.tech/",
-    "Descripción": "Herramienta gratuita que usa IA para resumir vídeos largos de YouTube. Ideal para docentes que quieren extraer rápidamente el contenido clave de vídeos educativos.",
-    "Etiquetas": [
-      "ia-pedagogica-herramienta",
-      "Productividad"
-    ],
-    "FechaPublicacion": "2026-06-01",
-    "Seccion": "ia-pedagogica"
-  },
+
   {
     "Título": "Napkin.ai — Convierte Texto en Elementos Visuales",
     "URL": "https://www.napkin.ai/",
@@ -539,6 +509,17 @@
     "Seccion": "aplicaciones-externas"
   },
   {
+    "Título": "No Sabéis Qué Me Pasa — Cómics y Unidades Didácticas",
+    "URL": "https://www.nosabeisquemepasa.org/",
+    "Descripción": "Proyecto de GINSO y CEMIN con cómics y unidades didácticas sobre salud mental infanto-juvenil: acoso escolar, adicciones, TCA, suicidio, mediación, violencia filio-parental y educación afectivo-sexual. Con guías para el aula.",
+    "Etiquetas": [
+      "tutorias-material",
+      "Conflictos"
+    ],
+    "FechaPublicacion": "2026-07-01",
+    "Seccion": "tutorias"
+  },
+  {
     "Título": "Programa TEI — Tutoría Entre Iguales contra el Acoso Escolar",
     "URL": "https://www.programatei.com/",
     "Descripción": "Programa de convivencia para la prevención de la violencia y el acoso escolar basado en la tutorización emocional entre iguales. Implica a todas las etapas educativas con evidencias científicas de resultados: reduce el acoso verbal un 28,8% y la agresión física un 52,1%.",
@@ -548,5 +529,229 @@
     ],
     "FechaPublicacion": "2026-06-01",
     "Seccion": "conflictos"
+  },
+  {
+    "Título": "OrientaRed",
+    "URL": "https://www.orientared.com/",
+    "Descripción": "Portal de referencia para orientadores y tutores con dinámicas, acción tutorial, convivencia y materiales descargables.",
+    "Etiquetas": ["tutorias-web", "Tutoría"],
+    "FechaPublicacion": "2026-07-08",
+    "Seccion": "tutorias"
+  },
+  {
+    "Título": "Educa y Aprende",
+    "URL": "https://www.educayaprende.com/",
+    "Descripción": "Colección de actividades para trabajar emociones, autoestima, habilidades sociales y educación emocional en el aula.",
+    "Etiquetas": ["tutorias-material", "Emociones"],
+    "FechaPublicacion": "2026-07-08",
+    "Seccion": "tutorias"
+  },
+  {
+    "Título": "Educaula — Convivencia Escolar",
+    "URL": "https://www.educaula.com/",
+    "Descripción": "Recursos prácticos para mediación, resolución de conflictos y mejora del clima del aula.",
+    "Etiquetas": ["conflictos-web", "Convivencia"],
+    "FechaPublicacion": "2026-07-08",
+    "Seccion": "conflictos"
+  },
+  {
+    "Título": "CAST — Universal Design for Learning",
+    "URL": "https://www.cast.org/",
+    "Descripción": "Portal oficial del Diseño Universal para el Aprendizaje con guías, ejemplos y recursos para una educación inclusiva.",
+    "Etiquetas": ["diversidad-web", "DUA"],
+    "FechaPublicacion": "2026-07-08",
+    "Seccion": "diversidad"
+  },
+  {
+    "Título": "AulaPlaneta",
+    "URL": "https://www.aulaplaneta.com/",
+    "Descripción": "Banco de artículos y experiencias sobre ABP, flipped classroom, gamificación y metodologías activas para el aula.",
+    "Etiquetas": ["metodologias-web", "ABP"],
+    "FechaPublicacion": "2026-07-08",
+    "Seccion": "metodologias"
+  },
+  {
+    "Título": "PBLWorks (Buck Institute)",
+    "URL": "https://www.pblworks.org/",
+    "Descripción": "Organización referente mundial en Aprendizaje Basado en Proyectos con guías, ejemplos y formación docente.",
+    "Etiquetas": ["metodologias-guia", "ABP"],
+    "FechaPublicacion": "2026-07-08",
+    "Seccion": "metodologias"
+  },
+  {
+    "Título": "CoRubrics",
+    "URL": "https://corubrics-es.tecnocentres.org/",
+    "Descripción": "Complemento gratuito para crear rúbricas y realizar coevaluación mediante Google Sheets. Sencillo y potente.",
+    "Etiquetas": ["evaluacion-herramienta", "Rúbricas"],
+    "FechaPublicacion": "2026-07-08",
+    "Seccion": "evaluacion"
+  },
+  {
+    "Título": "Rubistar",
+    "URL": "https://rubistar.4teachers.org/",
+    "Descripción": "Generador online de rúbricas para distintas materias y niveles educativos. Crea rúbricas personalizadas en minutos.",
+    "Etiquetas": ["evaluacion-herramienta", "Evaluación"],
+    "FechaPublicacion": "2026-07-08",
+    "Seccion": "evaluacion"
+  },
+  {
+    "Título": "MagicSchool AI",
+    "URL": "https://www.magicschool.ai/",
+    "Descripción": "Herramienta con más de 80 utilidades para docentes: rúbricas, adaptaciones, feedback y planificación asistida por IA.",
+    "Etiquetas": ["ia-pedagogica-herramienta", "Docentes"],
+    "FechaPublicacion": "2026-07-08",
+    "Seccion": "ia-pedagogica"
+  },
+  {
+    "Título": "Khanmigo",
+    "URL": "https://www.khanacademy.org/khan-labs",
+    "Descripción": "Asistente de IA educativa desarrollado por Khan Academy. Tutoriza al alumno sin dar respuestas directas.",
+    "Etiquetas": ["ia-pedagogica-web", "IA"],
+    "FechaPublicacion": "2026-07-08",
+    "Seccion": "ia-pedagogica"
+  },
+  {
+    "Título": "OpenAI Academy",
+    "URL": "https://academy.openai.com/",
+    "Descripción": "Recursos oficiales para aprender a utilizar la inteligencia artificial de forma responsable en educación.",
+    "Etiquetas": ["ia-pedagogica-curso", "Formación"],
+    "FechaPublicacion": "2026-07-08",
+    "Seccion": "ia-pedagogica"
+  },
+  {
+    "Título": "PhET Interactive Simulations",
+    "URL": "https://phet.colorado.edu/es/",
+    "Descripción": "Simulaciones interactivas gratuitas de ciencias y matemáticas de la Universidad de Colorado. Ideal para experimentación virtual.",
+    "Etiquetas": ["aplicaciones-externas-simulador", "STEM"],
+    "FechaPublicacion": "2026-07-08",
+    "Seccion": "aplicaciones-externas"
+  },
+  {
+    "Título": "NRICH",
+    "URL": "https://nrich.maths.org/",
+    "Descripción": "Miles de problemas matemáticos abiertos y actividades para desarrollar el razonamiento y el pensamiento crítico.",
+    "Etiquetas": ["mates-problemas", "Razonamiento"],
+    "FechaPublicacion": "2026-07-08",
+    "Seccion": "mates"
+  },
+  {
+    "Título": "Mathigon",
+    "URL": "https://mathigon.org/",
+    "Descripción": "Libros interactivos y actividades visuales de matemáticas. Contenido gratuito y adaptativo para distintos niveles.",
+    "Etiquetas": ["mates-libro", "ESO"],
+    "FechaPublicacion": "2026-07-08",
+    "Seccion": "mates"
+  },
+  {
+    "Título": "Desmos",
+    "URL": "https://www.desmos.com/",
+    "Descripción": "Calculadora gráfica online y actividades interactivas gratuitas para explorar matemáticas visualmente.",
+    "Etiquetas": ["mates-herramienta", "Gráficas"],
+    "FechaPublicacion": "2026-07-08",
+    "Seccion": "mates"
+  },
+  {
+    "Título": "Aprender a Estudiar — INTEF",
+    "URL": "http://ntic.educacion.es/w3/eos/MaterialesEducativos/mem2006/aprender_estudiar/",
+    "Descripción": "Recurso interactivo del INTEF con consejos y técnicas de estudio: organización, memoria, esquemas, resúmenes y preparación de exámenes.",
+    "Etiquetas": ["tutorias-web", "Técnicas de estudio"],
+    "FechaPublicacion": "2026-07-08",
+    "Seccion": "tutorias"
+  },
+  {
+    "Título": "IS4K — Internet Segura for Kids",
+    "URL": "https://www.is4k.es/",
+    "Descripción": "Centro de seguridad en Internet para menores del INCIBE. Recursos para prevenir riesgos, ciberacoso, grooming y adicción a pantallas.",
+    "Etiquetas": ["tutorias-web", "Prevención"],
+    "FechaPublicacion": "2026-07-08",
+    "Seccion": "tutorias"
+  },
+  {
+    "Título": "TodoFP — Orientación Académico-Profesional",
+    "URL": "https://www.todofp.es/",
+    "Descripción": "Portal oficial del Ministerio de Educación sobre Formación Profesional. Guías de orientación, salidas profesionales y recursos para el aula.",
+    "Etiquetas": ["tutorias-web", "Orientación"],
+    "FechaPublicacion": "2026-07-08",
+    "Seccion": "tutorias"
+  },
+  {
+    "Título": "ARASAAC — Portal Aragonés de Comunicación Aumentativa",
+    "URL": "https://arasaac.org/",
+    "Descripción": "Sistema de pictogramas y recursos SAAC para apoyar la comunicación de personas con TEA, discapacidad intelectual y necesidades complejas de comunicación.",
+    "Etiquetas": ["diversidad-material", "SAAC"],
+    "FechaPublicacion": "2026-07-08",
+    "Seccion": "diversidad"
+  },
+  {
+    "Título": "Confederación Autismo España",
+    "URL": "https://www.autismo.org.es/",
+    "Descripción": "Recursos, guías y materiales para la atención educativa del alumnado con Trastorno del Espectro Autista. Incluye pautas para el aula.",
+    "Etiquetas": ["diversidad-guia", "TEA"],
+    "FechaPublicacion": "2026-07-08",
+    "Seccion": "diversidad"
+  },
+  {
+    "Título": "DISFAM — Dislexia y Familia",
+    "URL": "https://www.disfam.org/",
+    "Descripción": "Asociación de dislexia con recursos, guías y materiales para docentes y familias. Pautas para identificar y apoyar al alumnado con dislexia.",
+    "Etiquetas": ["diversidad-guia", "Dislexia"],
+    "FechaPublicacion": "2026-07-08",
+    "Seccion": "diversidad"
+  },
+  {
+    "Título": "Confederación Española de Altas Capacidades",
+    "URL": "https://altascapacidades.es/",
+    "Descripción": "Recursos y guías para la identificación y atención educativa del alumnado con altas capacidades. Materiales para docentes y familias.",
+    "Etiquetas": ["diversidad-guia", "Altas Capacidades"],
+    "FechaPublicacion": "2026-07-08",
+    "Seccion": "diversidad"
+  },
+  {
+    "Título": "The Flipped Classroom España",
+    "URL": "https://www.theflippedclassroom.es/",
+    "Descripción": "Comunidad de referencia en español sobre Flipped Classroom. Artículos, experiencias, formación y recursos para dar la vuelta a tu clase.",
+    "Etiquetas": ["metodologias-web", "Flipped Classroom"],
+    "FechaPublicacion": "2026-07-08",
+    "Seccion": "metodologias"
+  },
+  {
+    "Título": "Guía Práctica de Aprendizaje Cooperativo",
+    "URL": "https://www.afoe.org/aprendizaje-cooperativo/",
+    "Descripción": "Guía completa sobre aprendizaje cooperativo: fundamentos, técnicas, roles, evaluación y plantillas para implementarlo en el aula.",
+    "Etiquetas": ["metodologias-guia", "Cooperativo"],
+    "FechaPublicacion": "2026-07-08",
+    "Seccion": "metodologias"
+  },
+  {
+    "Título": "Design Thinking for Educators — IDEO",
+    "URL": "https://designthinkingforeducators.com/",
+    "Descripción": "Toolkit oficial de IDEO para aplicar Design Thinking en educación. Guía con métodos, herramientas y ejemplos para innovar en el aula.",
+    "Etiquetas": ["metodologias-guia", "Design Thinking"],
+    "FechaPublicacion": "2026-07-08",
+    "Seccion": "metodologias"
+  },
+  {
+    "Título": "Additio App — Cuaderno del Profesor",
+    "URL": "https://www.additioapp.com/",
+    "Descripción": "Cuaderno del profesor digital con evaluación por competencias, rúbricas, informes y comunicación con familias. Plan gratuito disponible.",
+    "Etiquetas": ["evaluacion-herramienta", "Cuaderno del profesor"],
+    "FechaPublicacion": "2026-07-08",
+    "Seccion": "evaluacion"
+  },
+  {
+    "Título": "Formative — Evaluación Formativa Online",
+    "URL": "https://www.formative.com/",
+    "Descripción": "Plataforma de evaluación en tiempo real. Crea actividades, tests y tareas con feedback inmediato para el alumnado.",
+    "Etiquetas": ["evaluacion-herramienta", "Evaluación online"],
+    "FechaPublicacion": "2026-07-08",
+    "Seccion": "evaluacion"
+  },
+  {
+    "Título": "GoConqr — Tests, Mapas Mentales y Fichas",
+    "URL": "https://www.goconqr.com/es",
+    "Descripción": "Plataforma gratuita para crear tests, mapas mentales, fichas de estudio y apuntes online. Ideal para evaluación y estudio autónomo.",
+    "Etiquetas": ["evaluacion-herramienta", "Tests"],
+    "FechaPublicacion": "2026-07-08",
+    "Seccion": "evaluacion"
   }
 ]

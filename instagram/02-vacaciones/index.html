@@ -1,0 +1,654 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>02 — Vacaciones • Mejora tu Docencia</title>
+  <link href="https://fonts.googleapis.com/css2?family=Architects+Daughter&family=Inter:wght@500;600;700;800&display=swap" rel="stylesheet" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      background: #e2e8f0;
+      display: flex; flex-direction: column; align-items: center;
+      padding: 1.5rem; font-family: 'Inter', sans-serif;
+    }
+    h1, h2, .ad { font-family: 'Architects Daughter', cursive; }
+
+    /* ===== STORY PREVIEW CARD ===== */
+    .story-card-wrap {
+      margin: 20px 0;
+    }
+    .story-card {
+      width: 600px; height: 600px;
+      border-radius: 24px;
+      background: linear-gradient(160deg, #f0fdf4 0%, #ffffff 50%, #f0fdf4 100%);
+      box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+      display: flex; flex-direction: column;
+      align-items: center; justify-content: center;
+      text-align: center;
+      padding: 40px;
+      position: relative;
+      overflow: hidden;
+    }
+    .story-card .sc-deco {
+      position: absolute; top: 0; left: 0; right: 0;
+      height: 60px;
+      background: linear-gradient(90deg, #16a34a, #22c55e, #16a34a);
+      opacity: 0.06;
+    }
+    .story-card .sc-emoji { font-size: 64px; margin-bottom: 10px; }
+    .story-card .sc-tit {
+      font-size: 36px; font-weight: 700; color: #0f172a;
+      font-family: 'Architects Daughter', cursive;
+      line-height: 1.15; margin-bottom: 8px;
+    }
+    .story-card .sc-desc {
+      font-size: 20px; font-weight: 500; color: #64748b;
+      line-height: 1.4; margin-bottom: 20px; max-width: 440px;
+    }
+    .story-card .sc-btn {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 14px 32px;
+      background: #16a34a; color: #fff;
+      font-weight: 700; font-size: 18px;
+      border-radius: 50px; text-decoration: none;
+      transition: transform .15s;
+      border: none; cursor: pointer;
+    }
+    .story-card .sc-btn:hover { transform: scale(1.05); }
+    .story-card .sc-labels {
+      display: flex; gap: 10px; margin-top: 14px;
+    }
+    .story-card .sc-labels span {
+      font-size: 14px; font-weight: 600; color: #94a3b8;
+      background: rgba(255,255,255,0.6);
+      padding: 6px 16px; border-radius: 30px;
+      border: 1px solid rgba(255,255,255,0.4);
+    }
+    .story-card-actions {
+      display: flex; gap: 8px; margin-top: 10px;
+    }
+    .story-card-actions .btn {
+      padding: 9px 20px; font-weight: 700; font-size: 13px;
+      color: #fff; background: #16a34a; border: none;
+      border-radius: 40px; cursor: pointer;
+    }
+    .story-card-actions .btn-outline {
+      background: transparent; color: #16a34a;
+      border: 2px solid #16a34a;
+    }
+
+    .carousel {
+      position: relative;
+      width: 1254px; height: 1254px;
+      border-radius: 20px;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.15);
+    }
+    .slide {
+      position: absolute; inset: 0;
+      overflow: hidden; border-radius: 20px;
+      opacity: 0; visibility: hidden;
+      transition: opacity .4s, visibility .4s;
+    }
+    .slide.active { opacity: 1; visibility: visible; }
+    .slide .bg {
+      position: absolute; top: 0; left: 0;
+      width: 1254px; height: 1254px;
+      pointer-events: none;
+    }
+    .slide .content {
+      position: absolute; inset: 0;
+      display: flex; flex-direction: column;
+      align-items: center; text-align: center;
+      padding: 60px 90px 300px;
+      justify-content: space-between;
+    }
+    .emoji-xl { font-size: 80px; line-height: 1; margin-bottom: 12px; }
+
+    /* ===== SLIDE 1 – COVER ===== */
+    .slide1 .top {
+      display: flex; flex-direction: column; align-items: center;
+      flex: 1; width: 100%; justify-content: space-between;
+    }
+    .slide1 .top-inner {
+      display: flex; flex-direction: column; align-items: center;
+      flex: 1; justify-content: center;
+    }
+    .slide1 h1 {
+      font-size: 104px; line-height: 1.05; color: #0f172a;
+      margin-bottom: 12px;
+    }
+    .slide1 .hook {
+      font-weight: 600; font-size: 32px; color: #475569;
+      line-height: 1.35; margin-bottom: 10px; max-width: 800px;
+    }
+    .slide1 .sub {
+      font-weight: 500; font-size: 26px; color: #64748b;
+      line-height: 1.4; margin-bottom: 28px; max-width: 820px;
+    }
+    .slide1 .swipe {
+      font-size: 24px; color: #94a3b8; font-weight: 600;
+      display: flex; align-items: center; gap: 8px; padding-bottom: 10px;
+    }
+
+    .bottom-brand {
+      font-size: 24px; color: #16a34a; font-weight: 600;
+      display: flex; align-items: center; gap: 12px;
+      letter-spacing: 0.5px;
+    }
+    .bottom-brand .sep {
+      width: 50px; height: 2px; background: rgba(22,163,74,0.2);
+    }
+
+    /* ===== SLIDE 2 – LO QUE PREPARAMOS ===== */
+    .slide2 .top {
+      display: flex; flex-direction: column; align-items: center;
+      width: 100%; flex: 1; justify-content: space-between;
+    }
+    .slide2 h2 {
+      font-size: 72px; color: #0f172a; margin-bottom: 6px;
+    }
+    .slide2 .sub2 {
+      font-size: 26px; font-weight: 500; color: #64748b;
+      margin-bottom: 40px; max-width: 800px;
+    }
+    .items {
+      display: flex; flex-direction: column;
+      gap: 20px; width: 100%; max-width: 960px;
+    }
+    .item {
+      display: flex; align-items: center; gap: 24px;
+      background: rgba(255,255,255,0.6);
+      backdrop-filter: blur(4px);
+      padding: 24px 34px; border-radius: 50px;
+      border: 1px solid rgba(255,255,255,0.5);
+    }
+    .item .i-emoji { font-size: 42px; min-width: 56px; text-align: center; }
+    .item .i-tit {
+      font-size: 28px; font-weight: 700; color: #0f172a;
+      text-align: left; flex: 1;
+    }
+    .item .i-desc {
+      font-size: 20px; font-weight: 500; color: #64748b;
+      text-align: right; min-width: 220px;
+    }
+    .slide2 .tagline {
+      font-size: 26px; font-weight: 600; color: #64748b;
+      max-width: 800px; line-height: 1.4;
+    }
+
+    /* ===== SLIDE 3 – COLABORA ===== */
+    .slide3 .top {
+      display: flex; flex-direction: column; align-items: center;
+      width: 100%; flex: 1;
+    }
+    .slide3 h2 {
+      font-size: 64px; color: #0f172a; margin-bottom: 6px;
+    }
+    .slide3 .sub3 {
+      font-size: 28px; font-weight: 500; color: #64748b; margin-bottom: 26px;
+      max-width: 840px;
+    }
+    .col-grid {
+      display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 16px;
+      width: 100%; max-width: 1040px;
+      margin-bottom: 22px;
+    }
+    .col-card {
+      background: rgba(255,255,255,0.6);
+      backdrop-filter: blur(4px);
+      padding: 26px 16px 22px;
+      border-radius: 24px;
+      border: 1px solid rgba(255,255,255,0.5);
+      text-align: center;
+    }
+    .col-card .c-emoji { font-size: 50px; margin-bottom: 8px; }
+    .col-card .c-tit {
+      font-size: 26px; font-weight: 700; color: #0f172a; margin-bottom: 8px;
+    }
+    .col-card .c-desc { font-size: 17px; font-weight: 500; color: #64748b; line-height: 1.4; }
+
+    .pasos-label {
+      font-size: 26px; font-weight: 700; color: #0f172a;
+      margin-bottom: 14px;
+    }
+    .pasos {
+      display: flex; gap: 12px; width: 100%; max-width: 900px;
+    }
+    .paso {
+      flex: 1;
+      background: rgba(22,163,74,0.07);
+      border-radius: 20px;
+      padding: 18px 12px;
+      text-align: center;
+      border: 1px solid rgba(22,163,74,0.15);
+    }
+    .paso .p-num {
+      font-size: 38px; font-weight: 800; color: #16a34a;
+      display: block; margin-bottom: 4px;
+    }
+    .paso .p-desc {
+      font-size: 20px; font-weight: 600; color: #1e293b;
+    }
+    .paso .p-sub {
+      font-size: 15px; font-weight: 500; color: #64748b; margin-top: 4px;
+      display: block;
+    }
+
+    .divider {
+      width: 50%; height: 2px;
+      background: rgba(148,163,184,0.12);
+      margin: 20px 0 16px;
+    }
+
+    .cta-line {
+      text-align: center;
+    }
+    .cta-line .cta {
+      font-size: 30px; color: #16a34a; font-weight: 700;
+    }
+    .cta-line .cta small {
+      font-size: 18px; font-weight: 500; color: #94a3b8;
+    }
+    .cta-line .cta-row {
+      display: flex; align-items: center; justify-content: center;
+      gap: 24px; flex-wrap: wrap; margin-bottom: 6px;
+    }
+    .cta-line .cta-row span {
+      display: flex; align-items: center; gap: 8px;
+    }
+    .cta-line .cta-foot {
+      font-size: 20px; color: #94a3b8; font-weight: 500; margin-top: 8px;
+    }
+
+    /* ===== Navegación ===== */
+    .nav-dots { display: flex; gap: 10px; margin: 14px 0 12px; }
+    .nav-dots button {
+      width: 14px; height: 14px; border-radius: 50%;
+      border: 2px solid #16a34a; background: transparent;
+      cursor: pointer; transition: .2s;
+    }
+    .nav-dots button.active { background: #16a34a; transform: scale(1.2); }
+
+    /* ===== Botones ===== */
+    .actions { display: flex; gap: 8px; flex-wrap: wrap; justify-content: center; margin-bottom: 12px; }
+    .btn {
+      padding: 11px 26px; font-weight: 800; font-size: 14px;
+      color: #fff; background: #16a34a; border: none;
+      border-radius: 40px; cursor: pointer; transition: transform .15s;
+    }
+    .btn:hover { transform: scale(1.04); }
+    .btn:disabled { opacity: .5; cursor: not-allowed; transform: none; }
+    .btn-gray { background: #475569; }
+
+    .nota { font-size: 13px; color: #64748b; margin-bottom: 6px; }
+    .error { font-size: 13px; color: #dc2626; display: none; margin-bottom: 6px; }
+
+    /* ===== POST TEXT ===== */
+    .post-text {
+      width: 1254px; max-width: 100%;
+      background: #fff; border-radius: 20px;
+      padding: 32px 36px;
+      box-shadow: 0 10px 40px rgba(0,0,0,0.08);
+      margin-top: 20px;
+    }
+    .post-text h3 {
+      font-size: 18px; font-weight: 800; color: #0f172a;
+      margin-bottom: 10px; display: flex; align-items: center; gap: 8px;
+    }
+    .post-text h3 small { font-weight: 500; font-size: 13px; color: #94a3b8; }
+    .post-text .box {
+      background: #f8fafc; border-radius: 16px;
+      padding: 22px 26px;
+      font-size: 15px; line-height: 1.65;
+      color: #1e293b; white-space: pre-wrap;
+      border: 1px solid #e2e8f0;
+    }
+    .post-text .box .url { color: #16a34a; font-weight: 700; text-decoration: underline; }
+    .post-text .box .hash { color: #2563eb; font-weight: 600; }
+    .post-text .btn-copy {
+      margin-top: 10px; padding: 9px 22px;
+      font-weight: 700; font-size: 13px;
+      color: #16a34a; background: transparent;
+      border: 2px solid #16a34a; border-radius: 40px;
+      cursor: pointer; transition: .2s;
+    }
+    .post-text .btn-copy:hover { background: #16a34a; color: #fff; }
+    .tg-box { margin-top: 18px; }
+  </style>
+</head>
+<body>
+
+  <!-- ============ CARRUSEL ============ -->
+  <div class="carousel">
+
+    <!-- SLIDE 1 — Cover: vacaciones -->
+    <div class="slide slide1 active" data-slide="0">
+      <img class="bg" src="/instagram/layout.png" alt="" />
+      <div class="content">
+        <div class="top">
+          <div class="top-inner">
+            <div class="emoji-xl">🌊</div>
+            <h1>Disfrutando<br />del verano</h1>
+            <p class="hook">Pero ya estamos preparando algo para septiembre 🚀</p>
+            <p class="sub">
+              Mientras llegan los días de playa, piscina y descanso,<br />
+              por detrás recopilamos recursos, creamos apps y escribimos experiencias<br />
+              para que el curso que viene lo tengas todo listo.
+            </p>
+          </div>
+          <div class="swipe">👆 Desliza para ver qué preparamos →</div>
+        </div>
+        <div class="bottom-brand">
+          <span class="sep"></span> mejoratudocencia.es <span class="sep"></span>
+        </div>
+      </div>
+    </div>
+
+    <!-- SLIDE 2 — Qué preparamos -->
+    <div class="slide slide2" data-slide="1">
+      <img class="bg" src="/instagram/layout.png" alt="" />
+      <div class="content">
+        <div class="top">
+          <div class="emoji-xl">📦</div>
+          <h2>Preparando septiembre</h2>
+          <p class="sub2">Esto es lo que estamos cociendo durante las vacaciones 🍳</p>
+          <div class="items">
+            <div class="item">
+              <div class="i-emoji">📚</div>
+              <div class="i-tit">Recopilamos recursos</div>
+              <div class="i-desc">Guías, plantillas, dinámicas</div>
+            </div>
+            <div class="item">
+              <div class="i-emoji">🛠️</div>
+              <div class="i-tit">Creamos aplicaciones</div>
+              <div class="i-desc">Gratis, libres, sin registro</div>
+            </div>
+            <div class="item">
+              <div class="i-emoji">✍️</div>
+              <div class="i-tit">Escribimos experiencias</div>
+              <div class="i-desc">Compartidas por docentes</div>
+            </div>
+            <div class="item">
+              <div class="i-emoji">🤖</div>
+              <div class="i-tit">IA para tu aula</div>
+              <div class="i-desc">Formación y herramientas</div>
+            </div>
+          </div>
+          <p class="tagline">
+            📅 Septiembre: lanzamos todo lo nuevo. ¿Te lo vas a perder?
+          </p>
+        </div>
+        <div class="bottom-brand">
+          <span class="sep"></span> mejoratudocencia.es <span class="sep"></span>
+        </div>
+      </div>
+    </div>
+
+    <!-- SLIDE 3 — Colabora -->
+    <div class="slide slide3" data-slide="2">
+      <img class="bg" src="/instagram/layout.png" alt="" />
+      <div class="content">
+        <div class="top">
+          <h2>¿Quieres colaborar?</h2>
+          <p class="sub3">El proyecto lo hacemos entre todos · tú también puedes aportar</p>
+
+          <div class="col-grid">
+            <div class="col-card">
+              <div class="c-emoji">💡</div>
+              <div class="c-tit">Sugiere recursos</div>
+              <div class="c-desc">¿Conoces una guía, dinámica o herramienta educativa que haya funcionado en tu aula? Compártela y la añadimos a la biblioteca para que toda la comunidad pueda usarla.</div>
+            </div>
+            <div class="col-card">
+              <div class="c-emoji">📱</div>
+              <div class="c-tit">Propón una app</div>
+              <div class="c-desc">¿Necesitas una aplicación para resolver un problema concreto en clase? Dínoslo y la desarrollamos gratis, sin registro, para que esté disponible para todos los docentes.</div>
+            </div>
+            <div class="col-card">
+              <div class="c-emoji">📖</div>
+              <div class="c-tit">Cuenta tu experiencia</div>
+              <div class="c-desc">¿Una metodología, dinámica o herramienta te dio buenos resultados? Escríbela y compártela con otros profes. Tu experiencia puede inspirar a cientos de docentes.</div>
+            </div>
+          </div>
+
+          <div class="pasos-label">🗺️ Cómo participar — 3 pasos</div>
+          <div class="pasos">
+            <div class="paso">
+              <span class="p-num">1</span>
+              <span class="p-desc">Únete a la comunidad</span>
+              <span class="p-sub">Entra en Telegram y preséntate</span>
+            </div>
+            <div class="paso">
+              <span class="p-num">2</span>
+              <span class="p-desc">Comparte tu propuesta</span>
+              <span class="p-sub">Recurso, app o experiencia que aportar</span>
+            </div>
+            <div class="paso">
+              <span class="p-num">3</span>
+              <span class="p-desc">Lo hacemos realidad</span>
+              <span class="p-sub">Lo creamos y lo publicamos para todos</span>
+            </div>
+          </div>
+
+          <div class="divider"></div>
+
+          <div class="cta-line">
+            <div class="cta-row">
+              <span>✈️ t.me/mejoratudocencia <small>· Comunidad</small></span>
+              <span>📢 t.me/noticias_mejora_tu_docencia <small>· Novedades</small></span>
+            </div>
+            <div style="margin-top: 10px; font-size: 26px; font-weight: 700; color: #0f172a;">
+              🌐 mejoratudocencia.es
+            </div>
+            <div class="cta-foot">
+              Pasa, comparte, propón — entre todos hacemos que la docencia mejore
+            </div>
+          </div>
+        </div>
+        <div class="bottom-brand">
+          <span class="sep"></span> mejoratudocencia.es <span class="sep"></span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Navegación -->
+  <div class="nav-dots">
+    <button class="active" data-slide="0" onclick="ir(0)"></button>
+    <button data-slide="1" onclick="ir(1)"></button>
+    <button data-slide="2" onclick="ir(2)"></button>
+  </div>
+
+  <!-- Acciones -->
+  <div class="actions">
+    <button class="btn" onclick="descargar(0)">⬇ Slide 1</button>
+    <button class="btn" onclick="descargar(1)">⬇ Slide 2</button>
+    <button class="btn" onclick="descargar(2)">⬇ Slide 3</button>
+    <button class="btn btn-gray" onclick="descargarTodo()">⬇⬇ Descargar todo</button>
+  </div>
+
+  <!-- ===== STORY PREVIEW CARD ===== -->
+  <div class="story-card-wrap" id="storyCard">
+    <div class="story-card" id="storyPreview">
+      <div class="sc-deco"></div>
+      <div class="sc-emoji">📱</div>
+      <div class="sc-tit">Story vertical</div>
+      <div class="sc-desc">Formato vertical para Instagram Stories, WhatsApp<br>y Telegram Noticias</div>
+      <a class="sc-btn" href="story.html" target="_blank">
+        ➜ Abrir story
+      </a>
+      <div class="sc-labels">
+        <span>📸 1080×1920</span>
+        <span>🎯 1 slide</span>
+      </div>
+    </div>
+    <div class="story-card-actions">
+      <button class="btn" onclick="descargarStoryPreview()">⬇ Exportar card</button>
+      <button class="btn btn-outline" onclick="window.open('story.html', '_blank')">📱 Abrir story</button>
+    </div>
+  </div>
+
+  <p class="nota">Abrir con <code>python3 -m http.server</code> → <code>localhost:8000/instagram/02-vacaciones/</code></p>
+  <p class="error" id="errorMsg"></p>
+  <p class="error" id="storyError"></p>
+
+  <!-- ============ STORY TEXT ============ -->
+  <div class="post-text" style="margin-top:0">
+    <h3>📱 Texto para la Story <small>(copia y pega)</small></h3>
+    <div class="box" id="storyText">🌊 Disfrutando del verano, pero ya preparamos cositas para septiembre:
+
+📚 Recursos nuevos (guías, plantillas, dinámicas)
+🛠️ Apps gratuitas y sin registro
+✍️ Experiencias de aula compartidas por docentes
+🤖 Formación y herramientas de IA educativa
+
+🚀 ¿Quieres colaborar?
+💡 Sugiere un recurso · 📱 Propón una app · 📖 Cuenta tu experiencia
+
+✈️ Únete a la comunidad:
+t.me/mejoratudocencia · Comunidad
+t.me/noticias_mejora_tu_docencia · Novedades
+
+🌐 mejoratudocencia.es
+
+#MejoraTuDocencia #Verano #RecursosEducativos #AppsEducativas #ComunidadDocente</div>
+    <button class="btn-copy" onclick="copiar('storyText')">📋 Copiar texto</button>
+  </div>
+
+  <!-- ============ POST TEXT ============ -->
+  <div class="post-text">
+    <h3>📝 Texto del post para Instagram <small>(copia y pega)</small></h3>
+    <div class="box" id="igText">🌊 ¡Feliz verano! Disfrutando del descanso, pero no paramos del todo…
+
+Mientras llegan los días de playa, piscina y desconexión, por detrás ya estamos preparando cositas para septiembre 👇
+
+📚 Recopilando recursos: guías, plantillas, dinámicas para tu aula
+🛠️ Creando aplicaciones gratuitas, libres y sin registro
+✍️ Escribiendo experiencias compartidas por docentes como tú
+🤖 Formación y herramientas de IA educativa
+
+Todo esto y mucho más llegará en septiembre 🚀
+
+🤝 ¿Quieres colaborar? El proyecto lo hacemos entre todos:
+💡 Sugiere un recurso que conozcas
+📱 Propón una app que necesites en tu aula
+📖 Cuenta tu experiencia docente
+
+Pasa por nuestros canales de Telegram y comparte tus ideas:
+✈️ <span class="url">t.me/mejoratudocencia</span> · Comunidad
+📢 <span class="url">t.me/noticias_mejora_tu_docencia</span> · Novedades
+
+🌐 Todo gratis en <span class="url">mejoratudocencia.es</span>
+
+Entre todos hacemos que la docencia mejore. ¡Te esperamos!
+
+<span class="hash">#MejoraTuDocencia</span> <span class="hash">#Verano</span> <span class="hash">#RecursosEducativos</span>
+<span class="hash">#AppsEducativas</span> <span class="hash">#Docentes</span> <span class="hash">#Educacion</span>
+<span class="hash">#ComunidadDocente</span> <span class="hash">#Septiembre</span> <span class="hash">#ColaboracionDocente</span></div>
+    <button class="btn-copy" onclick="copiar('igText')">📋 Copiar texto</button>
+
+    <div class="tg-box">
+      <h3>✈️ Texto para Telegram</h3>
+      <div class="box" id="tgText">🌊 ¡Feliz verano! Disfrutando, pero no paramos del todo.
+
+Mientras descansamos, ya estamos preparando material para septiembre:
+
+📚 Recursos nuevos (guías, plantillas, dinámicas)
+🛠️ Apps gratuitas y sin registro
+✍️ Experiencias de aula compartidas por docentes
+🤖 Más formación y herramientas de IA educativa
+
+🚀 Todo llegará en septiembre. Y queremos que tú también participes:
+
+💡 ¿Conoces un recurso que debería estar en la web?
+📱 ¿Necesitas una app concreta para tu clase?
+📖 ¿Tienes una experiencia que compartir?
+
+Pásate por nuestros canales de Telegram y cuéntanos:
+💬 <span class="url">t.me/mejoratudocencia</span> · Comunidad
+📢 <span class="url">t.me/noticias_mejora_tu_docencia</span> · Novedades
+
+🌐 Todo gratis en <span class="url">mejoratudocencia.es</span>
+
+Entre todos hacemos que la docencia mejore.
+
+<span class="hash">#MejoraTuDocencia</span> <span class="hash">#Verano</span> <span class="hash">#RecursosEducativos</span> <span class="hash">#AppsEducativas</span> <span class="hash">#ComunidadDocente</span></div>
+      <button class="btn-copy" onclick="copiar('tgText')">📋 Copiar texto</button>
+    </div>
+  </div>
+
+  <script>
+    let descargando = false;
+
+    function ir(idx) {
+      document.querySelectorAll('.slide').forEach(s => s.classList.remove('active'));
+      document.querySelectorAll('.nav-dots button').forEach(b => b.classList.remove('active'));
+      document.querySelector(`.slide[data-slide="${idx}"]`).classList.add('active');
+      document.querySelector(`.nav-dots button[data-slide="${idx}"]`).classList.add('active');
+    }
+
+    async function descargar(idx) {
+      if (descargando) return;
+      descargando = true;
+      const err = document.getElementById('errorMsg');
+      err.style.display = 'none';
+      try {
+        await document.fonts.ready;
+        ir(idx);
+        await new Promise(r => setTimeout(r, 100));
+        const slide = document.querySelector(`.slide[data-slide="${idx}"]`);
+        const canvas = await html2canvas(slide, {
+          width: 1254, height: 1254, scale: 1080/1254, useCORS: true, logging: false
+        });
+        const link = document.createElement('a');
+        link.download = `02-vacaciones-slide-${idx+1}.png`;
+        link.href = canvas.toDataURL('image/png');
+        link.click();
+      } catch (e) {
+        err.textContent = 'Error: abre con servidor local (python3 -m http.server), no como archivo local.';
+        err.style.display = 'block';
+      }
+      descargando = false;
+    }
+
+    async function descargarTodo() {
+      for (let i = 0; i < 3; i++) { await descargar(i); await new Promise(r => setTimeout(r, 300)); }
+    }
+
+    async function descargarStoryPreview() {
+      if (descargando) return;
+      descargando = true;
+      const err = document.getElementById('storyError');
+      err.style.display = 'none';
+      try {
+        await document.fonts.ready;
+        await new Promise(r => setTimeout(r, 100));
+        const card = document.getElementById('storyPreview');
+        const canvas = await html2canvas(card, {
+          width: 600, height: 600, scale: 2, useCORS: true, logging: false
+        });
+        const link = document.createElement('a');
+        link.download = '02-vacaciones-story-card.png';
+        link.href = canvas.toDataURL('image/png');
+        link.click();
+      } catch (e) {
+        err.textContent = 'Error: abre con servidor local.';
+        err.style.display = 'block';
+      }
+      descargando = false;
+    }
+
+    function copiar(id) {
+      const el = document.getElementById(id);
+      const text = el.textContent;
+      navigator.clipboard.writeText(text).then(() => {
+        const btn = el.parentElement.querySelector('.btn-copy');
+        const orig = btn.textContent;
+        btn.textContent = '✅ Copiado';
+        setTimeout(() => btn.textContent = orig, 1500);
+      });
+    }
+  </script>
+</body>
+</html>

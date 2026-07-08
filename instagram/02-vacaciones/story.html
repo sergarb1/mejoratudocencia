@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>02 — Vacaciones • Story • Mejora tu Docencia</title>
+  <link href="https://fonts.googleapis.com/css2?family=Architects+Daughter&family=Inter:wght@500;600;700;800&display=swap" rel="stylesheet" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      background: #e2e8f0;
+      display: flex; flex-direction: column; align-items: center;
+      padding: 1.5rem; font-family: 'Inter', sans-serif;
+    }
+    h1, h2, .ad { font-family: 'Architects Daughter', cursive; }
+
+    .story {
+      position: relative;
+      width: 1080px; height: 1920px;
+      border-radius: 40px;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.15);
+      background: linear-gradient(160deg, #f0fdf4 0%, #ffffff 40%, #f0fdf4 100%);
+      overflow: hidden;
+    }
+
+    /* Decoración superior */
+    .deco-top {
+      position: absolute; top: 0; left: 0; right: 0;
+      height: 120px;
+      background: linear-gradient(90deg, #16a34a, #22c55e, #16a34a);
+      opacity: 0.08;
+    }
+
+    /* Líneas laterales decorativas */
+    .deco-line-left {
+      position: absolute; top: 0; left: 35px;
+      width: 4px; height: 100%;
+      background: rgba(10,140,219,0.15);
+      border-radius: 2px;
+    }
+    .deco-line-right {
+      position: absolute; top: 0; right: 35px;
+      width: 4px; height: 100%;
+      background: rgba(93,196,46,0.15);
+      border-radius: 2px;
+    }
+
+    .content {
+      position: absolute; inset: 0;
+      display: flex; flex-direction: column;
+      align-items: center; text-align: center;
+      padding: 100px 80px 160px;
+      justify-content: space-between;
+    }
+    .top {
+      display: flex; flex-direction: column; align-items: center;
+      width: 100%;
+    }
+    .emoji-xl { font-size: 120px; line-height: 1; margin-bottom: 20px; }
+
+    h1 {
+      font-size: 100px; line-height: 1.1; color: #0f172a;
+      margin-bottom: 16px;
+    }
+
+    .hook {
+      font-weight: 600; font-size: 38px; color: #475569;
+      line-height: 1.35; margin-bottom: 14px; max-width: 800px;
+    }
+    .sub {
+      font-weight: 500; font-size: 32px; color: #64748b;
+      line-height: 1.4; margin-bottom: 40px; max-width: 860px;
+    }
+
+    .items-story {
+      display: flex; flex-direction: column; gap: 24px;
+      width: 100%; max-width: 880px; margin-bottom: 40px;
+    }
+    .item-story {
+      display: flex; align-items: center; gap: 28px;
+      background: rgba(255,255,255,0.7);
+      backdrop-filter: blur(8px);
+      padding: 28px 36px; border-radius: 60px;
+      border: 1px solid rgba(255,255,255,0.6);
+    }
+    .item-story .s-emoji { font-size: 48px; min-width: 60px; text-align: center; }
+    .item-story .s-tit {
+      font-size: 32px; font-weight: 700; color: #0f172a;
+      text-align: left; flex: 1;
+    }
+    .item-story .s-desc {
+      font-size: 24px; font-weight: 500; color: #64748b;
+      text-align: right;
+    }
+
+    .cta-story {
+      width: 100%; max-width: 880px;
+      background: rgba(22,163,74,0.08);
+      border-radius: 60px;
+      padding: 30px 40px;
+      border: 1px solid rgba(22,163,74,0.15);
+    }
+    .cta-story .cta-title {
+      font-size: 32px; font-weight: 700; color: #16a34a;
+      margin-bottom: 12px;
+    }
+    .cta-story .cta-link {
+      font-size: 28px; font-weight: 600; color: #0f172a;
+      display: flex; align-items: center; justify-content: center; gap: 16px;
+      flex-wrap: wrap;
+    }
+    .cta-story .cta-link small {
+      font-weight: 500; font-size: 22px; color: #94a3b8;
+    }
+
+    .bottom-brand-story {
+      font-size: 30px; color: #16a34a; font-weight: 700;
+      display: flex; align-items: center; gap: 16px;
+      letter-spacing: 1px;
+    }
+    .bottom-brand-story .sep {
+      width: 60px; height: 3px; background: rgba(22,163,74,0.2);
+    }
+
+    /* ===== Botones ===== */
+    .actions { display: flex; gap: 8px; flex-wrap: wrap; justify-content: center; margin: 14px 0; }
+    .btn {
+      padding: 11px 26px; font-weight: 800; font-size: 14px;
+      color: #fff; background: #16a34a; border: none;
+      border-radius: 40px; cursor: pointer; transition: transform .15s;
+    }
+    .btn:hover { transform: scale(1.04); }
+    .btn-gray { background: #475569; }
+
+    .nota { font-size: 13px; color: #64748b; margin-bottom: 6px; }
+    .error { font-size: 13px; color: #dc2626; display: none; margin-bottom: 6px; }
+
+    .post-text {
+      width: 1080px; max-width: 100%;
+      background: #fff; border-radius: 20px;
+      padding: 32px 36px;
+      box-shadow: 0 10px 40px rgba(0,0,0,0.08);
+      margin-top: 20px;
+    }
+    .post-text h3 {
+      font-size: 18px; font-weight: 800; color: #0f172a;
+      margin-bottom: 10px; display: flex; align-items: center; gap: 8px;
+    }
+    .post-text h3 small { font-weight: 500; font-size: 13px; color: #94a3b8; }
+    .post-text .box {
+      background: #f8fafc; border-radius: 16px;
+      padding: 22px 26px;
+      font-size: 15px; line-height: 1.65;
+      color: #1e293b; white-space: pre-wrap;
+      border: 1px solid #e2e8f0;
+    }
+    .post-text .box .url { color: #16a34a; font-weight: 700; text-decoration: underline; }
+    .post-text .box .hash { color: #2563eb; font-weight: 600; }
+    .post-text .btn-copy {
+      margin-top: 10px; padding: 9px 22px;
+      font-weight: 700; font-size: 13px;
+      color: #16a34a; background: transparent;
+      border: 2px solid #16a34a; border-radius: 40px;
+      cursor: pointer; transition: .2s;
+    }
+    .post-text .btn-copy:hover { background: #16a34a; color: #fff; }
+  </style>
+</head>
+<body>
+
+  <div class="story" id="story">
+    <!-- Decoraciones -->
+    <div class="deco-top"></div>
+    <div class="deco-line-left"></div>
+    <div class="deco-line-right"></div>
+
+    <div class="content">
+      <div class="top">
+        <div class="emoji-xl">🌊</div>
+        <h1>Disfrutando<br />del verano</h1>
+        <p class="hook">Ya preparamos recursos, apps y experiencias para septiembre 🚀</p>
+        <p class="sub">¿Quieres colaborar? Únete a la comunidad y comparte tus ideas</p>
+
+        <div class="items-story">
+          <div class="item-story">
+            <div class="s-emoji">💡</div>
+            <div class="s-tit">Sugiere recursos o ideas</div>
+            <div class="s-desc">Ayuda a otros docentes</div>
+          </div>
+          <div class="item-story">
+            <div class="s-emoji">📱</div>
+            <div class="s-tit">Propón una app para tu aula</div>
+            <div class="s-desc">La creamos gratis</div>
+          </div>
+          <div class="item-story">
+            <div class="s-emoji">📖</div>
+            <div class="s-tit">Comparte tu experiencia</div>
+            <div class="s-desc">Inspira a la comunidad</div>
+          </div>
+        </div>
+
+        <div class="cta-story">
+          <div class="cta-title">✈️ Únete a la comunidad</div>
+          <div class="cta-link">
+            <span>t.me/mejoratudocencia <small>· Comunidad</small></span>
+            <span>t.me/noticias_mejora_tu_docencia <small>· Novedades</small></span>
+          </div>
+        </div>
+        <div style="margin-top: 20px; font-size: 34px; font-weight: 700; color: #0f172a;">
+          🌐 mejoratudocencia.es
+        </div>
+      </div>
+
+      <div class="bottom-brand-story">
+        <span class="sep"></span> mejoratudocencia.es <span class="sep"></span>
+      </div>
+    </div>
+  </div>
+
+  <div class="actions">
+    <button class="btn" onclick="descargar()">⬇ Descargar Story</button>
+    <button class="btn btn-gray" onclick="copiarTexto()">📋 Copiar texto</button>
+  </div>
+  <p class="nota">Abrir con <code>python -m http.server</code> → <code>localhost:8000/instagram/02-vacaciones/story.html</code></p>
+  <p class="error" id="errorMsg"></p>
+
+  <div class="post-text">
+    <h3>✈️ Texto para Telegram (Novedades) y WhatsApp</h3>
+    <div class="box" id="shareText">🌊 Disfrutando del verano, pero ya preparamos cositas para septiembre:
+
+📚 Recursos nuevos (guías, plantillas, dinámicas)
+🛠️ Apps gratuitas y sin registro
+✍️ Experiencias de aula compartidas por docentes
+🤖 Formación y herramientas de IA educativa
+
+🚀 ¿Quieres colaborar?
+💡 Sugiere un recurso · 📱 Propón una app · 📖 Cuenta tu experiencia
+
+✈️ Únete a la comunidad:
+<span class="url">t.me/mejoratudocencia</span> · Comunidad
+📢 <span class="url">t.me/noticias_mejora_tu_docencia</span> · Novedades
+
+🌐 <span class="url">mejoratudocencia.es</span>
+
+<span class="hash">#MejoraTuDocencia</span> <span class="hash">#Verano</span> <span class="hash">#RecursosEducativos</span> <span class="hash">#AppsEducativas</span> <span class="hash">#ComunidadDocente</span></div>
+    <button class="btn-copy" onclick="copiar('shareText')">📋 Copiar texto</button>
+  </div>
+
+  <script>
+    async function descargar() {
+      const err = document.getElementById('errorMsg');
+      err.style.display = 'none';
+      try {
+        await document.fonts.ready;
+        await new Promise(r => setTimeout(r, 100));
+        const el = document.getElementById('story');
+        const canvas = await html2canvas(el, {
+          width: 1080, height: 1920, scale: 1, useCORS: true, logging: false
+        });
+        const link = document.createElement('a');
+        link.download = '02-vacaciones-story.png';
+        link.href = canvas.toDataURL('image/png');
+        link.click();
+      } catch (e) {
+        err.textContent = 'Error: abre con servidor local (python -m http.server), no como archivo local.';
+        err.style.display = 'block';
+      }
+    }
+
+    function copiarTexto() {
+      const el = document.getElementById('shareText');
+      const text = el.textContent;
+      navigator.clipboard.writeText(text).then(() => {
+        const btn = document.querySelector('.btn-gray');
+        const orig = btn.textContent;
+        btn.textContent = '✅ Copiado';
+        setTimeout(() => btn.textContent = orig, 1500);
+      });
+    }
+
+    function copiar(id) {
+      const el = document.getElementById(id);
+      const text = el.textContent;
+      navigator.clipboard.writeText(text).then(() => {
+        const btn = el.parentElement.querySelector('.btn-copy');
+        const orig = btn.textContent;
+        btn.textContent = '✅ Copiado';
+        setTimeout(() => btn.textContent = orig, 1500);
+      });
+    }
+  </script>
+</body>
+</html>
