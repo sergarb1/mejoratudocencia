@@ -91,17 +91,18 @@ Todos los slides siguen la misma estructura:
 
 ```css
 .story {
-  width: 1080px; height: 1080px;
+  width: 1254px; height: 1254px;   /* native layout.png size */
 }
 .story .bg {
-  width: 1080px; height: 1080px;
+  width: 1254px; height: 1254px;
 }
 .content {
-  padding: 60px 90px 300px;
+  padding: 60px 90px 420px;        /* 420px bottom = 5 líneas extra para que no solape con logo */
   justify-content: space-between;
 }
 ```
 
+- html2canvas: `width: 1254, height: 1254, scale: 1080/1254` → produce PNG de 1080×1080 (mismo que slides)
 - `.top` centrado verticalmente con `flex: 1; justify-content: center`
 - `.bottom-brand` al fondo (como en los slides del carrusel)
 - Items con glass-effect (bg white/70 + backdrop-blur)
