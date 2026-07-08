@@ -27,6 +27,7 @@ Web estática con Vue 3 + Tailwind CSS + Lucide icons. Sin build step — CDN di
 
 | Archivo | Ruta | Descripción |
 |---------|------|-------------|
+| `404.html` | `/404.html` | Página de error 404 con estilo web, mensaje divertido y pista sobre GitHub Pages |
 | `index.html` | `/` | Portada: hero, "¿Qué creamos?" (4 tipos + CTA petición), últimos recursos, últimas experiencias, apps, Telegram CTA, quién soy |
 | `recursos.html` | `/recursos.html` | Biblioteca de recursos con filtros (carga `recursos.json`) |
 | `aplicaciones.html` | `/aplicaciones.html` | Apps del proyecto (carga `aplicaciones.json`) |
@@ -42,7 +43,11 @@ Web estática con Vue 3 + Tailwind CSS + Lucide icons. Sin build step — CDN di
 - Compara con `item.href` de cada entrada del menú
 - Logo enlaza a `'/'` (raíz absoluta) funcionando desde cualquier subdirectorio
 - Menú con 8 items: Inicio, Recursos, Aplicaciones, IA Docentes, Telegram, Experiencias, Contacto, Quién soy
-- Todos los enlaces internos son absolutos (`/index.html`, `/recursos.html`, etc.) para funcionar desde cualquier subdirectorio
+- Todos los enlaces internos usan el helper `p('/ruta.html')` que antepone `APP_BASE_PATH` automáticamente
+- `APP_BASE_PATH` se define en `js/config.js` y se detecta según el dominio:
+  - **mejoratudocencia.es** → basePath vacío (`/`)
+  - **GitHub Pages** (`sergarb1.github.io/mejoratudocencia`) → basePath `/mejoratudocencia`
+- En componentes Vue usar `:href="p('/ruta.html')"`. En HTML plano sin Vue, usar `href="/mejoratudocencia/ruta.html"` o heredar basePath desde JS
 - En móvil los items se renderizan más pequeños (`text-[9px]`, `px-1.5`, iconos `w-2.5`) para que quepan en una fila
 
 ## Experiencias

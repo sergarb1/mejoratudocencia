@@ -22,7 +22,7 @@
     <main class="flex-grow max-w-7xl mx-auto w-full p-4 md:p-6 mt-4">
       <article class="bg-white rounded-[2rem] md:rounded-[3rem] p-6 md:p-12 shadow-xl border border-primary-50">
         <div class="flex items-center gap-2 text-[10px] md:text-xs font-bold text-primary-600 uppercase tracking-widest mb-4">
-          <a href="/experiencias.html" class="hover:underline flex items-center gap-1">
+          <a :href="p('/experiencias.html')" class="hover:underline flex items-center gap-1">
             <i data-lucide="arrow-left" class="w-3 h-3"></i> Experiencias
           </a>
           <span class="text-gray-300">·</span>
@@ -193,7 +193,7 @@
         </div>
 
         <div class="mt-8 pt-6 border-t border-gray-100 flex flex-col sm:flex-row items-center justify-between gap-4">
-          <a href="/experiencias.html" class="inline-flex items-center gap-2 text-xs font-bold text-primary-600 hover:text-primary-800 uppercase tracking-widest transition-colors">
+          <a :href="p('/experiencias.html')" class="inline-flex items-center gap-2 text-xs font-bold text-primary-600 hover:text-primary-800 uppercase tracking-widest transition-colors">
             <i data-lucide="arrow-left" class="w-3 h-3"></i> Volver a experiencias
           </a>
           <div class="flex gap-2">
@@ -215,7 +215,11 @@
     const { createApp, nextTick } = Vue;
     createApp({
       components: { SiteHeader, SiteFooter },
-      setup() { return { config: APP_CONFIG }; },
+      setup() {
+        const basePath = typeof APP_BASE_PATH !== 'undefined' ? APP_BASE_PATH : '';
+        const p = (path) => basePath + path;
+        return { config: APP_CONFIG, p };
+      },
       mounted() { nextTick(() => lucide.createIcons()); }
     }).mount("#app");
   </script>

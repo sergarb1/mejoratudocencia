@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>404 — Página no encontrada - Mejora tu Docencia</title>
+  <script src="https://unpkg.com/vue@3.4.15/dist/vue.global.prod.js"></script>
+  <script src="https://unpkg.com/lucide@0.321.0/dist/umd/lucide.min.js"></script>
+  <script src="https://cdn.tailwindcss.com/3.4.1"></script>
+  <script src="js/config.js"></script>
+  <script src="js/components.js"></script>
+  <script src="js/tailwind-config.js"></script>
+  <link rel="stylesheet" href="js/app.css" />
+  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;900&family=Inter:wght@400;500;600;800&display=swap" rel="stylesheet" />
+  <style>
+    .float { animation: float 3s ease-in-out infinite; }
+    @keyframes float {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-12px); }
+    }
+  </style>
+</head>
+<body class="gradient-bg text-gray-800 min-h-screen flex flex-col">
+  <div id="app" v-cloak class="flex flex-col flex-grow">
+    <site-header active-page=""></site-header>
+
+    <main class="flex-grow flex items-center justify-center px-4 py-12">
+      <section class="max-w-lg w-full text-center">
+
+        <!-- Ilustración -->
+        <div class="text-8xl md:text-9xl mb-4 float font-black" style="color: #16a34a20;">
+          404
+        </div>
+
+        <!-- Card chula -->
+        <div class="bg-white/80 backdrop-blur-xl rounded-[2.5rem] p-8 md:p-12 shadow-xl border border-primary-100/50 relative overflow-hidden">
+          <div class="absolute top-0 left-0 w-full h-1.5 bg-gradient-to-r from-primary-400 via-green-500 to-primary-400"></div>
+          
+          <div class="text-6xl mb-4">🧭</div>
+          <h1 class="text-2xl md:text-3xl font-black text-slate-900 mb-2" style="font-family: 'Outfit', sans-serif;">
+            ¡Ups! Te has perdido
+          </h1>
+          <p class="text-gray-500 text-sm md:text-base leading-relaxed mb-6">
+            Esto no es un recurso educativo, es un <strong class="text-primary-600">404</strong>. 
+            La página que buscas no está aquí… o quizá nunca existió. 
+            Como en el aula, a veces toca improvisar.
+          </p>
+
+          <!-- Pista sobre GitHub Pages -->
+          <div class="bg-amber-50 border border-amber-200 rounded-2xl p-4 mb-6 text-left">
+            <p class="text-xs md:text-sm text-amber-800 font-medium flex items-start gap-2">
+              <span class="text-lg shrink-0">💡</span>
+              <span>
+                <strong class="text-amber-900">¿Estás en GitHub Pages?</strong><br>
+                Prueba a añadir <code class="bg-amber-100 px-1.5 py-0.5 rounded text-amber-900 font-bold">/mejoratudocencia/</code> delante de la ruta. 
+                Ejemplo: <code class="bg-amber-100 px-1.5 py-0.5 rounded text-amber-900">/mejoratudocencia/recursos.html</code>
+              </span>
+            </p>
+          </div>
+
+          <p class="text-gray-400 text-xs md:text-sm italic mb-8">
+            «El que busca, encuentra… o aprende algo nuevo en el intento»
+          </p>
+
+          <!-- Botón principal -->
+          <a :href="p('/')" class="inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-primary-600 to-green-600 text-white font-bold text-sm md:text-base rounded-full shadow-xl shadow-primary-200 hover:shadow-2xl hover:shadow-primary-300 hover:scale-105 transition-all duration-300">
+            <i data-lucide="home" class="w-4 h-4"></i>
+            Volver al inicio
+          </a>
+
+          <div class="mt-5 flex justify-center gap-3">
+            <a :href="p('/recursos.html')" class="text-xs font-bold text-gray-400 hover:text-primary-600 transition-colors uppercase tracking-widest">Recursos</a>
+            <span class="text-gray-200">·</span>
+            <a :href="p('/aplicaciones.html')" class="text-xs font-bold text-gray-400 hover:text-primary-600 transition-colors uppercase tracking-widest">Apps</a>
+            <span class="text-gray-200">·</span>
+            <a :href="p('/experiencias.html')" class="text-xs font-bold text-gray-400 hover:text-primary-600 transition-colors uppercase tracking-widest">Experiencias</a>
+          </div>
+        </div>
+
+        <!-- Mensaje secreto -->
+        <p class="text-[10px] text-gray-300 mt-6 select-none">
+          PD: Si esto es culpa mía, perdón. Si es culpa tuya, no pasa nada. 
+          <span class="text-primary-200">Entre todos arreglamos los enlaces rotos.</span>
+        </p>
+      </section>
+    </main>
+
+    <site-footer></site-footer>
+  </div>
+
+  <script>
+    const { createApp, nextTick } = Vue;
+    createApp({
+      components: { SiteHeader, SiteFooter },
+      setup() {
+        const basePath = typeof APP_BASE_PATH !== 'undefined' ? APP_BASE_PATH : '';
+        const p = (path) => basePath + path;
+        return { config: APP_CONFIG, p };
+      },
+      mounted() { nextTick(() => lucide.createIcons()); }
+    }).mount("#app");
+  </script>
+</body>
+</html>

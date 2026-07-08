@@ -9,17 +9,17 @@ const SiteHeader = {
       <div class="absolute top-0 left-0 w-full h-full bg-gradient-to-b from-primary-50/30 to-transparent pointer-events-none"></div>
 
       <div class="max-w-7xl w-full flex flex-col lg:flex-row items-center justify-between gap-4 relative z-10">
-        <!-- Logo Area - Banner Horizontal más grande -->
-        <div class="flex items-center cursor-pointer group" onclick="window.location.href='/'">
+        <!-- Logo Area -->
+        <div class="flex items-center cursor-pointer group" @click="irInicio">
           <div class="relative rounded-2xl overflow-hidden shadow-xl shadow-primary-100/60 group-hover:shadow-primary-200 transition-all duration-500 ease-out bg-white">
             <div class="absolute inset-0 bg-gradient-to-br from-primary-500/15 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-10"></div>
-            <img src="/logo.png" alt="Mejora tu Docencia" class="h-12 md:h-16 lg:h-20 w-auto object-contain relative z-20 group-hover:scale-105 transition-transform duration-500 ease-out" />
+            <img :src="p('/logo.png')" alt="Mejora tu Docencia" class="h-12 md:h-16 lg:h-20 w-auto object-contain relative z-20 group-hover:scale-105 transition-transform duration-500 ease-out" />
           </div>
         </div>
 
         <!-- Navigation -->
         <nav class="flex flex-wrap justify-center gap-x-0.5 lg:gap-x-1 bg-gradient-to-r from-gray-50/80 to-white/80 p-1 lg:p-1.5 rounded-2xl border border-gray-200/60 backdrop-blur-md shadow-sm">
-          <a v-for="item in menuItems" :key="item.name" :href="item.href"
+          <a v-for="item in menuItems" :key="item.name" :href="p(item.href)"
             :class="[
               'text-[9px] lg:text-[10px] uppercase tracking-widest font-bold transition-all duration-300 flex items-center gap-0.5 lg:gap-1 px-1.5 lg:px-2.5 py-1 lg:py-1.5 rounded-lg whitespace-nowrap',
               activePage === (item.href.startsWith('/') ? item.href.slice(1) : item.href) 
@@ -34,6 +34,9 @@ const SiteHeader = {
     </header>
   `,
   setup() {
+    const basePath = typeof APP_BASE_PATH !== 'undefined' ? APP_BASE_PATH : '';
+    const p = (path) => basePath + path;
+    const irInicio = () => { window.location.href = p('/'); };
     const menuItems = [
       { name: "Inicio", href: "/index.html", icon: "layout-grid" },
       { name: "Recursos", href: "/recursos.html", icon: "library" },
@@ -44,7 +47,7 @@ const SiteHeader = {
       { name: "Contacto", href: "/contacto.html", icon: "message-circle-heart" },
       { name: "Quién soy", href: "/quien.html", icon: "user-circle" }
     ];
-    return { config: APP_CONFIG, menuItems };
+    return { config: APP_CONFIG, menuItems, p, irInicio };
   },
   mounted() {
     lucide.createIcons();
