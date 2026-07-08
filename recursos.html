@@ -167,7 +167,7 @@
         });
 
         const filteredResources = computed(() => {
-          return recursos.value.filter(r => {
+          let result = recursos.value.filter(r => {
             if (!r.URL) return false;
             const text = search.value.toLowerCase();
             const byText = !text || r.Título?.toLowerCase().includes(text) || r.Descripción?.toLowerCase().includes(text);
@@ -175,6 +175,12 @@
             const byType = !selectedType.value || getTypeFromTags(r.Etiquetas) === selectedType.value;
             return byText && bySection && byType;
           });
+          result.sort((a, b) => {
+            if (!a.FechaPublicacion) return 1;
+            if (!b.FechaPublicacion) return -1;
+            return b.FechaPublicacion.localeCompare(a.FechaPublicacion);
+          });
+          return result;
         });
 
         const formatFecha = (fecha) => {
