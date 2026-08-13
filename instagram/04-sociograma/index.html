@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>04 — Sociograma de aula • Mejora tu Docencia</title>
+  <link href="https://fonts.googleapis.com/css2?family=Architects+Daughter&family=Inter:wght@500;600;700;800&display=swap" rel="stylesheet" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      background: #e2e8f0;
+      display: flex; flex-direction: column; align-items: center;
+      padding: 1.5rem; font-family: 'Inter', sans-serif;
+    }
+    h1, h2, .ad { font-family: 'Architects Daughter', cursive; }
+
+    /* --- Carrusel --- */
+    .carousel {
+      position: relative;
+      width: 1254px; height: 1254px;
+      border-radius: 20px;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.15);
+    }
+    .slide {
+      position: absolute; inset: 0;
+      overflow: hidden; border-radius: 20px;
+      opacity: 0; visibility: hidden;
+      transition: opacity .4s, visibility .4s;
+    }
+    .slide.active { opacity: 1; visibility: visible; }
+    .slide .bg {
+      position: absolute; top: 0; left: 0;
+      width: 1254px; height: 1254px;
+      pointer-events: none;
+    }
+    .slide .content {
+      position: absolute; inset: 0;
+      display: flex; flex-direction: column;
+      align-items: center; text-align: center;
+      padding: 60px 90px 300px;
+      justify-content: space-between;
+    }
+    .emoji-xl { font-size: 80px; line-height: 1; margin-bottom: 12px; }
+
+    /* ===== SLIDE 1 – COVER ===== */
+    .slide1 .top {
+      display: flex; flex-direction: column; align-items: center;
+      flex: 1; width: 100%; justify-content: space-between;
+    }
+    .slide1 .top-inner {
+      display: flex; flex-direction: column; align-items: center;
+      flex: 1; justify-content: center;
+    }
+    .slide1 h1 {
+      font-size: 104px; line-height: 1.05; color: #0f172a;
+      margin-bottom: 12px;
+    }
+    .slide1 .hook {
+      font-weight: 600; font-size: 32px; color: #475569;
+      line-height: 1.35; margin-bottom: 10px; max-width: 760px;
+    }
+    .slide1 .sub {
+      font-weight: 500; font-size: 26px; color: #64748b;
+      line-height: 1.4; margin-bottom: 28px; max-width: 720px;
+    }
+    .slide1 .swipe {
+      font-size: 24px; color: #94a3b8; font-weight: 600;
+      display: flex; align-items: center; gap: 8px; padding-bottom: 10px;
+    }
+
+    /* ===== SLIDE 2 – QUÉ TE MUESTRA ===== */
+    .slide2 .top {
+      display: flex; flex-direction: column; align-items: center;
+      width: 100%; flex: 1; justify-content: space-between;
+    }
+    .slide2 h2 {
+      font-size: 72px; color: #0f172a; margin-bottom: 6px;
+    }
+    .slide2 .sub2 {
+      font-size: 26px; font-weight: 500; color: #64748b;
+      margin-bottom: 40px;
+    }
+    .items {
+      display: flex; flex-direction: column;
+      gap: 20px; width: 100%; max-width: 1000px;
+    }
+    .item {
+      display: flex; align-items: center; gap: 20px;
+      background: rgba(255,255,255,0.6);
+      backdrop-filter: blur(4px);
+      padding: 24px 30px; border-radius: 50px;
+      border: 1px solid rgba(255,255,255,0.5);
+    }
+    .item .emoji-sm { font-size: 38px; min-width: 48px; text-align: center; }
+    .item .num {
+      font-size: 46px; font-weight: 400; color: #16a34a;
+      min-width: 110px; text-align: center;
+    }
+    .item .desc {
+      font-size: 24px; font-weight: 600; color: #1e293b;
+      text-align: left; flex: 1;
+    }
+    .item .extra {
+      font-size: 17px; font-weight: 500; color: #94a3b8;
+      text-align: right; min-width: 130px;
+    }
+    .slide2 .tip {
+      font-size: 26px; font-weight: 600; color: #64748b;
+      max-width: 800px; line-height: 1.4;
+    }
+
+    .bottom-brand {
+      font-size: 24px; color: #16a34a; font-weight: 600;
+      display: flex; align-items: center; gap: 12px;
+      letter-spacing: 0.5px;
+    }
+    .bottom-brand .sep {
+      width: 50px; height: 2px; background: rgba(22,163,74,0.2);
+    }
+
+    /* ===== SLIDE 3 – CÓMO SE USA ===== */
+    .slide3 .top {
+      display: flex; flex-direction: column; align-items: center;
+      width: 100%; flex: 1;
+    }
+    .slide3 h2 {
+      font-size: 64px; color: #0f172a; margin-bottom: 6px;
+    }
+    .slide3 .sub3 {
+      font-size: 26px; font-weight: 500; color: #64748b; margin-bottom: 30px;
+    }
+    .pasos {
+      display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 16px;
+      width: 100%; max-width: 1000px;
+    }
+    .paso {
+      background: rgba(255,255,255,0.6);
+      backdrop-filter: blur(4px);
+      padding: 26px 14px 22px;
+      border-radius: 24px;
+      border: 1px solid rgba(255,255,255,0.5);
+      text-align: center;
+    }
+    .paso .p-icon { font-size: 46px; margin-bottom: 6px; }
+    .paso .p-tit {
+      font-size: 22px; font-weight: 400; color: #0f172a; margin-bottom: 4px;
+    }
+    .paso .p-desc { font-size: 14px; font-weight: 600; color: #64748b; line-height: 1.3; }
+
+    .divider {
+      width: 50%; height: 2px;
+      background: rgba(148,163,184,0.12);
+      margin: 32px 0 24px;
+    }
+
+    .results-grid {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 16px 32px;
+      text-align: left; width: 100%; max-width: 780px;
+      margin-bottom: 16px;
+    }
+    .res-item {
+      display: flex; align-items: center; gap: 14px;
+      font-size: 22px; font-weight: 700; color: #0f172a;
+    }
+    .res-item .check { font-size: 30px; }
+
+    .slide3 .cta {
+      margin-top: 32px;
+      font-size: 28px; color: #16a34a;
+      display: flex; align-items: center; gap: 8px;
+    }
+    .slide3 .cta small {
+      font-size: 18px; font-weight: 500; color: #94a3b8;
+    }
+
+    /* --- Navegación --- */
+    .nav-dots { display: flex; gap: 10px; margin: 14px 0 12px; }
+    .nav-dots button {
+      width: 14px; height: 14px; border-radius: 50%;
+      border: 2px solid #16a34a; background: transparent;
+      cursor: pointer; transition: .2s;
+    }
+    .nav-dots button.active { background: #16a34a; transform: scale(1.2); }
+
+    /* --- Botones --- */
+    .actions { display: flex; gap: 8px; flex-wrap: wrap; justify-content: center; margin-bottom: 12px; }
+    .btn {
+      padding: 11px 26px; font-weight: 800; font-size: 14px;
+      color: #fff; background: #16a34a; border: none;
+      border-radius: 40px; cursor: pointer; transition: transform .15s;
+    }
+    .btn:hover { transform: scale(1.04); }
+    .btn:disabled { opacity: .5; cursor: not-allowed; transform: none; }
+    .btn-gray { background: #475569; }
+
+    .nota { font-size: 13px; color: #64748b; margin-bottom: 6px; }
+    .error { font-size: 13px; color: #dc2626; display: none; margin-bottom: 6px; }
+
+    /* ===== POST TEXT ===== */
+    .post-text {
+      width: 1254px; max-width: 100%;
+      background: #fff; border-radius: 20px;
+      padding: 32px 36px;
+      box-shadow: 0 10px 40px rgba(0,0,0,0.08);
+      margin-top: 20px;
+    }
+    .post-text h3 {
+      font-size: 18px; font-weight: 800; color: #0f172a;
+      margin-bottom: 10px; display: flex; align-items: center; gap: 8px;
+    }
+    .post-text h3 small { font-weight: 500; font-size: 13px; color: #94a3b8; }
+    .post-text .box {
+      background: #f8fafc; border-radius: 16px;
+      padding: 22px 26px;
+      font-size: 15px; line-height: 1.65;
+      color: #1e293b; white-space: pre-wrap;
+      border: 1px solid #e2e8f0;
+    }
+    .post-text .box .url { color: #16a34a; font-weight: 700; text-decoration: underline; }
+    .post-text .box .hash { color: #2563eb; font-weight: 600; }
+    .post-text .btn-copy {
+      margin-top: 10px; padding: 9px 22px;
+      font-weight: 700; font-size: 13px;
+      color: #16a34a; background: transparent;
+      border: 2px solid #16a34a; border-radius: 40px;
+      cursor: pointer; transition: .2s;
+    }
+    .post-text .btn-copy:hover { background: #16a34a; color: #fff; }
+    .tg-box { margin-top: 18px; }
+  </style>
+</head>
+<body>
+
+  <!-- ============ CARRUSEL ============ -->
+  <div class="carousel">
+
+    <!-- SLIDE 1 — Cover -->
+    <div class="slide slide1 active" data-slide="0">
+      <img class="bg" src="../layout.png" alt="" />
+      <div class="content">
+        <div class="top">
+          <div class="top-inner">
+            <div class="emoji-xl">🕸️</div>
+            <h1>Sociograma<br />de aula</h1>
+            <p class="hook">¿Sabes qué alumno se queda solo en tu clase? 😔</p>
+            <p class="sub">
+              Una app para visualizar las relaciones del grupo y detectar<br />
+              aislamientos a tiempo. Con datos 100 % locales.
+            </p>
+          </div>
+          <div class="swipe">👆 Desliza para ver qué te muestra →</div>
+        </div>
+        <div class="bottom-brand">
+          <span class="sep"></span> mejoratudocencia.es <span class="sep"></span>
+        </div>
+      </div>
+    </div>
+
+    <!-- SLIDE 2 — Qué te muestra -->
+    <div class="slide slide2" data-slide="1">
+      <img class="bg" src="../layout.png" alt="" />
+      <div class="content">
+        <div class="top">
+          <div class="emoji-xl">🔍</div>
+          <h2>¿Qué te muestra?</h2>
+          <p class="sub2">Las relaciones del aula, sin intuiciones ni rumores</p>
+          <div class="items">
+            <div class="item">
+              <div class="emoji-sm">🔗</div>
+              <div class="num">1</div>
+              <div class="desc">Quién se relaciona con quién</div>
+              <div class="extra">mapa visual del grupo</div>
+            </div>
+            <div class="item">
+              <div class="emoji-sm">🧍</div>
+              <div class="num">2</div>
+              <div class="desc">Detección de aislamiento</div>
+              <div class="extra">el que se queda solo</div>
+            </div>
+            <div class="item">
+              <div class="emoji-sm">🧩</div>
+              <div class="num">3</div>
+              <div class="desc">Grupos y líderes</div>
+              <div class="extra">cliques y personas clave</div>
+            </div>
+            <div class="item">
+              <div class="emoji-sm">🔒</div>
+              <div class="num">4</div>
+              <div class="desc">Datos 100 % locales</div>
+              <div class="extra">nada sale de tu aula</div>
+            </div>
+          </div>
+          <p class="tip">
+            💡 En 10 minutos: cada alumno elige con quién quiere estar y la app dibuja el mapa
+          </p>
+        </div>
+        <div class="bottom-brand">
+          <span class="sep"></span> mejoratudocencia.es <span class="sep"></span>
+        </div>
+      </div>
+    </div>
+
+    <!-- SLIDE 3 — Cómo se usa -->
+    <div class="slide slide3" data-slide="2">
+      <img class="bg" src="../layout.png" alt="" />
+      <div class="content">
+        <div class="top">
+          <h2>En 3 pasos</h2>
+          <p class="sub3">Cualquier tutoría · Primaria, ESO y Bachillerato</p>
+          <div class="pasos">
+            <div class="paso">
+              <div class="p-icon">📝</div>
+              <div class="p-tit">Encuesta rápida</div>
+              <div class="p-desc">Cada alumno responde 2 o 3 preguntas</div>
+            </div>
+            <div class="paso">
+              <div class="p-icon">🕸️</div>
+              <div class="p-tit">Se genera el mapa</div>
+              <div class="p-desc">El sociograma se dibuja automáticamente</div>
+            </div>
+            <div class="paso">
+              <div class="p-icon">🧑‍🏫</div>
+              <div class="p-tit">Interviene</div>
+              <div class="p-desc">Detecta, acompaña y previene</div>
+            </div>
+          </div>
+          <div class="divider"></div>
+          <p style="font-size: 22px; font-weight: 700; color: #0f172a; margin-bottom: 16px;">
+            🎯 Para qué sirve
+          </p>
+          <div class="results-grid">
+            <div class="res-item"><span class="check">❤️</span> Detectar aislamiento y acoso a tiempo</div>
+            <div class="res-item"><span class="check">🤝</span> Diseñar grupos equilibrados</div>
+            <div class="res-item"><span class="check">👀</span> Conocer la dinámica real del grupo</div>
+            <div class="res-item"><span class="check">🗂️</span> Evidencias para tutoría y jefatura</div>
+          </div>
+          <div class="cta">
+            🛠️ Pruébala gratis
+            <small>· SociogramaAula</small>
+          </div>
+        </div>
+        <div class="bottom-brand">
+          <span class="sep"></span> mejoratudocencia.es <span class="sep"></span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Navegación -->
+  <div class="nav-dots">
+    <button class="active" data-slide="0" onclick="ir(0)"></button>
+    <button data-slide="1" onclick="ir(1)"></button>
+    <button data-slide="2" onclick="ir(2)"></button>
+  </div>
+
+  <!-- Acciones -->
+  <div class="actions">
+    <button class="btn" onclick="descargar(0)">⬇ Slide 1</button>
+    <button class="btn" onclick="descargar(1)">⬇ Slide 2</button>
+    <button class="btn" onclick="descargar(2)">⬇ Slide 3</button>
+    <button class="btn btn-gray" onclick="descargarTodo()">⬇⬇ Descargar todo</button>
+  </div>
+  <p class="nota">Abrir con <code>python3 -m http.server</code> → <code>localhost:8000/instagram/04-sociograma/</code></p>
+  <p class="error" id="errorMsg"></p>
+
+  <!-- ============ POST TEXT ============ -->
+  <div class="post-text">
+    <h3>📝 Texto del post para Instagram <small>(copia y pega)</small></h3>
+    <div class="box" id="igText">🕸️ ¿Sabes qué alumno se queda solo en tu clase?
+
+Las dinámicas de grupo no se ven a simple vista. Con un sociograma dibujas el mapa real de relaciones y detectas aislamientos antes de que se conviertan en un problema 👇
+
+La app <span class="url">SociogramaAula</span> te muestra:
+🔗 Quién se relaciona con quién
+🧍 Quién se queda solo (¡el dato que lo cambia todo!)
+🧩 Grupos, cliques y líderes
+🔒 Todo con datos 100 % locales, sin salir del aula
+
+Cómo se usa en 3 pasos:
+📝 Encuesta rápida (2-3 preguntas por alumno)
+🕸️ La app dibuja el mapa automáticamente
+🧑‍🏫 Interviene: acompaña y previene
+
+Sirve para cualquier tutoría · Primaria, ESO y Bachillerato.
+
+👉 Guárdalo para el nuevo curso
+👉 Comparte con otros profes
+👉 Enlace en la bio
+
+<span class="hash">#Sociograma</span> <span class="hash">#Tutoria</span> <span class="hash">#Convivencia</span>
+<span class="hash">#CohesionDeGrupo</span> <span class="hash">#Educacion</span> <span class="hash">#Docentes</span>
+<span class="hash">#Aula</span> <span class="hash">#Septiembre2026</span> <span class="hash">#MejoraTuDocencia</span></div>
+    <button class="btn-copy" onclick="copiar('igText')">📋 Copiar texto</button>
+
+    <div class="tg-box">
+      <h3>✈️ Texto para Telegram</h3>
+      <div class="box" id="tgText">🕸️ <span class="url">Sociograma de aula</span> — visualiza las relaciones de tu clase
+
+Una app gratis para dibujar el mapa social del grupo:
+• 🔗 Quién se relaciona con quién
+• 🧍 Detecta al alumno que se queda solo
+• 🧩 Grupos, cliques y líderes
+• 🔒 Datos 100 % locales (nada sale del aula)
+
+En 3 pasos: encuesta rápida → se genera el mapa → intervienes.
+
+Válido para cualquier tutoría y nivel. Sin registro, sin coste.
+
+🔗 <span class="url">https://sergarb1.github.io/SociogramaAula/</span>
+
+📸 Cuando subas el post a Instagram, pega aquí su enlace.
+
+📲 Síguenos en Instagram para más ideas:
+👉 <span class="url">https://www.instagram.com/mejoratudocencia/</span>
+
+✈️ Comunidad: <span class="url">t.me/mejoratudocencia</span>
+📢 Novedades: <span class="url">t.me/noticias_mejora_tu_docencia</span>
+
+<span class="hash">#Sociograma</span> <span class="hash">#Tutoria</span> <span class="hash">#Convivencia</span> <span class="hash">#MejoraTuDocencia</span></div>
+      <button class="btn-copy" onclick="copiar('tgText')">📋 Copiar texto</button>
+    </div>
+  </div>
+
+  <script>
+    let descargando = false;
+
+    function ir(idx) {
+      document.querySelectorAll('.slide').forEach(s => s.classList.remove('active'));
+      document.querySelectorAll('.nav-dots button').forEach(b => b.classList.remove('active'));
+      document.querySelector(`.slide[data-slide="${idx}"]`).classList.add('active');
+      document.querySelector(`.nav-dots button[data-slide="${idx}"]`).classList.add('active');
+    }
+
+    async function descargar(idx) {
+      if (descargando) return;
+      descargando = true;
+      const err = document.getElementById('errorMsg');
+      err.style.display = 'none';
+      try {
+        await document.fonts.ready;
+        ir(idx);
+        await new Promise(r => setTimeout(r, 100));
+        const slide = document.querySelector(`.slide[data-slide="${idx}"]`);
+        const canvas = await html2canvas(slide, {
+          width: 1254, height: 1254, scale: 1080/1254, useCORS: true, logging: false
+        });
+        const link = document.createElement('a');
+        link.download = `04-sociograma-slide-${idx+1}.png`;
+        link.href = canvas.toDataURL('image/png');
+        link.click();
+      } catch (e) {
+        err.textContent = 'Error: abre con servidor local (python3 -m http.server), no como archivo local.';
+        err.style.display = 'block';
+      }
+      descargando = false;
+    }
+
+    async function descargarTodo() {
+      for (let i = 0; i < 3; i++) { await descargar(i); await new Promise(r => setTimeout(r, 300)); }
+    }
+
+    function copiar(id) {
+      const el = document.getElementById(id);
+      const text = el.textContent;
+      navigator.clipboard.writeText(text).then(() => {
+        const btn = el.parentElement.querySelector('.btn-copy');
+        const orig = btn.textContent;
+        btn.textContent = '✅ Copiado';
+        setTimeout(() => btn.textContent = orig, 1500);
+      });
+    }
+  </script>
+</body>
+</html>

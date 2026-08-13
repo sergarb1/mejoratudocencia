@@ -8,17 +8,20 @@ Genera un post de Instagram completo para Mejora tu Docencia, exporta los PNGs y
 - `AGENTS.md` → secciones "Instagram" y convenciones de la web
 - `instagram/CONVENCIONES.md` → TODAS las reglas de layout: zonas seguras, tamaños de fuente, estructura de slides, bottom-brand. SEGUIRLO AL PIE DE LA LETRA.
 - `campana.md` → narrativa, hashtags, CTAs, calendario semanal
+- `ideas/banco.md` → **banco de ideas**: si hay una idea aprobada que encaje con el tema, úsala como fuente del contenido
 - `instagram/layout.png` → fondo de todos los slides (referencia visual)
 - Plantilla de referencia: `instagram/01-pomodoro/index.html` (estructura HTML + CSS + html2canvas + `.post-text`)
 - Usa `codegraph`/`serena` para localizar y entender el código antes de editar.
 
 ## Entrada
-`$ARGUMENTS` describe el tema/ángulo del post. Si viene vacío, pregúntalo.
+`$ARGUMENTS` describe el tema/ángulo del post.
+- Si **no viene argumento**: ejecuta primero el flujo de `/sugerir` (analiza banco de ideas + calendario + contenido existente) y presenta las recomendaciones para que el usuario elija, en lugar de inventar el tema tú solo.
+- Si el tema coincide con una idea del banco, indícalo y usa sus notas.
 
 ## Pasos
 
 1. **Investigar y proponer el ángulo**
-   - Revisa `recursos.json`, `aplicaciones.json` y `experiencias/` para enlazar **contenido real existente** (un recurso, una app o una experiencia) en el post. Nunca inventes URLs.
+   - Revisa `ideas/banco.md` (ideas aprobadas) y `recursos.json`, `aplicaciones.json` y `experiencias/` para enlazar **contenido real existente** (un recurso, una app o una experiencia) en el post. Nunca inventes URLs.
    - Propón el ángulo y la estructura de slides (2-4 slides). Si la fecha coincide con el calendario de `campana.md`, prioriza ese contenido (Lunes=app · Miércoles=recurso · Viernes=petición).
 
 2. **Elegir slug y crear la carpeta**
@@ -32,6 +35,7 @@ Genera un post de Instagram completo para Mejora tu Docencia, exporta los PNGs y
      - **Instagram**: hook, contenido, CTAs (Guárdalo / Compártelo / Enlace en bio), hashtags con clase `.hash`, URLs con clase `.url`.
      - **Telegram**: adaptado, usando `t.me/...` en lugar de `@...`, mostrando Comunidad y Novedades, y enlace al post de Instagram.
    - Los textos pasan por los skills de revisión (`revision-ortografia`, `revision-lenguaje`).
+   - **QA**: pasa el borrador por el agente `.opencode/agent/editor.md` (revisor de marca/campaña/convenciones) y aplica sus correcciones antes de exportar.
 
 4. **Exportar los PNGs (1080×1080)** — usa el procedimiento de `automatizacion/README.md` ("Exportación de PNGs"):
    - Arranca `python automatizacion/servidor_export.py 8000` en background.
@@ -44,4 +48,6 @@ Genera un post de Instagram completo para Mejora tu Docencia, exporta los PNGs y
 
 6. **Commit + push** (por defecto sí, a no ser que el usuario diga lo contrario): `git add` + `git commit` + `git push origin main`. Los PNGs quedan en `output/` (gitignored); se publica el HTML + textos.
 
-7. **Resumen final**: ruta de la carpeta, PNGs exportados (con sus rutas), textos listos, y recordatorio de que el usuario sube a Instagram/Telegram.
+7. **Actualizar el banco de ideas** (`ideas/banco.md`): si el post venía de una idea del banco, muévela a **"🗂️ Hechas"** con la ruta `instagram/<slug>/`; si era nueva, añádela como Hecha.
+
+8. **Resumen final**: ruta de la carpeta, PNGs exportados (con sus rutas), textos listos, y recordatorio de que el usuario sube a Instagram/Telegram.

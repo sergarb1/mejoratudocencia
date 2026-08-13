@@ -234,9 +234,11 @@ El pipeline idea → contenido está en `automatizacion/README.md` y en los coma
 | `/experiencia "idea"` | Artículo en `experiencias/<slug>/` + listas actualizadas |
 | `/app "idea"` | Miniapp nueva (o enlaza existente) + `aplicaciones.json` |
 | `/publicar` | Exporta PNGs y hace commit + push |
-| `/idea "descripción"` | Registra idea en `ideas/inbox.md` |
+| `/sugerir` | Recomienda qué generar (banco de ideas + calendario + contenido existente) |
+| `/propone-ideas` | La IA propone ideas nuevas al banco para que las apruebes |
+| `/idea "descripción"` | Añade una idea tuya al banco como aprobada |
 
-- **Bandeja de ideas**: `ideas/inbox.md`
+- **Banco de ideas** (fuente de conocimiento): `ideas/banco.md` — ideas aprobadas, propuestas por la IA, hechas y descartadas. El pipeline (`/sugerir`, `/post`, etc.) lo usa para no repetir y para recomendar contenido.
 - **Editor jefe** (revisión de calidad): `.opencode/agent/editor.md`
 - **OpenSpec**: flujo `/opsx-propose` → `/opsx-apply` para apps nuevas (spec antes de construir)
 - **Export de PNGs**: chrome-devtools MCP + `automatizacion/decodificar-png.ps1` (ver `automatizacion/README.md`)

@@ -5,10 +5,14 @@ Pipeline que convierte una idea tuya en contenido publicado (web + posts de Inst
 ## Flujo
 
 ```
-Tú (idea) → ideas/inbox.md → comando → editor genera → PNGs exportados → commit+push → GitHub Pages → Tú subes a IG/Telegram
+Tú (idea) → ideas/banco.md → comando → editor genera → PNGs exportados → commit+push → GitHub Pages → Tú subes a IG/Telegram
 ```
 
 Se dispara **solo cuando tú pides** con un comando. Nada es autónomo.
+
+El **banco de ideas** (`ideas/banco.md`) es la fuente de conocimiento del pipeline:
+ideas aprobadas, propuestas por la IA, hechas y descartadas. `/sugerir` lo usa
+para recomendarte qué generar y los comandos marcan las ideas como hechas.
 
 ## Comandos (dentro de opencode, en esta carpeta del repo)
 
@@ -19,7 +23,10 @@ Se dispara **solo cuando tú pides** con un comando. Nada es autónomo.
 | `/experiencia "idea"` | Artículo de experiencia en `experiencias/<slug>/` + listas actualizadas |
 | `/app "idea"` | Miniapp nueva (o enlaza existente) + `aplicaciones.json` |
 | `/publicar <post>` | Exporta PNGs y hace commit + push |
-| `/idea "descripción"` | Registra una idea en `ideas/inbox.md` |
+| `/sugerir` | Recomienda qué generar (banco + calendario + contenido existente) |
+| `/propone-ideas` | La IA propone ideas nuevas al banco para que las apruebes |
+| `/idea "descripción"` | Registra una idea tuya en `ideas/banco.md` como aprobada |
+| `/opsx-propose` / `/opsx-apply` | Flujo OpenSpec (planificación → implementación) para apps nuevas |
 | `/opsx-propose` / `/opsx-apply` | Flujo OpenSpec (planificación → implementación) para apps nuevas |
 
 ## Agente
