@@ -4,3 +4,6 @@
 # Instagram — audios y videos locales (no se suben a la web ni al repo)
 instagram/**/*.mp3
 instagram/**/*.mp4
+
+# Exportación de PNGs de posts (derivados, no se suben al repo)
+output/

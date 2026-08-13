@@ -223,6 +223,25 @@ No hay servidor de desarrollo. Abrir los HTML directamente o servir con cualquie
 python3 -m http.server 8080
 ```
 
+## Automatización (opencode)
+
+El pipeline idea → contenido está en `automatizacion/README.md` y en los comandos de `.opencode/commands/`:
+
+| Comando | Qué hace |
+|---------|----------|
+| `/post "idea"` | Post de Instagram completo (carrusel + story + textos) + PNGs 1080×1080 exportados |
+| `/recurso "idea"` | Añade/actualiza recurso en `recursos.json` (verifica URL) |
+| `/experiencia "idea"` | Artículo en `experiencias/<slug>/` + listas actualizadas |
+| `/app "idea"` | Miniapp nueva (o enlaza existente) + `aplicaciones.json` |
+| `/publicar` | Exporta PNGs y hace commit + push |
+| `/idea "descripción"` | Registra idea en `ideas/inbox.md` |
+
+- **Bandeja de ideas**: `ideas/inbox.md`
+- **Editor jefe** (revisión de calidad): `.opencode/agent/editor.md`
+- **OpenSpec**: flujo `/opsx-propose` → `/opsx-apply` para apps nuevas (spec antes de construir)
+- **Export de PNGs**: chrome-devtools MCP + `automatizacion/decodificar-png.ps1` (ver `automatizacion/README.md`)
+- **Publicación**: `git push origin main` → GitHub Pages despliega solo. La subida a Instagram/Telegram la hace el usuario (no hay API pública gratuita).
+
 
 <!-- headroom:rtk-instructions -->
 # RTK (Rust Token Killer) - Token-Optimized Commands
