@@ -1,0 +1,617 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>05 — Bienvenida al curso • Mejora tu Docencia</title>
+  <link href="https://fonts.googleapis.com/css2?family=Architects+Daughter&family=Inter:wght@500;600;700;800&display=swap" rel="stylesheet" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      background: #e2e8f0;
+      display: flex; flex-direction: column; align-items: center;
+      padding: 1.5rem; font-family: 'Inter', sans-serif;
+    }
+    h1, h2, .ad { font-family: 'Architects Daughter', cursive; }
+
+    /* --- Carrusel --- */
+    .carousel {
+      position: relative;
+      width: 1254px; height: 1254px;
+      border-radius: 20px;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.15);
+    }
+    .slide {
+      position: absolute; inset: 0;
+      overflow: hidden; border-radius: 20px;
+      opacity: 0; visibility: hidden;
+      transition: opacity .4s, visibility .4s;
+    }
+    .slide.active { opacity: 1; visibility: visible; }
+    .slide .bg {
+      position: absolute; top: 0; left: 0;
+      width: 1254px; height: 1254px;
+      pointer-events: none;
+    }
+    .slide .content {
+      position: absolute; inset: 0;
+      display: flex; flex-direction: column;
+      align-items: center; text-align: center;
+      padding: 60px 90px 300px;
+      justify-content: space-between;
+    }
+    .emoji-xl { font-size: 80px; line-height: 1; margin-bottom: 12px; }
+
+    /* ===== SLIDE 1 – COVER ===== */
+    .slide1 .top {
+      display: flex; flex-direction: column; align-items: center;
+      flex: 1; width: 100%; justify-content: space-between;
+    }
+    .slide1 .top-inner {
+      display: flex; flex-direction: column; align-items: center;
+      flex: 1; justify-content: center;
+    }
+    .slide1 h1 {
+      font-size: 104px; line-height: 1.05; color: #0f172a;
+      margin-bottom: 12px;
+    }
+    .slide1 .hook {
+      font-weight: 600; font-size: 32px; color: #475569;
+      line-height: 1.35; margin-bottom: 10px; max-width: 800px;
+    }
+    .slide1 .sub {
+      font-weight: 500; font-size: 26px; color: #64748b;
+      line-height: 1.4; margin-bottom: 24px; max-width: 760px;
+    }
+    .slide1 .swipe {
+      font-size: 24px; color: #94a3b8; font-weight: 600;
+      display: flex; align-items: center; gap: 8px; padding-bottom: 10px;
+    }
+
+    /* ===== SLIDE 2 – LO NUEVO ===== */
+    .slide2 .top {
+      display: flex; flex-direction: column; align-items: center;
+      width: 100%; flex: 1; justify-content: space-between;
+    }
+    .slide2 h2 {
+      font-size: 72px; color: #0f172a; margin-bottom: 6px;
+    }
+    .slide2 .sub2 {
+      font-size: 26px; font-weight: 500; color: #64748b;
+      margin-bottom: 34px;
+    }
+    .grid2 {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 20px;
+      width: 100%; max-width: 1000px;
+    }
+    .celda {
+      background: rgba(255,255,255,0.6);
+      backdrop-filter: blur(4px);
+      padding: 26px 28px; border-radius: 24px;
+      border: 1px solid rgba(255,255,255,0.5);
+      text-align: left;
+    }
+    .celda .c-icon { font-size: 44px; margin-bottom: 8px; }
+    .celda .c-tit { font-size: 27px; font-weight: 800; color: #0f172a; margin-bottom: 6px; }
+    .celda .c-desc { font-size: 19px; font-weight: 500; color: #64748b; line-height: 1.35; }
+    .slide2 .tip {
+      font-size: 26px; font-weight: 600; color: #64748b;
+      max-width: 820px; line-height: 1.4;
+    }
+
+    .bottom-brand {
+      font-size: 24px; color: #16a34a; font-weight: 600;
+      display: flex; align-items: center; gap: 12px;
+      letter-spacing: 0.5px;
+    }
+    .bottom-brand .sep {
+      width: 50px; height: 2px; background: rgba(22,163,74,0.2);
+    }
+
+    /* ===== SLIDE 3 – CÓMO EMPEZAR ===== */
+    .slide3 .top {
+      display: flex; flex-direction: column; align-items: center;
+      width: 100%; flex: 1;
+    }
+    .slide3 h2 {
+      font-size: 64px; color: #0f172a; margin-bottom: 6px;
+    }
+    .slide3 .sub3 {
+      font-size: 26px; font-weight: 500; color: #64748b; margin-bottom: 30px;
+    }
+    .pasos {
+      display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 16px;
+      width: 100%; max-width: 1000px;
+    }
+    .paso {
+      background: rgba(255,255,255,0.6);
+      backdrop-filter: blur(4px);
+      padding: 26px 14px 22px;
+      border-radius: 24px;
+      border: 1px solid rgba(255,255,255,0.5);
+      text-align: center;
+    }
+    .paso .p-icon { font-size: 46px; margin-bottom: 6px; }
+    .paso .p-tit { font-size: 22px; font-weight: 400; color: #0f172a; margin-bottom: 4px; }
+    .paso .p-desc { font-size: 14px; font-weight: 600; color: #64748b; line-height: 1.3; }
+
+    .divider {
+      width: 50%; height: 2px;
+      background: rgba(148,163,184,0.12);
+      margin: 32px 0 20px;
+    }
+
+    .res-grid {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 16px 32px;
+      text-align: left; width: 100%; max-width: 800px;
+      margin-bottom: 10px;
+    }
+    .res-item {
+      display: flex; align-items: center; gap: 14px;
+      font-size: 22px; font-weight: 700; color: #0f172a;
+    }
+    .res-item .check { font-size: 30px; }
+
+    .slide3 .cta {
+      margin-top: 26px;
+      font-size: 28px; color: #16a34a;
+      display: flex; align-items: center; gap: 8px;
+    }
+    .slide3 .cta small {
+      font-size: 18px; font-weight: 500; color: #94a3b8;
+    }
+
+    /* --- Navegación --- */
+    .nav-dots { display: flex; gap: 10px; margin: 14px 0 12px; }
+    .nav-dots button {
+      width: 14px; height: 14px; border-radius: 50%;
+      border: 2px solid #16a34a; background: transparent;
+      cursor: pointer; transition: .2s;
+    }
+    .nav-dots button.active { background: #16a34a; transform: scale(1.2); }
+
+    /* --- Botones --- */
+    .actions { display: flex; gap: 8px; flex-wrap: wrap; justify-content: center; margin-bottom: 12px; }
+    .btn {
+      padding: 11px 26px; font-weight: 800; font-size: 14px;
+      color: #fff; background: #16a34a; border: none;
+      border-radius: 40px; cursor: pointer; transition: transform .15s;
+    }
+    .btn:hover { transform: scale(1.04); }
+    .btn:disabled { opacity: .5; cursor: not-allowed; transform: none; }
+    .btn-gray { background: #475569; }
+
+    .nota { font-size: 13px; color: #64748b; margin-bottom: 6px; }
+    .error { font-size: 13px; color: #dc2626; display: none; margin-bottom: 6px; }
+
+    /* ===== POST TEXT ===== */
+    .post-text {
+      width: 1254px; max-width: 100%;
+      background: #fff; border-radius: 20px;
+      padding: 32px 36px;
+      box-shadow: 0 10px 40px rgba(0,0,0,0.08);
+      margin-top: 20px;
+    }
+    .post-text h3 {
+      font-size: 18px; font-weight: 800; color: #0f172a;
+      margin-bottom: 10px; display: flex; align-items: center; gap: 8px;
+    }
+    .post-text h3 small { font-weight: 500; font-size: 13px; color: #94a3b8; }
+    .post-text .box {
+      background: #f8fafc; border-radius: 16px;
+      padding: 22px 26px;
+      font-size: 15px; line-height: 1.65;
+      color: #1e293b; white-space: pre-wrap;
+      border: 1px solid #e2e8f0;
+    }
+    .post-text .box .url { color: #16a34a; font-weight: 700; text-decoration: underline; }
+    .post-text .box .hash { color: #2563eb; font-weight: 600; }
+    .post-text .btn-copy {
+      margin-top: 10px; padding: 9px 22px;
+      font-weight: 700; font-size: 13px;
+      color: #16a34a; background: transparent;
+      border: 2px solid #16a34a; border-radius: 40px;
+      cursor: pointer; transition: .2s;
+    }
+    .post-text .btn-copy:hover { background: #16a34a; color: #fff; }
+    .tg-box { margin-top: 18px; }
+
+    /* ===== POST PREVIEW CARD (1:1 square) ===== */
+    .story-card-wrap {
+      margin: 20px 0;
+    }
+    .story-card {
+      width: 338px; height: 338px;
+      border-radius: 28px;
+      background: linear-gradient(160deg, #f0fdf4 0%, #ffffff 50%, #f0fdf4 100%);
+      box-shadow: 0 15px 40px rgba(0,0,0,0.12);
+      display: flex; flex-direction: column;
+      align-items: center; text-align: center;
+      padding: 24px 20px 16px;
+      position: relative;
+      overflow: hidden;
+      justify-content: space-between;
+    }
+    .story-card .sc-deco {
+      position: absolute; top: 0; left: 0; right: 0;
+      height: 30px;
+      background: linear-gradient(90deg, #16a34a, #22c55e, #16a34a);
+      opacity: 0.06;
+    }
+    .story-card .sc-top {
+      display: flex; flex-direction: column; align-items: center;
+      width: 100%; flex: 1; justify-content: center;
+    }
+    .story-card .sc-emoji { font-size: 32px; margin-bottom: 4px; }
+    .story-card .sc-tit {
+      font-size: 16px; font-weight: 700; color: #0f172a;
+      font-family: 'Architects Daughter', cursive;
+      line-height: 1.15; margin-bottom: 3px;
+    }
+    .story-card .sc-hook {
+      font-size: 9px; font-weight: 600; color: #475569;
+      line-height: 1.35; margin-bottom: 8px; max-width: 220px;
+    }
+    .story-card .sc-items {
+      display: flex; flex-direction: column; gap: 4px;
+      width: 100%; max-width: 250px; margin-bottom: 6px;
+    }
+    .story-card .sc-item {
+      display: flex; align-items: center; gap: 6px;
+      background: rgba(255,255,255,0.6);
+      padding: 4px 10px; border-radius: 30px;
+      border: 1px solid rgba(255,255,255,0.4);
+    }
+    .story-card .sc-item .si-emoji { font-size: 12px; min-width: 20px; text-align: center; }
+    .story-card .sc-item .si-txt {
+      font-size: 8px; font-weight: 600; color: #1e293b;
+      text-align: left;
+    }
+    .story-card .sc-cta {
+      font-size: 9px; font-weight: 700; color: #16a34a;
+      margin-top: 3px;
+    }
+    .story-card .sc-url {
+      font-size: 7px; font-weight: 600; color: #94a3b8;
+      letter-spacing: 0.5px;
+    }
+    .story-card .sc-labels {
+      display: flex; gap: 4px; flex-wrap: wrap; justify-content: center;
+    }
+    .story-card .sc-labels span {
+      font-size: 7px; font-weight: 600; color: #94a3b8;
+      background: rgba(255,255,255,0.6);
+      padding: 2px 8px; border-radius: 30px;
+      border: 1px solid rgba(255,255,255,0.4);
+    }
+    .story-card-actions {
+      display: flex; gap: 8px; margin-top: 10px;
+    }
+    .story-card-actions .btn {
+      padding: 9px 20px; font-weight: 700; font-size: 13px;
+      color: #fff; background: #16a34a; border: none;
+      border-radius: 40px; cursor: pointer;
+    }
+    .story-card-actions .btn-outline {
+      background: transparent; color: #16a34a;
+      border: 2px solid #16a34a;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ============ CARRUSEL ============ -->
+  <div class="carousel">
+
+    <!-- SLIDE 1 — Cover -->
+    <div class="slide slide1 active" data-slide="0">
+      <img class="bg" src="../layout.png" alt="" />
+      <div class="content">
+        <div class="top">
+          <div class="top-inner">
+            <div class="emoji-xl">🍎</div>
+            <h1>Nuevo curso,<br />nuevas herramientas</h1>
+            <p class="hook">Bienvenidos y bienvenidas a septiembre 👋</p>
+            <p class="sub">
+              Hemos llegado a los <b>87 recursos gratis</b> listos para usar<br />
+              en tu aula. Todo de acceso libre y sin registro.
+            </p>
+          </div>
+          <div class="swipe">👆 Desliza para ver lo nuevo →</div>
+        </div>
+        <div class="bottom-brand">
+          <span class="sep"></span> mejoratudocencia.es <span class="sep"></span>
+        </div>
+      </div>
+    </div>
+
+    <!-- SLIDE 2 — Lo nuevo que hemos añadido -->
+    <div class="slide slide2" data-slide="1">
+      <img class="bg" src="../layout.png" alt="" />
+      <div class="content">
+        <div class="top">
+          <div class="emoji-xl">📚</div>
+          <h2>Lo nuevo para tu aula</h2>
+          <p class="sub2">Estrenamos el curso con novedades seleccionadas</p>
+          <div class="grid2">
+            <div class="celda">
+              <div class="c-icon">🧠</div>
+              <div class="c-tit">IA pedagógica</div>
+              <div class="c-desc">Diffit para adaptar textos y materiales al nivel de tu alumnado</div>
+            </div>
+            <div class="celda">
+              <div class="c-icon">🛡️</div>
+              <div class="c-tit">Convivencia</div>
+              <div class="c-desc">Recursos contra el acoso: Conectado, Fundación ANAR y más</div>
+            </div>
+            <div class="celda">
+              <div class="c-icon">📝</div>
+              <div class="c-tit">Evaluación</div>
+              <div class="c-desc">Plickers para evaluar al momento, incluso sin dispositivos</div>
+            </div>
+            <div class="celda">
+              <div class="c-icon">🧩</div>
+              <div class="c-tit">Metodologías</div>
+              <div class="c-desc">Proyecto EDIA y El Aula de Fran: proyectos y dinámicas listas</div>
+            </div>
+            <div class="celda">
+              <div class="c-icon">🎮</div>
+              <div class="c-tit">Apps interactivas</div>
+              <div class="c-desc">Neal.fun y Flippity: simulaciones y juegos desde la web</div>
+            </div>
+            <div class="celda">
+              <div class="c-icon">🌈</div>
+              <div class="c-tit">Diversidad</div>
+              <div class="c-desc">Mentea, para orientación, psicología y atención a la diversidad</div>
+            </div>
+          </div>
+          <p class="tip">
+            💡 Y esto solo es el comienzo: seguimos sumando cada semana
+          </p>
+        </div>
+        <div class="bottom-brand">
+          <span class="sep"></span> mejoratudocencia.es <span class="sep"></span>
+        </div>
+      </div>
+    </div>
+
+    <!-- SLIDE 3 — Cómo empezar -->
+    <div class="slide slide3" data-slide="2">
+      <img class="bg" src="../layout.png" alt="" />
+      <div class="content">
+        <div class="top">
+          <div class="emoji-xl">🚀</div>
+          <h2>Cómo empezar</h2>
+          <p class="sub3">Ponte en marcha en menos de 5 minutos</p>
+          <div class="pasos">
+            <div class="paso">
+              <div class="p-icon">🔎</div>
+              <div class="p-tit">Explora</div>
+              <div class="p-desc">Filtra por materia, nivel o necesidad</div>
+            </div>
+            <div class="paso">
+              <div class="p-icon">⭐</div>
+              <div class="p-tit">Guarda</div>
+              <div class="p-desc">Elige tus favoritos para cada clase</div>
+            </div>
+            <div class="paso">
+              <div class="p-icon">📩</div>
+              <div class="p-tit">Pide</div>
+              <div class="p-desc">¿Falta algo? Te lo creamos a medida</div>
+            </div>
+          </div>
+          <div class="divider"></div>
+          <p style="font-size: 22px; font-weight: 700; color: #0f172a; margin-bottom: 16px;">
+            🎯 Todo esto, gratis
+          </p>
+          <div class="res-grid">
+            <div class="res-item"><span class="check">✅</span> Sin registro ni coste</div>
+            <div class="res-item"><span class="check">🧑‍🏫</span> Hecho por y para docentes</div>
+            <div class="res-item"><span class="check">🌐</span> Código abierto</div>
+            <div class="res-item"><span class="check">📱</span> Listo para cualquier aula</div>
+          </div>
+          <div class="cta">
+            🧭 Explóralo en mejoratudocencia.es
+            <small>· enlace en bio</small>
+          </div>
+        </div>
+        <div class="bottom-brand">
+          <span class="sep"></span> mejoratudocencia.es <span class="sep"></span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Navegación -->
+  <div class="nav-dots">
+    <button class="active" data-slide="0" onclick="ir(0)"></button>
+    <button data-slide="1" onclick="ir(1)"></button>
+    <button data-slide="2" onclick="ir(2)"></button>
+  </div>
+
+  <!-- Acciones -->
+  <div class="actions">
+    <button class="btn" onclick="descargar(0)">⬇ Slide 1</button>
+    <button class="btn" onclick="descargar(1)">⬇ Slide 2</button>
+    <button class="btn" onclick="descargar(2)">⬇ Slide 3</button>
+    <button class="btn btn-gray" onclick="descargarTodo()">⬇⬇ Descargar todo</button>
+  </div>
+  <p class="nota">Abrir con <code>python3 -m http.server</code> → <code>localhost:8000/instagram/05-bienvenida-curso/</code></p>
+  <p class="error" id="errorMsg"></p>
+
+  <!-- ===== POST PREVIEW CARD (1:1 square) ===== -->
+  <div class="story-card-wrap" id="storyCard">
+    <div class="story-card" id="storyPreview">
+      <div class="sc-deco"></div>
+      <div class="sc-top">
+        <div class="sc-emoji">🍎</div>
+        <div class="sc-tit">Bienvenido,<br />nuevo curso</div>
+        <div class="sc-hook">Ya somos 87 recursos gratis listos para tu aula 🚀</div>
+        <div class="sc-items">
+          <div class="sc-item">
+            <span class="si-emoji">🧠</span>
+            <span class="si-txt">IA para preparar tus clases</span>
+          </div>
+          <div class="sc-item">
+            <span class="si-emoji">🗂️</span>
+            <span class="si-txt">Recursos por materia y nivel</span>
+          </div>
+          <div class="sc-item">
+            <span class="si-emoji">📩</span>
+            <span class="si-txt">Pide lo que falte, lo creamos</span>
+          </div>
+        </div>
+        <div class="sc-cta">🧭 Explóralo gratis</div>
+        <div class="sc-url">mejoratudocencia.es</div>
+      </div>
+      <div class="sc-labels">
+        <span>📸 1080×1080</span>
+        <span>🎯 1:1</span>
+        <span>1 slide</span>
+      </div>
+    </div>
+    <div class="story-card-actions">
+      <button class="btn" onclick="descargarStoryPreview()">⬇ Exportar card</button>
+      <button class="btn btn-outline" onclick="window.open('story.html', '_blank')">📱 Abrir post</button>
+    </div>
+  </div>
+
+  <!-- ============ POST TEXT ============ -->
+  <div class="post-text">
+    <h3>📝 Texto del post para Instagram <small>(copia y pega)</small></h3>
+    <div class="box" id="igText">🍎 Nuevo curso, nuevas herramientas. ¡Bienvenidos y bienvenidas a septiembre!
+
+Estrenamos el curso con una biblioteca que ya supera los <b>87 recursos gratis</b>, todos listos para tu aula y sin registro 👇
+
+Lo nuevo que hemos añadido:
+🧠 IA pedagógica: adapta materiales al instante
+🛡️ Convivencia: recursos contra el acoso escolar
+📝 Evaluación: apps para evaluar al momento
+🧩 Metodologías: proyectos y dinámicas listas
+🎮 Apps interactivas: simulaciones y juegos
+🌈 Diversidad: orientación y atención a la diversidad
+
+Y esto solo es el comienzo: seguimos sumando cada semana.
+
+Cómo empezar:
+🔎 Explora y filtra por materia o necesidad
+⭐ Guarda tus favoritos para cada clase
+📩 ¿Falta algo? Pídelo y te lo creamos a medida
+
+Todo gratis, sin registro y de código abierto. Hecho por y para docentes.
+
+👉 Guárdalo para el nuevo curso
+👉 Comparte con otros profes
+👉 Enlace en la bio
+
+<span class="hash">#NuevoCurso</span> <span class="hash">#Septiembre2026</span> <span class="hash">#RecursosEducativos</span>
+<span class="hash">#Docentes</span> <span class="hash">#Educacion</span> <span class="hash">#AppsEducativas</span>
+<span class="hash">#VueltaAlCole</span> <span class="hash">#MejoraTuDocencia</span></div>
+    <button class="btn-copy" onclick="copiar('igText')">📋 Copiar texto</button>
+
+    <div class="tg-box">
+      <h3>✈️ Texto para Telegram</h3>
+      <div class="box" id="tgText">🍎 Nuevo curso, nuevas herramientas. ¡Bienvenidos a septiembre!
+
+Ya estamos a pleno rendimiento con una biblioteca de <b>87 recursos gratis</b>, todos listos para usar en tu aula y sin registro.
+
+Lo nuevo este mes:
+• 🧠 IA pedagógica: adapta materiales al instante
+• 🛡️ Convivencia: recursos contra el acoso escolar
+• 📝 Evaluación: apps para evaluar al momento
+• 🧩 Metodologías: proyectos y dinámicas listas
+• 🎮 Apps interactivas: simulaciones y juegos
+• 🌈 Diversidad: orientación y atención a la diversidad
+
+Y seguimos sumando cada semana.
+
+🔗 <span class="url">https://mejoratudocencia.es/recursos.html</span>
+
+📸 Cuando subas el post a Instagram, pega aquí su enlace.
+
+📲 Síguenos en Instagram para más ideas:
+👉 <span class="url">https://www.instagram.com/mejoratudocencia/</span>
+
+✈️ Comunidad: <span class="url">t.me/mejoratudocencia</span>
+📢 Novedades: <span class="url">t.me/noticias_mejora_tu_docencia</span>
+
+<span class="hash">#NuevoCurso</span> <span class="hash">#Septiembre2026</span> <span class="hash">#RecursosEducativos</span> <span class="hash">#MejoraTuDocencia</span></div>
+      <button class="btn-copy" onclick="copiar('tgText')">📋 Copiar texto</button>
+    </div>
+  </div>
+
+  <script>
+    let descargando = false;
+
+    function ir(idx) {
+      document.querySelectorAll('.slide').forEach(s => s.classList.remove('active'));
+      document.querySelectorAll('.nav-dots button').forEach(b => b.classList.remove('active'));
+      document.querySelector(`.slide[data-slide="${idx}"]`).classList.add('active');
+      document.querySelector(`.nav-dots button[data-slide="${idx}"]`).classList.add('active');
+    }
+
+    async function descargar(idx) {
+      if (descargando) return;
+      descargando = true;
+      const err = document.getElementById('errorMsg');
+      err.style.display = 'none';
+      try {
+        await document.fonts.ready;
+        ir(idx);
+        await new Promise(r => setTimeout(r, 100));
+        const slide = document.querySelector(`.slide[data-slide="${idx}"]`);
+        const canvas = await html2canvas(slide, {
+          width: 1254, height: 1254, scale: 1080/1254, useCORS: true, logging: false
+        });
+        const link = document.createElement('a');
+        link.download = `05-bienvenida-curso-slide-${idx+1}.png`;
+        link.href = canvas.toDataURL('image/png');
+        link.click();
+      } catch (e) {
+        err.textContent = 'Error: abre con servidor local (python3 -m http.server), no como archivo local.';
+        err.style.display = 'block';
+      }
+      descargando = false;
+    }
+
+    async function descargarTodo() {
+      for (let i = 0; i < 3; i++) { await descargar(i); await new Promise(r => setTimeout(r, 300)); }
+    }
+
+    async function descargarStoryPreview() {
+      if (descargando) return;
+      descargando = true;
+      const err = document.getElementById('errorMsg');
+      err.style.display = 'none';
+      try {
+        await document.fonts.ready;
+        await new Promise(r => setTimeout(r, 100));
+        const card = document.getElementById('storyPreview');
+        const canvas = await html2canvas(card, {
+          width: 338, height: 338, scale: 2, useCORS: true, logging: false
+        });
+        const link = document.createElement('a');
+        link.download = '05-bienvenida-curso-post-card.png';
+        link.href = canvas.toDataURL('image/png');
+        link.click();
+      } catch (e) {
+        err.textContent = 'Error: abre con servidor local.';
+        err.style.display = 'block';
+      }
+      descargando = false;
+    }
+
+    function copiar(id) {
+      const el = document.getElementById(id);
+      const text = el.textContent;
+      navigator.clipboard.writeText(text).then(() => {
+        const btn = el.parentElement.querySelector('.btn-copy');
+        const orig = btn.textContent;
+        btn.textContent = '✅ Copiado';
+        setTimeout(() => btn.textContent = orig, 1500);
+      });
+    }
+  </script>
+</body>
+</html>

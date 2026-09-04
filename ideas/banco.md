@@ -34,6 +34,7 @@ Tipos: `post` (Instagram), `recurso` (recursos.json), `experiencia` (artículo),
 - **[post] Vacaciones y septiembre** → `instagram/02-vacaciones/`
 - **[post] Cuadrante de tareas** → `instagram/03-cuadrante-tareas/`
 - **[post] Sociograma de aula** → `instagram/04-sociograma/`
+- **[post] Bienvenida al curso + novedades de recursos** → `instagram/05-bienvenida-curso/`
 - **[experiencia] Pomodoro** → `experiencias/pomodoro/`
 
 ## ⛔ Descartadas
