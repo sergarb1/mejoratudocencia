@@ -40,7 +40,7 @@
 
 | | |
 |---|---|
-| 📚 **Recursos curados** | 76 recursos en 9 áreas: tutoría, convivencia, diversidad, metodologías, evaluación, IA, herramientas propias, apps externas y matemáticas |
+| 📚 **Recursos curados** | 87 recursos en 9 áreas: tutoría, convivencia, diversidad, metodologías, evaluación, IA, herramientas propias, apps externas y matemáticas |
 | 🛠️ **Apps gratuitas** | Herramientas web creadas por y para docentes: sociogramas, generadores de orlas, cuadrantes, calendarios… |
 | ✍️ **Experiencias de aula** | Artículos con prácticas reales compartidas por docentes |
 | 🤖 **IA pedagógica** | Formación y recursos para integrar la inteligencia artificial en tu práctica docente |
@@ -83,7 +83,7 @@
 📁 mejoratudocencia/
 ├── 📄 index.html              Portada
 ├── 📄 recursos.html           Biblioteca con filtros
-├── 📄 recursos.json           76 recursos · 9 secciones
+├── 📄 recursos.json           87 recursos · 9 secciones
 ├── 📄 aplicaciones.html       Catálogo de apps
 ├── 📄 aplicaciones.json       Datos de apps
 ├── 📄 experiencias.html       Listado de experiencias
@@ -113,18 +113,18 @@
 
 ## 📚 Recursos (`recursos.json`)
 
-76 recursos organizados en 9 secciones:
+87 recursos organizados en 9 secciones:
 
 | Sección | Cant. | Contenido |
 |---------|-------|-----------|
 | 🫂 Tutoría y Emociones | 8 | Dinámicas de grupo, emociones, técnicas de estudio, orientación |
-| 🛡️ Gestión de Conflictos | 5 | Mediación, convivencia, prevención de acoso |
-| 👥 Atención a la Diversidad | 8 | DUA, TDAH, TEA, dislexia, altas capacidades, SAAC |
-| 💡 Metodologías Activas | 6 | ABP, flipped classroom, aprendizaje cooperativo, design thinking |
-| 📋 Evaluación Formativa | 5 | Rúbricas, coevaluación, cuaderno del profesor |
-| 🧠 IA Pedagógica | 9 | Prompts, formación, ética, herramientas IA |
+| 🛡️ Gestión de Conflictos | 8 | Mediación, convivencia, prevención de acoso, videojuegos educativos, observatorio |
+| 👥 Atención a la Diversidad | 9 | DUA, TDAH, TEA, dislexia, altas capacidades, orientación y psicología |
+| 💡 Metodologías Activas | 8 | ABP, Proyecto EDIA, flipped classroom, aprendizaje cooperativo, gamificación |
+| 📋 Evaluación Formativa | 7 | Rúbricas, Plickers, Wooclap, coevaluación, cuaderno del profesor |
+| 🧠 IA Pedagógica | 10 | Diffit, prompts, formación, ética, herramientas docentes con IA |
 | 🧩 Herramientas | 6 | Apps propias (sociograma, cuadrante, orlas…) |
-| 📱 Apps Externas | 21 | Educaplay, Genially, Kahoot, GeoGebra, PhET… |
+| 📱 Apps Externas | 23 | Flippity, Educaplay, Genially, Kahoot, GeoGebra, PhET, simuladores… |
 | 🔢 Matemáticas | 8 | Libros interactivos 1º ESO, problemas, proyectos |
 
 ---

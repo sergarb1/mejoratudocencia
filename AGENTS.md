@@ -10,7 +10,7 @@ Web estática con Vue 3 + Tailwind CSS + Lucide icons. Sin build step — CDN di
 - `js/tailwind-config.js` — Config de Tailwind (paleta primary, fuentes) compartida por todas las páginas
 - `js/app.css` — CSS común: gradient-bg, glass-effect, cards, article-content, transiciones Vue, list-enter/leave/move
 - `aplicaciones.json` — Datos de aplicaciones cargados por `aplicaciones.html` e `index.html`
-- `recursos.json` — Datos de recursos cargados dinámicamente por `recursos.html` e `index.html`. **76 recursos** en 9 secciones: tutorias (8), conflictos (5), diversidad (8), metodologias (6), evaluacion (5), ia-pedagogica (9), herramientas (6), aplicaciones-externas (21), mates (8)
+- `recursos.json` — Datos de recursos cargados dinámicamente por `recursos.html` e `index.html`. **87 recursos** en 9 secciones: tutorias (8), conflictos (8), diversidad (9), metodologias (8), evaluacion (7), ia-pedagogica (10), herramientas (6), aplicaciones-externas (23), mates (8)
 - `experiencias/` — Artículos de experiencias de aula, cada uno en su subcarpeta `experiencias/<slug>/`
 - `mates/` — Subweb de matemáticas con su propio index, libros, proyectos
 - `campana.md` — Plan de campaña para Telegram e Instagram (beta, estreno septiembre 2026)
@@ -97,19 +97,40 @@ Todo el CSS común está centralizado en `js/app.css`. La configuración de Tail
 - Prefijo `md:` para estilos de escritorio, mobile-first
 - Prefijo `lg:` para transiciones intermedias (nav items, logo)
 - `aplicaciones.json` tiene campo `Icono` (nombre de icono Lucide), `Etiquetas` (array), `GitHub` (opcional)
-- `recursos.json` tiene campo `Seccion` (id de sección), `Etiquetas` (array con prefijo seccion-tipo), `URL` (obligatorio)
+- `recursos.json` tiene un esquema estricto de 6 campos por recurso:
+  - `Título` (string): Nombre conciso del recurso con tildes correctas.
+  - `URL` (string): Enlace directo y funcional (preferir `https://`; en `mates/` se permiten rutas relativas locales).
+  - `Descripción` (string): Resumen pedagógico concreto (1-2 oraciones) indicando utilidad y destinatarios.
+  - `Etiquetas` (array de 2 strings): Primer tag `${Seccion}-${tipo}`, segundo tag categoría legible.
+  - `FechaPublicacion` (string): Formato `YYYY-MM-DD` (fecha actual al incorporar el recurso).
+  - `Seccion` (string): ID exacto coincidente con `APP_CONFIG.sections`.
 - No hay npm ni build — todo via CDN (unpkg + cdn.tailwindcss.com)
 - La config de Tailwind (`js/tailwind-config.js`) se carga después del CDN de Tailwind
 - Footer incluye aviso de licencia CC BY-SA 4.0 y CTA de petición de apps/recursos
 
 ## Curación de recursos (`recursos.json`)
 
+El catálogo cuenta actualmente con **87 recursos** distribuidos en 9 secciones:
+
+| Sección | ID | Cant. | Tipos habituales | Categorías secundarias |
+|---------|----|-------|------------------|------------------------|
+| Apps Externas | `aplicaciones-externas` | 23 | simulador, actividades, plantillas, presentaciones, fichas, diseño | Interactivo, Juegos, STEM, Colaborativo, Creación, Evaluación, LMS |
+| IA Pedagógica | `ia-pedagogica` | 10 | web, guia, herramienta, lista | Docentes, Formación, IA, Planificación, Prompts, Visual Thinking, Ética |
+| Atención a la Diversidad | `diversidad` | 9 | guia, web, material, plantilla | Altas Capacidades, DUA, Dislexia, Inclusión, Orientación, SAAC, TDAH, TEA |
+| Tutoría y Emociones | `tutorias` | 8 | web, material, dinamica | Cohesión, Emociones, Prevención, Técnicas de estudio, Tutoría, Orientación |
+| Matemáticas | `mates` | 8 | libro, web, guia, problemas, herramienta | 1º ESO, ABR, ESO, Gráficas, Razonamiento |
+| Metodologías Activas | `metodologias` | 8 | guia, web, material | ABP, Cooperativo, Design Thinking, Flipped Classroom, Gamificación |
+| Gestión de Conflictos | `conflictos` | 8 | guia, app, web | Acoso escolar, Convivencia, Mediación, Sociometría |
+| Evaluación Formativa | `evaluacion` | 7 | herramienta | Cuaderno del profesor, Evaluación online, Rúbricas, Tests |
+| Herramientas | `herramientas` | 6 | app | Sociometría, Planificación, Organización, Eventos, Estudio, Ejemplo |
+
 ### Cómo buscar nuevos recursos
 - Buscar webs/blogs/herramientas educativas en español, gratuitas, sin registro obligatorio, orientadas a docentes de secundaria principalmente
 - Priorizar recursos del Ministerio de Educación, CCAA, INTEF, universidades, fundaciones educativas reconocidas
-- Herramientas externas → sección `aplicaciones-externas`. Apps propias → `herramientas`
-- Cada recurso debe tener URL funcional, descripción útil y etiquetas en formato `seccion-tipo`
-- Usar `FechaPublicacion: "YYYY-MM-DD"` con la fecha actual
+- Herramientas externas → sección `aplicaciones-externas`. Apps propias del proyecto → `herramientas`
+- Cada recurso debe tener URL funcional, descripción pedagógica clara y etiquetas normalizadas
+- Usar `FechaPublicacion: "YYYY-MM-DD"` con la fecha actual del día en que se añade
+- Verificar que la URL sea HTTPS siempre que el servidor lo soporte
 
 ### Cómo eliminar recursos rotos
 - Si una URL da 404, redirige a sitio no relacionado, o requiere registro/pago obligatorio: **eliminar del JSON**
@@ -120,12 +141,15 @@ Todo el CSS común está centralizado en `js/app.css`. La configuración de Tail
 ### Cómo evaluar si un recurso merece estar
 - **Añadir** si: es gratuito, en español o con versión española, útil para docentes de secundaria, URL específica (no portal genérico)
 - **Descartar** si: URL genérica (ej. `juntaandalucia.es/educacion`), el recurso ya existe con otro nombre, es de pago, está desactualizado, enlaza a página principal de una organización sin contenido educativo concreto
-- Verificar siempre que no haya duplicados por título o URL similar
+- Verificar siempre que no haya duplicados por título o por URL antes de insertar
 
-### Formato de etiquetas
-- Primera etiqueta: `seccion-tipo` (ej. `tutorias-web`, `ia-pedagogica-herramienta`, `evaluacion-herramienta`)
-- Tipos usados: `web`, `guia`, `material`, `herramienta`, `app`, `curso`, `simulador`, `libro`, `problemas`, `plantilla`, `lista`, `dinamica`, `fichas`, `actividades`, `presentaciones`, `diseno`
-- Segunda etiqueta: categoría legible (ej. `ABP`, `TEA`, `Rúbricas`, `Flipped Classroom`)
+### Formato estricto de etiquetas (`Etiquetas`)
+Cada recurso contiene exactamente **2 etiquetas**:
+1. **Primera etiqueta (`${seccion}-${tipo}`)**:
+   - Prefijo idéntico a la `Seccion` del recurso (ej: `tutorias-`, `diversidad-`, `ia-pedagogica-`, `aplicaciones-externas-`).
+   - Sufijo de tipo: `web`, `guia`, `material`, `herramienta`, `app`, `curso`, `simulador`, `libro`, `problemas`, `plantilla` (o `plantillas`), `lista`, `dinamica`, `fichas`, `actividades`, `presentaciones`, `diseño`.
+2. **Segunda etiqueta (Categoría legible)**:
+   - Texto en formato título o mayúscula inicial (ej: `ABP`, `Acoso escolar`, `DUA`, `Gamificación`, `Inclusión`, `Orientación`, `Prompts`, `Rúbricas`, `STEM`, `TEA`).
 
 ## Skeletons de carga
 

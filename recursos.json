@@ -753,5 +753,93 @@
     "Etiquetas": ["evaluacion-herramienta", "Tests"],
     "FechaPublicacion": "2026-07-08",
     "Seccion": "evaluacion"
+  },
+  {
+    "Título": "Mentea — Comunidad de Psicología y Orientación",
+    "URL": "https://somosmentea.com",
+    "Descripción": "Comunidad profesional gratuita para especialistas en psicología, psicopedagogía, orientación y pedagogía donde compartir recursos, materiales y experiencias prácticas.",
+    "Etiquetas": ["diversidad-web", "Orientación"],
+    "FechaPublicacion": "2026-09-04",
+    "Seccion": "diversidad"
+  },
+  {
+    "Título": "Conectado — Videojuego sobre Bullying y Ciberacoso",
+    "URL": "https://e-ucm.github.io/ConectadoWeb/",
+    "Descripción": "Aventura gráfica educativa interactiva desarrollada por el grupo e-UCM (Universidad Complutense) para concienciar y generar empatía frente al acoso escolar y el ciberacoso en secundaria.",
+    "Etiquetas": ["conflictos-app", "Acoso escolar"],
+    "FechaPublicacion": "2026-09-04",
+    "Seccion": "conflictos"
+  },
+  {
+    "Título": "Neal.fun — Experimentos y Simulaciones Interactivas",
+    "URL": "https://neal.fun/",
+    "Descripción": "Colección de simulaciones, juegos educativos y experimentos interactivos web (The Deep Sea, Size of Space, Asteroid Launcher) ideales para dinamizar explicaciones en el aula.",
+    "Etiquetas": ["aplicaciones-externas-simulador", "Interactivos"],
+    "FechaPublicacion": "2026-09-04",
+    "Seccion": "aplicaciones-externas"
+  },
+  {
+    "Título": "El Aula de Fran",
+    "URL": "https://elauladefran.org/",
+    "Descripción": "Espacio docente con recursos didácticos descargables, actividades interactivas, dinámicas de gamificación, concursos escolares y experiencias prácticas de aula.",
+    "Etiquetas": ["metodologias-web", "Gamificación"],
+    "FechaPublicacion": "2026-09-04",
+    "Seccion": "metodologias"
+  },
+  {
+    "Título": "Proyecto EDIA — Recursos Educativos Abiertos (CeDEC-INTEF)",
+    "URL": "https://cedec.intef.es/proyecto-edia/",
+    "Descripción": "Banco oficial del Ministerio de Educación de Recursos Educativos Abiertos (REA) curriculares para ESO y Bachillerato, basados en ABP, DUA y evaluación formativa.",
+    "Etiquetas": ["metodologias-guia", "ABP"],
+    "FechaPublicacion": "2026-09-04",
+    "Seccion": "metodologias"
+  },
+  {
+    "Título": "Plickers — Evaluación Formativa sin Dispositivos",
+    "URL": "https://www.plickers.com/",
+    "Descripción": "Herramienta de evaluación instantánea en el aula mediante tarjetas de códigos que el docente escanea con la cámara del móvil. Ideal para evaluar sin dispositivos del alumnado.",
+    "Etiquetas": ["evaluacion-herramienta", "Evaluación online"],
+    "FechaPublicacion": "2026-09-04",
+    "Seccion": "evaluacion"
+  },
+  {
+    "Título": "Wooclap — Plataforma de Interacción y Evaluación Formativa",
+    "URL": "https://www.wooclap.com/es/",
+    "Descripción": "Herramienta interactiva para formular preguntas en directo, sondeos, lluvias de ideas y cuestionarios de evaluación continua con feedback visual inmediato.",
+    "Etiquetas": ["evaluacion-herramienta", "Evaluación online"],
+    "FechaPublicacion": "2026-09-04",
+    "Seccion": "evaluacion"
+  },
+  {
+    "Título": "Observatorio Estatal de la Convivencia Escolar",
+    "URL": "https://educacionfpydeportes.gob.es/mc/observatorio-convivencia-escolar/portada.html",
+    "Descripción": "Portal oficial del Ministerio de Educación con guías, protocolos de actuación, informes y recursos para la mejora del clima escolar y la resolución pacífica de conflictos.",
+    "Etiquetas": ["conflictos-guia", "Convivencia"],
+    "FechaPublicacion": "2026-09-04",
+    "Seccion": "conflictos"
+  },
+  {
+    "Título": "Fundación ANAR — Recursos contra el Acoso Escolar",
+    "URL": "https://www.anar.org/acoso-escolar/",
+    "Descripción": "Guías prácticas, protocolos de detección y recursos de prevención e intervención frente al acoso y ciberacoso escolar para docentes y centros educativos.",
+    "Etiquetas": ["conflictos-guia", "Acoso escolar"],
+    "FechaPublicacion": "2026-09-04",
+    "Seccion": "conflictos"
+  },
+  {
+    "Título": "Diffit — Adaptación de Textos y Materiales con IA",
+    "URL": "https://web.diffit.me/",
+    "Descripción": "Herramienta de IA que adapta cualquier texto, vídeo o tema al nivel de lectura del alumnado, generando resúmenes, vocabulario, preguntas guiadas y actividades editables.",
+    "Etiquetas": ["ia-pedagogica-herramienta", "Docentes"],
+    "FechaPublicacion": "2026-09-04",
+    "Seccion": "ia-pedagogica"
+  },
+  {
+    "Título": "Flippity — Actividades y Juegos desde Hojas de Cálculo",
+    "URL": "https://www.flippity.net/",
+    "Descripción": "Convierte fácilmente hojas de cálculo de Google en tarjetas de repaso, tableros de juego, ruletas aleatorias, concursos y actividades interactivas sin registro.",
+    "Etiquetas": ["aplicaciones-externas-plantillas", "Juegos"],
+    "FechaPublicacion": "2026-09-04",
+    "Seccion": "aplicaciones-externas"
   }
 ]
